@@ -1,0 +1,29 @@
+/* public  part */
+.go-top{
+    z-index:1001;
+    width:32px;
+    height:32px;
+    border-radius: 0;
+    text-align:center;
+    right: 30px;
+    overflow: hidden;
+    bottom:30px;
+    position:fixed;
+    background-color:rgba(110,110,110,0.85);
+}
+
+/* home page */
+.fn-topbar{
+    margin-bottom: -1px;
+    padding:5px;
+}
+.home-data-wrapper{
+    min-height: 20rem;
+    background-color:#0e90d2;
+}
+
+.home-list ul>li{
+    height:5rem;
+    border: 1px #ccc solid;
+    padding : auto;
+}

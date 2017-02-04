@@ -1,79 +1,50 @@
-<div class="panel panel-left panel-cover" ng-controller="LeftController">
-    <div class="view navbar-fixed">
-        <div class="pages">
-            <div data-page="panel-left" class="page">
-                <div class="navbar">
-                    <div class="navbar-inner">
-                        <div class="center">
-                            <div class="panel-avatar"><img src="" alt=""></div>
-                            <h3>{{customerId}}</h3>
-                            <p>{{customerName}}</p>
+<div id="doc-oc-demo1" ng-click="closeOffCanvas()"  class="fn-offcanvas">
+    <div class="fn-offcanvas-bar">
+        <div class="fn-offcanvas-content">
+            <ul class="fn-list">
+                <li>
+                    <a ui-sref="app">
+                        <div class="item-content">
+                            <i class="fn-icon-home fn-icon-md"></i>首页
                         </div>
-                        <div class="new-message">
-                            <i class="icon icon-tongzhihover"></i>
-                            <span>1</span>
+                    </a>
+                </li>
+                <li>
+                    <a ui-sref="order.productList" class="item-link close-panel">
+                        <div class="item-content">
+                            <i class="fn-icon-buysellads  fn-icon-md"></i>下订单
                         </div>
-                    </div>
-                </div>
-                <div class="page-content">
-                    <!-- left list -->
-                    <div class="list-block">
-                        <ul>
-                            <li>
-                                <a href="modules/order/views/order.html" class="item-link close-panel">
-                                    <div class="item-content">
-                                        <div class="item-media"><i class="icon icon-all"></i></div>
-                                        <div class="item-inner">
-                                            <div class="item-title">下订单</div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="modules/myorder/views/myorder.html" class="item-link close-panel">
-                                    <div class="item-content">
-                                        <div class="item-media"><i class="icon icon-good"></i></div>
-                                        <div class="item-inner">
-                                            <div class="item-title">我的订单</div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="modules/payment/payment.html" class="item-link close-panel">
-                                    <div class="item-content">
-                                        <div class="item-media"><i class="icon icon-share1"></i></div>
-                                        <div class="item-inner">
-                                            <div class="item-title">我的付款单</div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="modules/profile/profile.html" class="item-link close-panel">
-                                    <div class="item-content">
-                                        <div class="item-media"><i class="icon icon-ask"></i></div>
-                                        <div class="item-inner">
-                                            <div class="item-title">个人信息</div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a ng-href="about.html" href="views/about.html" class="item-link close-panel">
-                                    <div class="item-content">
-                                        <div class="item-media"><i class="icon icon-set"></i></div>
-                                        <div class="item-inner">
-                                            <div class="item-title">关于我们</div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <!--end-->
-                </div>
-            </div>
+                    </a>
+                </li>
+                <li>
+                    <a ui-sref="myorder.orderList" class="item-link close-panel">
+                        <div class="item-media">
+                            <i class="fn-icon-list-alt  fn-icon-md"></i>我的订单
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a ui-sref="payment.paymentList" class="item-link close-panel">
+                        <div class="item-content">
+                            <i class="fn-icon-database fn-icon-md"></i>我的付款单
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a ui-sref="profile.info" class="item-link close-panel">
+                        <div class="item-content">
+                            <i class="fn-icon-user fn-icon-md"></i>个人信息
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a ui-sref="about" class="item-link close-panel">
+                        <div class="item-content">
+                            <i class="fn-icon-info fn-icon-md"></i>关于我们
+                        </div>
+                    </a>
+                </li>
+            </ul>
         </div>
     </div>
 </div>

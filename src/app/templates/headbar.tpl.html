@@ -1,56 +1,6 @@
-<header class="fn-topbar fn-topbar-inverse fn-text-center fn-text-xl" id="topbar">
-    <a ng-click="goBack()" class="fn-btn fn-fl" ng-show="showBack"><i class="iconfont icon-back"></i>返回</a>
-            {{title}}
-    <a class="fn-btn fn-fr" data-fn-offcanvas="{target: '#doc-oc-demo1', effect: 'push'}"><i class="iconfont icon-menu"></i></a>
-</header>
-
-<div id="doc-oc-demo1" ng-click="closeOffCanvas()"  class="fn-offcanvas">
-    <div class="fn-offcanvas-bar">
-        <div class="fn-offcanvas-content">
-            <ul class="fn-list">
-                <li>
-                    <a ui-sref="app">
-                        <div class="item-content">
-                            <i class="icon iconfont icon-home"></i>首页
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a ui-sref="order.productList" class="item-link close-panel">
-                        <div class="item-content">
-                            <i class="icon iconfont icon-similarproduct"></i>下订单
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a ui-sref="myorder.orderList" class="item-link close-panel">
-                        <div class="item-media">
-                            <i class="iconfont icon-bags"></i>我的订单
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a ui-sref="payment.paymentList" class="item-link close-panel">
-                        <div class="item-content">
-                            <i class="iconfont icon-jifen"></i>我的付款单
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a ui-sref="profile.info" class="item-link close-panel">
-                        <div class="item-content">
-                            <i class="icon iconfont icon-account"></i>个人信息
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a ui-sref="about" class="item-link close-panel">
-                        <div class="item-content">
-                            <i class="icon iconfont icon-information"></i>关于我们
-                        </div>
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </div>
-</div>
+<nav class="fn-topbar fn-topbar-inverse fn-text-center fn-text-lg" id="topbar">
+    <a ng-click="goBack()" class="fn-fl" ng-show="showBack"><i class="fn-icon-chevron-left"></i>返回</a>
+    {{title}}
+    <a class="fn-fr" data-fn-offcanvas="{target: '#doc-oc-demo1', effect: 'push'}"><i class="fn-icon-list"></i></a>
+</nav>
+<ng-include src="'app/views/public/left.html'"></ng-include>

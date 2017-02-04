@@ -34,7 +34,6 @@ myApp.directive("goTop",function ($window,$rootScope,$location,$anchorScroll) {
                 case 'app':
                     scope.showBack = false;
                     scope.title = "首页";
-                    scope.backState = "app";
                     break;
                 case 'order.productList':
                     scope.showBack = true;
@@ -81,6 +80,7 @@ myApp.directive("goTop",function ($window,$rootScope,$location,$anchorScroll) {
                         break;
                 }
             });
+
             scope.goBack = function(){
                 $rootScope.slideClass = "view-slide-out";
                 setTimeout(function(){
@@ -91,6 +91,7 @@ myApp.directive("goTop",function ($window,$rootScope,$location,$anchorScroll) {
                     $rootScope.slideClass = "view-slide-in";
                 },0.5)
             };
+
             scope.closeOffCanvas = function(){
                 $("#doc-oc-demo1").offCanvas('close');
             }

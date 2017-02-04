@@ -2,7 +2,6 @@
  * Created by chent on 2017/1/18.
  */
 
-
 var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate'])
 .config(['$stateProvider','$urlRouterProvider','$compileProvider',function($stateProvider,$urlRouterProvider,$compileProvider){
             $urlRouterProvider.otherwise('/app');
@@ -11,9 +10,8 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate'])
                 //首页
                 .state('app',{
                         url:'/app',
-                        templateUrl:'app/views/app.html'
+                        templateUrl:'app/views/public/app.html'
                 })
-
                 //订单模块
                 .state('order',{
                     url:'/order',
@@ -151,7 +149,4 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate'])
         //展示账户信息和不同角色下的左侧栏
         $scope.customerId = "dsfasdfasfasdf";
         $scope.customerName = "adsfasdfasdf";
-        $rootScope.slideClass = 'view-slide-in';
     }]);
-
-    require('./components/directives');

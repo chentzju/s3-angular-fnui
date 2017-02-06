@@ -81,14 +81,13 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate'])
                 //个人信息
                 .state('profile',{
                     url:'/profile',
-                    templateUrl:'views/profile/profile.html',
+                    templateUrl:'views/account/profile.html',
                     abstract:true
                 })
                 .state('profile.info',{
                     url:'/info',
-                    templateUrl:'views/profile/info.html'
+                    templateUrl:'views/account/info.html'
                 })
-
                 //认证
                 .state('account',{
                     url:'/account',
@@ -99,7 +98,6 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate'])
                     url:'/login',
                     templateUrl:'views/account/login.html'
                 })
-
                 .state('about', {
                     url:'/about',
                     templateUrl:'views/public/about.html'
@@ -148,6 +146,4 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate'])
         //展示账户信息和不同角色下的左侧栏
         $scope.customerId = "dsfasdfasfasdf";
         $scope.customerName = "adsfasdfasdf";
-
-        //$scope.slideClass = 'view-slide-in';
     }]);

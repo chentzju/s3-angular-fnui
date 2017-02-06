@@ -106,8 +106,8 @@ myApp.directive("goTop",function ($window,$rootScope,$location,$anchorScroll) {
             transclude:true,
             template:'<div class="fn-dropdown" data-fn-dropdown ng-transclude></div>',
             link:function(){
-                $(function(context) {
-                    $('[data-fn-dropdown]', context).dropdown();
+                $(function() {
+                    $('[data-fn-dropdown]').dropdown();
                 });
             }
         }

@@ -10,31 +10,31 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate'])
                 //首页
                 .state('app',{
                         url:'/app',
-                        templateUrl:'app/views/public/app.html'
+                        templateUrl:'views/public/app.html'
                 })
                 //订单模块
                 .state('order',{
                     url:'/order',
-                    templateUrl: 'app/views/order/order.html',
+                    templateUrl: 'views/order/order.html',
                     abstract:true,
                     resolve:{
                         orderService:['$ocLazyLoad', function($ocLazyLoad) {
                             return $ocLazyLoad.load([
-                                    'app/views/order/js/order-ctrl.js',
-                                    'app/views/order/js/order-serv.js',
-                                    'app/views/order/css/order.css'
+                                    'views/order/js/order-ctrl.js',
+                                    'views/order/js/order-serv.js',
+                                    'views/order/css/order.css'
                                 ])
                         }]
                     }
                 })
                 .state('order.productList',{
                     url:'/productList',
-                    templateUrl:'app/views/order/productList.html',
+                    templateUrl:'views/order/productList.html',
                     controller:'ProductCtrl'
                 })
                 .state('order.productDetail',{
                     url:'/productDetail/:productId',
-                    templateUrl:'app/views/order/productDetail.html',
+                    templateUrl:'views/order/productDetail.html',
                     controller:'ProductDetailCtrl'
                 })
 
@@ -42,15 +42,15 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate'])
                 //我的订单
                 .state('myorder',{
                     url:'/myorder',
-                    templateUrl:'app/views/myorder/myOrder.html',
+                    templateUrl:'views/myorder/myOrder.html',
                     abstract:true,
                     resolve:{
                         myorderService:['$ocLazyLoad', function($ocLazyLoad) {
                             return $ocLazyLoad.load([
-                                    'app/views/myorder/js/myorder-ctrl.js',
-                                    'app/views/myorder/js/myorder-serv.js',
-                                    'app/views/myorder/js/myorder-dire.js',
-                                    'app/views/myorder/css/myorder.css'
+                                    'views/myorder/js/myorder-ctrl.js',
+                                    'views/myorder/js/myorder-serv.js',
+                                    'views/myorder/js/myorder-dire.js',
+                                    'views/myorder/css/myorder.css'
                                 ]
                             );
                         }]
@@ -58,12 +58,12 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate'])
                 })
                 .state('myorder.orderList',{
                     url:'/orderList',
-                    templateUrl:'app/views/myorder/orderList.html',
+                    templateUrl:'views/myorder/orderList.html',
                     controller:'OrderListCtrl'
                 })
                 .state('myorder.orderDetail',{
                     url:'/orderDetail/:orderId',
-                    templateUrl:'app/views/myorder/orderDetail.html',
+                    templateUrl:'views/myorder/orderDetail.html',
                     controller:'OrderListCtrl'
                 })
 
@@ -71,23 +71,23 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate'])
                 //支付信息
                 .state('payment',{
                     url:'/payment',
-                    templateUrl:'app/views/payment/payment.html',
+                    templateUrl:'views/payment/payment.html',
                     abstract:true
                 })
                 .state('payment.paymentList',{
                     url:'/paymentList',
-                    templateUrl:'app/views/payment/paymentList.html'
+                    templateUrl:'views/payment/paymentList.html'
                 })
 
                 //个人信息
                 .state('profile',{
                     url:'/profile',
-                    templateUrl:'app/views/profile/profile.html',
+                    templateUrl:'views/profile/profile.html',
                     abstract:true
                 })
                 .state('profile.info',{
                     url:'/info',
-                    templateUrl:'app/views/profile/info.html'
+                    templateUrl:'views/profile/info.html'
                 })
 
                 //认证
@@ -98,12 +98,12 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate'])
                 })
                 .state('account.login',{
                     url:'/login',
-                    templateUrl:'app/views/account/login.html'
+                    templateUrl:'views/account/login.html'
                 })
 
                 .state('about', {
                     url:'/about',
-                    templateUrl:'app/views/about.html'
+                    templateUrl:'views/public/about.html'
                 })
                 .state('error',{
                     url:'/error',

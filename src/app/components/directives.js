@@ -26,7 +26,7 @@ myApp.directive("goTop",function ($window,$rootScope,$location,$anchorScroll) {
     return {
         restrict:'E',
         transclude:true,
-        templateUrl:'app/templates/headbar.tpl.html',
+        templateUrl:'templates/headbar.tpl.html',
         link:function(scope,element,attr){
             if($rootScope.previousState_name)
                 scope.showBack = true;
@@ -102,7 +102,7 @@ myApp.directive("goTop",function ($window,$rootScope,$location,$anchorScroll) {
         return{
             restrict:'E',
             transclude:true,
-            templateUrl:'app/templates/iscroll.tpl.html',
+            templateUrl:'templates/iscroll.tpl.html',
             link:function(){
                 var myScroll;
                 function createScroll(){

@@ -8,7 +8,7 @@ myApp.directive('orderTabs', function() {
         replace:true,
         scope: {},
         controller: 'OrderListCtrl',
-        templateUrl: 'app/views/myorder/orderTab.tpl.html',
+        templateUrl: 'views/myorder/orderTab.tpl.html',
         link:function(OrderListCtrl){
 
         }

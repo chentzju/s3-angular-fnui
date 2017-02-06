@@ -5,16 +5,15 @@ var uglify = require('gulp-uglify');
 var cssmin = require('gulp-cssmin');
 var imgmin = require('gulp-imagemin');
 var fse = require('fs-extra');
+var connect = require('gulp-connect');
 var config = require("./config.js");
-
-
 
 
 //load assets
 gulp.task("assets",function(){
      gulp.src([
         'bower_components/jquery/dist/jquery.js',
-        'bower_components/fnui/dist/js/fnui.js',
+        'node_modules/fnui/dist/js/fnui.js',
         'bower_components/iscroll/build/iscroll-probe.js'
     ])
         .pipe(concat("vendor.js"))
@@ -23,15 +22,16 @@ gulp.task("assets",function(){
 
     gulp.src([
         'bower_components/angular/angular.js',
-       // 'bower_components/angular-ui-router/release/angular-ui-router.min.js',
-        'bower_components/ngAnimate/js/angular-animate.min.js',
+        'bower_components/angular-ui-router/release/angular-ui-router.min.js',
+        'bower_components/angular-animate/angular-animate.js',
         'bower_components/oclazyload/dist/ocLazyLoad.js'
     ])
         .pipe(concat('angular.min.js'))
-        //.pipe(uglify())
+        .pipe(uglify())
         .pipe(gulp.dest('dist/assets/js'));
-    gulp.src('bower_components/fnui/dist/fonts/*').pipe(gulp.dest('dist/assets/fonts'));
-    gulp.src('bower_components/fnui/dist/css/*').pipe(gulp.dest('dist/assets/styles'));
+
+    gulp.src('node_modules/fnui/dist/fonts/*').pipe(gulp.dest('dist/assets/fonts'));
+    gulp.src('node_modules/fnui/dist/css/*').pipe(gulp.dest('dist/assets/styles'));
 });
 
 //build app
@@ -68,12 +68,34 @@ gulp.task('clean', function () {
     fse.emptyDirSync('dist');
 });
 
+
+
 gulp.task('build',['clean', 'assets', 'copy', 'image','views','client']);
 
 gulp.task('default',['build']);
 
-gulp.task('buid-dev',function(){
 
+
+gulp.task('watch', function () {
+    gulp.watch(['src/index.html','src/app/templates/*'], ['copy','reload']);
+    gulp.watch(['src/app/components/*','src/app/*.css'], ['client','reload']);
+    gulp.watch(['src/app/views/**/*.html','src/app/views/**/**/*'], ['views','reload']);
+    gulp.watch(['src/index.html'], ['copy','reload']);
+    gulp.watch(['src/app/images/*'],['image','reload']);
 });
+
+gulp.task('reload',function () {
+    gulp.src('dist').pipe(connect.reload())
+});
+
+
+gulp.task('connect',['build'],function(){
+    connect.server({
+        root: 'dist',
+        livereload:true
+    })
+});
+
+gulp.task('build-dev',['connect','watch']);
 
 

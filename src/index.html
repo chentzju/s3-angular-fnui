@@ -15,11 +15,15 @@
 
 
 <body ng-app="myApp" ng-controller="RootCtrl">
-    <!--page content -->
-    <div  ng-class="slideClass" ng-view ui-view></div>
-    <go-top></go-top>
-    <!--bottom bar  -->
 
+    <!--page content -->
+    <div class="slide-top" ng-view ui-view>
+    </div>
+
+    <!--bottom bar  -->
+    <bottom-bar></bottom-bar>
+
+    <go-top></go-top>
 
     <script src="assets/js/vendor.js"></script>
     <script src="assets/js/angular.min.js"></script>

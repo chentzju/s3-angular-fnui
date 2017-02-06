@@ -82,22 +82,37 @@ myApp.directive("goTop",function ($window,$rootScope,$location,$anchorScroll) {
             });
 
             scope.goBack = function(){
-                $rootScope.slideClass = "view-slide-out";
-                setTimeout(function(){
-                    if(scope.backState)
-                        $state.go(scope.backState);
-                    else
-                        $state.go($rootScope.previousState_name, $rootScope.previousState_params);
-                    $rootScope.slideClass = "view-slide-in";
-                },0.5)
+                if(scope.backState)
+                    $state.go(scope.backState);
+                else
+                    $state.go($rootScope.previousState_name, $rootScope.previousState_params);
             };
-
             scope.closeOffCanvas = function(){
                 $("#doc-oc-demo1").offCanvas('close');
             }
         }
     }
 }])
+    .directive("bottomBar",function(){
+        return{
+            restrict:'E',
+            templateUrl:'templates/bottombar.tpl.html'
+        }
+    })
+
+    .directive("dropDown",function(){
+        return {
+            restrict:'E',
+            transclude:true,
+            template:'<div class="fn-dropdown" data-fn-dropdown ng-transclude></div>',
+            link:function(){
+                $(function(context) {
+                    $('[data-fn-dropdown]', context).dropdown();
+                });
+            }
+        }
+    })
+
     .directive("iscrollWrapper",function(){
         return{
             restrict:'E',

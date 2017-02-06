@@ -51,8 +51,7 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate'])
                                     'views/myorder/js/myorder-serv.js',
                                     'views/myorder/js/myorder-dire.js',
                                     'views/myorder/css/myorder.css'
-                                ]
-                            );
+                                ]);
                         }]
                     }
                 })
@@ -149,4 +148,6 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate'])
         //展示账户信息和不同角色下的左侧栏
         $scope.customerId = "dsfasdfasfasdf";
         $scope.customerName = "adsfasdfasdf";
+
+        //$scope.slideClass = 'view-slide-in';
     }]);

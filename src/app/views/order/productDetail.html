@@ -15,21 +15,18 @@
 </div>
 
 
-<div id = "dropdown1">
-    <div class="fn-dropdown" data-fn-dropdown="{justify:'#dropdown1'}">
-        <button class="fn-btn fn-btn-default fn-dropdown-toggle">种类<i class="fn-icon-caret-down"></i></button>
-        <div class="fn-dropdown-content">
-            <h2>dfasdfasf</h2>
-            <p>内容</p>
-        </div>
-    </div>
-</div>
-
-
-<div class="fn-dropdown" data-fn-dropdown>
-    <button class="fn-btn fn-btn-default fn-dropdown-toggle">种类<i class="fn-icon-caret-down"></i></button>
-    <div class="fn-dropdown-content">
-        <h2>dfasdfasf</h2>
-        <p>内容</p>
-    </div>
-</div>
+<drop-down>
+    <button class="fn-btn fn-btn-primary fn-dropdown-toggle"
+            data-fn-dropdown-toggle>
+        下拉列表 <span class="fn-icon-caret-down"></span>
+    </button>
+    <ul class="fn-dropdown-content">
+        <li class="fn-dropdown-header">标题</li>
+        <li><a href="#">1</a></li>
+        <li class="fn-active"><a href="#">2</a></li>
+        <li><a href="#">3</a></li>
+        <li class="fn-disabled"><a href="#">4</a></li>
+        <li class="fn-divider">5</li>
+        <li><a href="#">6</a></li>
+    </ul>
+</drop-down>

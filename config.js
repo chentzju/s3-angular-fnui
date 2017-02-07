@@ -12,6 +12,8 @@ module.exports = {
         {name:'myorder',path: appPath + 'views/myorder'},
         {name:'payment',path: appPath + 'views/payment'},
         {name:'cart',path: appPath + 'views/cart'},
+        {name:'profile',path: appPath + 'views/profile'},
+        {name:'delivery',path: appPath + 'views/delivery'},
         {name:'public',path: appPath + 'views/public'}
     ]
 

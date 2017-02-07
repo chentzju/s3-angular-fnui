@@ -99,6 +99,7 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate'])
                 })
                 .state('profile.info',{
                     url:'/info',
+                    title:'我的',
                     templateUrl:'views/account/info.html'
                 })
                 //认证

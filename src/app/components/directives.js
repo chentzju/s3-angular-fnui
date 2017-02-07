@@ -46,7 +46,6 @@ myApp.directive("goTop",function ($window,$rootScope,$location,$anchorScroll) {
             templateUrl:'templates/bottombar.tpl.html'
         }
     })
-
     .directive("dropDown",function(){
         return {
             restrict:'E',
@@ -54,11 +53,12 @@ myApp.directive("goTop",function ($window,$rootScope,$location,$anchorScroll) {
             template:'<div class="fn-dropdown" data-fn-dropdown ng-transclude></div>',
             link:function(){
                 $(function() {
-                    $('[data-fn-dropdown]').dropdown().on('click',function(){
+                    var selector = $('[data-fn-dropdown]');
+                    selector.dropdown().on('click',function(){
                         $(this).dropdown('toggle');
                     });
-                    $('[data-fn-dropdown]').find('li').on('click',function () {
-                        $('[data-fn-dropdown]').find('li').removeClass('fn-active');
+                    selector.find('li').on('click',function () {
+                        selector.find('li').removeClass('fn-active');
                         $(this).addClass('fn-active')
                     })
 
@@ -66,7 +66,6 @@ myApp.directive("goTop",function ($window,$rootScope,$location,$anchorScroll) {
             }
         }
     })
-
     .directive("iscrollWrapper",function(){
         return{
             restrict:'E',
@@ -75,8 +74,8 @@ myApp.directive("goTop",function ($window,$rootScope,$location,$anchorScroll) {
             link:function(){
                 var myScroll;
                 function createScroll(){
-                    var pullDown = $('#pullDown'),
-                        pullUp = $('#pullUp'),
+                    var pullUp = $('#pullUp'),
+                        pullDown = $("#pullDown"),
                         pullDownLabel = $(".pullDownLabel"),
                         pullUpLabel = $(".pullUpLabel"),
                         loadingStep = 0;
@@ -182,5 +181,43 @@ myApp.directive("goTop",function ($window,$rootScope,$location,$anchorScroll) {
                 });
             }
         }
-    });
+    }).directive('fnAlert',function(){
+    return {
+        restrict:'E',
+        template:'<div class = "fn-modal fn-modal-alert" id="fn-alert">'
+        +' <div class="fn-modal-dialog">'
+        +'<div class="fn-modal-hd"></div>'
+        +'<div class="fn-modal-bd"></div>'
+        +' <div class="fn-modal-footer">'
+        + '<span class="fn-modal-btn fn-modal-btn-bold">确定</span>'
+        +'</div></div></div>'
+    }
+}).directive('fnConfirm',function(){
+    return {
+        restrict:'E',
+        template:'<div class = "fn-modal fn-modal-alert" id="fn-confirm">'
+        +' <div class="fn-modal-dialog">'
+        +'<div class="fn-modal-hd"></div>'
+        +'<div class="fn-modal-bd"></div>'
+        +' <div class="fn-modal-footer">'
+        + '<span class="fn-modal-btn fn-modal-btn-cancel" data-fn-modal-cancel>取消</span>'
+        + '<span class="fn-modal-btn fn-modal-btn-bold"  data-fn-modal-confirm>确定</span>'
+        +'</div></div></div>',
+        link:function () {
+            modal.confirm('标题','你确定吗？');
+        }
+    }
+}).directive('fnAction',function () {
+    return {
+        restrict:'E',
+        transclude:true,
+        template:'<div class = "fn-modal-actions" id="fn-actions">'
+        +' <div class="fn-modal-actions-group"  style="overflow:scroll;height:10rem;" ng-transclude>'
+        +'</div>'
+        +'<div class="fn-modal-actions-group">' +
+        '<button class="fn-btn fn-btn-secondary fn-btn-block" data-fn-modal-close>取消</button>' +
+        '</div>'+
+        '</div>'
+    }
+});
 

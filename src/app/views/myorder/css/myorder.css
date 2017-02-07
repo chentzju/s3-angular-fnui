@@ -1,7 +1,7 @@
 #iscroll-wrapper {
     width: 100%;
     position:relative;
-    min-height:45rem;
+    min-height:40rem;
     overflow: hidden;
     /* Prevent native touch events on Windows */
     -ms-touch-action: none;

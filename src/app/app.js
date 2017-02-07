@@ -95,12 +95,21 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate'])
                 .state('profile',{
                     url:'/profile',
                     templateUrl:'views/account/profile.html',
-                    abstract:true
+                    abstract:true,
+                    resolve:{
+                        accountService:['$ocLazyLoad', function($ocLazyLoad) {
+                            return $ocLazyLoad.load([
+                                'views/account/js/account-ctrl.js'
+                            ]);
+                        }]
+                    }
+
                 })
                 .state('profile.info',{
                     url:'/info',
                     title:'我的',
-                    templateUrl:'views/account/info.html'
+                    templateUrl:'views/account/info.html',
+                    controller:'InfoCtrl'
                 })
                 //认证
                 .state('account',{

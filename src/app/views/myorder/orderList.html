@@ -3,6 +3,19 @@
         <li ng-repeat="status in orderStatusArray">
             <a  class="fn-btn fn-btn-primary-border" href="javascript:void(0)" ng-click="changeStatus(status)">{{status.name}}</a>
         </li>
+        <li>
+            <drop-down>
+                <button class="fn-btn fn-btn-default fn-dropdown-toggle"
+                        data-fn-dropdown-toggle>
+                    时间 <i class="fn-icon-caret-down"></i>
+                </button>
+                <ul class="fn-dropdown-content">
+                    <li class="fn-active"><a>近一个月</a></li>
+                    <li><a>三个月</a></li>
+                    <li><a>全部</a></li>
+                </ul>
+            </drop-down>
+        </li>
     </ul>
     <iscroll-wrapper>
         <li ng-repeat="order in orders track by $index">

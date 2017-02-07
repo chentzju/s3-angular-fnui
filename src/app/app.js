@@ -1,7 +1,6 @@
 /**
  * Created by chent on 2017/1/18.
  */
-
 var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate'])
 .config(['$stateProvider','$urlRouterProvider','$compileProvider',function($stateProvider,$urlRouterProvider,$compileProvider){
             $urlRouterProvider.otherwise('/app');
@@ -10,6 +9,7 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate'])
                 //首页
                 .state('app',{
                         url:'/app',
+                        title:'首页',
                         templateUrl:'views/public/app.html'
                 })
                 //订单模块
@@ -29,11 +29,14 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate'])
                 })
                 .state('order.productList',{
                     url:'/productList',
+                    title:'产品',
                     templateUrl:'views/order/productList.html',
                     controller:'ProductCtrl'
                 })
                 .state('order.productDetail',{
                     url:'/productDetail/:productId',
+                    backState:'order.productList',
+                    title:'产品详情',
                     templateUrl:'views/order/productDetail.html',
                     controller:'ProductDetailCtrl'
                 })
@@ -57,11 +60,14 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate'])
                 })
                 .state('myorder.orderList',{
                     url:'/orderList',
+                    title:'订单',
                     templateUrl:'views/myorder/orderList.html',
                     controller:'OrderListCtrl'
                 })
                 .state('myorder.orderDetail',{
                     url:'/orderDetail/:orderId',
+                    backState:'myorder.orderList',
+                    title:'订单详情',
                     templateUrl:'views/myorder/orderDetail.html',
                     controller:'OrderListCtrl'
                 })
@@ -75,7 +81,14 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate'])
                 })
                 .state('payment.paymentList',{
                     url:'/paymentList',
+                    title:'付款',
                     templateUrl:'views/payment/paymentList.html'
+                })
+                .state('payment.paymentDetail',{
+                    url:'/paymentList',
+                    title:'付款详情',
+                    backState:'payment.paymentList',
+                    templateUrl:'views/payment/paymentDetail.html'
                 })
 
                 //个人信息
@@ -115,6 +128,9 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate'])
             // to be used for back button //won't work when page is reloaded.
             $rootScope.previousState_name = fromState.name;
             $rootScope.previousState_params = fromParams;
+            $rootScope.title = toState.title;
+            $rootScope.showBack = toState.backState != null;
+            $rootScope.backState = toState.backState;
         });
 
         var loginState = "account.login";

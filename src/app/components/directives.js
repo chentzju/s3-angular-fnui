@@ -28,59 +28,6 @@ myApp.directive("goTop",function ($window,$rootScope,$location,$anchorScroll) {
         transclude:true,
         templateUrl:'templates/headbar.tpl.html',
         link:function(scope,element,attr){
-            if($rootScope.previousState_name)
-                scope.showBack = true;
-            switch($state.current.name){
-                case 'app':
-                    scope.showBack = false;
-                    scope.title = "首页";
-                    break;
-                case 'order.productList':
-                    scope.showBack = true;
-                    scope.title = "产品列表";
-                    scope.backState = "app";
-                    break;
-                case 'myorder.orderList':
-                    scope.showBack = true;
-                    scope.title = "我的订单";
-                    scope.backState = "app";
-                    break;
-                case 'payment.mypayment':
-                    scope.showBack = true;
-                    scope.title = "我的付款单";
-                    scope.backState = "app";
-                    break;
-                case 'about':
-                    scope.showBack = true;
-                    scope.title = "关于我们";
-                    scope.backState = "app";
-                    break;
-                default:
-                    scope.showBack = true;
-                    scope.title = "首页";
-                    scope.backState = "app";
-                    break;
-            }
-            $rootScope.$on("$stateChangeSuccess",function(){
-                switch($state.current.name){
-                    case 'myorder.orderDetail':
-                        scope.showBack = true;
-                        scope.title = "订单详情";
-                        scope.backState = "myorder.orderList";
-                        break;
-                    case 'order.productDetail':
-                        scope.showBack = true;
-                        scope.title = "产品详情";
-                        scope.backState = "order.productList";
-                        break;
-                    default:
-                        scope.showBack = true;
-                        scope.title = "首页";
-                        scope.backState = "app";
-                        break;
-                }
-            });
-
             scope.goBack = function(){
                 if(scope.backState)
                     $state.go(scope.backState);
@@ -107,7 +54,14 @@ myApp.directive("goTop",function ($window,$rootScope,$location,$anchorScroll) {
             template:'<div class="fn-dropdown" data-fn-dropdown ng-transclude></div>',
             link:function(){
                 $(function() {
-                    $('[data-fn-dropdown]').dropdown();
+                    $('[data-fn-dropdown]').dropdown().on('click',function(){
+                        $(this).dropdown('toggle');
+                    });
+                    $('[data-fn-dropdown]').find('li').on('click',function () {
+                        $('[data-fn-dropdown]').find('li').removeClass('fn-active');
+                        $(this).addClass('fn-active')
+                    })
+
                 });
             }
         }

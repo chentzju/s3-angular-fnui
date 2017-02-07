@@ -12,22 +12,12 @@
     background-color:rgba(110,110,110,0.85);
 }
 
-/* home page */
+
 .header{
     margin-bottom: -1px;
     padding:10px;
 }
 
-.home-data-wrapper{
-    min-height: 20rem;
-    background-color:#0e90d2;
-}
-
-.home-list ul>li{
-    height:5rem;
-    border: 1px #ccc solid;
-    padding : auto;
-}
 .footer{
     height:50px;
     width:100%;
@@ -42,4 +32,16 @@
 .footer span{
     display:block;
     font-size:8px;
+}
+
+/* home page */
+.home-data-wrapper{
+    min-height: 20rem;
+    background-color:#0e90d2;
+}
+
+.home-list ul>li{
+    height:5rem;
+    border: 1px #ccc solid;
+    padding : auto;
 }

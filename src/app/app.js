@@ -22,6 +22,7 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate'])
                             return $ocLazyLoad.load([
                                     'views/order/js/order-ctrl.js',
                                     'views/order/js/order-serv.js',
+                                    'views/order/js/order-dire.js',
                                     'views/order/css/order.css'
                                 ])
                         }]
@@ -94,12 +95,12 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate'])
                 //个人信息
                 .state('profile',{
                     url:'/profile',
-                    templateUrl:'views/account/profile.html',
+                    templateUrl:'views/profile/profile.html',
                     abstract:true,
                     resolve:{
                         accountService:['$ocLazyLoad', function($ocLazyLoad) {
                             return $ocLazyLoad.load([
-                                'views/account/js/account-ctrl.js'
+                                'views/profile/js/profile-ctrl.js'
                             ]);
                         }]
                     }
@@ -108,7 +109,7 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate'])
                 .state('profile.info',{
                     url:'/info',
                     title:'我的',
-                    templateUrl:'views/account/info.html',
+                    templateUrl:'views/profile/info.html',
                     controller:'InfoCtrl'
                 })
                 //认证

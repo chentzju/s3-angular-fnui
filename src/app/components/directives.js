@@ -181,7 +181,13 @@ myApp.directive("goTop",function ($window,$rootScope,$location,$anchorScroll) {
                 });
             }
         }
-    }).directive('fnAlert',function(){
+    })
+    /**
+     * 用来在页面中间弹出一个警告框
+     * 用法 1、在需要弹出的内容外加上<fn-confirm></fn-confirm>标签
+     *      2、在需要弹出的时候调用modal.confirm(title,content,confirm,cancel)
+     */
+    .directive('fnAlert',function(){
     return {
         restrict:'E',
         template:'<div class = "fn-modal fn-modal-alert" id="fn-alert">'
@@ -192,7 +198,13 @@ myApp.directive("goTop",function ($window,$rootScope,$location,$anchorScroll) {
         + '<span class="fn-modal-btn fn-modal-btn-bold">确定</span>'
         +'</div></div></div>'
     }
-}).directive('fnConfirm',function(){
+})
+    /**
+     * 用来在页面中间弹出一个确定框
+     * 用法 1、在需要弹出的内容外加上<fn-alert></fn-alert>标签
+     *      2、在需要弹出的时候调用modal.alert(title,content)
+     */
+    .directive('fnConfirm',function(){
     return {
         restrict:'E',
         template:'<div class = "fn-modal fn-modal-alert" id="fn-confirm">'
@@ -207,7 +219,13 @@ myApp.directive("goTop",function ($window,$rootScope,$location,$anchorScroll) {
             modal.confirm('标题','你确定吗？');
         }
     }
-}).directive('fnAction',function () {
+})
+    /**
+     * 用来在页面下部弹出一个框，超出的内容可以滚动
+     * 用法 1、在需要弹出的内容外加上<fn-action></fn-action>标签
+     *      2、在需要弹出的时候调用modal.action()
+     */
+    .directive('fnAction',function () {
     return {
         restrict:'E',
         transclude:true,

@@ -93,13 +93,15 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate'])
                 .state('payment.paymentList',{
                     url:'/paymentList',
                     title:'付款',
-                    templateUrl:'views/payment/paymentList.html'
+                    templateUrl:'views/payment/paymentList.html',
+                    controller:'PaymentListCtrl'
                 })
                 .state('payment.paymentDetail',{
                     url:'/paymentList',
                     title:'付款详情',
                     backState:'payment.paymentList',
-                    templateUrl:'views/payment/paymentDetail.html'
+                    templateUrl:'views/payment/paymentDetail.html',
+                    controller:'PaymentListCtrl'
                 })
 
 

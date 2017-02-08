@@ -78,7 +78,17 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate'])
                 .state('payment',{
                     url:'/payment',
                     templateUrl:'views/payment/payment.html',
-                    abstract:true
+                    abstract:true,
+                    resolve:{
+                        paymentService:['$ocLazyLoad', function($ocLazyLoad) {
+                            return $ocLazyLoad.load([
+                                'views/payment/js/payment-ctrl.js',
+                                'views/payment/js/payment-serv.js',
+                                'views/payment/js/payment-dire.js',
+                                'views/payment/css/payment.css'
+                            ]);
+                        }]
+                    }
                 })
                 .state('payment.paymentList',{
                     url:'/paymentList',
@@ -91,6 +101,35 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate'])
                     backState:'payment.paymentList',
                     templateUrl:'views/payment/paymentDetail.html'
                 })
+
+
+                //发货信息
+                .state('delivery',{
+                    url:'/delivery',
+                    templateUrl:'views/delivery/delivery.html',
+                    abstract:true,
+                    resolve:{
+                        deliveryService:['$ocLazyLoad', function($ocLazyLoad) {
+                            return $ocLazyLoad.load([
+                                'views/delivery/js/delivery-ctrl.js',
+                                'views/delivery/js/delivery-serv.js',
+                                'views/delivery/js/delivery-dire.js',
+                                'views/delivery/css/delivery.css'
+                            ]);
+                        }]
+                    }
+                })
+               /* .state('payment.paymentList',{
+                    url:'/paymentList',
+                    title:'付款',
+                    templateUrl:'views/payment/paymentList.html'
+                })
+                .state('payment.paymentDetail',{
+                    url:'/paymentList',
+                    title:'付款详情',
+                    backState:'payment.paymentList',
+                    templateUrl:'views/payment/paymentDetail.html'
+                })*/
 
                 //个人信息
                 .state('profile',{

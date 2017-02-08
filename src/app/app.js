@@ -121,17 +121,17 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate'])
                         }]
                     }
                 })
-               /* .state('payment.paymentList',{
-                    url:'/paymentList',
-                    title:'付款',
-                    templateUrl:'views/payment/paymentList.html'
-                })
-                .state('payment.paymentDetail',{
-                    url:'/paymentList',
-                    title:'付款详情',
-                    backState:'payment.paymentList',
-                    templateUrl:'views/payment/paymentDetail.html'
-                })*/
+                //.state('payment.paymentList',{
+                //    url:'/paymentList',
+                //    title:'付款',
+                //    templateUrl:'views/payment/paymentList.html'
+                //})
+                //.state('payment.paymentDetail',{
+                //    url:'/paymentList',
+                //    title:'付款详情',
+                //    backState:'payment.paymentList',
+                //    templateUrl:'views/payment/paymentDetail.html'
+                //})
 
                 //个人信息
                 .state('profile',{

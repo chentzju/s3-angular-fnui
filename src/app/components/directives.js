@@ -1,7 +1,21 @@
 /**
  * Created by chent on 2017/1/18.
  */
-myApp.directive("goTop",function ($window,$rootScope,$location,$anchorScroll) {
+
+myApp.directive('butterToast', ['$rootScope',
+    function($rootScope) {
+        return {
+            link: function(scope, element, attrs) {
+                var toast = $.toast.show('loading');
+                $(function() {
+                    if(toast)
+                       setTimeout(function(){
+                            toast.close();
+                       },0);
+                });
+            }
+        };
+    }]).directive("goTop",function ($window,$rootScope,$location,$anchorScroll) {
     return {
         restrict: 'E',
         replace: true,

@@ -35,7 +35,6 @@ angular.module("myApp").controller("OrderListCtrl",["$scope","$rootScope","Order
          return OrderService.getOrderList(status,page,time);
     }
 
-
     function initPage(){
         page =0;time=0;
         var orderStatusArray = OrderService.getOrderStatusArray();

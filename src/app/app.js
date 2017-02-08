@@ -4,7 +4,6 @@
 var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate'])
 .config(['$stateProvider','$urlRouterProvider','$compileProvider',function($stateProvider,$urlRouterProvider,$compileProvider){
             $urlRouterProvider.otherwise('/app');
-
             $stateProvider
                 //首页
                 .state('app',{
@@ -98,7 +97,7 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate'])
                     templateUrl:'views/profile/profile.html',
                     abstract:true,
                     resolve:{
-                        accountService:['$ocLazyLoad', function($ocLazyLoad) {
+                        profileService:['$ocLazyLoad', function($ocLazyLoad) {
                             return $ocLazyLoad.load([
                                 'views/profile/js/profile-ctrl.js'
                             ]);
@@ -115,8 +114,15 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate'])
                 //认证
                 .state('account',{
                     url:'/account',
-                    template:'<div class="main-view" ui-view></div>',
-                    abstract:true
+                    template:'<div class="main-view" ng-view ui-view></div>',
+                    abstract:true,
+                    resolve:{
+                        accountService:['$ocLazyLoad', function($ocLazyLoad) {
+                            return $ocLazyLoad.load([
+                                'views/account/js/account-ctrl.js'
+                            ]);
+                        }]
+                    }
                 })
                 .state('account.login',{
                     url:'/login',
@@ -139,15 +145,18 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate'])
             // to be used for back button //won't work when page is reloaded.
             $rootScope.previousState_name = fromState.name;
             $rootScope.previousState_params = fromParams;
+
             $rootScope.title = toState.title;
             $rootScope.showBack = toState.backState != null;
             $rootScope.backState = toState.backState;
         });
 
         var loginState = "account.login";
+        var homeState = "app";
         //login part
         $rootScope.$on("$stateChangeStart",function(event,toState,toParams,fromState,fromParams){
-                var valid =  false;
+            var valid =  false;
+
             if(toState.name === loginState)
                 valid = true;
             else{
@@ -155,22 +164,24 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate'])
                 /*
                  $es.userinfo = $es.java("userInfoBean.getUserData");
                  if($es.userinfo.status == "000" || $es.userinfo.retCode == "200"){
-                 $es.userinfo = $es.userinfo.data.user;
-                 $rootScope.userName = $es.userinfo.userName;
-                 $rootScope.unionId = $es.userinfo.unionId;
-                 var id = $es.userinfo.roles[0].id;
+                    $es.userinfo = $es.userinfo.data.user;
+                    $rootScope.userName = $es.userinfo.userName;
+                    $rootScope.unionId = $es.userinfo.unionId;
+                    $scope.customerId = $es.userinfo.customerId;
+                    $scope.customerName =  $es.userinfo.customerName;
+                    var id = $es.userinfo.roles[0].id;
                  }
                  */
+                valid = true;
             }
             if(!valid){
+                event.preventDefault();
                 $state.go(loginState);
             }
         });
-
         }
     ])
     .controller("RootCtrl",['$scope','$rootScope','$state',function ($scope,$rootScope,$state) {
         //展示账户信息和不同角色下的左侧栏
-        $scope.customerId = "dsfasdfasfasdf";
-        $scope.customerName = "adsfasdfasdf";
+
     }]);

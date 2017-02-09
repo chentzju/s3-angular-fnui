@@ -1,13 +1,13 @@
 /* public  part */
 .go-top{
     z-index:1001;
-    width:32px;
-    height:32px;
+    width:30px;
+    height:30px;
     border-radius: 0;
     text-align:center;
-    right: 30px;
+    right: 10px;
     overflow: hidden;
-    bottom:30px;
+    bottom:60px;
     position:fixed;
     background-color:rgba(110,110,110,0.85);
 }

@@ -120,17 +120,19 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate'])
                         }]
                     }
                 })
-                //.state('payment.paymentList',{
-                //    url:'/paymentList',
-                //    title:'付款',
-                //    templateUrl:'views/payment/paymentList.html'
-                //})
-                //.state('payment.paymentDetail',{
-                //    url:'/paymentList',
-                //    title:'付款详情',
-                //    backState:'payment.paymentList',
-                //    templateUrl:'views/payment/paymentDetail.html'
-                //})
+                .state('delivery.deliveryList',{
+                    url:'/deliveryList',
+                    title:'发货',
+                    templateUrl:'views/delivery/deliveryList.html',
+                    controller:'DeliveryListCtrl'
+                })
+                .state('delivery.deliveryDetail',{
+                    url:'/deliveryDetail',
+                    title:'发货详情',
+                    backState:'delivery.deliveryList',
+                    templateUrl:'views/delivery/deliveryDetail.html',
+                    controller:'DeliveryListCtrl'
+                })
 
                 //个人信息
                 .state('profile',{

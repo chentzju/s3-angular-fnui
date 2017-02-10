@@ -120,6 +120,7 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate','icbc.
                         accountService:['$ocLazyLoad', function($ocLazyLoad) {
                             return $ocLazyLoad.load([
                                 'views/account/assets/rsaoath.min.js',
+                                'views/account/js/account-dire.js',
                                 'views/account/js/account-ctrl.js'
                             ]);
                         }]

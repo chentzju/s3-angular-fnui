@@ -1,7 +1,7 @@
-angular.module("myApp").controller("PaymentListCtrl",["$scope","$rootScope","PaymentService",function ($scope,$rootScope,PaymentService) {
+angular.module("myApp").controller("DeliveryListCtrl",["$scope","$rootScope","DeliveryService",function ($scope,$rootScope,DeliveryService) {
 
 }]);
 
-myApp.controller("PaymentListCtrl",["$scope","$rootScope",'$stateParams','PaymentService',function ($scope,$rootScope,$stateParams,PaymentService) {
+myApp.controller("DeliveryListCtrl",["$scope","$rootScope",'$stateParams','DeliveryService',function ($scope,$rootScope,$stateParams,DeliveryService) {
 
 }]);

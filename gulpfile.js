@@ -105,7 +105,7 @@ gulp.task("assets-dev",function(){
 });
 
 gulp.task('client-dev',function(){
-    gulp.src(['src/app/app.js','src/app/components/*'])
+    gulp.src(['src/app/*.js','src/app/components/*'])
         .pipe(concat('app.js'))
         .pipe(gulp.dest('dist/scripts'));
 

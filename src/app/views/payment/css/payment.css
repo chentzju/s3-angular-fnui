@@ -1,0 +1,4 @@
+.fn-size-color{font-size: 0.9rem;color:#2d83d0;}
+.payment{width:94%;border:1px solid #2d83d0;margin:3%;border-radius: 10px;color:#2d83d0;}
+.payment-input{border:none;width:84%;outline: none;font-size: 0.9rem;}
+.payment-input input[placeholder]{color: #b9b9b9;!important}

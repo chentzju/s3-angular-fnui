@@ -127,7 +127,7 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate'])
                     controller:'DeliveryListCtrl'
                 })
                 .state('delivery.deliveryDetail',{
-                    url:'/deliveryDetail',
+                    url:'/deliveryList',
                     title:'发货详情',
                     backState:'delivery.deliveryList',
                     templateUrl:'views/delivery/deliveryDetail.html',

@@ -57,6 +57,7 @@ myApp.directive('butterToast', ['$rootScope',
     .directive("bottomBar",function(){
         return{
             restrict:'E',
+            replace:true,
             templateUrl:'templates/bottombar.tpl.html'
         }
     })
@@ -125,7 +126,7 @@ myApp.directive('butterToast', ['$rootScope',
                     var wrapper = document.getElementById('iscroll-wrapper');
                     if(wrapper)
                         myScroll = new IScroll(wrapper,{probeType: 2});
-
+                    $("#iscroll-wrapper").height($(window).height()-150);
                     //滚动时
                     myScroll.on('scroll', function(){
                         if(loadingStep == 0 && !pullDown.attr('class').match('flip|loading')

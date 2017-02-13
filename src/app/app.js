@@ -1,7 +1,7 @@
 /**
  * Created by chent on 2017/1/18.
  */
-var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate'])
+var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate','icbc.espresso'])
 .config(['$stateProvider','$urlRouterProvider','$compileProvider',function($stateProvider,$urlRouterProvider,$compileProvider){
             $urlRouterProvider.otherwise('/app');
             $stateProvider
@@ -162,6 +162,8 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate'])
                     resolve:{
                         accountService:['$ocLazyLoad', function($ocLazyLoad) {
                             return $ocLazyLoad.load([
+                                'views/account/assets/rsaoath.min.js',
+                                'views/account/js/account-dire.js',
                                 'views/account/js/account-ctrl.js'
                             ]);
                         }]
@@ -169,7 +171,8 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate'])
                 })
                 .state('account.login',{
                     url:'/login',
-                    templateUrl:'views/account/login.html'
+                    templateUrl:'views/account/login.html',
+                    controller:'LoginCtrl'
                 })
                 .state('about', {
                     url:'/about',
@@ -180,7 +183,10 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate'])
                     templateUrl:'404.html'
                 })
     }])
-    .run(['$rootScope', '$state', '$stateParams', function($rootScope, $state, $stateParams) {
+    .run(['$rootScope', '$state', '$stateParams','$es', function($rootScope, $state, $stateParams,$es) {
+        $es.setConfig('custid','s3');
+        $es.setConfig('userservice','usermanage');
+
         $rootScope.$state = $state;
         $rootScope.$stateParams = $stateParams;
 
@@ -188,6 +194,7 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate'])
             // to be used for back button //won't work when page is reloaded.
             $rootScope.previousState_name = fromState.name;
             $rootScope.previousState_params = fromParams;
+
             $rootScope.title = toState.title;
             $rootScope.showBack = toState.backState != null;
             $rootScope.backState = toState.backState;
@@ -196,7 +203,7 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate'])
         var loginState = "account.login";
         var homeState = "app";
         //login part
-        $rootScope.$on("$stateChangeStart",function(event,toState,toParams,fromState,fromParams){
+        $rootScope.$on("$stateChangeStart", function(event,toState,toParams,fromState,fromParams){
             var valid =  false;
 
             if(toState.name === loginState)
@@ -214,15 +221,15 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate'])
                     var id = $es.userinfo.roles[0].id;
                  }
                  */
-                valid = true;
+                if($es.userinfo && $es.userinfo.userName)
+                    valid = true;
             }
             if(!valid){
                 event.preventDefault();
                 $state.go(loginState);
             }
         });
-        }
-    ])
+        }])
     .controller("RootCtrl",['$scope','$rootScope','$state',function ($scope,$rootScope,$state) {
         //展示账户信息和不同角色下的左侧栏
 

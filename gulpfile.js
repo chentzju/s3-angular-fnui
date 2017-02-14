@@ -29,7 +29,9 @@ gulp.task("assets",function(){
         .pipe(concat('angular.min.js'))
         .pipe(uglify())
         .pipe(gulp.dest('dist/assets/js'));
-        gulp.src('node_modules/fnui/dist/css/*').pipe(gulp.dest('dist/assets/styles'));
+
+    gulp.src('node_modules/fnui/dist/fonts/*').pipe(gulp.dest('dist/assets/fonts'));
+    gulp.src('node_modules/fnui/dist/css/*').pipe(gulp.dest('dist/assets/styles'));
 });
 
 
@@ -97,7 +99,9 @@ gulp.task("assets-dev",function(){
     ])
         .pipe(concat('angular.min.js'))
         .pipe(gulp.dest('dist/assets/js'));
-        gulp.src('node_modules/fnui/dist/css/*').pipe(gulp.dest('dist/assets/styles'));
+
+    gulp.src('node_modules/fnui/dist/fonts/*').pipe(gulp.dest('dist/assets/fonts'));
+    gulp.src('node_modules/fnui/dist/css/*').pipe(gulp.dest('dist/assets/styles'));
 });
 
 gulp.task('client-dev',function(){

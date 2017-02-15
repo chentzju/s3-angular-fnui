@@ -2,8 +2,7 @@
  * Created by chent on 2017/1/18.
  */
 
-myApp.directive('butterToast', ['$rootScope',
-    function($rootScope) {
+myApp.directive('butterToast', function() {
         return {
             link: function(scope, element, attrs) {
                 var toast = $.toast.show('loading');
@@ -11,11 +10,11 @@ myApp.directive('butterToast', ['$rootScope',
                     if(toast)
                        setTimeout(function(){
                             toast.close();
-                       },0);
+                       },500);
                 });
             }
         };
-    }]).directive("goTop",function ($window,$rootScope,$location,$anchorScroll) {
+    }).directive("goTop",function ($window,$rootScope,$location,$anchorScroll) {
     return {
         restrict: 'E',
         replace: true,
@@ -57,8 +56,12 @@ myApp.directive('butterToast', ['$rootScope',
     .directive("bottomBar",function(){
         return{
             restrict:'E',
-            replace:true,
-            templateUrl:'templates/bottombar.tpl.html'
+            templateUrl:'templates/bottombar.tpl.html',
+            link:function(scope,element,attr){
+                //$(element).find('a').on('click',function(){
+               //     $(this).find('i').addClass('fn-color-gray');
+               // });
+            }
         }
     })
     .directive("dropDown",function(){
@@ -126,7 +129,7 @@ myApp.directive('butterToast', ['$rootScope',
                     var wrapper = document.getElementById('iscroll-wrapper');
                     if(wrapper)
                         myScroll = new IScroll(wrapper,{probeType: 2});
-                    $("#iscroll-wrapper").height($(window).height()-150);
+
                     //滚动时
                     myScroll.on('scroll', function(){
                         if(loadingStep == 0 && !pullDown.attr('class').match('flip|loading')

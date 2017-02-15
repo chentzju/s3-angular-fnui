@@ -126,36 +126,6 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate','icbc.
                 })
                 .state('delivery.deliveryList',{
                     url:'/deliveryList',
-                    title:'发货',
-                    templateUrl:'views/delivery/deliveryList.html',
-                    controller:'DeliveryListCtrl'
-                })
-                .state('delivery.deliveryDetail',{
-                    url:'/deliveryList',
-                    title:'发货详情',
-                    backState:'delivery.deliveryList',
-                    templateUrl:'views/delivery/deliveryDetail.html',
-                    controller:'DeliveryListCtrl'
-                })
-
-                //发货信息
-                .state('delivery',{
-                    url:'/delivery',
-                    templateUrl:'views/delivery/delivery.html',
-                    abstract:true,
-                    resolve:{
-                        deliveryService:['$ocLazyLoad', function($ocLazyLoad) {
-                            return $ocLazyLoad.load([
-                                'views/delivery/js/delivery-ctrl.js',
-                                'views/delivery/js/delivery-serv.js',
-                                'views/delivery/js/delivery-dire.js',
-                                'views/delivery/css/delivery.css'
-                            ]);
-                        }]
-                    }
-                })
-                .state('delivery.deliveryList',{
-                    url:'/deliveryList',
                     title:'我的发货单',
                     templateUrl:'views/delivery/deliveryList.html',
                     controller:'DeliveryListCtrl'

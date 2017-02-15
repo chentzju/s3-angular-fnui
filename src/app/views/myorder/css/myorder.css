@@ -1,7 +1,7 @@
 #iscroll-wrapper {
     width: 100%;
     position:relative;
-    min-height:40rem;
+    min-height:37rem;
     overflow: hidden;
     /* Prevent native touch events on Windows */
     -ms-touch-action: none;
@@ -30,7 +30,7 @@
  *
  */
 #pullDown, #pullUp {
-    background:#F2F2F2;
+    background:transparent;
     font-weight:bold;
     font-size:14px;
     color:#888;

@@ -38,7 +38,7 @@ myApp.directive('butterToast', function() {
 }).directive('headBar',['$rootScope','$state',function($rootScope,$state){
     return {
         restrict:'E',
-        transclude:true,
+        replace:true,
         templateUrl:'templates/headbar.tpl.html',
         link:function(scope,element,attr){
             scope.goBack = function(){

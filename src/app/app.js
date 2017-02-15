@@ -1,45 +1,52 @@
 /**
  * Created by chent on 2017/1/18.
  */
+var config = {
+    'custid':'s3',
+    'userservice':'usermanage'
+};
+
+
 var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate','icbc.espresso'])
-.config(['$stateProvider','$urlRouterProvider','$compileProvider',function($stateProvider,$urlRouterProvider,$compileProvider){
-            $urlRouterProvider.otherwise('/app');
-            $stateProvider
-                //首页
-                .state('app',{
-                        url:'/app',
-                        title:'首页',
-                        templateUrl:'views/public/app.html'
-                })
-                //订单模块
-                .state('order',{
-                    url:'/order',
-                    templateUrl: 'views/order/order.html',
-                    abstract:true,
-                    resolve:{
-                        orderService:['$ocLazyLoad', function($ocLazyLoad) {
-                            return $ocLazyLoad.load([
-                                    'views/order/js/order-ctrl.js',
-                                    'views/order/js/order-serv.js',
-                                    'views/order/js/order-dire.js',
-                                    'views/order/css/order.css'
-                                ])
-                        }]
-                    }
-                })
-                .state('order.productList',{
-                    url:'/productList',
-                    title:'产品',
-                    templateUrl:'views/order/productList.html',
-                    controller:'ProductCtrl'
-                })
-                .state('order.productDetail',{
-                    url:'/productDetail/:productId',
-                    backState:'order.productList',
-                    title:'产品详情',
-                    templateUrl:'views/order/productDetail.html',
-                    controller:'ProductDetailCtrl'
-                })
+    .config(['$stateProvider','$urlRouterProvider','$compileProvider',function($stateProvider,$urlRouterProvider,$compileProvider){
+        $urlRouterProvider.otherwise('/app');
+        $stateProvider
+        //首页
+            .state('app',{
+                url:'/app',
+                title:'首页',
+                templateUrl:'views/public/app.html',
+                controller:'RootCtrl'
+            })
+            //订单模块
+            .state('order',{
+                url:'/order',
+                templateUrl: 'views/order/order.html',
+                abstract:true,
+                resolve:{
+                    orderService:['$ocLazyLoad', function($ocLazyLoad) {
+                        return $ocLazyLoad.load([
+                            'views/order/js/order-ctrl.js',
+                            'views/order/js/order-serv.js',
+                            'views/order/js/order-dire.js',
+                            'views/order/css/order.css'
+                        ])
+                    }]
+                }
+            })
+            .state('order.productList',{
+                url:'/productList',
+                title:'产品',
+                templateUrl:'views/order/productList.html',
+                controller:'ProductCtrl'
+            })
+            .state('order.productDetail',{
+                url:'/productDetail/:productId',
+                backState:'order.productList',
+                title:'产品详情',
+                templateUrl:'views/order/productDetail.html',
+                controller:'ProductDetailCtrl'
+            })
 
 
                 //我的订单
@@ -147,49 +154,59 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate','icbc.
                         }]
                     }
 
-                })
-                .state('profile.info',{
-                    url:'/info',
-                    title:'我的',
-                    templateUrl:'views/profile/info.html',
-                    controller:'InfoCtrl'
-                })
-                //认证
-                .state('account',{
-                    url:'/account',
-                    template:'<div class="main-view" ng-view ui-view></div>',
-                    abstract:true,
-                    resolve:{
-                        accountService:['$ocLazyLoad', function($ocLazyLoad) {
-                            return $ocLazyLoad.load([
-                                'views/account/assets/rsaoath.min.js',
-                                'views/account/js/account-dire.js',
-                                'views/account/js/account-ctrl.js'
-                            ]);
-                        }]
-                    }
-                })
-                .state('account.login',{
-                    url:'/login',
-                    templateUrl:'views/account/login.html',
-                    controller:'LoginCtrl'
-                })
-                .state('about', {
-                    url:'/about',
-                    templateUrl:'views/public/about.html'
-                })
-                .state('error',{
-                    url:'/error',
-                    templateUrl:'404.html'
-                })
+            })
+            .state('profile.info',{
+                url:'/info',
+                title:'我的',
+                templateUrl:'views/profile/info.html',
+                controller:'InfoCtrl'
+            })
+            //认证
+            .state('account',{
+                url:'/account',
+                template:'<div class="main-view" ng-view ui-view></div>',
+                abstract:true,
+                resolve:{
+                    accountService:['$ocLazyLoad', function($ocLazyLoad) {
+                        return $ocLazyLoad.load([
+                            'views/account/assets/rsaoath.min.js',
+                            'views/account/js/account-dire.js',
+                            'views/account/js/account-ctrl.js'
+                        ]);
+                    }]
+                }
+            })
+            .state('account.login',{
+                url:'/login',
+                templateUrl:'views/account/login.html',
+                controller:'LoginCtrl'
+            })
+            .state('account.checkMobile',{
+                url:'/checkMobile',
+                templateUrl:'views/account/checkMobile.html',
+                controller:'MobileCtrl'
+            })
+            .state('account.checkSuccess',{
+                url:'/checkSuccess',
+                templateUrl:'views/account/checkSuccess.html',
+                controller:'MobileCtrl'
+            })
+            .state('about', {
+                url:'/about',
+                templateUrl:'views/public/about.html'
+            })
+            .state('error',{
+                url:'/error',
+                templateUrl:'404.html'
+            })
     }])
     .run(['$rootScope', '$state', '$stateParams','$es', function($rootScope, $state, $stateParams,$es) {
-        $es.setConfig('custid','s3');
-        $es.setConfig('userservice','usermanage');
+        for(var key in config){
+            $es.set(key,config[key]);
+        }
 
         $rootScope.$state = $state;
         $rootScope.$stateParams = $stateParams;
-
         $rootScope.$on("$stateChangeSuccess",  function(event, toState, toParams, fromState, fromParams) {
             // to be used for back button //won't work when page is reloaded.
             $rootScope.previousState_name = fromState.name;
@@ -201,11 +218,11 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate','icbc.
         });
 
         var loginState = "account.login";
-        var homeState = "app";
+        var rootState = "app";
+
         //login part
         $rootScope.$on("$stateChangeStart", function(event,toState,toParams,fromState,fromParams){
             var valid =  false;
-
             if(toState.name === loginState)
                 valid = true;
             else{
@@ -213,12 +230,15 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate','icbc.
                 /*
                  $es.userinfo = $es.java("userInfoBean.getUserData");
                  if($es.userinfo.status == "000" || $es.userinfo.retCode == "200"){
-                    $es.userinfo = $es.userinfo.data.user;
-                    $rootScope.userName = $es.userinfo.userName;
-                    $rootScope.unionId = $es.userinfo.unionId;
-                    $scope.customerId = $es.userinfo.customerId;
-                    $scope.customerName =  $es.userinfo.customerName;
-                    var id = $es.userinfo.roles[0].id;
+                 $es.userinfo = $es.userinfo.data.user;
+
+                 //角色
+                 var roleId = $es.userinfo.roles[0].id;
+
+                 //根据角色判断首页的不同显示
+                 //应该是来自后台的状态才比较合理
+                 //新增一个状态表，来保存状态
+
                  }
                  */
                 if($es.userinfo && $es.userinfo.userName)
@@ -229,8 +249,29 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate','icbc.
                 $state.go(loginState);
             }
         });
-        }])
-    .controller("RootCtrl",['$scope','$rootScope','$state',function ($scope,$rootScope,$state) {
-        //展示账户信息和不同角色下的左侧栏
+    }])
+    .controller("RootCtrl",['$scope','$state','$es',function ($scope,$state,$es) {
+        //用户信息
+        var userInfo = $es.userinfo;
+        $scope.userName = userInfo.userName;
+        $scope.unionId = userInfo.unionId;
 
+        //展示首页
+
+        //如果角色不同，首页内容照例也不同
+        var main = {
+            1:[
+                {name:'',state:''}
+            ],
+            2:[],
+            3:[]
+        };
+
+        var footer = {
+            1:[
+                {name:'首页',state:''}
+            ],
+            2:[],
+            3:[]
+        };
     }]);

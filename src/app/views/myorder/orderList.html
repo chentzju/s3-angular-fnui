@@ -1,30 +1,77 @@
+
+
 <div id="orderList" class="order-list">
-    <ul class="fn-nav fn-nav-tabs fn-nav-justify">
-        <li ng-repeat="status in orderStatusArray">
-            <a  class="fn-btn fn-btn-primary-border" href="javascript:void(0)" ng-click="changeStatus(status)">{{status.name}}</a>
-        </li>
-        <li>
-
-
+    <!--搜素加时间-->
+    <div class="fn-g search-nav back-white">
+        <div class="payment">
+            <i class="iconfont icon-sousuo1 fn-size-color p2"></i>
+            <input type="text" placeholder="请输入内容" class="payment-input">
             <drop-down>
-                <button class="fn-btn fn-btn-default fn-dropdown-toggle"
-                        data-fn-dropdown-toggle>
-                    时间 <i class="fn-icon-caret-down"></i>
-                </button>
-                <ul class="fn-dropdown-content">
-                    <li class="fn-active"><a>近一个月</a></li>
-                    <li><a>三个月</a></li>
-                    <li><a>全部</a></li>
+                <i class="iconfont icon-shizhong fn-size-color"></i>
+                <ul class="fn-dropdown-content paymentList-dropdown myorder-dropdown" >
+                    <li class="fn-active"><a>一周内</a></li>
+                    <li><a>一个月内</a></li>
+                    <li><a>三个月内</a></li>
                 </ul>
             </drop-down>
+        </div>
+    </div>
+    <!--切换导航-->
+    <ul class="fn-nav fn-nav-tabs myorder-tabs fn-avg-sm-5 back-white">
+        <li ng-repeat="status in orderStatusArray">
+            <a  class="fn-btn fn-size" href="javascript:void(0)" ng-click="changeStatus(status)">{{status.name}}</a>
         </li>
     </ul>
-    <iscroll-wrapper>
+    <!--数据盒子-->
+    <iscroll-wrapper class="myorder-box">
         <li ng-repeat="order in orders track by $index">
-            <a ui-sref="myorder.orderDetail({orderId:order.d})">
-                {{order.id}}
-                <i class="fn-icon-chevron-right fn-align-right"></i>
-            </a>
+            <!--订单编号-->
+            <div class="num-content">
+                <div class="badge fn-fl">
+                    <span>{{$index+1}}</span>
+                </div>
+                <a ui-sref="myorder.orderDetail({orderId:order.d})" class="myorderID fn-fr">
+                    订单编号：{{order.id}}
+                    <i class="iconfont icon-xiangyoujiantou fn-fr"></i>
+                </a>
+            </div>
+            <!--订单详情-->
+            <div class="del-content">
+                <div>
+                    <span>
+                        经销商名称：
+                    </span>
+                    <a ui-sref="myorder.orderDetail({orderId:order.d})" class="myorderName">
+                        <!--{{order.id}}-->工银聚股份有限公司
+                    </a>
+                </div>
+                <div>
+                    <span>
+                        下单时间：
+                    </span>
+                    <a ui-sref="myorder.orderDetail({orderId:order.d})" class="myorderTime">
+                        {{order.time}}
+                        <!--下单时间：2016-11-17　09:30:35-->
+                    </a>
+                </div>
+                <div>
+                    <span class="fn-fl">
+                        单据状态：
+                    </span>
+                    <a ui-sref="myorder.orderDetail({orderId:order.d})" class="fn-fl myorderStau">
+                        {{order.statusText}}
+                        <!--已审核-->
+                    </a>
+                </div>
+
+            </div>
+            <!--订单金额-->
+            <div class="mon-content">
+                <a ui-sref="myorder.orderDetail({orderId:order.d})" class="myorderMon fn-fr">
+                    ￥{{order.money}}
+                </a>
+                <span class="fn-fr">订单金额：</span>
+            </div>
         </li>
     </iscroll-wrapper>
 </div>

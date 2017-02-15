@@ -171,7 +171,8 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate','icbc.
                         return $ocLazyLoad.load([
                             'views/account/assets/rsaoath.min.js',
                             'views/account/js/account-dire.js',
-                            'views/account/js/account-ctrl.js'
+                            'views/account/js/account-ctrl.js',
+                            'views/account/js/account-serv.js'
                         ]);
                     }]
                 }
@@ -202,7 +203,7 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate','icbc.
     }])
     .run(['$rootScope', '$state', '$stateParams','$es', function($rootScope, $state, $stateParams,$es) {
         for(var key in config){
-            $es.set(key,config[key]);
+            $es.setConfig(key,config[key]);
         }
 
         $rootScope.$state = $state;

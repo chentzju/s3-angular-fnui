@@ -91,7 +91,7 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate','icbc.
                 })
                 .state('payment.paymentList',{
                     url:'/paymentList',
-                    title:'付款',
+                    title:'我的付款单',
                     templateUrl:'views/payment/paymentList.html',
                     controller:'PaymentListCtrl'
                 })
@@ -122,7 +122,7 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate','icbc.
                 })
                 .state('delivery.deliveryList',{
                     url:'/deliveryList',
-                    title:'发货',
+                    title:'我的发货单',
                     templateUrl:'views/delivery/deliveryList.html',
                     controller:'DeliveryListCtrl'
                 })

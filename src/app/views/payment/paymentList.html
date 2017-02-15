@@ -1,5 +1,51 @@
-<div class="payment">
-    <i class="iconfont icon-sousuo1 fn-size-color"></i>
-    <input type="text" placeholder="请输入内容" class="payment-input">
-    <i class="fn-icon-calendar fn-size-color"></i>
+<div id="paymentList">
+    <!--搜索-->
+    <div class="payment" data-fn-sticky="{top:80}">
+        <i class="iconfont icon-sousuo1 fn-size-color p2"></i>
+        <input type="text" placeholder="请输入内容" class="payment-input">
+        <drop-down>
+            <i class="fn-icon-calendar fn-size-color"></i>
+            </button>
+            <ul class="fn-dropdown-content paymentList-dropdown fn-size">
+                <li class="fn-active"><a>一周内</a></li>
+                <li><a>一个月内</a></li>
+                <li><a>三个月内</a></li>
+            </ul>
+        </drop-down>
+    </div>
+
+    <!--tab切换-->
+        <ul class="fn-avg-sm-5 fn-horizontal-sm newtabs">
+            <li ng-repeat="status in paymentStatusArray">
+                <a  class="fn-btn fn-size" style="box-shadow:none;color:#000;" href="javascript:void(0)" ng-click="changeStatus(status)">{{status.name}}</a>
+            </li>
+        </ul>
+        <iscroll-wrapper>
+            <li ng-repeat="payment in payments track by $index" style="border:0">
+                <!--付款单列表-->
+                <div class="payment-list">
+                    <!--向上的三角-->
+                    <div class="arrow-up">
+                        <span class="fn-text-top fn-size number">{{$index+1}}</span>
+                    </div>
+                    <div class="payment-numberlist fn-size-color">
+                        <a ui-sref="payment.paymentDetail({paymentId:payment.d})">
+                            付款单编号:{{payment.id}}
+                            <i class="iconfont icon-xiangyou1 fn-fr fn-size"></i>
+                        </a>
+
+                    </div>
+                    <div class="payment-list-detail fn-size">
+                        <p>生成时间:<span class="time">2016-11-17 09:35:45</span></p>
+                        <p>付款时间:<span class="time">2016-11-17 09:35:45</span></p>
+                        <p>付款状态:<span>{{payment.statusText}}</span></p>
+                    </div>
+                    <div class="payment-monery-list fn-size fn-fr">
+                        <p>付款单金额:<span class="money fn-fr">￥20500.00</span></p>
+                        <p>&nbsp;&nbsp;&nbsp;实付金额:<span class="money fn-fr">￥17800.00</span></p>
+                    </div>
+                </div>
+            </li>
+        </iscroll-wrapper>
+
 </div>

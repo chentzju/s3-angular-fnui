@@ -1,4 +1,22 @@
-.fn-size-color{font-size: 0.9rem;color:#2d83d0;}
+.fn-size{font-size: 1.4rem;}
+.fn-size-color{font-size: 1.4rem;color:#2d83d0;}
+.money{color: #ff2150;}
+.time{color: #5d5d5d}
+/*搜索*/
+.p2{padding-left:2%;}
 .payment{width:94%;border:1px solid #2d83d0;margin:3%;border-radius: 10px;color:#2d83d0;}
-.payment-input{border:none;width:84%;outline: none;font-size: 0.9rem;}
-.payment-input input[placeholder]{color: #b9b9b9;!important}
+.payment-input{border:none;width:84%;outline: none;font-size: 1.4rem;}
+.payment-input input[placeholder]{color: #ebf6ff;!important}
+ul.paymentList-dropdown{border-radius: 10px;overflow: hidden;padding: 0px;}
+/*tab切换*/
+.newtabs{border-bottom: 1px solid #ccc;}
+
+.newtabs>li>a:hover{border-bottom:1px solid  #2d83d0;color:#2d83d0; }
+.newtabs>li>a:active{color:#2d83d0;}
+/*付款单列表*/
+.payment-list{width:94%;border-radius: 10px;border:1px solid #c1c1c1;margin:3%;overflow: hidden;}
+.payment-list-detail{background: #fbfbfb;padding-left: 9px;border-top:1px solid #c1c1c1;border-bottom:1px solid #c1c1c1;}
+.arrow-up {width:0;height:0;color:#fff;background: #ff2150;border-left:3.5rem solid transparent;border-bottom:3.2rem solid #fff;display: inline-block;position: relative;  top:-3px;}
+.number{position: relative;left:-3.15rem;display: inline-block;}
+.payment-numberlist{display: inline-block;width: 84%;position: relative;top: 0.5rem;left:-1.5rem;}
+.payment-monery-list{margin: 2% 2% 3% 0;}

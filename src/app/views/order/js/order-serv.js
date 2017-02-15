@@ -8,6 +8,7 @@ angular.module("myApp").service("ProductService",function(){
         var productList = [];
 
 
+
         //make virtual product
         for(var i =0;i<10;i++){
             var v_product = {

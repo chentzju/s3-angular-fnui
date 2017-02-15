@@ -47,8 +47,6 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate','icbc.
                 templateUrl:'views/order/productDetail.html',
                 controller:'ProductDetailCtrl'
             })
-
-
                 //我的订单
                 .state('myorder',{
                     url:'/myorder',
@@ -98,7 +96,7 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate','icbc.
                 })
                 .state('payment.paymentList',{
                     url:'/paymentList',
-                    title:'我的付款单',
+                    title:'付款',
                     templateUrl:'views/payment/paymentList.html',
                     controller:'PaymentListCtrl'
                 })
@@ -110,6 +108,35 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate','icbc.
                     controller:'PaymentListCtrl'
                 })
 
+                //发货信息
+                .state('delivery',{
+                    url:'/delivery',
+                    templateUrl:'views/delivery/delivery.html',
+                    abstract:true,
+                    resolve:{
+                        deliveryService:['$ocLazyLoad', function($ocLazyLoad) {
+                            return $ocLazyLoad.load([
+                                'views/delivery/js/delivery-ctrl.js',
+                                'views/delivery/js/delivery-serv.js',
+                                'views/delivery/js/delivery-dire.js',
+                                'views/delivery/css/delivery.css'
+                            ]);
+                        }]
+                    }
+                })
+                .state('delivery.deliveryList',{
+                    url:'/deliveryList',
+                    title:'发货',
+                    templateUrl:'views/delivery/deliveryList.html',
+                    controller:'DeliveryListCtrl'
+                })
+                .state('delivery.deliveryDetail',{
+                    url:'/deliveryList',
+                    title:'发货详情',
+                    backState:'delivery.deliveryList',
+                    templateUrl:'views/delivery/deliveryDetail.html',
+                    controller:'DeliveryListCtrl'
+                })
 
                 //发货信息
                 .state('delivery',{

@@ -12,38 +12,129 @@
     background-color:rgba(110,110,110,0.85);
 }
 
-
 .header{
     margin-bottom: -1px;
     padding:10px;
     background-color: #2d83ce;
     color:#fff;
 }
-
+/*首页底部*/
 .footer{
     height:50px;
     width:100%;
+    background: #fff;
+    border-top: 1px solid #E8E8E8;
 }
 .footer .fn-btn-group{
     width:100%;
 }
-.footer a{
+.footer .fn-btn {
+    padding: .3em 1em;
     height:50px;
-    width: 20%;
+    width: 25%;
+    background: #fff;
+    color: #999;
+    border: none;
 }
+.footer .fn-btn:hover{
+    color: #2d83ce;
+}
+
 .footer span{
     display:block;
-    font-size:8px;
+    font-size: 1.2rem;
+    color: #999;
+}
+.footer i{
+    font-size:2rem;
+    color: #999;
 }
 
 /* home page */
+.color-more{
+    color:#ec5759;
+}
+.color-finance{
+    color:#2fa585;
+}
+.color-credit{
+    color:#1a86ce;
+}
+.color-invoice{
+    color:#fc9b16;
+}
 .home-data-wrapper{
     min-height: 20rem;
     background-color:#0e90d2;
 }
 
 .home-list ul>li{
-    height:5rem;
-    border: 1px #ccc solid;
-    padding : auto;
+    height:8.7rem;
+    border: 1px #E8E8E8 solid;
+    border-bottom: none;
+    border-left: none;
+    padding : 1.25rem 0;
+    text-align: center;
+    color: #000;
+}
+.home-list ul>li:nth-of-type(3n+1) {
+    border-left: none;
+}
+.home-list ul>li:nth-of-type(3n) {
+    border-right: none;
+    border-left: none;
+}
+.home-list ul>li>a>span{
+    color: #000;
+    display: block;
+}
+.home-list .iconfont{
+    font-size: 2.8rem;
+}
+/*首页*/
+.color-white{
+    color: #fff;
+}
+.home-top{
+    padding:0;
+}
+.back-blue{
+    background: #2d83ce;
+}
+.home-con-top{
+    border: 0;
+    box-shadow: none;
+    padding: 1.5rem 0 0 0;
+}
+.home-con-bot{
+    padding:0;
+    border-top: 1px  solid #4E95D5;
+}
+.home-con-bot .fn-u-sm-6{
+    padding: 1.25rem 2rem;
+}
+.home-con-bot .fn-u-sm-6:first-child{
+    border-right: 1px  solid #4E95D5;
+}
+.margin-bot{
+    margin-bottom: 14px;
+}
+.text-center{
+    text-align: center;
+}
+.padd-bot0{
+    padding-bottom: 0;
+}
+#orderNum{
+    font-size: 4rem;
+    padding-top: 0;
+}
+.today-txt{
+    font-size: 1.4rem;
+}
+.today-num{
+    font-size: 0.5rem;
+}
+.today-num span{
+    color: #DBDE6B;
 }

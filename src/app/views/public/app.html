@@ -2,19 +2,91 @@
 <head-bar></head-bar>
 
 
-<div class="home-data-wrapper">
-    数据统计内容
+<div class="home-data-wrapper back-blue">
+    <!--订单金额Box-->
+    <div class="home-top back-blue ">
+        <!--订单金额-->
+        <div class="fn-panel fn-panel-default home-con-top back-blue">
+            <div class="fn-panel-bd text-center padd-bot0 color-white">订单金额（万元）</div>
+            <div class="fn-panel-bd text-center color-white" id="orderNum">1500000.00</div>
+        </div>
+        <!--今日+本月-->
+        <div class="fn-g home-con-bot">
+            <div class="fn-u-sm-6 color-white">
+                <div class="today-txt">今日成交额 ( 元 )</div>
+                <div class="today-mon" id="today-mon">23445.00</div>
+                <div class="today-num">共 <span id="today-num">128</span> 笔</div>
+            </div>
+            <div class="fn-u-sm-6 color-white">
+                <div class="today-txt">本月成交额 ( 元 )</div>
+                <div class="today-mon" id="month-mon">234490.00</div>
+                <div class="today-num">共 <span id="month-num">843</span> 笔</div>
+            </div>
+        </div>
+    </div>
 </div>
+<content-scroll>
 <div class="home-list">
-    <ul class = "fn-avg-sm-2">
-        <li class="fn-text-middle"><a ui-sref="order.productList">下订单</a></li>
-        <li class="fn-text-middle"><a ui-sref="myorder.orderList" >我的订单</a></li>
-        <li class="fn-text-middle"><a ui-sref="cart">购物车</a></li>
-        <li class="fn-text-middle"><a ui-sref="payment.paymentList"> 付款单</a></li>
-        <li class="fn-text-middle"><a ui-sref="about"> 关于工银聚</a></li>
+    <ul class = "fn-avg-sm-3">
+        <li class="fn-text-middle">
+            <a ui-sref="myorder.orderList">
+                <i class="iconfont icon-pinpai color-credit"></i>
+                <span>我的订单</span>
+            </a>
+        </li>
+        <li class="fn-text-middle">
+            <a ui-sref="payment.paymentList" >
+                <i class="iconfont icon-shezhi1 color-more color-finance"></i>
+                <span>我的付款单</span>
+
+            </a>
+        </li>
+        <li class="fn-text-middle">
+            <a>
+                <i class="iconfont icon-wuliu color-invoice"></i>
+                <span>我的对账单</span>
+            </a>
+        </li>
+
+        <li class="fn-text-middle">
+            <a ui-sref="delivery.deliveryList">
+                <i class="iconfont icon-gouwudai color-more"></i>
+                <span>我的发货单</span>
+            </a>
+        </li>
+        <li class="fn-text-middle">
+            <a>
+                <i class="iconfont icon-shaixuan color-invoice"></i>
+                <span>我的发票</span>
+            </a>
+        </li>
+        <li class="fn-text-middle">
+            <a>
+                <i class="iconfont icon-biaoxing color-credit color-credit"></i>
+                <span>我的贷款</span>
+            </a>
+        </li>
+
+        <li class="fn-text-middle">
+            <a>
+                <i class="iconfont icon-danxuan color-finance"></i>
+                <span>我的理财</span>
+            </a>
+        </li>
+        <li class="fn-text-middle">
+            <a ui-sref="about">
+                <i class="iconfont icon-gengduo color-more"></i>
+                <span>更多</span>
+            </a>
+        </li>
+        <li class="fn-text-middle"><a > </a></li>
     </ul>
 </div>
+</content-scroll>
+
 
 <!--bottom bar  -->
 <bottom-bar></bottom-bar>
+
+
 

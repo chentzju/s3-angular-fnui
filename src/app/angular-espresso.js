@@ -1,10 +1,16 @@
 angular.module('icbc.espresso',[])
  .factory('$es',function($q,$state)
     {
+
 	 var setting = {};
 	 function setConfig(key,value){
          setting[key] = value;
      }
+     function getConfig(key){
+         return setting[key];
+     }
+
+
 	 var userinfo={};
 	 /**
 	  * ajax执行一个服务器端Action，该方法是同步函数版本
@@ -130,6 +136,7 @@ angular.module('icbc.espresso',[])
             java:java,
             ajax:ajax,
             userinfo:userinfo,
-            setConfig:setConfig
+            setConfig:setConfig,
+            getConfig:getConfig
         }
     });

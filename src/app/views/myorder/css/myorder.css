@@ -1,7 +1,7 @@
 #iscroll-wrapper {
     width: 100%;
     position:relative;
-    min-height:40rem;
+    min-height:37rem;
     overflow: hidden;
     /* Prevent native touch events on Windows */
     -ms-touch-action: none;
@@ -30,7 +30,7 @@
  *
  */
 #pullDown, #pullUp {
-    background:#fff;
+    background:transparent;
     font-weight:bold;
     font-size:14px;
     color:#888;
@@ -71,11 +71,242 @@
     to { -webkit-transform:rotate(360deg) translateZ(0); }
 }
 
-/**/
 
-#iscroll-wrapper li>a{
-    height:5rem;
+/*new orderlist*/
+p,ul,h1,h2,h3,h4,h5,h6,ol,dl,dt,dd,pre,li,form,input,select,textarea{
+    margin:0;padding:0;
+    list-style:none;
 }
 .order-list{
-    margin-top: 1rem;
+    background:#F2F2F2 ;
+}
+
+.back-white{
+    background: #fff;
+}
+.fn-size{font-size: 1.4rem;}
+.fn-size-color{color:#2d83ce;}
+/*搜索*/
+.p2{
+    padding-left:2%;
+}
+.payment{
+    width:94%;
+    border:1px solid #2d83d0;
+    margin:3%;
+    border-radius: 10px;
+    color:#2d83ce;
+}
+.payment-input{
+    border:none;
+    width:80%;
+    outline: none;
+    font-size: 1.4rem;
+    margin-top: -6px;
+}
+.payment-input input[placeholder]{
+    color: #ebf6ff;!important
+}
+ul.paymentList-dropdown{
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 0;
+}
+ul.myorder-dropdown>.fn-active>a{
+    color: #2d83ce;
+    background-color: #ebf6ff;
+}
+/*tab切换*/
+.myorder-tabs>li>a{
+    border: none;
+    color:#000;
+}
+.myorder-tabs>li>a:hover{
+    border: none;
+    border-bottom:2px solid #2d83ce;
+    background-color: #fff;
+    color: #2d83ce;
+}
+.myorder-box ul{
+    padding: 1rem;
+}
+.myorder-box ul>li{
+    border-radius: .8rem;
+    margin-bottom: .6rem;
+    overflow: hidden;
+
+}
+.myorder-box ul>li:first-child{
+    border-radius: .8rem!important;
+}
+.myorder-box ul>li:last-of-type{
+    margin-bottom: 0;
+}
+
+#iscroll-wrapper li{
+    border: 1px solid #DFDFDF;
+}
+.num-content,.mon-content{
+    height: 3.1rem;
+    font-size: 1.4rem;
+}
+.num-content{
+    border-bottom: 1px solid #DFDFDF;
+}
+
+.mon-content{
+    padding: 0 .8rem;
+    border-top: 1px solid #DFDFDF;
+}
+.myorder-box .badge{
+    width: 8%;
+    height: 0;
+    border-right: 2.8rem solid transparent;
+    border-top: 2.4rem solid #d7d7d7;
+    left: 0;
+    color: #fff;
+}
+.badge-first{
+    border-top: 1.8rem solid #ea566c;
+}
+.badge-first{
+    border-top: 1.8rem solid #efbe27;
+}
+.badge-first{
+    border-top: 1.8rem solid #3681c4;
+}
+.badge span{
+    font-size: 1.4rem;
+    position: relative;
+    top: -30px;
+    left: 6px;
+}
+
+.num-content .myorderID{
+    display: inline-block;
+    height: 100%;width: 88%;
+    line-height:3.1rem;
+    background-color: #fff;
+    color: #2d83ce;
+    padding: 0 .8rem 0 0;
+}
+.mon-content span{
+    display: inline-block;
+    height: 100%;
+    line-height:3.1rem;
+    font-size: 1.4rem;
+    color: #000;
+}
+.num-content i{
+    font-size: 1.4rem;
+}
+.myorderTime,.myorderName{
+    color: #000;
+}
+.myorderMon{
+    display: inline-block;
+    height: 100%;
+    line-height:3.1rem;
+    background-color: #fff;
+    color: #fb3b4e;
+    font-size:1.4rem ;
+    font-weight: 600;
+}
+.del-content{
+    min-height: 7.25rem;
+    padding:.8rem;
+    background: #fbfbfb;
+}
+.del-content div{
+    font-size: 1.4rem;
+}
+.del-content span{
+    color: #111;
+}
+.del-content div .myorderStau{
+    color: #F27405;
+}
+
+/*订单详情*/
+.orderDet-ul li{
+    border: 1px solid #DFDFDF;
+    margin-bottom: .6rem;
+    overflow: hidden;
+    border-radius: .8rem;
+}
+/*收货人信息*/
+.information-con .fn-fl{
+    width: 8%;height: 100%;
+    line-height: 3.1rem;
+    text-align: center;
+    color: #f7a014;
+    font-size: 1.6rem;
+    transform: rotateY(180deg);
+}
+.information-con .myorderID{
+    color: #000;
+}
+.color-67{
+    color: #676767;
+}
+.back-red{
+    background: #fa6767;
+    font-weight: normal;
+}
+.fn-stripe-redblue::before{
+    transform: rotateY(180deg);
+    display: block;
+    content: '';
+    height: 4px;
+    background: repeating-linear-gradient(62deg,#529fd7 1px,#529fd7 5px,#fff 5px,#fff 10px,#ec5252 10px,#ec5252 15px,#fff 15px,#fff 20px);
+    background: -webkit-repeating-linear-gradient(62deg,#529fd7 1px,#529fd7 5px,#fff 5px,#fff 10px,#ec5252 10px,#ec5252 15px,#fff 15px,#fff 20px);
+    background: -moz-repeating-linear-gradient(62deg,#529fd7 1px,#529fd7 5px,#fff 5px,#fff 10px,#ec5252 10px,#ec5252 15px,#fff 15px,#fff 20px);
+}
+.informaList-con .myorderID{
+    padding: 0 .8rem;
+    color: #000;
+}
+.informaList-del .fn-padding-0 span{
+    font-size: 1.2rem;
+    color: #676767;
+}
+.informaList-del li {
+    border: none;
+    padding: .8rem;
+    border-bottom: 1px solid #DFDFDF;
+    margin-bottom:0;
+    overflow: hidden;
+    border-radius: 0;
+}
+.informaNum-con{
+    padding: .8rem;
+}
+.bor-none{
+    border: none;
+}
+.height-xs{
+    height: 1rem;
+}
+
+.orderDetail-mon .mon-content{
+    height: 2.2rem;
+}
+.height-sm{
+    height: 2rem;
+}
+.delNode-con .myorderID{
+    padding-left: .8rem;
+    color: #000;
+}
+.node-content{
+    height: 4rem;
+    padding: .8rem;
+}
+.audit-con{
+    background: #fff;
+    min-height: 9rem;
+    padding: .8rem;
+}
+.freight{
+    height: 3rem;
 }

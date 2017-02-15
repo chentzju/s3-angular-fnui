@@ -77,18 +77,61 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate','icbc.
                 .state('payment',{
                     url:'/payment',
                     templateUrl:'views/payment/payment.html',
-                    abstract:true
+                    abstract:true,
+                    resolve:{
+                        paymentService:['$ocLazyLoad', function($ocLazyLoad) {
+                            return $ocLazyLoad.load([
+                                'views/payment/js/payment-ctrl.js',
+                                'views/payment/js/payment-serv.js',
+                                'views/payment/js/payment-dire.js',
+                                'views/payment/css/payment.css'
+                            ]);
+                        }]
+                    }
                 })
                 .state('payment.paymentList',{
                     url:'/paymentList',
-                    title:'付款',
-                    templateUrl:'views/payment/paymentList.html'
+                    title:'我的付款单',
+                    templateUrl:'views/payment/paymentList.html',
+                    controller:'PaymentListCtrl'
                 })
                 .state('payment.paymentDetail',{
                     url:'/paymentList',
                     title:'付款详情',
                     backState:'payment.paymentList',
-                    templateUrl:'views/payment/paymentDetail.html'
+                    templateUrl:'views/payment/paymentDetail.html',
+                    controller:'PaymentListCtrl'
+                })
+
+
+                //发货信息
+                .state('delivery',{
+                    url:'/delivery',
+                    templateUrl:'views/delivery/delivery.html',
+                    abstract:true,
+                    resolve:{
+                        deliveryService:['$ocLazyLoad', function($ocLazyLoad) {
+                            return $ocLazyLoad.load([
+                                'views/delivery/js/delivery-ctrl.js',
+                                'views/delivery/js/delivery-serv.js',
+                                'views/delivery/js/delivery-dire.js',
+                                'views/delivery/css/delivery.css'
+                            ]);
+                        }]
+                    }
+                })
+                .state('delivery.deliveryList',{
+                    url:'/deliveryList',
+                    title:'我的发货单',
+                    templateUrl:'views/delivery/deliveryList.html',
+                    controller:'DeliveryListCtrl'
+                })
+                .state('delivery.deliveryDetail',{
+                    url:'/deliveryList',
+                    title:'发货详情',
+                    backState:'delivery.deliveryList',
+                    templateUrl:'views/delivery/deliveryDetail.html',
+                    controller:'DeliveryListCtrl'
                 })
 
                 //个人信息

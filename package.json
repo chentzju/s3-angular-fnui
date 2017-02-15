@@ -17,7 +17,7 @@
   "author": "zjfh-chent",
   "license": "MIT",
   "devDependencies": {
-    "fnui": "^2.0.8",
+    "fnui": "^2.0.12",
     "fs-extra": "^0.22.1",
     "gulp": "^3.9.0",
     "gulp-concat": "^2.6.1",

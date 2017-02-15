@@ -1,0 +1,48 @@
+<div id="deliveryList">
+    <!--搜索-->
+    <div class="delivery" >
+            <i class="iconfont icon-sousuo1 fn-size-color p2"></i>
+            <input type="text" placeholder="请输入内容" class="delivery-input">
+            <drop-down>
+                <i class="fn-icon-calendar fn-size-color"></i>
+                </button>
+                <ul class="fn-dropdown-content deliveryList-dropdown fn-size">
+                    <li class="fn-active"><a>一周内</a></li>
+                    <li><a>一个月内</a></li>
+                    <li><a>三个月内</a></li>
+                </ul>
+            </drop-down>
+
+    </div>
+
+    <!--tab切换-->
+        <ul class="fn-avg-sm-5 fn-horizontal-sm newtabs">
+            <li ng-repeat="status in deliveryStatusArray">
+                <a  class="fn-btn fn-size" style="box-shadow:none;color:#000;" href="javascript:void(0)" ng-click="changeStatus(status)">{{status.name}}</a>
+            </li>
+        </ul>
+        <iscroll-wrapper>
+            <li ng-repeat="delivery in deliverys track by $index" style="border:0">
+                <!--付款单列表-->
+                <div class="delivery-list">
+                    <!--向上的三角-->
+                    <div class="arrow-up">
+                        <span class="fn-text-top fn-size number">{{$index+1}}</span>
+                    </div>
+                    <div class="delivery-numberlist fn-size-color">
+                        <a ui-sref="delivery.deliveryDetail({deliveryId:delivery.d})">
+                            付款单编号:{{delivery.id}}
+                            <i class="iconfont icon-xiangyou1 fn-fr fn-size"></i>
+                        </a>
+
+                    </div>
+                    <div class="delivery-list-detail fn-size">
+                        <p>经销商名称:<span class="time">工银聚股份有限公司</span></p>
+                        <p>生成时间: <span class="time">2016-11-17 09:35:45</span></p>
+                        <p>发货状态:<span>{{delivery.statusText}}</span></p>
+                    </div>
+                </div>
+            </li>
+        </iscroll-wrapper>
+
+</div>

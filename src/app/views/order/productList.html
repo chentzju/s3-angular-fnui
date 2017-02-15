@@ -1,15 +1,46 @@
 <div id="productList">
     <iscroll-wrapper>
-        <li ng-repeat="product in products">
+        <!--添加的-->
+        <div class="productSearch">
+            <input type="text" placeholder="关键字搜索">
+            <i class="iconfont icon-sousuo1"></i>
+        </div>
+        <div class="productChangeList">
+            <a href="">全部产品</a>
+            <a href="">最近订单</a>
+            <a href="">收藏产品</a>
+        </div>
+        <!--添加的-->
+        <ul class="productListUl">
+            <li ng-repeat="product in products">
             <a ui-sref="order.productDetail({productId:product.productId})" class="item-link item-content">
-                <div class="item-media"><i class="icon iconfont icon-box"></i></div>
+                <div class="item-media">
+                    <span class="proListTig"></span>
+                    <span class="proListBt">POY</span>
+                    <span class="turnProDe"></span>
+                    <i class="icon iconfont icon-box"></i>
+                </div>
                 <div class="item-inner">
-                    <div class="item-title">编号：{{product.productId}}</div>
-                    <div class="item-after"><span class="badge">5</span></div>
-                    品名：{{product.productName}}
-                    价格：{{product.price}}
+                    <div class="productInfo">
+                        <div class="item-title">产品编号：{{product.productId}}&nbsp;<span class="productsuo">规格：262dtx/48f</span></div>
+                        <!--<div class="item-after"><span class="badge">5</span></div>-->
+
+                        <p>价格：{{product.price}}&nbsp;<span class="productSuo">分类号：1001</span></p>
+                        <p>分类名：{{product.productName}}</p>
+                    </div>
+                    <!--<div class="productInfo">
+                        <p>规格：262dtx/48f</p>
+                        <p>分类号</p>
+                    </div>-->
+                    <div class="productStaPrice">
+                        <p>标准价</p>
+                        <span>￥205</span>
+                    </div>
+
                 </div>
             </a>
-        </li>
+            </li>
+        </ul>
+
     </iscroll-wrapper>
 </div>

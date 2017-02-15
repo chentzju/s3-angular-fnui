@@ -38,3 +38,6 @@ bower_components
 
 # Dist
 dist
+
+#webstorm
+.idea

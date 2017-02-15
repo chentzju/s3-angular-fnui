@@ -1,23 +1,40 @@
-<div>
 
-
-</div>
 <div class="page-content hide-bars-on-scroll">
 
-    <div class="card">
-        <div class="card-header">编号:{{product.productId}}</div>
-        <div class="card-content">
-            <div class="card-content-inner">名称：{{product.productName}}</div>
-            <div class="card-content-inner">价格：{{product.price}}</div>
-            <div class="card-content-inner">长度：{{product.length}}</div>
-            <div class="card-content-inner">规格：{{product.type}}</div>
+    <div class="top">
+        <span class="top_name">POY</span>
+        <div class="top_icon">
+            <i style="color:#BEBEBE;" class="iconfont icon-biaoxing"></i>
+            <i style="color:#2F83CE;" class="iconfont icon-gouwuche"></i>
         </div>
-        <div class="card-footer">xxxxxxxxxxx</div>
+        <div class="top_line"></div>
     </div>
 
+    <div class="list">
+        <div class="list_main">
+            <div class="pic">
+                <img src="views/order/img/shili00.png" alt="">
+            </div>
+            <div class="card">
+                <div class="card-header">产品编号:{{product.productId}}</div>
+                <div class="card-content">
+                    <div class="card-content-inner">名称：{{product.productName}}</div>
+                    <div class="card-content-inner">价格：<span style="color:#FF375F;">{{product.price}}</span></div>
+                    <div class="card-content-inner">长度：{{product.length}}</div>
+                    <div class="card-content-inner">规格：{{product.type}}</div>
+                </div>
+                <div class="card-footer">xxxxxxxxxxx</div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="btn">
+    <div class="add">加入购物车</div>
+    <div class="buy">立即购买</div>
 </div>
 
 
+<!--
 <drop-down>
     <button class="fn-btn fn-btn-primary fn-dropdown-toggle"
             data-fn-dropdown-toggle>
@@ -32,4 +49,4 @@
         <li class="fn-divider">5</li>
         <li><a href="#">6</a></li>
     </ul>
-</drop-down>
+</drop-down>-->

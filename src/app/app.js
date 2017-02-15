@@ -38,8 +38,7 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate','icbc.
                                     'views/order/js/order-serv.js',
                                     'views/order/js/order-dire.js',
                                     'views/order/css/order.css'
-
-                                ])
+                            ])
                         }]
                     }
                 })
@@ -54,16 +53,7 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate','icbc.
                     backState:'order.productList',
                     title:'产品详情',
                     templateUrl:'views/order/productDetail.html',
-                    controller:'ProductDetailCtrl',
-                    resolve:{
-                        orderService:['$ocLazyLoad', function($ocLazyLoad) {
-                            return $ocLazyLoad.load([
-
-                                'views/order/css/product-detail.css'
-
-                            ])
-                        }]
-                    }
+                    controller:'ProductDetailCtrl'
                 })
 
 

@@ -200,6 +200,37 @@ myApp.directive('butterToast', function() {
             }
         }
     })
+    .directive('contentScroll',function(){
+        return{
+            restrict:'E',
+            replace:true,
+            transclude:true,
+            template:'<div class="content-scroll"><div class="content-scroller" ng-transclude></div></div>',
+            link:function(scope,element,attr){
+                $(function(){
+                    var scroll = element[0];
+                    function isPassive() {
+                        var supportsPassiveOption = false;
+                        try {
+                            addEventListener("test", null, Object.defineProperty({}, 'passive', {
+                                get: function () {
+                                    supportsPassiveOption = true;
+                                }
+                            }));
+                        } catch(e) {}
+                        return supportsPassiveOption;
+                    }
+
+                    new IScroll(scroll);
+
+                    document.addEventListener('touchmove', function (e) { e.preventDefault(); }, isPassive() ? {
+                        capture: false,
+                        passive: false
+                    } : false);
+                })
+            }
+        }
+    })
     /**
      * 用来在页面中间弹出一个警告框
      * 用法 1、在需要弹出的内容外加上<fn-confirm></fn-confirm>标签

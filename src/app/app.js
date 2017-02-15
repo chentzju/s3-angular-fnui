@@ -242,6 +242,7 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate','icbc.
 
                  }
                  */
+                valid = true;
                 if($es.userinfo && $es.userinfo.userName)
                     valid = true;
             }

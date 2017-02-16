@@ -128,7 +128,7 @@ myApp.directive('butterToast', function() {
                     //init
                     var wrapper = document.getElementById('iscroll-wrapper');
                     if(wrapper)
-                        myScroll = new IScroll(wrapper,{probeType: 2});
+                        myScroll = new IScroll(wrapper,{probeType: 2,click:true});
 
                     //滚动时
                     myScroll.on('scroll', function(){
@@ -209,7 +209,7 @@ myApp.directive('butterToast', function() {
             link:function(scope,element,attr){
                 $(function(){
                     var scroll = element[0];
-                    new IScroll(scroll);
+                    new IScroll(scroll,{click:true});
                     scroll.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
                 })
             }

@@ -47,15 +47,16 @@ myApp.directive('butterToast', function() {
                 else
                     $state.go($rootScope.previousState_name, $rootScope.previousState_params);
             };
-            scope.closeOffCanvas = function(){
-                $("#doc-oc-demo1").offCanvas('close');
-            }
+            // scope.closeOffCanvas = function(){
+            //     $("#doc-oc-demo1").offCanvas('close');
+            // }
         }
     }
 }])
     .directive("bottomBar",function(){
         return{
             restrict:'E',
+            replace:true,
             templateUrl:'templates/bottombar.tpl.html',
             link:function(scope,element,attr){
                 //$(element).find('a').on('click',function(){
@@ -68,10 +69,10 @@ myApp.directive('butterToast', function() {
         return {
             restrict:'E',
             transclude:true,
-            template:'<div class="fn-dropdown" data-fn-dropdown ng-transclude></div>',
-            link:function(){
+            template:'<div class="fn-dropdown" ng-transclude></div>',
+            link:function(scope,element,attr){
                 $(function() {
-                    var selector = $('[data-fn-dropdown]');
+                    var selector = $(element).find('.fn-dropdown');
                     selector.dropdown().on('click',function(){
                         $(this).dropdown('toggle');
                     });

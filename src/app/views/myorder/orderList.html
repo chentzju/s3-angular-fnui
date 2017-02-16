@@ -6,20 +6,25 @@
         <div class="payment">
             <i class="iconfont icon-sousuo1 fn-size-color p2"></i>
             <input type="text" placeholder="请输入内容" class="payment-input">
+        </div>
+    </div>
+    <!--切换导航-->
+    <ul class="fn-nav fn-nav-tabs myorder-tabs fn-avg-sm-5 back-white">
+        <li ng-repeat="status in orderStatusArray">
+            <a  class="fn-btn" href="javascript:void(0)" ng-click="changeStatus(status)">{{status.name}}</a>
+        </li>
+        <li>
             <drop-down>
-                <i class="iconfont icon-shizhong fn-size-color"></i>
+                <a class="fn-btn">
+                    日期
+                    <i class="iconfont icon-xiangxiajiantou"></i>
+                </a>
                 <ul class="fn-dropdown-content paymentList-dropdown myorder-dropdown" >
                     <li class="fn-active"><a>一周内</a></li>
                     <li><a>一个月内</a></li>
                     <li><a>三个月内</a></li>
                 </ul>
             </drop-down>
-        </div>
-    </div>
-    <!--切换导航-->
-    <ul class="fn-nav fn-nav-tabs myorder-tabs fn-avg-sm-5 back-white">
-        <li ng-repeat="status in orderStatusArray">
-            <a  class="fn-btn fn-size" href="javascript:void(0)" ng-click="changeStatus(status)">{{status.name}}</a>
         </li>
     </ul>
     <!--数据盒子-->
@@ -55,10 +60,10 @@
                     </a>
                 </div>
                 <div>
-                    <span class="fn-fl">
+                    <span>
                         单据状态：
                     </span>
-                    <a ui-sref="myorder.orderDetail({orderId:order.d})" class="fn-fl myorderStau">
+                    <a ui-sref="myorder.orderDetail({orderId:order.d})" class="myorderStau">
                         {{order.statusText}}
                         <!--已审核-->
                     </a>

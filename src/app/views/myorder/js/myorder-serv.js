@@ -8,8 +8,7 @@ angular.module("myApp").service("OrderService",function(){
             {id:null,name:'全  部'},
             {id:0, name:'待审核'},
             {id:1,name:'已审核'},
-            {id:2,name:'已核销'},
-            {id:3,name:'已作废'}
+            {id:2,name:'已作废'}
         ];
     };
 

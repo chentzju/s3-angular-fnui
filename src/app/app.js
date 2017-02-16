@@ -146,7 +146,8 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate','icbc.
                     resolve:{
                         profileService:['$ocLazyLoad', function($ocLazyLoad) {
                             return $ocLazyLoad.load([
-                                'views/profile/js/profile-ctrl.js'
+                                'views/profile/js/profile-ctrl.js',
+                                'views/profile/css/personal_center.css'
                             ]);
                         }]
                     }
@@ -156,8 +157,26 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate','icbc.
                 url:'/info',
                 title:'我的',
                 templateUrl:'views/profile/info.html',
-                controller:'InfoCtrl'
+                //controller:'InfoCtrl'
             })
+            .state('profile.myAddress',{
+                url:'/editAddress',
+                title:'地址管理',
+                templateUrl:'views/profile/myAddress.html',
+                //controller:'addAddressCtrl'
+            })
+            .state('profile.changePw',{
+                url:'/info',
+                title:'修改密码',
+                templateUrl:'views/profile/changePw.html',
+            //    controller:'InfoCtrl'
+            })
+            //.state('profile.info',{
+            //    url:'/info',
+            //    title:'我的',
+            //    templateUrl:'views/profile/info.html',
+            //    controller:'InfoCtrl'
+            //})
             //认证
             .state('account',{
                 url:'/account',

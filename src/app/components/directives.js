@@ -10,7 +10,7 @@ myApp.directive('butterToast', function() {
                     if(toast)
                        setTimeout(function(){
                             toast.close();
-                       },500);
+                       },0);
                 });
             }
         };

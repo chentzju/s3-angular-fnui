@@ -125,3 +125,91 @@ html{background-color: #F2F2F2;}
 .add{float: left;background-color:#fff;color:#3183CE;}
 .buy{float:right;background-color: #2F83D0;color:#fff;}
 /*product-detail*/
+/*productSearch*/
+.proSear{
+
+}
+.proSear-input{
+    width:100%;
+    height:5.4rem;
+    background:#2d83ce;
+    line-height:5.4rem;
+    overflow: hidden;
+
+}
+.proSear-input div {
+    float: left;
+    width: 10%;
+    height: 2.87rem;
+    background: #fff;
+    margin-top: 1.3rem;
+    border-radius: 0.86rem 0 0 0.86rem;
+    border:1px solid #8cc5f7;
+    border-right:none;
+    line-height:2.87rem;
+    text-align: center;
+    font-size:1.27rem!important;
+    color:#2d83ce;
+    margin-left:0.77rem;
+}
+.proSear-input input{
+    float:left;
+    border:1px solid #8cc5f7;
+    border-radius: 0 0.86rem 0.86rem 0;
+    width:74%;
+    height:2.87rem;
+    margin-top:1.3rem;
+    border-left:none;
+    outline: none;
+    line-height:2.87rem;
+}
+.proSear-input span{
+    color:#fff;
+    margin-left:1rem;
+}
+.proSear-category,.proSear-screen{
+    width:90%;
+    margin:0 auto;
+}
+.proSear-category-title{
+    overflow: hidden;
+    height:4.47rem;
+    line-height:4.47rem;
+}
+.proSear-category-title span{
+    float:left;
+}
+.proSear-category-title span:nth-child(2){
+    margin-left:10px;
+}
+.proSear-btn{
+    /*background:#2d83ce;*/
+    width:6rem;
+    height:2.07rem;
+    border:1px solid #cbcbcb;
+    outline: none;
+    color:#767676;
+    background:#fafafa;
+    border-radius:0.57rem;
+    font-size:1rem;
+    margin-right:2rem;
+}
+.proSear-screen{
+    margin-top:1.83rem;
+}
+.proSear-screen-down{
+    height:2.77rem;
+    border:1px solid #2d83d0;
+    border-radius: 0.73rem;
+    color:#404040;
+    line-height: 2.77rem;
+    padding-left:10%;
+}
+.proSear-screen-down:nth-child(2){
+    margin-top:6%;
+}
+html{
+    background:#fff;
+}
+/*productSearch*/
+

@@ -201,15 +201,14 @@ myApp.directive('butterToast', function() {
             }
         }
     })
-    .directive('contentScroll',function(){
+    .directive('scrollContent',function(){
         return{
             restrict:'E',
-            replace:true,
             transclude:true,
             template:'<div class="content-scroll"><div class="content-scroller" ng-transclude></div></div>',
             link:function(scope,element,attr){
                 $(function(){
-                    var scroll = element[0];
+                    var scroll = $(element).find('.content-scroll')[0];
                     new IScroll(scroll,{click:true});
                     scroll.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
                 })
@@ -248,10 +247,7 @@ myApp.directive('butterToast', function() {
         +' <div class="fn-modal-footer">'
         + '<span class="fn-modal-btn fn-modal-btn-cancel" data-fn-modal-cancel>取消</span>'
         + '<span class="fn-modal-btn fn-modal-btn-bold"  data-fn-modal-confirm>确定</span>'
-        +'</div></div></div>',
-        link:function () {
-            modal.confirm('标题','你确定吗？');
-        }
+        +'</div></div></div>'
     }
 })
     /**

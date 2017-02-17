@@ -6,6 +6,7 @@ var cssmin = require('gulp-cssmin');
 var imgmin = require('gulp-imagemin');
 var fse = require('fs-extra');
 var connect = require('gulp-connect');
+var replace = require('gulp-replace');
 var config = require("./config.js");
 
 
@@ -19,7 +20,6 @@ gulp.task("assets",function(){
         .pipe(concat("vendor.js"))
         .pipe(uglify())
         .pipe(gulp.dest('dist/assets/js'));
-
     gulp.src([
         'bower_components/angular/angular.js',
         'bower_components/angular-ui-router/release/angular-ui-router.min.js',
@@ -29,11 +29,9 @@ gulp.task("assets",function(){
         .pipe(concat('angular.min.js'))
         .pipe(uglify())
         .pipe(gulp.dest('dist/assets/js'));
-
     gulp.src('node_modules/fnui/dist/fonts/*').pipe(gulp.dest('dist/assets/fonts'));
     gulp.src('node_modules/fnui/dist/css/*').pipe(gulp.dest('dist/assets/styles'));
 });
-
 
 //copy files
 gulp.task('copy',function(){
@@ -56,6 +54,13 @@ gulp.task('views',function(){
         fse.copySync(item.path, 'dist/views/'+item.name);
     })
 });
+gulp.task('replace',function(){
+    config.modules.forEach(function(item) {
+        gulp.src(['dist/views/' + item.name + '/js/*.js'])
+            .pipe(replace(/\/\/TESTSTART[^(//TESTSTART)]+\/\/TESTEND/g, ''))
+            .pipe(gulp.dest('dist/views/' + item.name + '/js'))
+    })
+});
 
 //
 gulp.task('client',function(){
@@ -75,7 +80,7 @@ gulp.task('clean', function () {
     fse.emptyDirSync('dist');
 });
 
-gulp.task('build',['clean', 'assets', 'copy', 'image','views','client']);
+gulp.task('build',['clean', 'assets', 'copy', 'image','views','client','replace']);
 gulp.task('default',['build']);
 
 

@@ -213,7 +213,7 @@
 .today-num span{
     color: #DBDE6B;
 }
-.content-scroll{
+.scroll-content{
     width: 100%;
     position:relative;
     min-height:24rem;

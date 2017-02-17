@@ -204,12 +204,16 @@ myApp.directive('butterToast', function() {
     .directive('scrollContent',function(){
         return{
             restrict:'E',
+            replace:true,
             transclude:true,
-            template:'<div class="content-scroll"><div class="content-scroller" ng-transclude></div></div>',
+            template:'<div class="scroll-content"><div class="content-scroller" ng-transclude></div></div>',
             link:function(scope,element,attr){
                 $(function(){
-                    var scroll = $(element).find('.content-scroll')[0];
-                    new IScroll(scroll,{click:true});
+                    var scroll = element[0];
+                    var myscroll = new IScroll(scroll,{
+                        click:true
+                    });
+                    myscroll.maxScrollY = -110;
                     scroll.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
                 })
             }

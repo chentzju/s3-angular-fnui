@@ -6,6 +6,7 @@ var cssmin = require('gulp-cssmin');
 var imgmin = require('gulp-imagemin');
 var fse = require('fs-extra');
 var connect = require('gulp-connect');
+var replace = require('gulp-replace');
 var config = require("./config.js");
 
 
@@ -56,6 +57,13 @@ gulp.task('views',function(){
         fse.copySync(item.path, 'dist/views/'+item.name);
     })
 });
+gulp.task('replace',function(){
+    config.modules.forEach(function(item) {
+        gulp.src(['dist/views/' + item.name + '/js/*.js'])
+            .pipe(replace(/\/\/TESTSTART[^(//TESTSTART)]+\/\/TESTEND/g, ''))
+            .pipe(gulp.dest('dist/views/' + item.name + '/js'))
+    })
+});
 
 //
 gulp.task('client',function(){
@@ -75,7 +83,7 @@ gulp.task('clean', function () {
     fse.emptyDirSync('dist');
 });
 
-gulp.task('build',['clean', 'assets', 'copy', 'image','views','client']);
+gulp.task('build',['clean', 'assets', 'copy', 'image','views','client','replace']);
 gulp.task('default',['build']);
 
 

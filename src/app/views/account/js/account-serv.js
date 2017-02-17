@@ -17,11 +17,13 @@ angular.module('myApp').service('UserService',['$es',function($es){
      * @returns {*}
      */
     var userLogin = function(loginName,password,code){
+        //TESTSTART
         $es.userinfo = {userName:'haha'};
         return {
             retCode:'200',
             retMsg:'success'
         };
+        //TESTEND
 
         // public key
         var key = getPublicKey();
@@ -58,10 +60,13 @@ angular.module('myApp').service('UserService',['$es',function($es){
     };
 
     var changePassword = function(oldPassword,newPassword,repeatPassword){
+        //TESTSTART
         return {
             retCode:'200',
             retMsg:'success'
         };
+        //TESTEND
+
 
         // public key
         var key = getPublicKey();
@@ -91,17 +96,13 @@ angular.module('myApp').service('UserService',['$es',function($es){
 }])
     .service('AppUserService',['$es',function($es){
         var appId = $es.getConfig('custid');
-
         var setLoginSession = function(){
             return $es.java("userInfoBean.setLoginSession",param,appId,1000);
         };
 
-
         var getUserInfo = function(){
             return $es.java("userInfoBean.getUserData",param,appId,1000);
         };
-
-
 
         return {
           setLoginSession:setLoginSession,

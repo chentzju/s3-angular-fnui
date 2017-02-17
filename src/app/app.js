@@ -102,7 +102,7 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate','icbc.
                 })
                 .state('payment.paymentDetail',{
                     url:'/paymentList',
-                    title:'付款详情',
+                    title:'付款单详情',
                     backState:'payment.paymentList',
                     templateUrl:'views/payment/paymentDetail.html',
                     controller:'PaymentListCtrl'
@@ -132,7 +132,7 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate','icbc.
                 })
                 .state('delivery.deliveryDetail',{
                     url:'/deliveryList',
-                    title:'发货详情',
+                    title:'发货单详情',
                     backState:'delivery.deliveryList',
                     templateUrl:'views/delivery/deliveryDetail.html',
                     controller:'DeliveryListCtrl'

@@ -34,6 +34,10 @@ p,ul,h1,h2,h3,h4,h5,h6,ol,dl,dt,dd,pre,li,form,input,select,textarea{
     width:80%;
     outline: none;
 }
+
+.payment-input:not([type=radio]):not([type=checkbox]), select {
+    vertical-align:inherit;
+}
 .payment-input input[placeholder]{
     color: #ebf6ff!important;
 }
@@ -41,6 +45,9 @@ ul.paymentList-dropdown{
     border-radius: 10px;
     overflow: hidden;
     padding: 0;
+}
+ul.paymentList-dropdown>li>a{
+    margin: 0;
 }
 ul.myorder-dropdown>.fn-active>a{
     color: #2d83ce;

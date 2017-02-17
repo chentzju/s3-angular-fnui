@@ -14,9 +14,8 @@ p,ul,h1,h2,h3,h4,h5,h6,ol,dl,dt,dd,pre,li,form,input,select,textarea{
     font-size: 1.4rem;
     color: #2d83d0;
 }
-.height-29{
-    font-size: 1.2rem;
-    height:1.6rem;
+.height-26{
+    height:26px;
     line-height: 1.6rem;
 }
 /*搜索*/
@@ -84,6 +83,10 @@ ul.myorder-dropdown>.fn-active>a{
     margin-bottom: .6rem;
     overflow: hidden;
 
+}
+.myorder-box ul>li>a{
+    display: block;
+    padding: 0;
 }
 .myorder-box ul>li:first-child{
     border-radius: .8rem!important;
@@ -163,7 +166,7 @@ ul.myorder-dropdown>.fn-active>a{
 }
 .del-content{
     min-height: 5rem;
-    padding:.6rem;
+    padding: .6rem;
     background: #fbfbfb;
 }
 .del-content span{
@@ -181,6 +184,9 @@ ul.myorder-dropdown>.fn-active>a{
 }
 .orderDet-ul>li:last-of-type{
     margin-bottom: 50px;
+}
+.orderDet-ul .del-content{
+    padding-bottom: 0;
 }
 /*收货人信息*/
 .information-con .fn-fl{
@@ -209,6 +215,7 @@ ul.myorder-dropdown>.fn-active>a{
     display: block;
     content: '';
     height: 4px;
+    border-radius: 0 0 .8rem .8rem;
     background: repeating-linear-gradient(62deg,#529fd7 1px,#529fd7 5px,#fff 5px,#fff 10px,#ec5252 10px,#ec5252 15px,#fff 15px,#fff 20px);
     background: -webkit-repeating-linear-gradient(62deg,#529fd7 1px,#529fd7 5px,#fff 5px,#fff 10px,#ec5252 10px,#ec5252 15px,#fff 15px,#fff 20px);
     background: -moz-repeating-linear-gradient(62deg,#529fd7 1px,#529fd7 5px,#fff 5px,#fff 10px,#ec5252 10px,#ec5252 15px,#fff 15px,#fff 20px);
@@ -240,6 +247,7 @@ ul.myorder-dropdown>.fn-active>a{
 }
 .orderDetail-mon .mon-content{
     height: 2.2rem;
+    margin-bottom: .3rem;
 }
 .height-sm{
     height: 2rem;
@@ -258,106 +266,6 @@ ul.myorder-dropdown>.fn-active>a{
 .freight p{
     height: 20px;
 }
-/*审核流程*/
-.audit-con{
-    background: #fff;
-    min-height: 9rem;
-    padding: .6rem;
-}
-.inner-audit{
-    width: 100%;
-    min-height: 9rem;
-    position: relative;
-}
-.audit-line{
-    height: 100%;
-    position: absolute;
-    left: 17%;
-    border-left: 1px solid #c1c1c1;
-    top:0;
-}
-.branch-item{
-    height: 6rem;
-}
-.branch-post{
-    margin-left:6%;
-    margin-bottom: 3%;
-    position: relative;
-    z-index: 2;
+.font-normal{
     font-weight: normal;
-    top: -6px;
-    background: #099fde;
-}
-
-.circle-in .con-box{
-    width: 3900%;
-    position: absolute;
-    text-align: left;
-    left: 500%;
-    min-height: 3rem;
-    top: -100%;
-}
-.con-box span{
-    display: block;
-    width: 100%;
-}
-.con-box i{
-    font-size: 1rem;
-}
-/*未审核开始*/
-.circle-but-no .circle-in{
-    width: .5rem;
-    height: .5rem;
-    background: #099FDE;
-    border-radius: 50%;
-    position: absolute;
-    left: 0;right: 0;bottom: 0;top:0;
-    margin: auto;
-}
-.circle-but-no .circle-bor{
-    width: 1rem;
-    height: 1rem;
-    border: 1px solid #099FDE;
-    border-radius: 50%;
-    position: relative;
-    left:15.2%;
-    z-index: 2;
-    top: -.4rem;
-}
-.circle-but-no .audit-stau{
-    color:#f27405;
-}
-.circle-but-no .audit-stau i{
-    color: #03a058;
-}
-/*已审核开始*/
-.circle-but-yes .circle-in{
-    width: .5rem;
-    height: .5rem;
-    background: #ff6565;
-    border-radius: 50%;
-    position: absolute;
-    left: 0;right: 0;bottom: 0;top:0;
-    margin: auto;
-}
-.circle-but-yes .circle-bor{
-    width: 1rem;
-    height: 1rem;
-    border: 1px solid #ff6565;
-    border-radius: 50%;
-    position: relative;
-    left:15.2%;
-    top: -.4rem;
-    z-index: 2;
-}
-.circle-but-yes .audit-stau{
-    color:#000;
-}
-.circle-but-yes .audit-stau i{
-    color: #ff6565;
-}
-.branch-post-yes{
-    background: #fff;
-    border: 1px solid #099FDE;
-    color: #099FDE;
 }

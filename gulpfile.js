@@ -20,7 +20,6 @@ gulp.task("assets",function(){
         .pipe(concat("vendor.js"))
         .pipe(uglify())
         .pipe(gulp.dest('dist/assets/js'));
-
     gulp.src([
         'bower_components/angular/angular.js',
         'bower_components/angular-ui-router/release/angular-ui-router.min.js',
@@ -30,11 +29,9 @@ gulp.task("assets",function(){
         .pipe(concat('angular.min.js'))
         .pipe(uglify())
         .pipe(gulp.dest('dist/assets/js'));
-
     gulp.src('node_modules/fnui/dist/fonts/*').pipe(gulp.dest('dist/assets/fonts'));
     gulp.src('node_modules/fnui/dist/css/*').pipe(gulp.dest('dist/assets/styles'));
 });
-
 
 //copy files
 gulp.task('copy',function(){

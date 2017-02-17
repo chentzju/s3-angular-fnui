@@ -20,7 +20,7 @@ ul.paymentList-dropdown{border-radius: .8rem;overflow: hidden;padding: 0px;}
 /*tab切换*/
 .newtabs{border-bottom: 1px solid #f2f2f2;}
 
-.newtabs>li>a:hover{border-bottom:1px solid  #2d83d0;color:#2d83d0;}
+.newtabs>li>a:hover{border-bottom:1px solid  #2d83d0;color:#2d83d0 !important;}
 .newtabs>li>a:active{color:#2d83d0;}
 /*付款单列表*/
 .payment-list{width:94%;border-radius: .8rem;border:1px solid #f2f2f2;margin:3%;overflow: hidden;}

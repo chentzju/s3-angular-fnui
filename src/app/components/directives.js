@@ -64,7 +64,7 @@ myApp.directive('butterToast', function() {
                 // });
             }
         }
-    }])
+    })
     .directive("dropDown",function(){
         return {
             restrict:'E',

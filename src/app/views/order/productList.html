@@ -11,7 +11,18 @@
     </div>
     <!--添加的-->
     <iscroll-wrapper>
-
+        <!--添加的-->
+        <div class="productSearch">
+            <input type="text" placeholder="关键字搜索">
+            <i class="iconfont icon-sousuo1"></i>
+        </div>
+        <tab-bar>
+        <div class="productChangeList">
+            <a href="" class="fn-tab-active">全部产品</a>
+            <a href="">最近订单</a>
+            <a href="">收藏产品</a>
+        </div>
+        </tab-bar>
         <ul class="productListUl">
             <li ng-repeat="product in products">
             <a ui-sref="order.productDetail({productId:product.productId})" class="item-link item-content">

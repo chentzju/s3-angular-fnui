@@ -100,10 +100,10 @@ li{list-style: none}
     text-align: center;
     width:32.3%;
 }
-.productChangeList a:nth-child(1){
-    /*background:red;*/
-    border-bottom:1px solid #2d83ce;
-}
+/*.productChangeList a:nth-child(1){*/
+    /*!*background:red;*!*/
+    /*border-bottom:1px solid #2d83ce;*/
+/*}*/
 /*.productsuo{
     text-indent: 9.5rem;
 }*/

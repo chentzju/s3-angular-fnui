@@ -3,21 +3,25 @@
     <div class="payment">
     <i class="iconfont icon-sousuo1 fn-size-color p2 fn-size"></i>
     <input type="text" placeholder="请输入内容" class="payment-input">
-    <drop-down>
-        <i class="fn-icon-calendar fn-size-color"></i>
-        </button>
-        <ul class="fn-dropdown-content paymentList-dropdown ">
-            <li class="fn-active"><a>一周内</a></li>
-            <li><a>一个月内</a></li>
-            <li><a>三个月内</a></li>
-        </ul>
-    </drop-down>
     </div>
 
     <!--tab切换-->
         <ul class="fn-avg-sm-5 fn-horizontal-sm newtabs">
             <li ng-repeat="status in paymentStatusArray">
                 <a  class="fn-btn " style="box-shadow:none;color:#000;" href="javascript:void(0)" ng-click="changeStatus(status)">{{status.name}}</a>
+            </li>
+            <li>
+                <drop-down>
+                    <a class="fn-btn">
+                        日期
+                        <i class="iconfont icon-xiangxiajiantou fn-size"></i>
+                    </a>
+                    <ul class="fn-dropdown-content paymentList-dropdown myorder-dropdown" >
+                        <li class="fn-active"><a>一周内</a></li>
+                        <li><a>一个月内</a></li>
+                        <li><a>三个月内</a></li>
+                    </ul>
+                </drop-down>
             </li>
         </ul>
         <iscroll-wrapper>

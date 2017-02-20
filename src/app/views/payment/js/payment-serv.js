@@ -5,8 +5,7 @@ angular.module("myApp").service("PaymentService",function(){
             {id:null,name:'全  部'},
             {id:0, name:'待审核'},
             {id:1,name:'已审核'},
-            {id:2,name:'已核销'},
-            {id:3,name:'已作废'}
+            {id:2,name:'已作废'}
         ];
     };
     this.getPaymentList = function(status,page,time){
@@ -34,16 +33,6 @@ angular.module("myApp").service("PaymentService",function(){
                 }
                 break;
             case 2:
-                for(i = 0;i<10;i++){
-                    payment = {};
-                    payment.id = "DD201722222"+time+page+i;
-                    payment.name = "订单名称";
-                    payment.status = 0;
-                    payment.statusText = "已核销";
-                    paymentList.push(payment);
-                }
-                break;
-            case 3:
                 for(i = 0;i<10;i++){
                     payment = {};
                     payment.id = "DD201722222"+time+page+i;

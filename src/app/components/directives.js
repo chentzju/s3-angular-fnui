@@ -91,14 +91,17 @@ myApp.directive('butterToast', function() {
             restrict:'E',
             replace:true,
             transclude:true,
-            template:'<div class="fn-tabbar" ng-transclude></div>',
+            template:'<ul class="fn-nav fn-nav-tabs myorder-tabs back-white" ng-transclude></ul>',
             link:function(scope,element,attr){
                 $(function() {
-                    var selector = $(element).find('a');
-                    selector.on('click',function(){
-                        selector.removeClass('fn-tab-active');
-                        $(this).addClass('fn-tab-active')
+                    var tabs = $(element);
+                    var length = tabs.children().length;
+                    tabs.addClass(' fn-avg-sm-'+length);
+                    tabs.find('a').on('click',function(){
+                        tabs.find('.fn-tab-active').removeClass('fn-tab-active');
+                        $(this).addClass('fn-tab-active');
                     });
+
                 });
             }
         }
@@ -231,7 +234,7 @@ myApp.directive('butterToast', function() {
                     var myscroll = new IScroll(scroll,{
                         click:true
                     });
-                    myscroll.maxScrollY = -110;
+                    myscroll.maxScrollY = -100;
                     scroll.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
                 })
             }

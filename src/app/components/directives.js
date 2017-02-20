@@ -59,20 +59,21 @@ myApp.directive('butterToast', function() {
             replace:true,
             templateUrl:'templates/bottombar.tpl.html',
             link:function(scope,element,attr){
-                //$(element).find('a').on('click',function(){
-               //     $(this).find('i').addClass('fn-color-gray');
-               // });
+                // $(element).find('a').on('click',function(){
+                //     $(this).find('i').addClass('fn-bot-active')
+                // });
             }
         }
-    })
+    }])
     .directive("dropDown",function(){
         return {
             restrict:'E',
+            replace:true,
             transclude:true,
             template:'<div class="fn-dropdown" ng-transclude></div>',
             link:function(scope,element,attr){
                 $(function() {
-                    var selector = $(element).find('.fn-dropdown');
+                    var selector = $(element);
                     selector.dropdown().on('click',function(){
                         $(this).dropdown('toggle');
                     });
@@ -81,6 +82,23 @@ myApp.directive('butterToast', function() {
                         $(this).addClass('fn-active')
                     })
 
+                });
+            }
+        }
+    })
+    .directive("tabBar",function(){
+        return {
+            restrict:'E',
+            replace:true,
+            transclude:true,
+            template:'<div class="fn-tabbar" ng-transclude></div>',
+            link:function(scope,element,attr){
+                $(function() {
+                    var selector = $(element).find('a');
+                    selector.on('click',function(){
+                        selector.removeClass('fn-tab-active');
+                        $(this).addClass('fn-tab-active')
+                    });
                 });
             }
         }

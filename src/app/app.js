@@ -34,6 +34,21 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate','icbc.
                     }]
                 }
             })
+            //确认订单
+            .state('orderConfirm',{
+                url:'/orderConfirm',
+                templateUrl: 'views/order/orderConfirm.html',
+                title:'确认订单',
+                backState:'order.orderDetail',
+                resolve:{
+                    orderConfirmService:['$ocLazyLoad', function($ocLazyLoad) {
+                        return $ocLazyLoad.load([
+
+                            'views/order/css/orderConfirm.css'
+                        ])
+                    }]
+                }
+            })
             .state('order.productList',{
                 url:'/productList',
                 title:'产品',

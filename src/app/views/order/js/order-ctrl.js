@@ -12,8 +12,6 @@ angular.module("myApp").controller("ProductCtrl",["$scope","$rootScope","Product
     $scope.loadMore = function () {
         console.log('加载更多产品');
     }
-    console.log($("#iscroll-wrapper").attr("id"));
-
 }]);
 
 myApp.controller("ProductDetailCtrl",["$scope","$rootScope",'$stateParams','ProductService',function ($scope,$rootScope,$stateParams,ProductService) {

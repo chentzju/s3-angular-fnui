@@ -91,13 +91,14 @@ myApp.directive('butterToast', function() {
             restrict:'E',
             replace:true,
             transclude:true,
-            template:'<ul class="fn-nav fn-nav-tabs myorder-tabs back-white" ng-transclude></ul>',
+            template:'<ul class="fn-nav fn-nav-tabs myorder-tabs fn-tabbar back-white" ng-transclude></ul>',
             link:function(scope,element,attr){
                 $(function() {
                     var tabs = $(element);
                     var length = tabs.children().length;
                     tabs.addClass(' fn-avg-sm-'+length);
-                    tabs.find('a').on('click',function(){
+                    tabs.children().first().addClass('fn-tab-active');
+                    tabs.find('li').on('click',function(){
                         tabs.find('.fn-tab-active').removeClass('fn-tab-active');
                         $(this).addClass('fn-tab-active');
                     });

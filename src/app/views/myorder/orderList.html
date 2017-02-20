@@ -11,13 +11,13 @@
         </div>
     </div>
     <!--切换导航-->
-    <ul class="fn-nav fn-nav-tabs myorder-tabs fn-avg-sm-5 back-white">
+    <tab-bar>
         <li ng-repeat="status in orderStatusArray">
-            <a  class="fn-btn" href="javascript:void(0)" ng-click="changeStatus(status)">{{status.name}}</a>
+            <a  class="fn-btn fn-margin-0" href="javascript:void(0)" ng-click="changeStatus(status)">{{status.name}}</a>
         </li>
         <li>
             <drop-down>
-                <a class="fn-btn">
+                <a class="fn-btn fn-margin-0">
                     日期
                     <i class="iconfont icon-xiangxiajiantou"></i>
                 </a>
@@ -28,7 +28,7 @@
                 </ul>
             </drop-down>
         </li>
-    </ul>
+    </tab-bar>
     <!--数据盒子-->
     <iscroll-wrapper class="myorder-box">
         <li ng-repeat="order in orders track by $index">

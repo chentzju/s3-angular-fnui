@@ -222,7 +222,7 @@
 .scroll-content{
     width: 100%;
     position:relative;
-    min-height:26.5rem;
+    min-height:26rem;
     overflow: hidden;
     /* Prevent native touch events on Windows */
     -ms-touch-action: none;

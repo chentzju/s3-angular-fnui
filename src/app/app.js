@@ -76,6 +76,12 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate','icbc.
                     templateUrl:'views/myorder/orderDetail.html',
                     controller:'OrderListCtrl'
                 })
+                .state('search',{
+                    url:'/search',
+                    title:'查找订单',
+                    templateUrl:'views/public/search.html',
+                    //controller:'OrderListCtrl'
+                })
 
 
                 //支付信息
@@ -138,29 +144,28 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate','icbc.
                     controller:'DeliveryListCtrl'
                 })
 
-                //个人信息
-                .state('profile',{
-                    url:'/profile',
-                    templateUrl:'views/profile/profile.html',
-                    abstract:true,
-                    resolve:{
-                        profileService:['$ocLazyLoad', function($ocLazyLoad) {
-                            return $ocLazyLoad.load([
-                                'views/profile/js/profile-ctrl.js',
-                                'views/profile/css/personal_center.css'
-                            ]);
-                        }]
-                    }
-
+            //个人信息
+            .state('profile',{
+                url:'/profile',
+                templateUrl:'views/profile/profile.html',
+                abstract:true,
+                resolve:{
+                    profileService:['$ocLazyLoad', function($ocLazyLoad) {
+                        return $ocLazyLoad.load([
+                            'views/profile/js/profile-ctrl.js',
+                            'views/profile/css/personal_center.css'
+                        ]);
+                    }]
+                }
             })
             .state('profile.info',{
                 url:'/info',
-                title:'我的',
+                title:'个人信息',
                 templateUrl:'views/profile/info.html',
                 //controller:'InfoCtrl'
             })
             .state('profile.myAddress',{
-                url:'/editAddress',
+                url:'/info',
                 title:'地址管理',
                 templateUrl:'views/profile/myAddress.html',
                 //controller:'addAddressCtrl'
@@ -171,12 +176,25 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate','icbc.
                 templateUrl:'views/profile/changePw.html',
             //    controller:'InfoCtrl'
             })
-            //.state('profile.info',{
-            //    url:'/info',
-            //    title:'我的',
-            //    templateUrl:'views/profile/info.html',
-            //    controller:'InfoCtrl'
-            //})
+            .state('cart',{
+                url:'/cart',
+                title:'购物车',
+                templateUrl:'views/cart/cart.html'
+                //    controller:'InfoCtrl'
+            })
+            .state('profile.addAddress',{
+                url:'/addAddress',
+                title:'新增地址',
+                templateUrl:'views/profile/addAddress.html',
+                //controller:'InfoCtrl'
+            })
+            .state('profile.editAddress',{
+                url:'/editAddress',
+                title:'编辑收货地址',
+                templateUrl:'views/profile/editAddress.html',
+                //controller:'InfoCtrl'
+            })
+
             //认证
             .state('account',{
                 url:'/account',

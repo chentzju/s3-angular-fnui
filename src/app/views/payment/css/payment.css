@@ -1,36 +1,71 @@
+p,ul,h1,h2,h3,h4,h5,h6,ol,dl,dt,dd,pre,li,form,input,select,textarea{
+    margin:0;padding:0;
+    list-style:none;
+}
 
-
-
-
-
-
-
-
-
-
-
-.fn-size{font-size: 1.4rem;}
-.fn-size-color{font-size: 1.4rem;color:#2d83d0;}
+.fn-size{font-size: 1.2rem;}
+.fn-size-color{color:#2d83d0;}
 .money{color: #ff2150;}
 .time{color: #5d5d5d}
+.status{color: #F27405;}
 .p2{padding-left:2%;}
 /*搜索*/
 .back-white{
     background: #fff;
 }
 .payment{width:94%;border:1px solid #2d83d0;margin:3%;border-radius: 10px;color:#2d83d0;}
-.payment-input{border:none;width:84%;outline: none;font-size: 1.4rem;}
+.payment-input{border:none;width:84%;outline: none;}
 .payment-input input[placeholder]{color: #ebf6ff;!important}
-ul.paymentList-dropdown{border-radius: 10px;overflow: hidden;padding: 0px;}
+ul.paymentList-dropdown{border-radius: .8rem;overflow: hidden;padding: 0px;}
 /*tab切换*/
-.newtabs{border-bottom: 1px solid #ccc;}
+.newtabs{border-bottom: 1px solid #c1c1c1;}
 
-.newtabs>li>a:hover{border-bottom:1px solid  #2d83d0;color:#2d83d0;}
+.newtabs>li>a:hover{border-bottom:1px solid  #2d83d0;color:#2d83d0 !important;}
 .newtabs>li>a:active{color:#2d83d0;}
 /*付款单列表*/
-.payment-list{width:94%;border-radius: 10px;border:1px solid #c1c1c1;margin:3%;overflow: hidden;}
-.payment-list-detail{background: #fbfbfb;padding-left: 9px;border-top:1px solid #c1c1c1;border-bottom:1px solid #c1c1c1;}
-.arrow-up {width:0;height:0;color:#fff;background: #ff2150;border-left:3.5rem solid transparent;border-bottom:3.2rem solid #fff;display: inline-block;position: relative;  top:-3px;}
-.number{position: relative;left:-3.15rem;display: inline-block;}
-.payment-numberlist{display: inline-block;width: 83%;position: relative;top: 0.5rem;left:-1.5rem;}
+.payment-list{width:94%;border-radius: .8rem;border:1px solid #c1c1c1;margin:3%;overflow: hidden;}
+.payment-list p{color:#000;}
+.payment-list-detail{background: #fbfbfb;padding-left: 9px;border-top:1px solid #c1c1c1;border-bottom:1px solid #c1c1c1;line-height: 2rem;}
+.payment-list p{color:#000;}
+.arrow-up {width:0;height:0;color:#fff;background: #ff2150;border-left:2.5rem solid transparent;border-bottom:2.5rem solid #fff;display: inline-block;position: relative;  top:-3px;}
+.number{position: relative;left:-2.1rem;display: inline-block;}
+.payment-numberlist{display: inline-block;width: 85%;position: relative;top: 0.5rem;}
 .payment-monery-list{margin: 2% 2% 3% 0;}
+
+
+
+/*付款单详情*/
+.paymentDet{background: #f2f2f2;min-height: 56.8rem;}
+.payment-content{background:#fff;border-radius: .8rem;}
+.bt{border-bottom: 1px solid #f2f2f2;}
+.b-top{border-top: 1px solid #f2f2f2;}
+.i-color{color: #F27405;font-size: 1.2rem;}
+.color-67{ color: #676767;  }
+.mypaymentName{color: #000;}
+.content-head{width: 100%;}
+.content-center{
+    padding: .6rem;
+}
+.height-29{
+    font-size: 1.2rem;
+}
+.freight{
+    height: 40px;
+}
+.freight p{
+    height: 20px;
+}
+.num-content{
+    border-bottom: 1px solid #DFDFDF;
+}
+.bor-none{border:none;}
+.informaNum-con{
+    padding: .6rem;
+}
+.paymentDetail-mon .mon-content{
+    height: 1.9rem;
+}
+.num-content,.mon-content{
+    height: 3.1rem;
+}
+

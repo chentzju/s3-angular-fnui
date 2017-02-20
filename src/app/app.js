@@ -35,10 +35,10 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate','icbc.
                 }
             })
             //确认订单
-            .state('orderConfirm',{
-                url:'/orderConfirm',
-                templateUrl: 'views/order/orderConfirm.html',
-                title:'确认订单',
+            .state('orderSucess',{
+                url:'/orderSucess',
+                templateUrl: 'views/order/orderSucess.html',
+                title:'订单成功',
                 backState:'order.orderDetail',
                 resolve:{
                     orderConfirmService:['$ocLazyLoad', function($ocLazyLoad) {

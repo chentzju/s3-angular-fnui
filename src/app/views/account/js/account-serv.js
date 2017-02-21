@@ -21,7 +21,7 @@ angular.module('myApp').service('UserService',['$es',function($es){
         $es.userinfo = {userName:'haha'};
         return {
             retCode:'200',
-            retMsg:'success'
+            retMsg:'success',
         };
         //TESTEND
 
@@ -94,18 +94,42 @@ angular.module('myApp').service('UserService',['$es',function($es){
         changePassword:changePassword
     }
 }])
-    .service('AppUserService',['$es',function($es){
-        var appId = $es.getConfig('custid');
-        var setLoginSession = function(){
-            return $es.java("userInfoBean.setLoginSession",param,appId,1000);
+    .service('PhoneService',['$es',function($es){
+
+        var userManage = $es.getConfig('userservice');
+
+        this.getValidateCode = function(phoneNumber){
+
+            //TESTSTART
+
+            //假装取到了
+            return{
+                retCode:200,
+                retMsg:'success'
+            };
+            //TESTEND
+
+            var param = {
+                mobile:phoneNumber
+            };
+            return $es.ajax('userInfoBean.getValidateCode',param,userManage);
         };
 
-        var getUserInfo = function(){
-            return $es.java("userInfoBean.getUserData",param,appId,1000);
+        this.mobileLogin = function(phoneNumber,code){
+
+            //TESTSTART
+
+            return{
+                retCode:200,
+                retMsg:'success'
+            };
+            //TESTEND
+
+            var param = {
+                mobile:phoneNumber,
+                code:code
+            };
+            return $es.ajax('userInfoBean.getValidateCode',param,userManage);
         };
 
-        return {
-          setLoginSession:setLoginSession,
-            getUserInfo:getUserInfo
-        }
     }]);

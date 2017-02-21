@@ -83,7 +83,7 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate','icbc.
                     backState:'myorder.orderList',
                     title:'订单详情',
                     templateUrl:'views/myorder/orderDetail.html',
-                    controller:'OrderListCtrl'
+                    controller:'OrderDetailCtrl'
                 })
                 .state('search',{
                     url:'/search',

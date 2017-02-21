@@ -252,7 +252,11 @@
     background-color: #fff;
     color: #2d83ce;
 }
-
+.fn-tabbar .fn-tab-active>a{
+    border: none;
+    background-color: #fff;
+    color: #2d83ce;
+}
 /*搜索页面*/
 .pSearch{width:100%;height:100%;background-color:#fff;}
 .pSearch ul,li{list-style: none;margin:0 0;padding:0 0;}

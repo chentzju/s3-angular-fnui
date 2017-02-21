@@ -59,20 +59,21 @@ myApp.directive('butterToast', function() {
             replace:true,
             templateUrl:'templates/bottombar.tpl.html',
             link:function(scope,element,attr){
-                //$(element).find('a').on('click',function(){
-               //     $(this).find('i').addClass('fn-color-gray');
-               // });
+                // $(element).find('a').on('click',function(){
+                //     $(this).find('i').addClass('fn-bot-active')
+                // });
             }
         }
     })
     .directive("dropDown",function(){
         return {
             restrict:'E',
+            replace:true,
             transclude:true,
             template:'<div class="fn-dropdown" ng-transclude></div>',
             link:function(scope,element,attr){
                 $(function() {
-                    var selector = $(element).find('.fn-dropdown');
+                    var selector = $(element);
                     selector.dropdown().on('click',function(){
                         $(this).dropdown('toggle');
                     });
@@ -80,6 +81,27 @@ myApp.directive('butterToast', function() {
                         selector.find('li').removeClass('fn-active');
                         $(this).addClass('fn-active')
                     })
+
+                });
+            }
+        }
+    })
+    .directive("tabBar",function(){
+        return {
+            restrict:'E',
+            replace:true,
+            transclude:true,
+            template:'<ul class="fn-nav fn-nav-tabs myorder-tabs fn-tabbar back-white" ng-transclude></ul>',
+            link:function(scope,element,attr){
+                $(function() {
+                    var tabs = $(element);
+                    var length = tabs.children().length;
+                    tabs.addClass(' fn-avg-sm-'+length);
+                    tabs.children().first().addClass('fn-tab-active');
+                    tabs.find('li').on('click',function(){
+                        tabs.find('.fn-tab-active').removeClass('fn-tab-active');
+                        $(this).addClass('fn-tab-active');
+                    });
 
                 });
             }
@@ -213,7 +235,7 @@ myApp.directive('butterToast', function() {
                     var myscroll = new IScroll(scroll,{
                         click:true
                     });
-                    myscroll.maxScrollY = -110;
+                    myscroll.maxScrollY = -100;
                     scroll.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
                 })
             }

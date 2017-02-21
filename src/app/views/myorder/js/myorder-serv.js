@@ -25,7 +25,7 @@ angular.module("myApp")
                         order.name = "订单名称";
                         order.money = "1106"+time+page+i;
                         order.status = 0;
-                        order.statusText = "未审核";
+                        order.statusText = "待审核";
                         orderList.push(order);
                     }
                     break;
@@ -37,7 +37,7 @@ angular.module("myApp")
                         order.name = "订单名称";
                         order.money = "1106"+time+page+i;
                         order.status = 0;
-                        order.statusText = "未审核";
+                        order.statusText = "已审核";
                         orderList.push(order);
                     }
                     break;
@@ -49,7 +49,7 @@ angular.module("myApp")
                         order.name = "订单名称";
                         order.money = "1106"+time+page+i;
                         order.status = 0;
-                        order.statusText = "未审核";
+                        order.statusText = "已作废";
                         orderList.push(order);
                     }
                     break;

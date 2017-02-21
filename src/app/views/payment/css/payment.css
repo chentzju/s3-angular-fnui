@@ -4,7 +4,7 @@ p,ul,h1,h2,h3,h4,h5,h6,ol,dl,dt,dd,pre,li,form,input,select,textarea{
 }
 
 .fn-size{font-size: 1.2rem;}
-.fn-size-color{color:#2d83d0;}
+.search-color{color:#2d83d0;font-size: 1.4rem;}
 .money{color: #ff2150;font-weight: 600;}
 .time{color: #5d5d5d}
 .status{color: #F27405;}
@@ -14,7 +14,7 @@ p,ul,h1,h2,h3,h4,h5,h6,ol,dl,dt,dd,pre,li,form,input,select,textarea{
     background: #fff;
 }
 .payment{width:94%;border:1px solid #2d83d0;margin:3%;border-radius: 10px;}
-.payment-input{border:none;width:84%;outline: none;}
+.payment-input{border:none;width:84%;outline: none;vertical-align: inherit;}
 .payment-input input[placeholder]{color: #ebf6ff;!important}
 ul.paymentList-dropdown{border-radius: .8rem;overflow: hidden;padding: 0px;}
 /*tab切换*/
@@ -29,7 +29,7 @@ ul.paymentList-dropdown{border-radius: .8rem;overflow: hidden;padding: 0px;}
 .payment-list p{color:#000;}
 .payment-arrow-up {width:0;height:0;color:#fff;border-right:3.4rem solid transparent;border-top:2.8rem solid #ff2150;display: inline-block;position: relative;  top:-3px;}
 .payment-list-number{position: relative;top: -32px;left: 6px;width: 1.4rem;white-space: nowrap;}
-.payment-numberlist{display: inline-block;width: 85%;position: relative;top: 0.5rem;}
+.payment-numberlist{display: inline-block;width: 85%;line-height: 3.1rem;padding: 0 0.6rem 0 0;}
 .payment-monery-list{margin: 2% 2% 3% 0;}
 
 
@@ -42,9 +42,10 @@ ul.paymentList-dropdown{border-radius: .8rem;overflow: hidden;padding: 0px;}
 .i-color{color: #F27405;font-size: 1.2rem;}
 .color-67{ color: #676767;  }
 .mypaymentName{color: #000;}
-.content-head{width: 100%;}
+.content-head{width: 100%;line-height: 3.1rem;}
 .content-center{
     padding: .6rem;
+    line-height: 2rem;
 }
 .height-29{
     font-size: 1.2rem;
@@ -62,10 +63,7 @@ ul.paymentList-dropdown{border-radius: .8rem;overflow: hidden;padding: 0px;}
 .informaNum-con{
     padding: .6rem;
 }
-.paymentDetail-mon .mon-content{
-    height: 1.9rem;
-}
-.num-content,.mon-content{
+.num-content,.payment-mon-content{
     height: 3.1rem;
 }
 

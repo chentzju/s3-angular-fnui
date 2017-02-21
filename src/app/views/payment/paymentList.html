@@ -2,12 +2,12 @@
     <!--搜索-->
     <div class="fn-g search-nav back-white">
         <div class="payment">
-            <i class="iconfont icon-sousuo1 fn-size-color p2 fn-size"></i>
+            <i class="iconfont icon-sousuo1 search-color fn-padding-horizontal-xs"></i>
             <input type="text" placeholder="请输入内容" class="payment-input">
         </div>
     </div>
     <!--tab切换-->
-        <ul class="fn-avg-sm-5 fn-horizontal-sm newtabs">
+        <tab-bar>
             <li ng-repeat="status in paymentStatusArray">
                 <a  class="fn-btn " style="box-shadow:none;color:#000;" href="javascript:void(0)" ng-click="changeStatus(status)">{{status.name}}</a>
             </li>
@@ -24,7 +24,7 @@
                     </ul>
                 </drop-down>
             </li>
-        </ul>
+        </tab-bar>
         <iscroll-wrapper>
             <li ng-repeat="payment in payments track by $index" style="border:0;">
                 <!--付款单列表-->

@@ -58,7 +58,7 @@ angular.module("myApp").service("DeliveryService",function(){
         return deliveryList;
     };
 
-    this.getDeliveryDetail = function(){
+    this.getDeliveryDetail = function(deliveryNo){
 
     }
 });

@@ -4,14 +4,14 @@ p,ul,h1,h2,h3,h4,h5,h6,ol,dl,dt,dd,pre,li,form,input,select,textarea{
 }
 
 .fn-size{font-size: 1.2rem;}
-.fn-size-color{font-size: 1.2rem;color:#2d83d0;}
+.search-color{font-size: 1.4rem;color:#2d83d0;}
 .satus{color: #f27405;}
 .time{color: #5d5d5d}
 .back-white{background: #fff;}
 /*搜索*/
-.p2{padding-left:2%;}
+.delivery-back{background: #f2f2f2;}
 .delivery{width:94%;border:1px solid #2d83d0;margin:3%;border-radius: 10px;}
-.delivery-input{border:none;width:84%;outline: none;}
+.delivery-input{border:none;width:84%;outline: none;vertical-align: inherit;}
 .delivery-input input[placeholder]{color: #ebf6ff;!important}
 ul.deliveryList-dropdown{border-radius: 10px;overflow: hidden;padding: 0px;}
 
@@ -37,13 +37,14 @@ ul.deliveryList-dropdown{border-radius: 10px;overflow: hidden;padding: 0px;}
 .i-color{color: #F27405;font-size: 1.2rem;}
 .color-67{ color: #676767;  }
 .mydeliveryName{color: #000;}
-.content-head{width: 100%;}
-.content-center{padding: .6rem;  }
+.content-head{width: 100%;line-height: 3.1rem;}
+.content-center{padding: .6rem;line-height: 2rem;  }
 .height-29{font-size: 1.2rem;  }
 .freight{height: 40px;}
 .freight p{height: 20px;  }
 .num-content{border-bottom: 1px solid #f2f2f2;}
 .bor-none{border:none;}
 .informaNum-con{padding: .6rem;}
+.informaList-con{line-height: 3.1rem;}
 .deliveryDetail-mon .mon-content{height: 1.9rem;}
-.informaList-del li{border:none;}
+.informaList-del li{border: none;padding: .6rem;border-top: 1px solid #DFDFDF;margin-bottom: 0;overflow: hidden;border-radius: 0;}

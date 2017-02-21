@@ -34,12 +34,42 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate','icbc.
                     }]
                 }
             })
+            //购物车
+            .state('cart',{
+                url:'/cart',
+                templateUrl: 'views/cart/cart.html',
+                title:'购物车',
+                backState:'order.productDetail',
+                resolve:{
+                    orderConfirmService:['$ocLazyLoad', function($ocLazyLoad) {
+                        return $ocLazyLoad.load([
+
+                            'views/cart/css/cart.css'
+                        ])
+                    }]
+                }
+            })
+            //提交订单
+            .state('addOrder',{
+                url:'/addOrder',
+                templateUrl: 'views/order/addOrder.html',
+                title:"提交订单",
+                backState:"cart",
+                resolve:{
+                    addOrderService:['$ocLazyLoad', function($ocLazyLoad) {
+                        return $ocLazyLoad.load([
+                            'views/order/css/addOrder.css'
+                        ])
+                    }]
+                }
+            })
+
             //确认订单
-            .state('orderSucess',{
-                url:'/orderSucess',
-                templateUrl: 'views/order/orderSucess.html',
-                title:'订单成功',
-                backState:'order.orderDetail',
+            .state('orderConfirm',{
+                url:'/orderConfirm',
+                templateUrl: 'views/order/orderConfirm.html',
+                title:'确认订单',
+                backState:'addOrder',
                 resolve:{
                     orderConfirmService:['$ocLazyLoad', function($ocLazyLoad) {
                         return $ocLazyLoad.load([
@@ -48,6 +78,14 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate','icbc.
                         ])
                     }]
                 }
+            })
+            //订单成功
+            .state('orderSucess',{
+                url:'/orderSucess',
+                templateUrl: 'views/order/orderSucess.html',
+                title:'订单成功',
+                backState:'orderConfirm',
+
             })
             .state('order.productList',{
                 url:'/productList',

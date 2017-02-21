@@ -2,6 +2,7 @@
  * Created by chent on 2017/1/18.
  */
 angular.module("myApp").controller("ProductCtrl",["$scope","$rootScope","ProductService",function ($scope,$rootScope,ProductService) {
+
     //$rootScope  在购买的时候应该会有用吧
     $scope.products = ProductService.getProductList();
 
@@ -15,6 +16,14 @@ angular.module("myApp").controller("ProductCtrl",["$scope","$rootScope","Product
 }]);
 
 myApp.controller("ProductDetailCtrl",["$scope","$rootScope",'$stateParams','ProductService',function ($scope,$rootScope,$stateParams,ProductService) {
+    console.log($rootScope.backState)
+    /*$rootScope.showBack=false;
+    console.log($(".icon-gouwuche").eq(0).attr("class"))
+
+    $(".icon-gouwuche").eq(0).addClass("selected");*/
+
+    /*$("#ProductDetailCtrl-cart").css("display","none")*/
+
     //取得传过来的参数
     var productId = $stateParams.productId;
     // console.log();

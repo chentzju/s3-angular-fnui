@@ -110,21 +110,21 @@ li{list-style: none}
 }*/
 /*product-detail*/
 html{background-color: #F2F2F2;}
-.top{width:100%;height:5rem;line-height:5rem;background-color: #fff;font-size:1.2rem;position:relative;}
-.top_name{color:#3184CE;float: left;margin-left:1rem;}
-.top_icon{float: right;margin-right:1rem;}
-.top_line{width:100%;height:0.4rem;background:url("../img/top_line.png") no-repeat;background-size:100% 100%;position:absolute;bottom:0;}
+.proDe-top{width:100%;height:5rem;line-height:5rem;background-color: #fff;font-size:1.2rem;position:relative;}
+.proDe-top_name{color:#3184CE;float: left;margin-left:1rem;}
+.proDe-top_icon{float: right;margin-right:1rem;}
+.proDe-top_line{width:100%;height:0.4rem;background:url("../img/top_line.png") no-repeat;background-size:100% 100%;position:absolute;bottom:0;}
 
-.list{width:100%;height:13.3rem;font-size:1rem;overflow: hidden;}
-.list_main{width:90%;height:100%;margin:0 auto;margin-top:1.5rem;}
-.pic{width:7.6rem;height:8.3rem;float: left;position:relative;top:0.5rem;}
-.pic>img{width:100%;height:100%;}
-.card{float: left;margin-left:3.33rem;}
+.proDe-list{width:100%;height:13.3rem;font-size:1rem;overflow: hidden;}
+.proDe-list_main{width:90%;height:100%;margin:0 auto;margin-top:1.5rem;}
+.proDe-pic{width:7.6rem;height:8.3rem;float: left;position:relative;top:0.5rem;}
+.proDe-pic>img{width:100%;height:100%;}
+.proDe-card{float: left;margin-left:3.33rem;}
 
-.btn{width:93%;margin:0 auto;margin-top:2rem;}
-.btn>div{width:48%;height:3rem;font-size:1.2rem;line-height:3rem;text-align:center;border:1px solid #76ACDD;border-radius:30px;}
-.add{float: left;background-color:#fff;color:#3183CE;}
-.buy{float:right;background-color: #2F83D0;color:#fff;}
+.proDe-btn{width:93%;margin:0 auto;margin-top:2rem;}
+.proDe-btn div{width:100%;height:3rem;font-size:1.2rem;line-height:3rem;text-align:center;border:1px solid #76ACDD;border-radius:30px;}
+.proDe-add{background-color:#fff;color:#3183CE;}
+/*.buy{float:right;background-color: #2F83D0;color:#fff;}*/
 /*product-detail*/
 /*productSearch*/
 .proSear{

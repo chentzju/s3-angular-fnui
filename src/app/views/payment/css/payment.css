@@ -5,7 +5,7 @@ p,ul,h1,h2,h3,h4,h5,h6,ol,dl,dt,dd,pre,li,form,input,select,textarea{
 
 .fn-size{font-size: 1.2rem;}
 .fn-size-color{color:#2d83d0;}
-.money{color: #ff2150;}
+.money{color: #ff2150;font-weight: 600;}
 .time{color: #5d5d5d}
 .status{color: #F27405;}
 .p2{padding-left:2%;}
@@ -27,8 +27,8 @@ ul.paymentList-dropdown{border-radius: .8rem;overflow: hidden;padding: 0px;}
 .payment-list p{color:#000;}
 .payment-list-detail{background: #fbfbfb;padding-left: 9px;border-top:1px solid #c1c1c1;border-bottom:1px solid #c1c1c1;line-height: 2rem;}
 .payment-list p{color:#000;}
-.arrow-up {width:0;height:0;color:#fff;background: #ff2150;border-left:2.5rem solid transparent;border-bottom:2.5rem solid #fff;display: inline-block;position: relative;  top:-3px;}
-.number{position: relative;left:-2.1rem;display: inline-block;}
+.payment-arrow-up {width:0;height:0;color:#fff;border-right:3.4rem solid transparent;border-top:2.8rem solid #ff2150;display: inline-block;position: relative;  top:-3px;}
+.payment-list-number{position: relative;top: -32px;left: 6px;width: 1.4rem;white-space: nowrap;}
 .payment-numberlist{display: inline-block;width: 85%;position: relative;top: 0.5rem;}
 .payment-monery-list{margin: 2% 2% 3% 0;}
 
@@ -37,7 +37,7 @@ ul.paymentList-dropdown{border-radius: .8rem;overflow: hidden;padding: 0px;}
 /*付款单详情*/
 .paymentDet{background: #f2f2f2;min-height: 56.8rem;}
 .payment-content{background:#fff;border-radius: .8rem;}
-.bt{border-bottom: 1px solid #f2f2f2;}
+.b-bot{border-bottom: 1px solid #f2f2f2;}
 .b-top{border-top: 1px solid #f2f2f2;}
 .i-color{color: #F27405;font-size: 1.2rem;}
 .color-67{ color: #676767;  }

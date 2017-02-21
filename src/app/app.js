@@ -170,6 +170,12 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate','icbc.
                 templateUrl:'views/profile/info.html',
                 //controller:'InfoCtrl'
             })
+            .state('profile.myAccount',{
+                url:'/myAccount',
+                title:'账户信息',
+                templateUrl:'views/profile/myAccount.html',
+                //controller:'addAddressCtrl'
+            })
             .state('profile.myAddress',{
                 url:'/info',
                 title:'地址管理',
@@ -210,6 +216,7 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate','icbc.
                     accountService:['$ocLazyLoad', function($ocLazyLoad) {
                         return $ocLazyLoad.load([
                             'views/account/assets/rsaoath.min.js',
+                            'views/account/css/account.css',
                             'views/account/js/account-dire.js',
                             'views/account/js/account-ctrl.js',
                             'views/account/js/account-serv.js'

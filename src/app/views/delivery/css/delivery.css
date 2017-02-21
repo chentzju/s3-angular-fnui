@@ -10,7 +10,7 @@ p,ul,h1,h2,h3,h4,h5,h6,ol,dl,dt,dd,pre,li,form,input,select,textarea{
 .back-white{background: #fff;}
 /*搜索*/
 .p2{padding-left:2%;}
-.delivery{width:94%;border:1px solid #2d83d0;margin:3%;border-radius: 10px;color:#2d83d0;}
+.delivery{width:94%;border:1px solid #2d83d0;margin:3%;border-radius: 10px;}
 .delivery-input{border:none;width:84%;outline: none;}
 .delivery-input input[placeholder]{color: #ebf6ff;!important}
 ul.deliveryList-dropdown{border-radius: 10px;overflow: hidden;padding: 0px;}

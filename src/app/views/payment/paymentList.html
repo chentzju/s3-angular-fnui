@@ -1,12 +1,13 @@
 <div id="paymentList">
     <!--搜索-->
-    <div class="payment">
-    <i class="iconfont icon-sousuo1 fn-size-color p2 fn-size"></i>
-    <input type="text" placeholder="请输入内容" class="payment-input">
+    <div class="fn-g search-nav back-white">
+        <div class="payment">
+            <i class="iconfont icon-sousuo1 search-color fn-padding-horizontal-xs"></i>
+            <input type="text" placeholder="请输入内容" class="payment-input">
+        </div>
     </div>
-
     <!--tab切换-->
-        <ul class="fn-avg-sm-5 fn-horizontal-sm newtabs">
+        <tab-bar>
             <li ng-repeat="status in paymentStatusArray">
                 <a  class="fn-btn " style="box-shadow:none;color:#000;" href="javascript:void(0)" ng-click="changeStatus(status)">{{status.name}}</a>
             </li>
@@ -23,31 +24,33 @@
                     </ul>
                 </drop-down>
             </li>
-        </ul>
+        </tab-bar>
         <iscroll-wrapper>
-            <li ng-repeat="payment in payments track by $index" style="border:0">
+            <li ng-repeat="payment in payments track by $index" style="border:0;">
                 <!--付款单列表-->
                 <div class="payment-list">
                     <!--向上的三角-->
                     <a ui-sref="payment.paymentDetail({paymentId:payment.d})">
-                    <div class="arrow-up">
-                        <span class="fn-text-top  number">{{$index+1}}</span>
-                    </div>
-                    <div class="payment-numberlist fn-size-color">
+                        <div class="back-white fn-cf">
+                            <div class="payment-arrow-up fn-fl">
+                                <span class="fn-text-top  payment-list-number">{{$index+1}}</span>
+                            </div>
+                            <div class="payment-numberlist fn-size-color fn-fr">
 
-                            付款单编号:{{payment.id}}
-                            <i class="iconfont icon-xiangyou1 fn-fr fn-size"></i>
+                                    付款单编号：{{payment.id}}
+                                    <i class="iconfont icon-xiangyou1 fn-fr fn-size"></i>
 
-                    </div>
-                    <div class="payment-list-detail">
-                        <p>生成时间:<span class="time">2016-11-17 09:35:45</span></p>
-                        <p>付款时间:<span class="time">2016-11-17 09:35:45</span></p>
-                        <p>付款状态:<span class="status">{{payment.statusText}}</span></p>
-                    </div>
-                    <div class="payment-monery-list  fn-fr">
-                        <p>付款单金额:<span class="money fn-fr">￥20500.00</span></p>
-                        <p>&nbsp;&nbsp;&nbsp;实付金额:<span class="money fn-fr">￥17000.00</p>
-                    </div>
+                            </div>
+                        </div>
+                        <div class="payment-list-detail">
+                            <p>生成时间：<span class="time">2016-11-17 09:35:45</span></p>
+                            <p>付款时间：<span class="time">2016-11-17 09:35:45</span></p>
+                            <p>付款状态：<span class="status">{{payment.statusText}}</span></p>
+                        </div>
+                        <div class="payment-monery-list  fn-fr">
+                            <p>付款单金额：<span class="money fn-fr">￥20500.00</span></p>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp;实付金额：<span class="money fn-fr">￥17000.00</p>
+                        </div>
                     </a>
                 </div>
             </li>

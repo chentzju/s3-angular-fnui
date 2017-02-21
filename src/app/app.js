@@ -170,6 +170,12 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate','icbc.
                 templateUrl:'views/profile/info.html',
                 //controller:'InfoCtrl'
             })
+            .state('profile.myAccount',{
+                url:'/myAccount',
+                title:'账户信息',
+                templateUrl:'views/profile/myAccount.html',
+                //controller:'addAddressCtrl'
+            })
             .state('profile.myAddress',{
                 url:'/info',
                 title:'地址管理',

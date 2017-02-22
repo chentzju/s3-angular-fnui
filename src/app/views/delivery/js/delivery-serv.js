@@ -64,8 +64,8 @@ angular.module("myApp").service("DeliveryService",function(){
         this.getDeliveryDetail = function(deliveryId,deliveryNum){
             //get deliveryDetail
             var deliveryDetail = {
-                orderId:orderId,
-                orderNum:orderNum,
+                deliveryId:deliveryId,
+                deliveryNum:deliveryNum,
                 orderTo:"王小二",
                 orderTel:'1590000001256',
                 orderAddDefault:"杭州市下城区新市街153号",

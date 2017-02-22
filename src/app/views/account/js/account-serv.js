@@ -1,27 +1,42 @@
 /**
  * Created by chent on 2017/2/13.
  */
+
+
+//使用service来创建service对象，确保对象是单例的
 angular.module('myApp').service('UserService',['$es',function($es){
 
     var userManage = $es.getConfig('userservice');
 
-    var getPublicKey = function(){
-        return $es.java('userAuthenBean.getPublickKey',{},userManage,1000);
+    /**
+     * 获取公钥 内部函数 UserService 对象私有
+     * @param appid
+     * @returns {*}
+     */
+    var getPublicKey = function(appid){
+        var param = {};
+        if(appid)
+            param.appid = appid;
+        else
+            param.appid = $es.getConfig('custid');
+        return $es.java('userAuthenBean.getPublickKey',param,userManage,1000);
     };
 
     /**
      *  登录
-     * @param loginName
-     * @param password
-     * @param code
+     * @param loginName  登录名
+     * @param password  密码
+     * @param code   验证码（暂无处理）
      * @returns {*}
      */
-    var userLogin = function(loginName,password,code){
+    this.userLogin = function(loginName,password,code){
         //TESTSTART
         $es.userinfo = {userName:'haha'};
         return {
             retCode:'200',
             retMsg:'success',
+            isActive:1,
+            appid:"s3"
         };
         //TESTEND
 
@@ -36,10 +51,13 @@ angular.module('myApp').service('UserService',['$es',function($es){
         var param = {};
         param.loginName = loginName;
         param.password = pwd.toString(16);
+
+        //验证码 暂时不用
         if(code)
             param.code = code;
         else
             param.code = '';
+
         var result = $es.java('userAuthenBean.userLogin',param,userManage,3000);
         if(result || !result.retCode){
             return {
@@ -54,12 +72,20 @@ angular.module('myApp').service('UserService',['$es',function($es){
                 retMsg:'用户未激活，请激活后登录'
             }
         }else{
-            $es.userinfo = result.user;
             return result;
         }
     };
 
-    var changePassword = function(oldPassword,newPassword,repeatPassword){
+    /**
+     * 修改密码
+     * @param oldPassword
+     * @param newPassword
+     * @param repeatPassword
+     * @param loginName   非必须
+     * @param appid        非必须
+     * @returns {*}
+     */
+    this.changePassword = function(oldPassword,newPassword,repeatPassword,loginName,appid){
         //TESTSTART
         return {
             retCode:'200',
@@ -85,40 +111,89 @@ angular.module('myApp').service('UserService',['$es',function($es){
             repeatPassword:repeatPwd
         };
 
-        var result = $es.java("userAuthenBean.changePassword",param,userManage);
-        return result;
+        if(loginName)
+            param.loginName = loginName;
+        if(appid)
+            param.appid = appid;
+        else
+            param.appid = $es.getConfig('custid');
+
+        return $es.java("userAuthenBean.changePassword",param,userManage);
     };
 
-    return {
-        userLogin:userLogin,
-        changePassword:changePassword
-    }
-}])
-    .service('PhoneService',['$es',function($es){
 
-        var userManage = $es.getConfig('userservice');
-
-        this.getValidateCode = function(phoneNumber){
+    /**
+     * 获取验证码
+     * @param phoneNumber
+     * @param loginName  非必须
+     * @param appid  非必须
+     * @returns {*}
+     */
+    this.getValidateCode = function(phoneNumber,loginName,appid){
 
             //TESTSTART
-
             //假装取到了
             return{
                 retCode:200,
-                retMsg:'success'
+            retMsg:'success',
+            mobile:'135****3456'
             };
             //TESTEND
 
             var param = {
                 mobile:phoneNumber
             };
-            return $es.ajax('userInfoBean.getValidateCode',param,userManage);
+
+        //登录名 非必须
+        if(loginName)
+            param.loginName = loginName;
+        if(appid)
+            param.appid = appid;
+        else
+            param.appid = $es.getConfig('custid');
+
+        return $es.ajax('userAuthenBean.getValidateCode',param,userManage);
         };
 
+
+    /**
+     * 校验验证码
+     * @param mobile   手机号
+     * @param code      验证码
+     * @param appid     非必须
+     */
+    this.checkValidate = function(mobile,code,appid){
+
+        //TESTSTART
+        return true;
+        //TESTEND
+
+        var param = {
+            mobile:mobile
+        };
+
+        //登录名 非必须
+        if(loginName)
+            param.loginName = loginName;
+        if(appid)
+            param.appid = appid;
+        else
+            param.appid = $es.getConfig('custid');
+
+        return $es.ajax('userAuthenBean.checkValidateCode',param,userManage);
+    };
+
+
+    /**
+     *
+     * @param phoneNumber
+     * @param code
+     * @returns {*}
+     */
+    //TODO 手机号码登录 未做
         this.mobileLogin = function(phoneNumber,code){
 
             //TESTSTART
-
             return{
                 retCode:200,
                 retMsg:'success'
@@ -129,7 +204,7 @@ angular.module('myApp').service('UserService',['$es',function($es){
                 mobile:phoneNumber,
                 code:code
             };
-            return $es.ajax('userInfoBean.getValidateCode',param,userManage);
+        return $es.ajax('userAuthenBean.mobileLogin',param,userManage);
         };
 
     }]);

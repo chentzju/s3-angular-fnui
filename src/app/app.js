@@ -117,7 +117,7 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate','icbc.
                     title:'付款详情',
                     backState:'payment.paymentList',
                     templateUrl:'views/payment/paymentDetail.html',
-                    controller:'PaymentListCtrl'
+                    controller:'PaymentDetailCtrl'
                 })
 
                 //发货信息
@@ -147,7 +147,7 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate','icbc.
                     title:'发货详情',
                     backState:'delivery.deliveryList',
                     templateUrl:'views/delivery/deliveryDetail.html',
-                    controller:'DeliveryListCtrl'
+                    controller:'DeliveryDetailCtrl'
                 })
 
             //个人信息

@@ -5,7 +5,7 @@
     <div class="fn-g search-nav back-white">
         <div class="payment">
             <i class="iconfont icon-sousuo1 fn-size-color p2"></i>
-            <a  ui-sref="order.productSearch">
+            <a  ui-sref="product.productSearch">
                 <input type="text" placeholder="关键字搜索" class="payment-input">
             </a>
         </div>
@@ -30,7 +30,7 @@
     <!--数据盒子-->
     <iscroll-wrapper class="myorder-box">
         <li ng-repeat="product in products track by $index">
-            <a ui-sref="order.productDetail({productId:product.productId})" >
+            <a ui-sref="product.productDetail({productId:product.productId})" >
                 <!--订单编号-->
                 <div class="num-content">
                     <div class="badge fn-fl">
@@ -69,7 +69,6 @@
             </a>
         </li>
     </iscroll-wrapper>
-    <a class="productList-cart" ui-sref="cart"><i class="iconfont icon-gouwuche"></i></a>
 </div>
 
 

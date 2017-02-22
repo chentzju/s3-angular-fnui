@@ -8,10 +8,11 @@ var config = {
 
 
 var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate','icbc.espresso'])
-    .config(['$stateProvider','$urlRouterProvider','$compileProvider',function($stateProvider,$urlRouterProvider,$compileProvider){
+    .config(['$stateProvider','$urlRouterProvider',function($stateProvider,$urlRouterProvider){
         $urlRouterProvider.otherwise('/app');
         $stateProvider
-        //首页
+
+        //公共部分
             .state('app',{
                 url:'/app',
                 title:'首页',
@@ -25,18 +26,28 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate','icbc.
                     }]
                 }
             })
-            //订单模块
-            .state('order',{
-                url:'/order',
-                templateUrl: 'views/order/order.html',
+            .state('about', {
+                url:'/about',
+                templateUrl:'views/public/about.html'
+            })
+            .state('error',{
+                url:'/error',
+                templateUrl:'404.html'
+            })
+
+
+            //产品模块
+            .state('product',{
+                url:'/product',
+                templateUrl: 'views/public/main.html',
                 abstract:true,
                 resolve:{
                     orderService:['$ocLazyLoad', function($ocLazyLoad) {
                         return $ocLazyLoad.load([
-                            'views/order/js/order-ctrl.js',
-                            'views/order/js/order-serv.js',
-                            'views/order/js/order-dire.js',
-                            'views/order/css/order.css'
+                            'views/product/js/product-ctrl.js',
+                            'views/product/js/product-serv.js',
+                            'views/product/js/product-dire.js',
+                            'views/product/css/product.css'
                         ])
                     }]
                 },
@@ -44,165 +55,173 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate','icbc.
                     $scope.showCart = true;
                 }
             })
-            //提交订单
-            .state('addOrder',{
-                url:'/addOrder',
-                templateUrl: 'views/order/addOrder.html',
-                title:"提交订单",
-                backState:"cart",
-                controller:'addOrderCtrl',
-                resolve:{
-                    addOrderService:['$ocLazyLoad', function($ocLazyLoad) {
-                        return $ocLazyLoad.load([
-                            'views/order/css/addOrder.css',
-                            'views/order/js/addOrder-ctrl.js'
-                        ])
-                    }]
-                }
-
-            })
-
-            //确认订单
-            .state('orderConfirm',{
-                url:'/orderConfirm',
-                templateUrl: 'views/order/orderConfirm.html',
-                title:'确认订单',
-                backState:'addOrder',
-                resolve:{
-                    orderConfirmService:['$ocLazyLoad', function($ocLazyLoad) {
-                        return $ocLazyLoad.load([
-                            'views/order/js/orderConfirm-ctrl.js',
-                            'views/order/css/orderConfirm.css'
-                        ])
-                    }]
-                },
-                controller:'orderConfirm'
-            })
-            //订单成功
-            .state('orderSucess',{
-                url:'/orderSucess',
-                templateUrl: 'views/order/orderSucess.html',
-                title:'订单成功',
-                backState:'orderConfirm',
-
-            })
-            .state('order.productList',{
+            .state('product.productList',{
                 url:'/productList',
                 title:'产品',
-                templateUrl:'views/order/productList.html',
+                templateUrl:'views/product/productList.html',
                 controller:'ProductCtrl'
             })
-            .state('order.productSearch',{
+            .state('product.productSearch',{
                 url:'/productSearch',
                 title:'产品搜索',
-                templateUrl:'views/order/productSearch.html',
-                controller:''
+                backState:'product.productList',
+                templateUrl:'views/product/productSearch.html'
             })
-            .state('order.productDetail',{
+            .state('product.productDetail',{
                 url:'/productDetail/:productId',
-                backState:'order.productList',
+                backState:'product.productList',
                 title:'产品详情',
                 templateUrl:'views/order/productDetail.html',
                 controller:'ProductDetailCtrl'
             })
-                //我的订单
-                .state('myorder',{
-                    url:'/myorder',
-                    templateUrl:'views/myorder/myOrder.html',
-                    abstract:true,
-                    resolve:{
-                        myorderService:['$ocLazyLoad', function($ocLazyLoad) {
-                            return $ocLazyLoad.load([
-                                    'views/myorder/js/myorder-ctrl.js',
-                                    'views/myorder/js/myorder-serv.js',
-                                    'views/myorder/js/myorder-dire.js',
-                                    'views/myorder/css/myorder.css'
-                                ]);
-                        }]
-                    }
-                })
-                .state('myorder.orderList',{
-                    url:'/orderList',
-                    title:'订单',
-                    templateUrl:'views/myorder/orderList.html',
-                    controller:'OrderListCtrl'
-                })
-                .state('myorder.orderDetail',{
-                    url:'/orderDetail/:orderId',
-                    backState:'myorder.orderList',
-                    title:'订单详情',
-                    templateUrl:'views/myorder/orderDetail.html',
-                    controller:'OrderDetailCtrl'
-                })
-                .state('search',{
-                    url:'app/search',
-                    url:'/search',
-                    title:'查找订单',
-                    templateUrl:'views/public/search.html',
-                    controller:'SearchCtrl'
-                    //controller:'OrderListCtrl'
-                })
 
 
-                //支付信息
-                .state('payment',{
-                    url:'/payment',
-                    templateUrl:'views/payment/payment.html',
-                    abstract:true,
-                    resolve:{
-                        paymentService:['$ocLazyLoad', function($ocLazyLoad) {
-                            return $ocLazyLoad.load([
-                                'views/payment/js/payment-ctrl.js',
-                                'views/payment/js/payment-serv.js',
-                                'views/payment/js/payment-dire.js',
-                                'views/payment/css/payment.css'
-                            ]);
-                        }]
-                    }
-                })
-                .state('payment.paymentList',{
-                    url:'/paymentList',
-                    title:'付款',
-                    templateUrl:'views/payment/paymentList.html',
-                    controller:'PaymentListCtrl'
-                })
-                .state('payment.paymentDetail',{
-                    url:'/paymentList',
-                    title:'付款详情',
-                    backState:'payment.paymentList',
-                    templateUrl:'views/payment/paymentDetail.html',
-                    controller:'PaymentListCtrl'
-                })
+            .state('order',{
+                url:'/order',
+                templateUrl: 'views/public/main.html',
+                abstract:true,
+                resolve:{
+                    orderService:['$ocLazyLoad', function($ocLazyLoad) {
+                        return $ocLazyLoad.load([
+                            'views/order/css/order.css',
+                            'views/order/js/order-ctrl.js',
+                            'views/order/js/order-dire.js',
+                            'views/order/js/order-serv.js'
+                        ])
+                    }]
+                }
+            })
+            .state('order.cart',{
+                url:'/cart',
+                title:'购物车',
+                backState:'product.productList',
+                templateUrl:'views/order/cart.html'
+            })
 
-                //发货信息
-                .state('delivery',{
-                    url:'/delivery',
-                    templateUrl:'views/delivery/delivery.html',
-                    abstract:true,
-                    resolve:{
-                        deliveryService:['$ocLazyLoad', function($ocLazyLoad) {
-                            return $ocLazyLoad.load([
-                                'views/delivery/js/delivery-ctrl.js',
-                                'views/delivery/js/delivery-serv.js',
-                                'views/delivery/js/delivery-dire.js',
-                                'views/delivery/css/delivery.css'
-                            ]);
-                        }]
-                    }
-                })
-                .state('delivery.deliveryList',{
-                    url:'/deliveryList',
-                    title:'我的发货单',
-                    templateUrl:'views/delivery/deliveryList.html',
-                    controller:'DeliveryListCtrl'
-                })
-                .state('delivery.deliveryDetail',{
-                    url:'/deliveryList',
-                    title:'发货详情',
-                    backState:'delivery.deliveryList',
-                    templateUrl:'views/delivery/deliveryDetail.html',
-                    controller:'DeliveryListCtrl'
-                })
+
+            //提交订单
+            .state('order.addOrder',{
+                url:'/addOrder',
+                templateUrl: 'views/order/addOrder.html',
+                title:"提交订单",
+                backState:"order.cart",
+                //controller:'addOrderCtrl'
+            })
+
+            //确认订单
+            .state('order.confirm',{
+                url:'/confirm',
+                templateUrl: 'views/order/orderConfirm.html',
+                title:'确认订单',
+                backState:'order.cart'
+            })
+            //订单成功
+            .state('order.sucess',{
+                url:'/sucess',
+                templateUrl: 'views/order/orderSucess.html',
+                title:'订单成功',
+                backState:'product.productList'
+            })
+
+            //我的订单
+            .state('myorder',{
+                url:'/myorder',
+                templateUrl:'views/public/main.html',
+                abstract:true,
+                resolve:{
+                    myorderService:['$ocLazyLoad', function($ocLazyLoad) {
+                        return $ocLazyLoad.load([
+                            'views/myorder/js/myorder-ctrl.js',
+                            'views/myorder/js/myorder-serv.js',
+                            'views/myorder/js/myorder-dire.js',
+                            'views/myorder/css/myorder.css'
+                        ]);
+                    }]
+                }
+            })
+            .state('myorder.orderList',{
+                url:'/orderList',
+                title:'订单',
+                templateUrl:'views/myorder/orderList.html',
+                controller:'OrderListCtrl'
+            })
+            .state('myorder.orderDetail',{
+                url:'/orderDetail/:orderId',
+                backState:'myorder.orderList',
+                title:'订单详情',
+                templateUrl:'views/myorder/orderDetail.html',
+                controller:'OrderDetailCtrl'
+            })
+            .state('search',{
+                url:'app/search',
+                title:'查找订单',
+                templateUrl:'views/public/search.html',
+                controller:'SearchCtrl'
+                //controller:'OrderListCtrl'
+            })
+
+
+            //支付信息
+            .state('payment',{
+                url:'/payment',
+                templateUrl:'views/payment/payment.html',
+                abstract:true,
+                resolve:{
+                    paymentService:['$ocLazyLoad', function($ocLazyLoad) {
+                        return $ocLazyLoad.load([
+                            'views/payment/js/payment-ctrl.js',
+                            'views/payment/js/payment-serv.js',
+                            'views/payment/js/payment-dire.js',
+                            'views/payment/css/payment.css'
+                        ]);
+                    }]
+                }
+            })
+            .state('payment.paymentList',{
+                url:'/paymentList',
+                title:'付款',
+                templateUrl:'views/payment/paymentList.html',
+                controller:'PaymentListCtrl'
+            })
+            .state('payment.paymentDetail',{
+                url:'/paymentList',
+                title:'付款详情',
+                backState:'payment.paymentList',
+                templateUrl:'views/payment/paymentDetail.html',
+                controller:'PaymentListCtrl'
+            })
+
+            //发货信息
+            .state('delivery',{
+                url:'/delivery',
+                templateUrl:'views/delivery/delivery.html',
+                abstract:true,
+                resolve:{
+                    deliveryService:['$ocLazyLoad', function($ocLazyLoad) {
+                        return $ocLazyLoad.load([
+                            'views/delivery/js/delivery-ctrl.js',
+                            'views/delivery/js/delivery-serv.js',
+                            'views/delivery/js/delivery-dire.js',
+                            'views/delivery/css/delivery.css'
+                        ]);
+                    }]
+                }
+            })
+            .state('delivery.deliveryList',{
+                url:'/deliveryList',
+                title:'我的发货单',
+                templateUrl:'views/delivery/deliveryList.html',
+                controller:'DeliveryListCtrl'
+            })
+            .state('delivery.deliveryDetail',{
+                url:'/deliveryDetail',
+                title:'发货详情',
+                backState:'delivery.deliveryList',
+                templateUrl:'views/delivery/deliveryDetail.html',
+                controller:'DeliveryListCtrl'
+            })
+
+
 
             //个人信息
             .state('profile',{
@@ -242,19 +261,6 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate','icbc.
                 templateUrl:'views/profile/changePw.html',
             //    controller:'InfoCtrl'
             })
-            .state('cart',{
-                url:'/cart',
-                title:'购物车',
-                templateUrl:'views/cart/cart.html',
-                resolve:{
-                    cartService:['$ocLazyLoad', function($ocLazyLoad) {
-                        return $ocLazyLoad.load([
-                            'views/cart/css/cart.css',
-                            'views/cart/js/cart-ctrl.js'
-                        ])
-                    }]
-                },
-            })
             .state('profile.addAddress',{
                 url:'/addAddress',
                 title:'新增地址',
@@ -292,22 +298,13 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate','icbc.
             })
             .state('account.checkMobile',{
                 url:'/checkMobile',
-                templateUrl:'views/account/checkMobile.html',
-                controller:'MobileCtrl'
+                templateUrl:'views/account/getCode.html'
             })
             .state('account.checkSuccess',{
                 url:'/checkSuccess',
-                templateUrl:'views/account/checkSuccess.html',
-                controller:'MobileCtrl'
+                templateUrl:'views/account/checkCode.html'
             })
-            .state('about', {
-                url:'/about',
-                templateUrl:'views/public/about.html'
-            })
-            .state('error',{
-                url:'/error',
-                templateUrl:'404.html'
-            })
+
     }])
     .run(['$rootScope', '$state', '$stateParams','$es', function($rootScope, $state, $stateParams,$es) {
         for(var key in config){
@@ -326,13 +323,8 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate','icbc.
             $rootScope.backState = toState.backState;
         });
 
-
-
-
         var loginState = "account.login";
         var rootState = "app";
-
-
 
         //userinfo checking part
         $rootScope.$on("$stateChangeStart", function(event,toState,toParams,fromState,fromParams){

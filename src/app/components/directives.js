@@ -63,7 +63,7 @@ myApp.directive('butterToast', function() {
                 $(element).find('.fn-bot-active').removeClass('fn-bot-active');
                 if(state.indexOf('app') != -1)
                     $(element).find('a:first').addClass('fn-bot-active');
-                else if( (state.indexOf('myorder') == -1) && (state.indexOf('order.') != -1)  )
+                else if( state.indexOf('product.') != -1  )
                     $(element).find('a:eq(1)').addClass('fn-bot-active');
                 else if(state.indexOf('myorder.') != -1)
                     $(element).find('a:eq(2)').addClass('fn-bot-active');

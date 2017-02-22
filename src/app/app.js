@@ -21,7 +21,7 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate','icbc.
             //订单模块
             .state('order',{
                 url:'/order',
-                templateUrl: 'views/order/order.html',
+                templateUrl: 'views/public/main.html',
                 abstract:true,
                 resolve:{
                     orderService:['$ocLazyLoad', function($ocLazyLoad) {
@@ -32,6 +32,9 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate','icbc.
                             'views/order/css/order.css'
                         ])
                     }]
+                },
+                controller:function($scope){
+                    $scope.showCart = true;
                 }
             })
             .state('order.productList',{
@@ -56,7 +59,7 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate','icbc.
                 //我的订单
                 .state('myorder',{
                     url:'/myorder',
-                    templateUrl:'views/myorder/myOrder.html',
+                    templateUrl: 'views/public/main.html',
                     abstract:true,
                     resolve:{
                         myorderService:['$ocLazyLoad', function($ocLazyLoad) {
@@ -80,7 +83,7 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate','icbc.
                     backState:'myorder.orderList',
                     title:'订单详情',
                     templateUrl:'views/myorder/orderDetail.html',
-                    controller:'OrderListCtrl'
+                    controller:'OrderDetailCtrl'
                 })
                 .state('search',{
                     url:'/search',
@@ -93,7 +96,7 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate','icbc.
                 //支付信息
                 .state('payment',{
                     url:'/payment',
-                    templateUrl:'views/payment/payment.html',
+                    templateUrl: 'views/public/main.html',
                     abstract:true,
                     resolve:{
                         paymentService:['$ocLazyLoad', function($ocLazyLoad) {
@@ -123,7 +126,7 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate','icbc.
                 //发货信息
                 .state('delivery',{
                     url:'/delivery',
-                    templateUrl:'views/delivery/delivery.html',
+                    templateUrl: 'views/public/main.html',
                     abstract:true,
                     resolve:{
                         deliveryService:['$ocLazyLoad', function($ocLazyLoad) {
@@ -153,7 +156,7 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate','icbc.
             //个人信息
             .state('profile',{
                 url:'/profile',
-                templateUrl:'views/profile/profile.html',
+                templateUrl: 'views/public/main.html',
                 abstract:true,
                 resolve:{
                     profileService:['$ocLazyLoad', function($ocLazyLoad) {
@@ -173,18 +176,21 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate','icbc.
             .state('profile.myAccount',{
                 url:'/myAccount',
                 title:'账户信息',
+                backState:'profile.info',
                 templateUrl:'views/profile/myAccount.html',
                 //controller:'addAddressCtrl'
             })
             .state('profile.myAddress',{
                 url:'/info',
                 title:'地址管理',
+                backState:'profile.info',
                 templateUrl:'views/profile/myAddress.html',
                 //controller:'addAddressCtrl'
             })
             .state('profile.changePw',{
                 url:'/info',
                 title:'修改密码',
+                backState:'profile.info',
                 templateUrl:'views/profile/changePw.html',
             //    controller:'InfoCtrl'
             })
@@ -216,6 +222,7 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate','icbc.
                     accountService:['$ocLazyLoad', function($ocLazyLoad) {
                         return $ocLazyLoad.load([
                             'views/account/assets/rsaoath.min.js',
+                            'views/account/css/account.css',
                             'views/account/js/account-dire.js',
                             'views/account/js/account-ctrl.js',
                             'views/account/js/account-serv.js'
@@ -227,6 +234,14 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate','icbc.
                 url:'/login',
                 templateUrl:'views/account/login.html',
                 controller:'LoginCtrl'
+            })
+            .state('account.getCode',{
+                url:'/getCode',
+                templateUrl:'views/account/getCode.html',
+            })
+            .state('account.checkCode',{
+                url:'/getCode',
+                templateUrl:'views/account/checkCode.html',
             })
             .state('account.checkMobile',{
                 url:'/checkMobile',
@@ -240,6 +255,8 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate','icbc.
             })
             .state('about', {
                 url:'/about',
+                backState:'app',
+                title:'关于我们',
                 templateUrl:'views/public/about.html'
             })
             .state('error',{

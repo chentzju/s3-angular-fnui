@@ -25,6 +25,52 @@ angular.module("myApp").directive('loginForm',['$state','UserService',function($
         }
     }
 }])
+    .directive('mobileLogin',['$state','PhoneService',function($state,PhoneService){
+        return {
+            restrict:'E',
+            replace:true,
+            templateUrl:'views/account/mobileLogin.tpl.html',
+            link:function(scope,element,attr){
+                $(element).find('#mobileForm').validator({
+                    validateOnSubmit:true,
+                    onSuccess:function(){
+                        PhoneService.getValidateCode(scope.mobilephone);
+                        //点击之后 倒计时
+                        var getCode = $("#getCode");
+                        $("#checkCode").removeClass('fn-disabled');
+                        getCode.addClass('fn-disabled');
+
+                        var i = 60;
+                        getCode.html("("+i+")s");
+                        Timer.invoke(tick,0,1000,60000);
+                        function tick(){
+                            --i;
+                            getCode.html("("+i+")s");
+                            if(i <= 1){
+                                getCode.html("获取验证码");
+                                getCode.removeClass('fn-disabled');
+                            }
+                        }
+                    }
+                });
+                $(element).validator({
+                    validateOnSubmit:true,
+                    onSuccess:function(){
+                        var result = PhoneService.mobileLogin(scope.mobilephone,scope.validateCode);
+                        //点击之后 倒计时
+                        if(result.retCode == "200"){
+                            event.preventDefault();
+                            $state.go('app');
+                        }else{
+                            scope.errorMessage = result.retMsg;
+                            scope.showError = true;
+                        }
+                    }
+                });
+
+            }
+        }
+    }])
 .directive('passwordForm',['$state','UserService',function($state,UserService){
     return {
         restrict:'E',

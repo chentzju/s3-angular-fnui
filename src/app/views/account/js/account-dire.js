@@ -1,6 +1,9 @@
 /**
  * Created by chent on 2017/2/10.
  */
+
+//登录directive  一个登录的form
+//TODO 验证码暂时还没有加进去
 angular.module("myApp").directive('loginForm',['$state','UserService',function($state,UserService){
     return{
         restrict:'E',
@@ -20,12 +23,74 @@ angular.module("myApp").directive('loginForm',['$state','UserService',function($
                          scope.showError = true;
                      }
                  }
-
              });
         }
     }
 }])
-    .directive('mobileLogin',['$state','PhoneService',function($state,PhoneService){
+    .directive('getValidate',['$state','UserService',function($state,UserService){
+        return{
+            restrict:'E',
+            replace:true,
+            templateUrl:'views/account/getValidateCode.tpl.html',
+            link:function(scope,element,attr){
+                $(element).validator({
+                    validateOnsubmit:true,
+                    onSuccess:function(){
+                        var result = UserService.getValidateCode(scope.mobilephone);
+                        if(result.retCode === "200"){
+                            event.preventDefault();
+                            $state.go('account.checkCode');
+                        }
+                    }
+                })
+            }
+        }
+    }])
+    .directive('checkValidate',['$state','UserService',function($state,UserService){
+        return {
+            restrict:'E',
+            replace:true,
+            templateUrl:'views/account/checkValidateCode.tpl.html',
+            link:function(scope,element,attr){
+                $(element).validator({
+                    validateOnsubmit:true,
+                    onSuccess:function () {
+                        var result = UserService.checkValidate(scope.mobilephone);
+                    }
+                })
+            }
+        }
+    }])
+
+    //修改密码的form
+    //实现修改密码的功能
+    .directive('passwordForm',['$state','UserService',function($state,UserService){
+        return {
+            restrict:'E',
+            replace:true,
+            templateUrl:'views/account/password.tpl.html',
+            link:function (scope,element,attr) {
+                $(element).validator({
+                    validateOnSubmit:true,
+                    onSuccess:function(){
+                        var result = UserService.changePassword(scope.oldPassword,scope.newPassword,scope.repeatPassword);
+                        if(result.retCode === "200"){
+                            event.preventDefault();
+                            $state.go('profile.info');
+                        }else{
+                            scope.errorMessage = result.retMsg;
+                            scope.showError = true;
+                        }
+                    }
+                });
+            }
+        }
+    }])
+
+    //手机登录的代码
+    //实现用手机号码登录
+    //TODO 后台未支持
+    .directive('mobileLogin',['$state','UserService',function($state,UserService){
         return {
             restrict:'E',
             replace:true,
@@ -34,7 +99,7 @@ angular.module("myApp").directive('loginForm',['$state','UserService',function($
                 $(element).find('#mobileForm').validator({
                     validateOnSubmit:true,
                     onSuccess:function(){
-                        PhoneService.getValidateCode(scope.mobilephone);
+                        UserService.getValidateCode(scope.mobilephone);
                         //点击之后 倒计时
                         var getCode = $("#getCode");
                         $("#checkCode").removeClass('fn-disabled');
@@ -56,7 +121,7 @@ angular.module("myApp").directive('loginForm',['$state','UserService',function($
                 $(element).validator({
                     validateOnSubmit:true,
                     onSuccess:function(){
-                        var result = PhoneService.mobileLogin(scope.mobilephone,scope.validateCode);
+                        var result = UserService.mobileLogin(scope.mobilephone,scope.validateCode);
                         //点击之后 倒计时
                         if(result.retCode == "200"){
                             event.preventDefault();
@@ -70,26 +135,4 @@ angular.module("myApp").directive('loginForm',['$state','UserService',function($
 
             }
         }
-    }])
-.directive('passwordForm',['$state','UserService',function($state,UserService){
-    return {
-        restrict:'E',
-        replace:true,
-        templateUrl:'views/account/password.tpl.html',
-        link:function (scope,element,attr) {
-            $(element).validator({
-                validateOnSubmit:true,
-                onSuccess:function(){
-                    var result = UserService.changePassword(scope.oldPassword,scope.newPassword,scope.repeatPassword);
-                    if(result.retCode === "200"){
-                        event.preventDefault();
-                        $state.go('profile.info');
-                    }else{
-                        scope.errorMessage = result.retMsg;
-                        scope.showError = true;
-                    }
-                }
-            });
-        }
-    }
-}]);
+    }]);

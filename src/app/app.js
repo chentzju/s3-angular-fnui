@@ -39,6 +39,9 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate','icbc.
                             'views/order/css/order.css'
                         ])
                     }]
+                },
+                controller:function($scope){
+                    $scope.showCart = true;
                 }
             })
             .state('order.productList',{

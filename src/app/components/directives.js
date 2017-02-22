@@ -98,7 +98,7 @@ myApp.directive('butterToast', function() {
             restrict:'E',
             replace:true,
             transclude:true,
-            template:'<ul class="fn-nav fn-nav-tabs myorder-tabs fn-tabbar back-white" ng-transclude></ul>',
+            template:'<ul class="fn-nav fn-nav-tabs fn-tabbar back-white" ng-transclude></ul>',
             link:function(scope,element,attr){
                 $(function() {
                     var tabs = $(element);

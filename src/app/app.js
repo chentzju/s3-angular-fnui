@@ -105,7 +105,6 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate','icbc.
                 templateUrl:'views/order/productDetail.html',
                 controller:'ProductDetailCtrl'
             })
-            //订单模块
                 //我的订单
                 .state('myorder',{
                     url:'/myorder',
@@ -136,9 +135,11 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate','icbc.
                     controller:'OrderDetailCtrl'
                 })
                 .state('search',{
+                    url:'app/search',
                     url:'/search',
                     title:'查找订单',
                     templateUrl:'views/public/search.html',
+                    controller:'SearchCtrl'
                     //controller:'OrderListCtrl'
                 })
 
@@ -253,8 +254,6 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate','icbc.
                         ])
                     }]
                 },
-                controller:'cartCtrl'
-                //    controller:'InfoCtrl'
             })
             .state('profile.addAddress',{
                 url:'/addAddress',

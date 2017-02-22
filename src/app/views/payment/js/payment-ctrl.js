@@ -38,15 +38,14 @@ angular.module("myApp").controller("PaymentListCtrl",["$scope","$rootScope","Pay
         status = paymentStatusArray[0];
         $scope.payments = loadPayments(status,page,time);
     }
-
     //初始化
     initPage();
 }])
 .controller("PaymentDetailCtrl",["$scope","$rootScope",'$stateParams','PaymentDetailService',function ($scope,$rootScope,$stateParams,PaymentDetailService) {
     //取得传过来的参数
-    var orderId = $stateParams.orderId;
-    var orderNum = $stateParams.orderNum;
-    $scope.order = OrderDetailService.getOrderDetail(orderId,orderNum);
+    var paymentId = $stateParams.paymentId;
+    var paymentNum = $stateParams.paymentNum;
+    $scope.payment = PaymentDetailService.getPaymentDetail(paymentId,paymentNum);
 
     // 我的订单详情
     // function loadOrderDetail(status,page,time) {

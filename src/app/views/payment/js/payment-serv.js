@@ -54,7 +54,6 @@ angular.module("myApp").service("PaymentService",function(){
                 break;
         }
 
-
         return paymentList;
     };
 
@@ -64,8 +63,8 @@ angular.module("myApp").service("PaymentService",function(){
         this.getPaymentDetail = function(paymentId,paymentNum){
             //get PaymentDetail
             var paymentDetail = {
-                orderId:orderId,
-                orderNum:orderNum,
+                paymentId:paymentId,
+                paymentNum:paymentNum,
                 orderTo:"王小二",
                 orderTel:'1590000001256',
                 orderAddDefault:"杭州市下城区新市街153号",
@@ -76,7 +75,7 @@ angular.module("myApp").service("PaymentService",function(){
                 length:"100m"
             };
 
-            return orderDetail;
+            return paymentDetail;
         }
 
     });

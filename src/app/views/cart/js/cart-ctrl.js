@@ -1,3 +1,17 @@
+
+
+angular.module("myApp").controller("cartCtrl",["$scope","$rootScope",function ($scope,$rootScope) {
+    var scHei = document.documentElement.offsetHeight||document.body.offsetHeight;
+    /*console.log(scHei)
+
+    console.log($(".cart-main").attr("class"))*/
+    $(".cart-main").css("height",scHei-90);
+    $scope.cartBack=function () {
+        $rootScope.go(order.productDetail)
+    }
+    /*console.log($(".cart-back").attr("class"))*/
+   /* console.log($rootScope.backState)*/
+}])
 /**
  * Created by ICBC on 2017/2/13.
  */

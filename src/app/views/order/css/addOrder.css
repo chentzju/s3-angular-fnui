@@ -1,9 +1,9 @@
 html{background-color: #F2F2F2;}
 input:focus { outline: none; }
-.addO{width:100%;height:100%;background-color: #F2F2F2;}
+.addO{width:100%;height: 200px;;background-color: #F2F2F2;padding-top:0.6rem;overflow:auto;}
 .addO i,span{display: inline-block;}
 .addO ul,li{list-style: none;margin:0 0;padding:0 0;}
-.addO .main{width:93%;background-color:#fff;margin:0.9rem auto 0 auto;border:1px solid #E6E6E6;border-radius: 8px;overflow: hidden;}
+.addO .main{width:93%;background-color:#fff;margin:0 auto;border:1px solid #E6E6E6;border-radius: 8px;overflow: hidden;}
 .addO .payWay{height:34rem;}
 .addO .title{width:100%;height:3.4rem;line-height: 3.4rem;font-size:1.2rem;border-bottom:1px solid #E6E6E6;}
 .addO .title>i{width:1.4rem;height:1.4rem;margin-left:1rem;margin-right:1rem;position: relative;top:9%;}

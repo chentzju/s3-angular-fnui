@@ -34,34 +34,22 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate','icbc.
                     }]
                 }
             })
-            //购物车
-            .state('cart',{
-                url:'/cart',
-                templateUrl: 'views/cart/cart.html',
-                title:'购物车',
-                backState:'order.productDetail',
-                resolve:{
-                    orderConfirmService:['$ocLazyLoad', function($ocLazyLoad) {
-                        return $ocLazyLoad.load([
-
-                            'views/cart/css/cart.css'
-                        ])
-                    }]
-                }
-            })
             //提交订单
             .state('addOrder',{
                 url:'/addOrder',
                 templateUrl: 'views/order/addOrder.html',
                 title:"提交订单",
                 backState:"cart",
+                controller:'addOrderCtrl',
                 resolve:{
                     addOrderService:['$ocLazyLoad', function($ocLazyLoad) {
                         return $ocLazyLoad.load([
-                            'views/order/css/addOrder.css'
+                            'views/order/css/addOrder.css',
+                            'views/order/js/addOrder-ctrl.js'
                         ])
                     }]
                 }
+
             })
 
             //确认订单
@@ -73,11 +61,12 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate','icbc.
                 resolve:{
                     orderConfirmService:['$ocLazyLoad', function($ocLazyLoad) {
                         return $ocLazyLoad.load([
-
+                            'views/order/js/orderConfirm-ctrl.js',
                             'views/order/css/orderConfirm.css'
                         ])
                     }]
-                }
+                },
+                controller:'orderConfirm'
             })
             //订单成功
             .state('orderSucess',{
@@ -106,6 +95,7 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate','icbc.
                 templateUrl:'views/order/productDetail.html',
                 controller:'ProductDetailCtrl'
             })
+            //订单模块
                 //我的订单
                 .state('myorder',{
                     url:'/myorder',
@@ -134,6 +124,12 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate','icbc.
                     title:'订单详情',
                     templateUrl:'views/myorder/orderDetail.html',
                     controller:'OrderListCtrl'
+                })
+                .state('search',{
+                    url:'/search',
+                    title:'查找订单',
+                    templateUrl:'views/public/search.html',
+                    //controller:'OrderListCtrl'
                 })
 
 
@@ -197,29 +193,28 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate','icbc.
                     controller:'DeliveryListCtrl'
                 })
 
-                //个人信息
-                .state('profile',{
-                    url:'/profile',
-                    templateUrl:'views/profile/profile.html',
-                    abstract:true,
-                    resolve:{
-                        profileService:['$ocLazyLoad', function($ocLazyLoad) {
-                            return $ocLazyLoad.load([
-                                'views/profile/js/profile-ctrl.js',
-                                'views/profile/css/personal_center.css'
-                            ]);
-                        }]
-                    }
-
+            //个人信息
+            .state('profile',{
+                url:'/profile',
+                templateUrl:'views/profile/profile.html',
+                abstract:true,
+                resolve:{
+                    profileService:['$ocLazyLoad', function($ocLazyLoad) {
+                        return $ocLazyLoad.load([
+                            'views/profile/js/profile-ctrl.js',
+                            'views/profile/css/personal_center.css'
+                        ]);
+                    }]
+                }
             })
             .state('profile.info',{
                 url:'/info',
-                title:'我的',
+                title:'个人信息',
                 templateUrl:'views/profile/info.html',
                 //controller:'InfoCtrl'
             })
             .state('profile.myAddress',{
-                url:'/editAddress',
+                url:'/info',
                 title:'地址管理',
                 templateUrl:'views/profile/myAddress.html',
                 //controller:'addAddressCtrl'
@@ -230,12 +225,34 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate','icbc.
                 templateUrl:'views/profile/changePw.html',
             //    controller:'InfoCtrl'
             })
-            //.state('profile.info',{
-            //    url:'/info',
-            //    title:'我的',
-            //    templateUrl:'views/profile/info.html',
-            //    controller:'InfoCtrl'
-            //})
+            .state('cart',{
+                url:'/cart',
+                title:'购物车',
+                templateUrl:'views/cart/cart.html',
+                resolve:{
+                    cartService:['$ocLazyLoad', function($ocLazyLoad) {
+                        return $ocLazyLoad.load([
+                            'views/cart/css/cart.css',
+                            'views/cart/js/cart-ctrl.js'
+                        ])
+                    }]
+                },
+                controller:'cartCtrl'
+                //    controller:'InfoCtrl'
+            })
+            .state('profile.addAddress',{
+                url:'/addAddress',
+                title:'新增地址',
+                templateUrl:'views/profile/addAddress.html',
+                //controller:'InfoCtrl'
+            })
+            .state('profile.editAddress',{
+                url:'/editAddress',
+                title:'编辑收货地址',
+                templateUrl:'views/profile/editAddress.html',
+                //controller:'InfoCtrl'
+            })
+
             //认证
             .state('account',{
                 url:'/account',

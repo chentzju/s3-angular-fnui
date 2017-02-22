@@ -5,17 +5,19 @@
     <div class="fn-g search-nav back-white">
         <div class="payment">
             <i class="iconfont icon-sousuo1 fn-size-color p2"></i>
-            <input type="text" placeholder="请输入内容" class="payment-input">
+            <a ui-sref="search">
+                <input type="text" placeholder="请输入内容" class="payment-input">
+            </a>
         </div>
     </div>
     <!--切换导航-->
-    <ul class="fn-nav fn-nav-tabs myorder-tabs fn-avg-sm-5 back-white">
+    <tab-bar>
         <li ng-repeat="status in orderStatusArray">
-            <a  class="fn-btn" href="javascript:void(0)" ng-click="changeStatus(status)">{{status.name}}</a>
+            <a  class="fn-btn fn-margin-0" href="javascript:void(0)" ng-click="changeStatus(status)">{{status.name}}</a>
         </li>
         <li>
             <drop-down>
-                <a class="fn-btn">
+                <a class="fn-btn fn-margin-0">
                     日期
                     <i class="iconfont icon-xiangxiajiantou"></i>
                 </a>
@@ -26,57 +28,63 @@
                 </ul>
             </drop-down>
         </li>
-    </ul>
+    </tab-bar>
     <!--数据盒子-->
     <iscroll-wrapper class="myorder-box">
         <li ng-repeat="order in orders track by $index">
-            <!--订单编号-->
-            <div class="num-content">
-                <div class="badge fn-fl">
-                    <span>{{$index+1}}</span>
-                </div>
-                <a ui-sref="myorder.orderDetail({orderId:order.d})" class="myorderID fn-fr">
-                    订单编号：{{order.id}}
-                    <i class="iconfont icon-xiangyoujiantou fn-fr"></i>
-                </a>
-            </div>
-            <!--订单详情-->
-            <div class="del-content">
-                <div>
-                    <span>
-                        经销商名称：
-                    </span>
-                    <a ui-sref="myorder.orderDetail({orderId:order.d})" class="myorderName">
-                        <!--{{order.id}}-->工银聚股份有限公司
-                    </a>
-                </div>
-                <div>
-                    <span>
-                        下单时间：
-                    </span>
-                    <a ui-sref="myorder.orderDetail({orderId:order.d})" class="myorderTime">
-                        {{order.time}}
-                        <!--下单时间：2016-11-17　09:30:35-->
-                    </a>
-                </div>
-                <div>
-                    <span>
-                        单据状态：
-                    </span>
-                    <a ui-sref="myorder.orderDetail({orderId:order.d})" class="myorderStau">
-                        {{order.statusText}}
-                        <!--已审核-->
-                    </a>
+            <a ui-sref="myorder.orderDetail({orderId:order.d})" >
+
+
+                <!--订单编号-->
+                <div class="num-content">
+                    <div class="badge fn-fl">
+                        <span>{{$index+1}}</span>
+                    </div>
+                    <span class="myorderID fn-fr">
+                        订单编号：{{order.id}}
+                        <i class="iconfont icon-xiangyoujiantou fn-fr"></i>
+                    </span >
                 </div>
 
-            </div>
-            <!--订单金额-->
-            <div class="mon-content">
-                <a ui-sref="myorder.orderDetail({orderId:order.d})" class="myorderMon fn-fr">
-                    ￥{{order.money}}
-                </a>
-                <span class="fn-fr">订单金额：</span>
-            </div>
+                <!--订单详情-->
+                <div class="del-content">
+                    <div>
+                        <span>
+                            经销商名称：
+                        </span>
+                        <span class="myorderName">
+                            <!--{{order.id}}-->工银聚股份有限公司
+                        </span>
+                    </div>
+                    <div>
+                        <span>
+                            下单时间：
+                        </span>
+                        <span class="myorderTime">
+                            {{order.time}}
+                            <!--下单时间：2016-11-17　09:30:35-->
+                        </span>
+                    </div>
+                    <div>
+                        <span>
+                            单据状态：
+                        </span>
+                        <span class="myorderStau">
+                            {{order.statusText}}
+                            <!--已审核-->
+                        </span>
+                    </div>
+
+                </div>
+                <!--订单金额-->
+                <div class="mon-content">
+                    <a class="myorderMon fn-fr">
+                        ￥{{order.money}}
+                    </a>
+                    <span class="fn-fr">订单金额：</span>
+                </div>
+
+            </a>
         </li>
     </iscroll-wrapper>
 </div>

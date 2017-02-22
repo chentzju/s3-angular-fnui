@@ -75,7 +75,7 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate','icbc.
                 controller:'ProductDetailCtrl'
             })
 
-
+            //购物车和订单部分
             .state('order',{
                 url:'/order',
                 templateUrl: 'views/public/main.html',
@@ -91,13 +91,14 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate','icbc.
                     }]
                 }
             })
+
+            //购物车
             .state('order.cart',{
                 url:'/cart',
                 title:'购物车',
                 backState:'product.productList',
                 templateUrl:'views/order/cart.html'
             })
-
 
             //提交订单
             .state('order.addOrder',{
@@ -123,7 +124,9 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate','icbc.
                 backState:'product.productList'
             })
 
-            //我的订单
+        /**
+         *  我的订单
+         */
             .state('myorder',{
                 url:'/myorder',
                 templateUrl:'views/public/main.html',
@@ -161,7 +164,9 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate','icbc.
             })
 
 
-            //支付信息
+        /**
+         *         支付信息
+         */
             .state('payment',{
                 url:'/payment',
                 templateUrl:'views/payment/payment.html',
@@ -191,7 +196,9 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate','icbc.
                 controller:'PaymentListCtrl'
             })
 
-            //发货信息
+            /**
+             * 发货信息
+             */
             .state('delivery',{
                 url:'/delivery',
                 templateUrl:'views/delivery/delivery.html',
@@ -223,7 +230,9 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate','icbc.
 
 
 
-            //个人信息
+            /**
+             * 个人信息
+             */
             .state('profile',{
                 url:'/profile',
                 templateUrl:'views/profile/profile.html',
@@ -274,7 +283,9 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate','icbc.
                 //controller:'InfoCtrl'
             })
 
-            //认证
+            /**
+             * 认证
+             */
             .state('account',{
                 url:'/account',
                 template:'<div class="main-view" ng-view ui-view></div>',
@@ -301,8 +312,7 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate','icbc.
                 templateUrl:'views/account/getCode.html'
             })
             .state('account.checkSuccess',{
-                url:'/checkSuccess',
-                templateUrl:'views/account/checkCode.html'
+                url:'/checkSuccess',                templateUrl:'views/account/checkCode.html'
             })
 
     }])

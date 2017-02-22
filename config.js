@@ -5,7 +5,6 @@
 var appPath = 'src/app/';
 
 module.exports = {
-
     modules:[
         {name:'account',path: appPath + 'views/account'},
         {name:'product',  path: appPath + 'views/product'},
@@ -16,5 +15,4 @@ module.exports = {
         {name:'delivery',path: appPath + 'views/delivery'},
         {name:'public',path: appPath + 'views/public'}
     ]
-
 };

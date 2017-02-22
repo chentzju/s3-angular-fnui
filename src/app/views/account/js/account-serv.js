@@ -131,18 +131,18 @@ angular.module('myApp').service('UserService',['$es',function($es){
      */
     this.getValidateCode = function(phoneNumber,loginName,appid){
 
-            //TESTSTART
-            //假装取到了
-            return{
-                retCode:200,
+        //TESTSTART
+        //假装取到了
+        return{
+            retCode:200,
             retMsg:'success',
             mobile:'135****3456'
-            };
-            //TESTEND
+        };
+        //TESTEND
 
-            var param = {
-                mobile:phoneNumber
-            };
+        var param = {
+            mobile:phoneNumber
+        };
 
         //登录名 非必须
         if(loginName)
@@ -153,7 +153,7 @@ angular.module('myApp').service('UserService',['$es',function($es){
             param.appid = $es.getConfig('custid');
 
         return $es.ajax('userAuthenBean.getValidateCode',param,userManage);
-        };
+    };
 
 
     /**
@@ -191,20 +191,20 @@ angular.module('myApp').service('UserService',['$es',function($es){
      * @returns {*}
      */
     //TODO 手机号码登录 未做
-        this.mobileLogin = function(phoneNumber,code){
+    this.mobileLogin = function(phoneNumber,code){
 
-            //TESTSTART
-            return{
-                retCode:200,
-                retMsg:'success'
-            };
-            //TESTEND
-
-            var param = {
-                mobile:phoneNumber,
-                code:code
-            };
-        return $es.ajax('userAuthenBean.mobileLogin',param,userManage);
+        //TESTSTART
+        return{
+            retCode:200,
+            retMsg:'success'
         };
+        //TESTEND
 
-    }]);
+        var param = {
+            mobile:phoneNumber,
+            code:code
+        };
+        return $es.ajax('userAuthenBean.mobileLogin',param,userManage);
+    };
+
+}]);

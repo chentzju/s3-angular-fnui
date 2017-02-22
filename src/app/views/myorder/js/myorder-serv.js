@@ -2,7 +2,7 @@
  * Created by chent on 2017/1/18.
  */
 angular.module("myApp")
-    .service("OrderService",function(){
+    .service("OrderService",['$es',function($es){
     
         this.getOrderStatusArray = function(){
             return [
@@ -25,7 +25,7 @@ angular.module("myApp")
                         order.name = "订单名称";
                         order.money = "1106"+time+page+i;
                         order.status = 0;
-                        order.statusText = "未审核";
+                        order.statusText = "待审核";
                         orderList.push(order);
                     }
                     break;
@@ -37,7 +37,7 @@ angular.module("myApp")
                         order.name = "订单名称";
                         order.money = "1106"+time+page+i;
                         order.status = 0;
-                        order.statusText = "未审核";
+                        order.statusText = "已审核";
                         orderList.push(order);
                     }
                     break;
@@ -49,7 +49,7 @@ angular.module("myApp")
                         order.name = "订单名称";
                         order.money = "1106"+time+page+i;
                         order.status = 0;
-                        order.statusText = "未审核";
+                        order.statusText = "已作废";
                         orderList.push(order);
                     }
                     break;
@@ -70,8 +70,8 @@ angular.module("myApp")
     
             return orderList;
         };
-    })
-    .service("OrderDetailService",function(){
+    }])
+    .service("OrderDetailService",['$es',function($es){
 
         this.getOrderDetail = function(orderId,orderNum){
             //get orderDetail
@@ -91,4 +91,4 @@ angular.module("myApp")
             return orderDetail;
         }
 
-    });
+    }]);

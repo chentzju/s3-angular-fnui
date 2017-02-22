@@ -18,6 +18,10 @@ angular.module("myApp").service("PaymentService",function(){
                     payment.id = "DD2017000000"+time+page+i;
                     payment.name = "订单名称";
                     payment.status = 0;
+                    payment.time1 = "2017-"+time;
+                    payment.time2 = "2017-"+time;
+                    payment.money1="￥11111"+time;
+                    payment.money2="￥22222"+time;
                     payment.statusText = "待审核";
                     paymentList.push(payment);
                 }
@@ -28,6 +32,10 @@ angular.module("myApp").service("PaymentService",function(){
                     payment.id = "DD2017111111"+time+page+i;
                     payment.name = "订单名称";
                     payment.status = 0;
+                    payment.time1 = "2017-"+time;
+                    payment.time2 = "2017-"+time;
+                    payment.money1="￥11111"+time;
+                    payment.money2="￥22222"+time;
                     payment.statusText = "已审核";
                     paymentList.push(payment);
                 }
@@ -38,6 +46,10 @@ angular.module("myApp").service("PaymentService",function(){
                     payment.id = "DD201722222"+time+page+i;
                     payment.name = "订单名称";
                     payment.status = 0;
+                    payment.time1 = "2017-"+time;
+                    payment.time2 = "2017-"+time;
+                    payment.money1="￥11111"+time;
+                    payment.money2="￥22222"+time;
                     payment.statusText = "已作废";
                     paymentList.push(payment);
                 }
@@ -48,6 +60,10 @@ angular.module("myApp").service("PaymentService",function(){
                     payment.id = "DD2017xxxxxxx"+time+page+i+Math.floor(Math.random()*3);
                     payment.name = "订单名称";
                     payment.status = 0;
+                    payment.time1 = "2017-"+time;
+                    payment.time2 = "2017-"+time;
+                    payment.money1="￥11111"+time;
+                    payment.money2="￥22222"+time;
                     payment.statusText = "未审核";
                     paymentList.push(payment);
                 }

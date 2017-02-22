@@ -2,25 +2,25 @@
 <head-bar></head-bar>
 
 
-<div class="home-data-wrapper back-blue">
+<div class="home-data-wrapper back-blue" ng-controller="MyappCtrl">
     <!--订单金额Box-->
     <div class="home-top back-blue ">
         <!--订单金额-->
         <div class="fn-panel fn-panel-default home-con-top back-blue">
             <div class="fn-panel-bd text-center padd-bot0 color-white">订单金额（万元）</div>
-            <div class="fn-panel-bd text-center color-white" id="orderNum">1500000.00</div>
+            <div class="fn-panel-bd text-center color-white" id="orderNum">{{myapp.orderMonery}}</div>
         </div>
         <!--今日+本月-->
         <div class="fn-g home-con-bot">
             <div class="fn-u-sm-6 color-white">
                 <div class="today-txt">今日成交额 ( 元 )</div>
-                <div class="today-mon" id="today-mon">23445.00</div>
-                <div class="today-num">共 <span id="today-num">128</span> 笔</div>
+                <div class="today-mon" id="today-mon">{{myapp.orderDay}}</div>
+                <div class="today-num">共 <span id="today-num">{{myapp.orderDaynum}}</span> 笔</div>
             </div>
             <div class="fn-u-sm-6 color-white">
                 <div class="today-txt">本月成交额 ( 元 )</div>
-                <div class="today-mon" id="month-mon">234490.00</div>
-                <div class="today-num">共 <span id="month-num">843</span> 笔</div>
+                <div class="today-mon" id="month-mon">{{myapp.orderMonth}}</div>
+                <div class="today-num">共 <span id="month-num">{{myapp.orderMonnum}}</span> 笔</div>
             </div>
         </div>
     </div>

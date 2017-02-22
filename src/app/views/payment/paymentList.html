@@ -30,7 +30,7 @@
                 <!--数据盒子-->
                 <div class="payment-list">
                     <!--向上的三角-->
-                    <a ui-sref="payment.paymentDetail({paymentId:payment.d})">
+                    <a ui-sref="payment.paymentDetail({paymentId:payment.id})">
                         <div class="back-white fn-cf">
                             <div class="payment-arrow-up fn-fl">
                                 <span class="fn-text-top  payment-list-number">{{$index+1}}</span>
@@ -43,13 +43,13 @@
                             </div>
                         </div>
                         <div class="payment-list-detail">
-                            <p>生成时间：<span class="time">2016-11-17 09:35:45</span></p>
-                            <p>付款时间：<span class="time">2016-11-17 09:35:45</span></p>
+                            <p>生成时间：<span class="time">{{payment.time1}}</span></p>
+                            <p>付款时间：<span class="time">{{payment.time2}}</span></p>
                             <p>付款状态：<span class="status">{{payment.statusText}}</span></p>
                         </div>
                         <div class="payment-monery-list  fn-fr">
-                            <p>付款单金额：<span class="money fn-fr">￥20500.00</span></p>
-                            <p>&nbsp;&nbsp;&nbsp;&nbsp;实付金额：<span class="money fn-fr">￥17000.00</p>
+                            <p>付款单金额：<span class="money fn-fr">{{payment.money1}}</span></p>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp;实付金额：<span class="money fn-fr">{{payment.money2}}</span></p>
                         </div>
                     </a>
                 </div>

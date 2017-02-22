@@ -285,11 +285,11 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate','icbc.
             var valid =  false;
             if(toState.name === loginState)
                 valid = true;
-            else{
-
+            else if(!valid){
                 //TESTSTART
-                var currentState = $state.current.name;
-                $state.go(currentState);
+                if(true){
+
+                }else{
                 //TESTEND
 
                 //check userinfo
@@ -306,11 +306,13 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate','icbc.
                      //根据角色判断首页的不同显示
                      //应该是来自后台的状态才比较合理
                      //新增一个状态表，来保存状态
+                 }else {
+                     event.preventDefault();
+                     $state.go(loginState);
                  }
-            }
-            if(!valid){
-                event.preventDefault();
-                $state.go(loginState);
+                //TESTSTART
+                }
+                //TESTEND
             }
         });
     }])

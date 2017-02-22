@@ -2,7 +2,7 @@
  * Created by chent on 2017/1/18.
  */
 angular.module("myApp")
-    .service("OrderService",function(){
+    .service("OrderService",['$es',function($es){
     
         this.getOrderStatusArray = function(){
             return [
@@ -70,8 +70,8 @@ angular.module("myApp")
     
             return orderList;
         };
-    })
-    .service("OrderDetailService",function(){
+    }])
+    .service("OrderDetailService",['$es',function($es){
 
         this.getOrderDetail = function(orderId,orderNum){
             //get orderDetail
@@ -91,4 +91,4 @@ angular.module("myApp")
             return orderDetail;
         }
 
-    });
+    }]);

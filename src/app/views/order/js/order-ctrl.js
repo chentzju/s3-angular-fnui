@@ -2,6 +2,8 @@
  * Created by chent on 2017/1/18.
  */
 angular.module("myApp").controller("ProductCtrl",["$scope","$rootScope","ProductService",function ($scope,$rootScope,ProductService) {
+
+
     var page,time,status;
     $scope.changeStatus = function(newStatus){
         page = 0;
@@ -44,6 +46,7 @@ angular.module("myApp").controller("ProductCtrl",["$scope","$rootScope","Product
 
 myApp.controller("ProductDetailCtrl",["$scope","$rootScope",'$stateParams','ProductService',function ($scope,$rootScope,$stateParams,ProductService) {
     //取得传过来的参数
+    console.log($rootScope.backState)
     var productId = $stateParams.productId;
     // console.log();
     $scope.product = ProductService.getProductDetail(productId);

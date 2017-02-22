@@ -44,6 +44,48 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate','icbc.
                     $scope.showCart = true;
                 }
             })
+            //提交订单
+            .state('addOrder',{
+                url:'/addOrder',
+                templateUrl: 'views/order/addOrder.html',
+                title:"提交订单",
+                backState:"cart",
+                controller:'addOrderCtrl',
+                resolve:{
+                    addOrderService:['$ocLazyLoad', function($ocLazyLoad) {
+                        return $ocLazyLoad.load([
+                            'views/order/css/addOrder.css',
+                            'views/order/js/addOrder-ctrl.js'
+                        ])
+                    }]
+                }
+
+            })
+
+            //确认订单
+            .state('orderConfirm',{
+                url:'/orderConfirm',
+                templateUrl: 'views/order/orderConfirm.html',
+                title:'确认订单',
+                backState:'addOrder',
+                resolve:{
+                    orderConfirmService:['$ocLazyLoad', function($ocLazyLoad) {
+                        return $ocLazyLoad.load([
+                            'views/order/js/orderConfirm-ctrl.js',
+                            'views/order/css/orderConfirm.css'
+                        ])
+                    }]
+                },
+                controller:'orderConfirm'
+            })
+            //订单成功
+            .state('orderSucess',{
+                url:'/orderSucess',
+                templateUrl: 'views/order/orderSucess.html',
+                title:'订单成功',
+                backState:'orderConfirm',
+
+            })
             .state('order.productList',{
                 url:'/productList',
                 title:'产品',
@@ -63,6 +105,7 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate','icbc.
                 templateUrl:'views/order/productDetail.html',
                 controller:'ProductDetailCtrl'
             })
+            //订单模块
                 //我的订单
                 .state('myorder',{
                     url:'/myorder',
@@ -201,7 +244,16 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate','icbc.
             .state('cart',{
                 url:'/cart',
                 title:'购物车',
-                templateUrl:'views/cart/cart.html'
+                templateUrl:'views/cart/cart.html',
+                resolve:{
+                    cartService:['$ocLazyLoad', function($ocLazyLoad) {
+                        return $ocLazyLoad.load([
+                            'views/cart/css/cart.css',
+                            'views/cart/js/cart-ctrl.js'
+                        ])
+                    }]
+                },
+                controller:'cartCtrl'
                 //    controller:'InfoCtrl'
             })
             .state('profile.addAddress',{

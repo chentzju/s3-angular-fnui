@@ -277,14 +277,14 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate','icbc.
             .state('profile.addAddress',{
                 url:'/addAddress',
                 title:'新增地址',
-                backState:'profile.addAddress',
+                backState:'profile.myAddress',
                 templateUrl:'views/profile/addAddress.html',
                 //controller:'InfoCtrl'
             })
             .state('profile.editAddress',{
                 url:'/editAddress',
                 title:'编辑收货地址',
-                backState:'profile.addAddress',
+                backState:'profile.myAddress',
                 templateUrl:'views/profile/editAddress.html',
                 //controller:'InfoCtrl'
             })

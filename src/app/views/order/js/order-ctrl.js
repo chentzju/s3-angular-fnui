@@ -1,7 +1,7 @@
 /**
  * Created by chent on 2017/1/18.
  */
-angular.module("myApp").controller("cartCtCtrl",["$scope","$rootScope","ProductService",function ($scope,$rootScope,ProductService) {
+angular.module("myApp").controller("orderCtrl",["$scope","$rootScope","ProductService",function ($scope,$rootScope,ProductService) {
 
 
     var page,time,status;

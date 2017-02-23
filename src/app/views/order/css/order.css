@@ -363,7 +363,7 @@ html{
 }
 /*productSearch*/
 
-.cart-main{z-index:10000;position:relative;width:100%;height:100%;/*margin-bottom:1.25rem;*/background-color:#F2F2F2;overflow: hidden;}
+.cart-main{padding-bottom:40px;z-index:10000;position:relative;width:100%;height:100%;/*margin-bottom:1.25rem;*/background-color:#F2F2F2;overflow: hidden;}
 .cart-list{width:100%;height:100%;margin:0 auto;padding:0 5%;overflow:auto}
 .cart-list>li{width:100%;height:12.1rem;background-color:#fdfdfd;margin-top:0.533rem;border:1px solid #DADADA;border-radius: 10px;overflow:hidden;}
 .cart-list_top{padding-left:0.76rem;width:100%;height:2.93rem;font-size:0.875rem;line-height:2.93rem;background-color: #fff;}
@@ -373,7 +373,7 @@ html{
 
 .cart-list_middle{width:100%;height:5.7rem;font-size:0.775rem;border-top: 1px solid #DEDEDE;overflow: hidden;padding:0 1.13rem;}
 
-.cart-xq{float: left;width: 70%;margin-top: 0.3rem;}
+.cart-xq{float: left;width: 80%;margin-top: 0.3rem;}
 .cart-xq p{line-height:1.6rem;height:1.6rem}
 /*.xq>p,.bzj>p{line-height: 1.25rem;}*/
 .cart-bzj{float: right;margin-top:1rem;}
@@ -421,7 +421,7 @@ body{background:#F2F2F2}
 /*提交订单*/
 html{background-color: #F2F2F2;}
 input:focus { outline: none; }
-.addO{width:100%;height: 100%;;background-color: #F2F2F2;padding-top:0.6rem;overflow:auto;}
+.addO{position:relative;width:100%;height: 100%;;background-color: #F2F2F2;padding-top:0.6rem;overflow:auto;padding-bottom:50px;}
 .addO i,span{display: inline-block;}
 .addO ul,li{list-style: none;margin:0 0;padding:0 0;}
 .addO .main{width:93%;background-color:#fff;margin:0 auto;border:1px solid #E6E6E6;border-radius: 8px;overflow: hidden;}
@@ -449,10 +449,10 @@ input:focus { outline: none; }
 .addO .payRmark{height:6.6rem;}
 .addO .payRmark>input{margin-left:1rem;display: inline-block;width:100%;height:3rem;line-height:3rem;border: none;font-size:1.2rem;}
 
-.addO .bottom{width:100%;height:4.3rem;line-height:4.3rem;text-align:center;background-color:#fff;border-top:1px solid #FCFCFC;position:fixed;bottom:0;}
-.addO .bottom span{width:8.3rem;height:100%;color:#fff;float: right;}
-.addO .bottom_l{background-color: #F89860;}
-.addO .bottom_r{background-color: #2F83CE;}
+.addO .addorder-bottom{position:absolute;bottom:0;width:100%;height:50px;line-height:50px;text-align:center;background-color:#fff;border-top:1px solid #FCFCFC;}
+.addO .addorder-bottom span{width:8.3rem;height:100%;color:#fff;float: right;}
+.addO .addOrder-bottom_l{background-color: #F89860;}
+.addO .addOrder-bottom_r{background-color: #2F83CE;}
 /*提交订单*/
 /*确认订单*/
 html{
@@ -462,12 +462,11 @@ html{
 .orderconfirm{
     width:100%;
     margin:0 auto;
-    overflow: hidden;
-}
-.orderconfirm{
-    color:#000;
     overflow: auto;
-    height:900px;
+    padding-bottom:4.23rem;
+    color:#000;
+    height:100%;
+    font-size:0.9rem;
 }
 .orcon-div{
     background:#fff;
@@ -497,8 +496,8 @@ html{
 }
 .ofirm-p{
     padding-left:1.07rem;
-    height:2.57rem;
-    line-height:2.57rem;
+    height:2rem;
+    line-height:2rem;
 }
 .ofirm-span{
     color:#676767;
@@ -547,7 +546,8 @@ html{
     width:100%;
     height:4.23rem;
     background:#fff;
-    position: fixed;
+    position: absolute;
+    z-index:1001;
     bottom:0;
     border-top:1px solid #d8d6d6;
 
@@ -566,6 +566,15 @@ html{
 .orderconfirm-submit-price{
     color:#fb3b4e;
     margin-right:1.8rem;
+}
+.orderCofirm-xiaoji{
+    text-align: right;
+    padding:0 1.07rem;
+}
+.orderCofirm-time{
+    text-align: right;
+    padding:0 1.07rem;
+    margin-bottom:16px;
 }
 /*订单成功*/
 .orderSucess{

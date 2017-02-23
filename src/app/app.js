@@ -168,7 +168,7 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate','icbc.
          */
                 .state('payment',{
                     url:'/payment',
-                    templateUrl:'views/payment/payment.html',
+                    templateUrl:'views/public/main.html',
                     abstract:true,
                     resolve:{
                         paymentService:['$ocLazyLoad', function($ocLazyLoad) {
@@ -184,6 +184,7 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate','icbc.
                 .state('payment.paymentList',{
                     url:'/paymentList',
                     title:'付款',
+                    backState:'app',
                     templateUrl:'views/payment/paymentList.html',
                     controller:'PaymentListCtrl'
                 })
@@ -200,7 +201,7 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate','icbc.
              */
                 .state('delivery',{
                     url:'/delivery',
-                    templateUrl:'views/delivery/delivery.html',
+                    templateUrl:'views/public/main.html',
                     abstract:true,
                     resolve:{
                         deliveryService:['$ocLazyLoad', function($ocLazyLoad) {
@@ -234,7 +235,7 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate','icbc.
              */
             .state('profile',{
                 url:'/profile',
-                templateUrl:'views/profile/profile.html',
+                templateUrl:'views/public/main.html',
                 abstract:true,
                 resolve:{
                     profileService:['$ocLazyLoad', function($ocLazyLoad) {
@@ -254,30 +255,35 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate','icbc.
             .state('profile.myAccount',{
                 url:'/myAccount',
                 title:'账户信息',
+                backState:'profile.info',
                 templateUrl:'views/profile/myAccount.html',
                 //controller:'addAddressCtrl'
             })
             .state('profile.myAddress',{
                 url:'/info',
                 title:'地址管理',
+                backState:'profile.info',
                 templateUrl:'views/profile/myAddress.html',
                 //controller:'addAddressCtrl'
             })
             .state('profile.changePw',{
                 url:'/info',
                 title:'修改密码',
+                backState:'profile.info',
                 templateUrl:'views/profile/changePw.html',
             //    controller:'InfoCtrl'
             })
             .state('profile.addAddress',{
                 url:'/addAddress',
                 title:'新增地址',
+                backState:'profile.addAddress',
                 templateUrl:'views/profile/addAddress.html',
                 //controller:'InfoCtrl'
             })
             .state('profile.editAddress',{
                 url:'/editAddress',
                 title:'编辑收货地址',
+                backState:'profile.addAddress',
                 templateUrl:'views/profile/editAddress.html',
                 //controller:'InfoCtrl'
             })

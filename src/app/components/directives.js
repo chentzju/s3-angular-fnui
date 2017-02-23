@@ -160,6 +160,10 @@ myApp.directive('butterToast', function() {
                     if(wrapper)
                         myScroll = new IScroll(wrapper,{probeType: 2,click:true});
 
+                    //高度处理
+                    var height  = $(window).height() - $('.header')[0].clientHeight - $('.footer')[0].clientHeight -$('.search-nav')[0].clientHeight - $('.fn-tabbar')[0].clientHeight;
+                    $(wrapper).css("min-height",height);
+
                     //滚动时
                     myScroll.on('scroll', function(){
                         if(loadingStep == 0 && !pullDown.attr('class').match('flip|loading')

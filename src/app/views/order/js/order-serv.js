@@ -2,7 +2,7 @@
  * Created by chent on 2017/1/18.
  */
 
-angular.module("myApp").service("ProductService",function(){
+angular.module("myApp").service("OrderService",function(){
 
     this.getProductStatusArray = function(){
         return [

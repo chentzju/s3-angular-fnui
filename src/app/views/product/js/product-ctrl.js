@@ -13,7 +13,7 @@ angular.module("myApp").controller("ProductCtrl",["$scope","$rootScope","Product
     };
 
     //$rootScope  在购买的时候应该会有用吧
-    $scope.products = ProductService.getProductList();
+    //$scope.products = ProductService.getProductList();
 
     $scope.refreshPage = function () {
         $scope.products = loadProducts(status,page,time);

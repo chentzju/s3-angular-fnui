@@ -1,48 +1,54 @@
-<div id="deliveryList">
+<div id="deliveryList" class="delivery-back">
     <!--搜索-->
-    <div class="delivery" >
-            <i class="iconfont icon-sousuo1 fn-size-color p2"></i>
+    <div class="fn-g search-nav back-white">
+        <div class="delivery" >
+            <i class="iconfont icon-sousuo1 search-color fn-padding-horizontal-xs"></i>
             <input type="text" placeholder="请输入内容" class="delivery-input">
-            <drop-down>
-                <i class="fn-icon-calendar fn-size-color"></i>
-                </button>
-                <ul class="fn-dropdown-content deliveryList-dropdown fn-size">
-                    <li class="fn-active"><a>一周内</a></li>
-                    <li><a>一个月内</a></li>
-                    <li><a>三个月内</a></li>
-                </ul>
-            </drop-down>
-
+        </div>
     </div>
 
     <!--tab切换-->
-        <ul class="fn-avg-sm-5 fn-horizontal-sm newtabs">
+        <tab-bar>
             <li ng-repeat="status in deliveryStatusArray">
                 <a  class="fn-btn fn-size" style="box-shadow:none;color:#000;" href="javascript:void(0)" ng-click="changeStatus(status)">{{status.name}}</a>
             </li>
-        </ul>
+            <li>
+                <drop-down>
+                    <a class="fn-btn">
+                        日期
+                        <i class="iconfont icon-xiangxiajiantou fn-size"></i>
+                    </a>
+                    <ul class="fn-dropdown-content deliveryList-dropdown" >
+                        <li class="fn-active"><a>一周内</a></li>
+                        <li><a>一个月内</a></li>
+                        <li><a>三个月内</a></li>
+                    </ul>
+                </drop-down>
+            </li>
+        </tab-bar>
+    <!--数据盒子-->
         <iscroll-wrapper>
-            <li ng-repeat="delivery in deliverys track by $index" style="border:0" class="delivery-det">
+            <li ng-repeat="delivery in deliverys track by $index" style="border:0;background: #f2f2f2;" class="delivery-det">
                 <!--付款单列表-->
-                <a ui-sref="delivery.deliveryDetail({deliveryId:delivery.d})">
-                <div class="delivery-list">
-                    <!--向上的三角-->
-                    <div class="arrow-up">
-                        <span class="fn-text-top fn-size number">{{$index+1}}</span>
-                    </div>
-                    <div class="delivery-numberlist fn-size-color">
+                <a ui-sref="delivery.deliveryDetail({deliveryId:delivery.id})">
+                    <div class="delivery-list">
+                        <!--向上的三角-->
+                        <div class="back-white fn-cf">
+                            <div class="delivery-arrow-up fn-fl">
+                                <span class="fn-size list-number">{{$index+1}}</span>
+                            </div>
+                            <div class="delivery-numberlist fn-size-color fn-fr">
+                                发货单编号：{{delivery.id}}
+                                <i class="iconfont icon-xiangyou1 fn-fr fn-size"></i>
+                            </div>
+                        </div>
 
-                            付款单编号:{{delivery.id}}
-                            <i class="iconfont icon-xiangyou1 fn-fr fn-size"></i>
-
-
+                        <div class="delivery-list-detail fn-size">
+                            <p>经销商名称：<span class="time">工银聚股份有限公司</span></p>
+                            <p>生成时间：<span class="time">{{delivery.time}}</span></p>
+                            <p>发货状态：<span>{{delivery.statusText}}</span></p>
+                        </div>
                     </div>
-                    <div class="delivery-list-detail fn-size">
-                        <p>经销商名称:<span class="time">工银聚股份有限公司</span></p>
-                        <p>生成时间: <span class="time">2016-11-17 09:35:45</span></p>
-                        <p>发货状态:<span>{{delivery.statusText}}</span></p>
-                    </div>
-                </div>
                 </a>
             </li>
         </iscroll-wrapper>

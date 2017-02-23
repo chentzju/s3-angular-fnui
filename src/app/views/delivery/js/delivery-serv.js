@@ -58,7 +58,25 @@ angular.module("myApp").service("DeliveryService",function(){
         return deliveryList;
     };
 
-    this.getDeliveryDetail = function(deliveryNo){
+})
+    .service("DeliveryDetailService",function(){
 
-    }
-});
+        this.getDeliveryDetail = function(deliveryId,deliveryNum){
+            //get deliveryDetail
+            var deliveryDetail = {
+                deliveryId:deliveryId,
+                deliveryNum:deliveryNum,
+                orderTo:"王小二",
+                orderTel:'1590000001256',
+                orderAddDefault:"杭州市下城区新市街153号",
+                orderAdd:"浙江宁波",
+                price: Number(Math.random()*10).toFixed(2),
+                orderType:"自购零食",
+                orderPayType:"265dtex/48f",
+                length:"100m"
+            };
+
+            return deliveryDetail;
+        }
+
+    });

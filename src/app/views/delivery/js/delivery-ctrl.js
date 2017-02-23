@@ -42,3 +42,15 @@ angular.module("myApp").controller("DeliveryListCtrl",["$scope","$rootScope","De
     //初始化
     initPage();
 }]);
+
+myApp.controller("DeliveryDetailCtrl",["$scope","$rootScope",'$stateParams','DeliveryDetailService',function ($scope,$rootScope,$stateParams,DeliveryDetailService) {
+    //取得传过来的参数
+    var deliveryId = $stateParams.deliveryId;
+    var deliveryNum = $stateParams.deliveryNum;
+    $scope.delivery = DeliveryDetailService.getDeliveryDetail(deliveryId,deliveryNum);
+
+    // 我的订单详情
+    // function loadOrderDetail(status,page,time) {
+    //     return OrderDetailService.getOrderDetail(status,page,time);
+    // }
+}]);

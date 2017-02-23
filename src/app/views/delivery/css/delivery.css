@@ -47,4 +47,4 @@ ul.deliveryList-dropdown{border-radius: 10px;overflow: hidden;padding: 0px;}
 .informaNum-con{padding: .6rem;}
 .informaList-con{line-height: 3.1rem;}
 .deliveryDetail-mon .mon-content{height: 1.9rem;}
-.informaList-del li{border: none;padding: .6rem;border-top: 1px solid #DFDFDF;margin-bottom: 0;overflow: hidden;border-radius: 0;}
+.deliveryInformaList-del li{border: none;padding: .6rem;border-top: 1px solid #DFDFDF;margin-bottom: 0;overflow: hidden;border-radius: 0;}

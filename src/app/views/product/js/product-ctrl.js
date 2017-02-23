@@ -1,7 +1,7 @@
 /**
  * Created by chent on 2017/1/18.
  */
-angular.module("myApp").controller("cartCtCtrl",["$scope","$rootScope","ProductService",function ($scope,$rootScope,ProductService) {
+angular.module("myApp").controller("ProductCtrl",["$scope","$rootScope","ProductService",function ($scope,$rootScope,ProductService) {
 
 
     var page,time,status;
@@ -13,7 +13,7 @@ angular.module("myApp").controller("cartCtCtrl",["$scope","$rootScope","ProductS
     };
 
     //$rootScope  在购买的时候应该会有用吧
-    $scope.products = ProductService.getProductList();
+    //$scope.products = ProductService.getProductList();
 
     $scope.refreshPage = function () {
         $scope.products = loadProducts(status,page,time);

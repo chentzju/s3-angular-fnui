@@ -53,18 +53,25 @@ myApp.directive('butterToast', function() {
         }
     }
 }])
-    .directive("bottomBar",function(){
+    .directive("bottomBar",['$state',function($state){
         return{
             restrict:'E',
             replace:true,
             templateUrl:'templates/bottombar.tpl.html',
             link:function(scope,element,attr){
-                // $(element).find('a').on('click',function(){
-                //     $(this).find('i').addClass('fn-bot-active')
-                // });
+                var state = $state.current.name;
+                $(element).find('.fn-bot-active').removeClass('fn-bot-active');
+                if(state.indexOf('app') != -1)
+                    $(element).find('a:first').addClass('fn-bot-active');
+                else if( state.indexOf('product.') != -1  )
+                    $(element).find('a:eq(1)').addClass('fn-bot-active');
+                else if(state.indexOf('myorder.') != -1)
+                    $(element).find('a:eq(2)').addClass('fn-bot-active');
+                else if(state.indexOf('profile.') != -1)
+                    $(element).find('a:last').addClass('fn-bot-active');
             }
         }
-    })
+    }])
     .directive("dropDown",function(){
         return {
             restrict:'E',
@@ -91,7 +98,7 @@ myApp.directive('butterToast', function() {
             restrict:'E',
             replace:true,
             transclude:true,
-            template:'<ul class="fn-nav fn-nav-tabs myorder-tabs fn-tabbar back-white" ng-transclude></ul>',
+            template:'<ul class="fn-nav fn-nav-tabs fn-tabbar back-white" ng-transclude></ul>',
             link:function(scope,element,attr){
                 $(function() {
                     var tabs = $(element);
@@ -294,4 +301,5 @@ myApp.directive('butterToast', function() {
         '</div>'
     }
 });
+
 

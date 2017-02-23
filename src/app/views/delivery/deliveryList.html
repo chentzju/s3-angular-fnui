@@ -27,7 +27,7 @@
             </li>
         </tab-bar>
     <!--数据盒子-->
-        <iscroll-wrapper>
+        <iscroll-wrapper class="delivery-box">
             <li ng-repeat="delivery in deliverys track by $index" style="border:0;background: #f2f2f2;" class="delivery-det">
                 <!--付款单列表-->
                 <a ui-sref="delivery.deliveryDetail({deliveryId:delivery.id})">

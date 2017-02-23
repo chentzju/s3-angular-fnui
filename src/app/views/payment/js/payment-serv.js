@@ -20,8 +20,8 @@ angular.module("myApp").service("PaymentService",function(){
                     payment.status = 0;
                     payment.time1 = "2017-"+time;
                     payment.time2 = "2017-"+time;
-                    payment.money1="￥11111"+time;
-                    payment.money2="￥22222"+time;
+                    payment.money1="11111"+time;
+                    payment.money2="22222"+time;
                     payment.statusText = "待审核";
                     paymentList.push(payment);
                 }
@@ -34,8 +34,8 @@ angular.module("myApp").service("PaymentService",function(){
                     payment.status = 0;
                     payment.time1 = "2017-"+time;
                     payment.time2 = "2017-"+time;
-                    payment.money1="￥11111"+time;
-                    payment.money2="￥22222"+time;
+                    payment.money1="11111"+time;
+                    payment.money2="22222"+time;
                     payment.statusText = "已审核";
                     paymentList.push(payment);
                 }
@@ -48,8 +48,8 @@ angular.module("myApp").service("PaymentService",function(){
                     payment.status = 0;
                     payment.time1 = "2017-"+time;
                     payment.time2 = "2017-"+time;
-                    payment.money1="￥11111"+time;
-                    payment.money2="￥22222"+time;
+                    payment.money1="11111"+time;
+                    payment.money2="22222"+time;
                     payment.statusText = "已作废";
                     paymentList.push(payment);
                 }
@@ -60,10 +60,10 @@ angular.module("myApp").service("PaymentService",function(){
                     payment.id = "DD2017xxxxxxx"+time+page+i+Math.floor(Math.random()*3);
                     payment.name = "订单名称";
                     payment.status = 0;
-                    payment.time1 = "2017-"+time;
-                    payment.time2 = "2017-"+time;
-                    payment.money1="￥11111"+time;
-                    payment.money2="￥22222"+time;
+                    payment.time1 = "1234567890567";
+                    payment.time2 = "2017"+time;
+                    payment.money1="11111"+time;
+                    payment.money2="22222"+time;
                     payment.statusText = "未审核";
                     paymentList.push(payment);
                 }
@@ -76,19 +76,20 @@ angular.module("myApp").service("PaymentService",function(){
 })
     .service("PaymentDetailService",function(){
 
-        this.getPaymentDetail = function(paymentId,paymentNum){
+        this.getPaymentDetail = function(paymentId){
             //get PaymentDetail
             var paymentDetail = {
                 paymentId:paymentId,
-                paymentNum:paymentNum,
-                orderTo:"王小二",
-                orderTel:'1590000001256',
-                orderAddDefault:"杭州市下城区新市街153号",
-                orderAdd:"浙江宁波",
-                price: Number(Math.random()*10).toFixed(2),
-                orderType:"自购零食",
-                orderPayType:"265dtex/48f",
-                length:"100m"
+                customerName:"10010分公司",
+                customerCompany:"浙江工银聚有限公司",
+                paymentMethod:"易付",
+                paymentMoney:"222220",
+                Prepaid:"40",
+                discountCoupon:"120",
+                outofpocket:"222140",
+                customerNum:"10010",
+                creationTime:"2017-01-17  15:20:25",
+                orderTime:"2017-01-17  16:20:25"
             };
 
             return paymentDetail;

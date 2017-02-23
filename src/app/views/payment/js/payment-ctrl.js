@@ -44,8 +44,9 @@ angular.module("myApp").controller("PaymentListCtrl",["$scope","$rootScope","Pay
 .controller("PaymentDetailCtrl",["$scope","$rootScope",'$stateParams','PaymentDetailService',function ($scope,$rootScope,$stateParams,PaymentDetailService) {
     //取得传过来的参数
     var paymentId = $stateParams.paymentId;
-    var paymentNum = $stateParams.paymentNum;
-    $scope.payment = PaymentDetailService.getPaymentDetail(paymentId,paymentNum);
+    $scope.payment = PaymentDetailService.getPaymentDetail(paymentId);
+    //var paymentNum = $stateParams.paymentNum;
+    //$scope.payment = PaymentDetailService.getPaymentDetail(paymentId,paymentNum);
 
     // 我的订单详情
     // function loadOrderDetail(status,page,time) {

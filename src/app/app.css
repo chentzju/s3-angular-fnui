@@ -1,5 +1,14 @@
+html{background-color: #F2F2F2;}
+div, h1, h2, h3, h4, h5, h6, ul, ol, dl, li, dt, dd, p, blockquote,
+pre, form, fieldset, table, th, td, input, table, textarea { margin: 0; padding: 0;}
+fieldset, img { border:none;}
+ol, ul, li { list-style:none;}
+span,i,em{display:inline-block;}
+p,ul,h1,h2,h3,h4,h5,h6,ol,dl,dt,dd,pre,li,form,input,select,textarea{
+    margin:0;padding:0;
+    list-style:none;
+}
 /* public  part */
-
 #iscroll-wrapper {
     width: 100%;
     position:relative;
@@ -80,7 +89,11 @@
     background-color: #fff;
     color: #2d83ce;
 }
-
+.fn-nav-tabs>li a{
+    margin-right: 5px;
+    display: block;
+    position: relative;
+}
 .fn-tabbar .fn-tab-active>a{
     border: none;
     background-color: #fff;

@@ -125,14 +125,13 @@ ul.myorder-dropdown>.fn-active>a{
     position: relative;
     top: -3px;
 }
-.badge-first{
+.myorder-box ul>li:nth-child(1) .badge{
     border-top: 2.8rem solid #ea566c;
 }
-.badge-first{
-
+.myorder-box ul>li:nth-child(2) .badge{
     border-top: 2.8rem solid #efbe27;
 }
-.badge-first{
+.myorder-box ul>li:nth-child(3) .badge{
     border-top: 2.8rem solid #3681c4;
 }
 .badge span{

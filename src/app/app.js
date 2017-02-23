@@ -158,7 +158,8 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate','icbc.
                 .state('search',{
                 url:'app/search',
                     title:'查找订单',
-                    templateUrl:'views/public/search.html'
+                templateUrl:'views/public/search.html',
+                controller:'SearchCtrl'
                     //controller:'OrderListCtrl'
                 })
 
@@ -189,7 +190,7 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate','icbc.
                     controller:'PaymentListCtrl'
                 })
                 .state('payment.paymentDetail',{
-                    url:'/paymentList',
+                    url:'/paymentdetail/:paymentId',
                     title:'付款详情',
                     backState:'payment.paymentList',
                     templateUrl:'views/payment/paymentDetail.html',

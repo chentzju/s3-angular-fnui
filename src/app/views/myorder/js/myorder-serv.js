@@ -73,11 +73,10 @@ angular.module("myApp")
     }])
     .service("OrderDetailService",['$es',function($es){
 
-        this.getOrderDetail = function(orderId,orderNum){
+        this.getOrderDetail = function(orderId){
             //get orderDetail
             var orderDetail = {
                 orderId:orderId,
-                orderNum:orderNum,
                 orderTo:"王大二",
                 orderTel:'1590000001256',
                 orderAddDefault:"杭州市下城区新市街153号",

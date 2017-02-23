@@ -51,8 +51,9 @@ angular.module("myApp").controller("OrderListCtrl",["$scope","$rootScope","Order
 myApp.controller("OrderDetailCtrl",["$scope","$rootScope",'$stateParams','OrderDetailService',function ($scope,$rootScope,$stateParams,OrderDetailService) {
     //取得传过来的参数
     var orderId = $stateParams.orderId;
-    var orderNum = $stateParams.orderNum;
-    $scope.order = OrderDetailService.getOrderDetail(orderId,orderNum);
+    $scope.order = OrderDetailService.getOrderDetail(orderId);
+    // var orderNum = $stateParams.orderNum;
+    // $scope.order = OrderDetailService.getOrderDetail(orderId,orderNum);
 
     // 我的订单详情
     // function loadOrderDetail(status,page,time) {

@@ -44,7 +44,7 @@ angular.module("myApp").controller("orderCtrl",["$scope","$rootScope","ProductSe
 
 }]);
 
-myApp.controller("ProductDetailCtrl",["$scope","$rootScope",'$stateParams','ProductService',function ($scope,$rootScope,$stateParams,ProductService) {
+myApp.controller("orderCatCtrl",["$scope","$rootScope",'$stateParams','ProductService',function ($scope,$rootScope,$stateParams,ProductService) {
     //取得传过来的参数
     console.log($rootScope.backState)
     var productId = $stateParams.productId;

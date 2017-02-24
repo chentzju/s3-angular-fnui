@@ -3,7 +3,7 @@
  */
 angular.module("myApp")
     .service("OrderService",['$es',function($es){
-    
+
         this.getOrderStatusArray = function(){
             return [
                 {id:null,name:'全  部'},
@@ -12,7 +12,7 @@ angular.module("myApp")
                 {id:2,name:'已作废'}
             ];
         };
-    
+
         this.getOrderList = function(status,page,time){
             var orderList = [];
             var i,order;
@@ -66,8 +66,8 @@ angular.module("myApp")
                     }
                     break;
             }
-    
-    
+
+
             return orderList;
         };
     }])

@@ -71,7 +71,7 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate','icbc.
                 url:'/productDetail/:productId',
                 backState:'product.productList',
                 title:'产品详情',
-                templateUrl:'views/order/productDetail.html',
+                templateUrl:'views/product/productDetail.html',
                 controller:'ProductDetailCtrl'
             })
 

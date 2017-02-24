@@ -3,7 +3,7 @@
     <div class="fn-g search-nav back-white">
         <div class="payment-search">
             <i class="iconfont icon-sousuo1 search-color fn-padding-horizontal-xs"></i>
-            <input type="text" placeholder="请输入内容" class="payment-input">
+            <a ui-sref="payment.paymentSearch"><input type="text" placeholder="请输入内容" class="payment-input"></a>
         </div>
     </div>
     <!--tab切换-->
@@ -18,9 +18,9 @@
                         <i class="iconfont icon-xiangxiajiantou fn-size"></i>
                     </a>
                     <ul class="fn-dropdown-content paymentList-dropdown myorder-dropdown" >
-                        <li class="fn-active"><a>一周内</a></li>
-                        <li><a>一个月内</a></li>
-                        <li><a>三个月内</a></li>
+                        <li class="fn-active"><a href="javascript:void(0)">一周内</a></li>
+                        <li><a href="javascript:void(0)">一个月内</a></li>
+                        <li><a href="javascript:void(0)">三个月内</a></li>
                     </ul>
                 </drop-down>
             </li>
@@ -33,7 +33,7 @@
                     <a ui-sref="payment.paymentDetail({paymentId:payment.id})">
                         <div class="back-white fn-cf">
                             <div class="payment-arrow-up fn-fl">
-                                <span class="fn-text-top  payment-list-number">{{$index+1}}</span>
+                                <!--<span class="fn-text-top  payment-list-number">{{$index+1}}</span>-->
                             </div>
                             <div class="payment-numberlist fn-size-color fn-fr">
 
@@ -42,14 +42,13 @@
 
                             </div>
                         </div>
-                        <div class="payment-list-detail">
-                            <p>生成时间：<span class="time">{{payment.time1|date:'yyyy-MM-dd HH:mm:ss'}}</span></p>
+                        <div class="fn-padding-xs payment-list-detail">
+                            <p>生成时间：<span class="time">{{payment.time1}}</span></p>
                             <p>付款时间：<span class="time">{{payment.time2}}</span></p>
                             <p>付款状态：<span class="status">{{payment.statusText}}</span></p>
                         </div>
-                        <div class="fn-padding-right-xs  fn-fr">
-                            <p>付款单金额：<span class="money fn-fr">{{payment.money1|currency:'￥'}}</span></p>
-                            <p>&nbsp;&nbsp;&nbsp;&nbsp;实付金额：<span class="money fn-fr">{{payment.money2|currency:'￥'}}</span></p>
+                        <div class="fn-padding-xs  fn-fr">
+                            <p>支付金额：<span class="money fn-fr">{{payment.money1|currency:'￥'}}</span></p>
                         </div>
                     </a>
                 </div>

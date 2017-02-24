@@ -17,7 +17,7 @@
             <div class="photo">
                 <img src="views/profile/img/photo.png" alt="">
             </div>
-            <p class="company">浙江工银聚有限公司<span>经销商</span></p>
+            <p class="company">{{companyName}}<span>{{role}}</span></p>
         </div>
         <div class="list_main">
             <ul class="list">
@@ -41,7 +41,7 @@
                     <li class="changePw">
                         <i></i>
                         <span>修改密码</span>
-                        <span class="remark">10</span>
+                        <span class="remark"></span>
                         <em></em>
                     </li>
                 </a>
@@ -49,19 +49,19 @@
             <div class="cutLine"></div>
 
             <ul class="list">
-                <a ui-sref="cart">
-                    <li class="shopCar">
+                <a ui-sref="myorder.orderList">
+                    <li class="collect">
                         <i></i>
-                        <span>我的购物车</span>
-                        <span class="remark">22</span>
+                        <span>我的订单</span>
+                        <span class="remark"></span>
                         <em></em>
                     </li>
                 </a>
-                <a>
-                    <li class="collect">
+                <a ui-sref="order.cart">
+                    <li class="shopCar">
                         <i></i>
-                        <span>我的收藏</span>
-                        <span class="remark">20</span>
+                        <span>我的购物车</span>
+                        <span class="remark"></span>
                         <em></em>
                     </li>
                 </a>

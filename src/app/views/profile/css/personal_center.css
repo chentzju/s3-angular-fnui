@@ -8,7 +8,7 @@ span,i,em{display:inline-block;}
 html{background-color: #F2F2F2;}
 
 .main{width:100%;}
-
+.profile input{outline: none;}
 .profile .header{position: relative;z-index: 2000;}
 .profile .shadow{display:none;width:100%;height:100%;position: fixed;left:0;top:0;z-index: 1200;background-color: #F1F1F1;opacity: 0.5;}
 .profile .switch{display:none;width:100%;height:11.4rem;background-color: #fff;margin-top:5rem;position: absolute;top:0;left:0;z-index: 1300;}
@@ -16,7 +16,7 @@ html{background-color: #F2F2F2;}
 .profile .switch>ul>li{width:25%;height:2.2rem;line-height:2.2rem;margin-left:6.25%;margin-top:2.1rem;text-align: center;border:1px solid #EAEAEA;border-radius:3px;float: left;}
 
 .profile .head{width:100%;height:10rem;background-color: #2F83CE;overflow: hidden;}
-.profile .photo{width: 5rem;height: 5rem;margin:0 auto;border:2px solid #fff;border-radius: 50%;}
+.profile .photo{width: 5rem;height: 5rem;margin:0 auto;border:2px solid #fff;border-radius: 50%;overflow: hidden;}
 .profile .photo>img{width:100%;height:100%;}
 .profile .company{font-size:1.1rem;color:#DFE9F5;margin:1rem auto;text-align: center;}
 .profile .company>span{width:3.3rem;height:1.3rem;font-size:0.7rem;background-color: #fff;border-radius: 3px;color:#487E9D;position:relative;text-align: center;line-height:1.4rem;margin-left:0.5rem; }
@@ -43,6 +43,7 @@ html{background-color: #F2F2F2;}
 .profile .addAddress{width:100%;height:100%;background-color:#F2F2F2;}
 .profile .addAddress .add_line{width:100%;height:1.1rem;background-color:#F2F2F2;}
 .profile .addAddress .add_list{width:100%;height:100%;background-color: #fff;border-bottom:1px solid #F0F0F0;}
+
 .profile .addAddress .add_list>li{width:95%;height:3.3rem;line-height:3.3rem;font-size:1.23rem;color:#696969;border-bottom: 1px solid #F2F2F2;margin:0 auto;}
 .profile .addAddress .add_list>li>span{display: inline-block;width:20%;text-align: right;}
 .profile .addAddress .add_list>li>input{display: inline-block;width:75%;height:3rem;border:none;float: right;position:relative;top:0.15rem}
@@ -61,10 +62,15 @@ html{background-color: #F2F2F2;}
 .profile .edit{width:93%;height:2.6rem;line-height:2.6rem;margin:0 auto;}
 .profile .edit_left{width:50%;height:2.6rem;float: left;}
 .profile .edit_right{width:50%;height:2.6rem;float:right;position: relative;}
-.profile .edit_left>span{display: inline-block;width:1.5rem;height:1.5rem;margin-right:0.6rem;border-radius: 50%;background-color: #FB3E50;position:relative;top:21%;}
-.profile .edit_left>span>i{display: inline-block;width:1.5rem;height:1.5rem;background:url('../img/checked.png') no-repeat;background-size: 80% 80%;position:relative;left:14%;top:10%;}
+
+/*样式修改    2.23                  */
+/*.profile .edit_left>span{display: inline-block;width:1.5rem;height:1.5rem;margin-right:0.6rem;border-radius: 50%;background-color: #FB3E50;position:relative;top:21%;}*/
+/*.profile .edit_left>span>i{display: inline-block;width:1.5rem;height:1.5rem;background:url('../img/checked.png') no-repeat;background-size: 80% 80%;position:relative;left:14%;top:10%;}*/
+.profile .edit_left>i{position:relative;left:-2%;top:6%;}
+.profile .myAddress_list li:nth-child(1) i{color:#FB3E50;}
+
 .profile .myAddress_btn{width:95%;height:2.9rem;line-height: 2.9rem;text-align:center;color:#fff;border-radius:10px;margin:5.3rem auto 6rem auto;background-color: #2F83CE;}
-.profile .myAddress_btn>span{display: inline-block;width:1.4rem;height:1.4rem;margin-right:1rem;background:url("../img/addAddress_icon01.png") no-repeat;background-size:100% 100%;position:relative;top:3%;}
+.profile .myAddress_btn>span{display: inline-block;width:1.4rem;height:1.4rem;margin-right:1rem;background:url("../img/addAddress_icon01.png") no-repeat;background-size:100% 100%;position:relative;top:10%;}
 .profile .edit_right>a>i{display:inline-block;width:1.43rem;height:1.43rem;position:absolute;right:7%;top:27%}
 .profile .bj{background:url("../img/edit.png") no-repeat;background-size:100% 100%;margin-right:2.5rem;}
 .profile .sc{background:url("../img/delete.png") no-repeat;background-size:100% 100%;}

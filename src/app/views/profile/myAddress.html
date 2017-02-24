@@ -1,19 +1,24 @@
 <!--我的收货地址-->
 <div class="profile">
     <div class="myAddress">
-        <ul>
-            <li>
+        <ul class="myAddress_list">
+            <li ng-click="clic($index)" ng-repeat="list in addressList">
                 <div class="myAddress_text">
-                    <p><span style="float: left;">赵志平</span><span  style="float: right;">13666666666</span></p>
-                    <p class="dizhi">杭州市下城区西湖文化广场西区萨克雷11号楼8层</p>
+                    <p><span style="float: left;">{{list.name}}</span><span  style="float: right;">{{list.phone}}</span></p>
+                    <p class="dizhi">{{list.address}}</p>
                 </div>
                 <div class="edit">
-                    <div class="edit_left">
-                        <span><i></i></span>设为默认地址
-                    </div>
+                    <!--<div class="edit_left" ng-click="check($index)">-->
+                        <!--<i class="iconfont icon-yuanxingxuanzhongfill"></i>设为默认地址-->
+                    <!--</div>-->
+
+                    <label class="am-radio am-success" style="font-size:1.2rem;font-weight: normal;">
+                        <input type="radio" name="radio2" value=""  class="am-success"  data-am-ucheck>
+                        设为默认地址
+                    </label>
                     <div class="edit_right">
-                        <a ui-sref="profile.editAddress"><i class="bj"></i></a>
-                        <a><i class="sc"></i></a>
+                        <a ui-sref="profile.editAddress({addressId:address.id})"><i class="bj"></i></a>
+                        <a><i class="sc" ng-click="delete($index)"></i></a>
                     </div>
                 </div>
             </li>

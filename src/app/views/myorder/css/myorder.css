@@ -77,6 +77,9 @@ p,ul,h1,h2,h3,h4,h5,h6,ol,dl,dt,dd,pre,li,form,input,select,textarea{
     background-color: #fff;
     color: #2d83ce;
 }
+.order-list .fn-dropdown>a{
+    color: #444;
+}
 .order-list .myorder-tabs>li>drop-down a:hover{
     color:#2d83ce;
 }
@@ -114,6 +117,30 @@ p,ul,h1,h2,h3,h4,h5,h6,ol,dl,dt,dd,pre,li,form,input,select,textarea{
     padding: 0 .6rem;
     border-top: 1px solid #DFDFDF;
 }
+/*未审核*/
+.order-list .myorder-box .badgePending{
+    width: 0;
+    height: 0;
+    color: #fff;
+    border-right: 3.4rem solid transparent;
+    display: inline-block;
+    position: relative;
+    top: -3px;
+    border-top: 2.8rem solid #2fa585;
+}
+/*已审核*/
+.order-list .myorder-box .badgeSuccess{
+    width: 0;
+    height: 0;
+    color: #fff;
+    border-right: 3.4rem solid transparent;
+    display: inline-block;
+    position: relative;
+    top: -3px;
+    border-top: 2.8rem solid #2d83ce;
+}
+
+/*已作废*/
 .order-list .myorder-box .badge{
     width: 0;
     height: 0;
@@ -124,15 +151,7 @@ p,ul,h1,h2,h3,h4,h5,h6,ol,dl,dt,dd,pre,li,form,input,select,textarea{
     position: relative;
     top: -3px;
 }
-.order-list .myorder-box ul>li:nth-child(1) .badge{
-    border-top: 2.8rem solid #ea566c;
-}
-.order-list .myorder-box ul>li:nth-child(2) .badge{
-    border-top: 2.8rem solid #efbe27;
-}
-.order-list .myorder-box ul>li:nth-child(3) .badge{
-    border-top: 2.8rem solid #3681c4;
-}
+
 .order-list .badge span{
     position: relative;
     top: -32px;

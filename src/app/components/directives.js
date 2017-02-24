@@ -246,7 +246,7 @@ myApp.directive('butterToast', function() {
                     var myscroll = new IScroll(scroll,{
                         click:true
                     });
-                    myscroll.maxScrollY = -100;
+                    myscroll.maxScrollY = 0;
                     scroll.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
                 })
             }

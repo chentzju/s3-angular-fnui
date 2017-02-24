@@ -1,6 +1,6 @@
 
 
-<div id="productList" class="order-list">
+<div id="productList" class="productList">
     <!--搜素加时间-->
     <div class="fn-g search-nav back-white">
         <div class="payment">
@@ -10,23 +10,14 @@
             </a>
         </div>
     </div>
-    <!--切换导航-->
-    <ul class="fn-nav fn-nav-tabs myorder-tabs fn-avg-sm-3 back-white">
-        <li>
-            <a  class="fn-btn" >全部产品</a>
+
+    <tab-bar>
+        <li ng-repeat="status in productStatusArray">
+            <a  class="fn-btn fn-margin-0" href="javascript:void(0)" ng-click="changeStatus(status)">{{status.name}}</a>
         </li>
-        <li>
-            <a  class="fn-btn" >最近订单</a>
-        </li>
-        <li>
-            <a  class="fn-btn" >收藏产品</a>
-        </li>
-    </ul>
-    <!--<ul class="fn-nav fn-nav-tabs myorder-tabs fn-avg-sm-5 back-white">-->
-        <!--<li ng-repeat="status in getProductStatusArray">-->
-            <!--<a  class="fn-btn" href="javascript:void(0)" ng-click="changeStatus(status)">{{status.name}}</a>-->
-        <!--</li>-->
-    <!--</ul>-->
+
+    </tab-bar>
+
     <!--数据盒子-->
     <iscroll-wrapper class="myorder-box">
         <li ng-repeat="product in products track by $index">

@@ -11,8 +11,7 @@ angular.module("myApp").service("ProductService",function(){
             {id:1,name:'收藏产品'}
         ];
     };
-    this.getProductList = function(){
-
+    this.getProductList = function(status,page,time){
         var productList = [];
         var i,product;
         //make virtual product
@@ -24,12 +23,13 @@ angular.module("myApp").service("ProductService",function(){
         //     };
         //     productList.push(v_product);
         // }
+        console.log(status)
         switch(status.id){
             case 0:
                 for(i = 0;i<10;i++){
                     product = {
-                        productId:"CC001002001"+i,
-                        productName:"一个虚拟产品名称"+i,
+                        productId:"001"+i,
+                        productName:"最近订单产品名称"+i,
                         price: Number(Math.random()*10).toFixed(2)
                     };
                     productList.push(product);
@@ -38,8 +38,8 @@ angular.module("myApp").service("ProductService",function(){
             case 1:
                 for(i = 0;i<10;i++){
                     product = {
-                        productId:"CC001002002"+i,
-                        productName:"一个虚拟产品名称"+i,
+                        productId:"002"+i,
+                        productName:"收藏产品名称"+i,
                         price: Number(Math.random()*10).toFixed(2)
                     };
                     productList.push(product);
@@ -48,7 +48,7 @@ angular.module("myApp").service("ProductService",function(){
             default:
                 for(i = 0;i<10;i++){
                     product = {
-                        productId:"CC001002003"+i,
+                        productId:"003"+i,
                         productName:"一个虚拟产品名称"+i,
                         price: Number(Math.random()*10).toFixed(2)
                     };

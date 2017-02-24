@@ -104,123 +104,113 @@
     height:50px;
     line-height:50px;
 }
-p,ul,h1,h2,h3,h4,h5,h6,ol,dl,dt,dd,pre,li,form,input,select,textarea{
-    margin:0;padding:0;
-    list-style:none;
-}
-.order-list{
+.productList{
     background:#F2F2F2 ;
 }
-.back-white{
+.productList .back-white{
     background: #fff;
 }
-.fn-size-color {
+.productList .fn-size-color {
     font-size: 1.4rem;
     color: #2d83d0;
 }
-.height-26{
+.productList .height-26{
     height:26px;
     line-height: 1.6rem;
 }
 /*搜索*/
-.p2{
+.productList .p2{
     padding-left:2%;
 }
-.payment{
+.productList .payment{
     width:94%;
     border:1px solid #2d83d0;
     margin:3%;
     border-radius: 10px;
     color:#2d83ce;
 }
-.payment-input{
+.productList .payment-input{
     border:none;
     width:80%;
     outline: none;
 }
 
-.payment-input:not([type=radio]):not([type=checkbox]), select {
+.productList .payment-input:not([type=radio]):not([type=checkbox]), select {
     vertical-align:inherit;
 }
-.payment-input input[placeholder]{
+.productList .payment-input input[placeholder]{
     color: #ebf6ff!important;
 }
-ul.paymentList-dropdown{
+.productList ul.paymentList-dropdown{
     border-radius: 10px;
     overflow: hidden;
     padding: 0;
 }
-ul.paymentList-dropdown>li>a{
+.productList ul.paymentList-dropdown>li>a{
     margin: 0;
 }
-ul.myorder-dropdown>.fn-active>a{
+.productList ul.myorder-dropdown>.fn-active>a{
     color: #2d83ce;
     background-color: #ebf6ff;
 }
 /*tab切换*/
-.myorder-tabs>li a{
+.productList .myorder-tabs>li a{
     padding: .4rem 0;
     border: none;
     color:#000;
 }
-.myorder-tabs .fn-dropdown {
+.productList .myorder-tabs .fn-dropdown {
     width: 100%;
     position: relative;
     display: inline-block;
 }
-.myorder-tabs .fn-dropdown i{
+.productList .myorder-tabs .fn-dropdown i{
     font-size: 1rem;
 }
-.fn-nav-tabs>li a{
-    margin-right: 5px;
+.productList .fn-nav-tabs>li a{
+    margin-right: 0;
     line-height: 1.4;
     display: block;
     position: relative;
 }
-/*.myorder-tabs>li>a:hover{
-    border: none;
-    border-bottom:2px solid #2d83ce;
-    background-color: #fff;
-    color: #2d83ce;
-}*/
-.myorder-tabs>li>drop-down a:hover{
+.productList .myorder-tabs>li>drop-down a:hover{
+    background: #fff!important;
     color:#2d83ce;
 }
-.myorder-box ul{
+.productList .myorder-box ul{
     padding: .8rem;
 }
-.myorder-box ul>li{
+.productList .myorder-box ul>li{
     border-radius: .8rem;
     margin-bottom: .6rem;
     overflow: hidden;
 
 }
-.myorder-box ul>li>a{
+.productList .myorder-box ul>li>a{
     display: block;
     padding: 0;
 }
-.myorder-box ul>li:first-child{
+.productList .myorder-box ul>li:first-child{
     border-radius: .8rem!important;
 }
-.myorder-box ul>li:last-of-type{
+.productList .myorder-box ul>li:last-of-type{
     margin-bottom: 0;
 }
-
-#iscroll-wrapper li{
+.productList #iscroll-wrapper li{
     border: 1px solid #DFDFDF;
 }
-.num-content,.mon-content{
+.productList .num-content,.mon-content{
     height: 3.1rem;
 }
-.num-content{
+.productList .num-content{
     border-bottom: 1px solid #DFDFDF;
 }
 
-.mon-content{
+.productList .mon-content{
     padding: 0 .6rem;
     border-top: 1px solid #DFDFDF;
 }
-.myorder-box .badge{
+.productList .myorder-box .badge{
     width: 0;
     height: 0;
     color: #fff;
@@ -230,24 +220,23 @@ ul.myorder-dropdown>.fn-active>a{
     position: relative;
     top: -3px;
 }
-.badge-first{
+.productList .myorder-box ul>li:nth-child(1) .badge{
     border-top: 2.8rem solid #ea566c;
 }
-.badge-first{
-
+.productList .myorder-box ul>li:nth-child(2) .badge{
     border-top: 2.8rem solid #efbe27;
 }
-.badge-first{
+.productList .myorder-box ul>li:nth-child(3) .badge{
     border-top: 2.8rem solid #3681c4;
 }
-.badge span{
+.productList .badge span{
     position: relative;
     top: -32px;
     left: 6px;
     width: 1.4rem;
     white-space: nowrap;
 }
-.num-content .myorderID{
+.productList .num-content .myorderID{
     display: inline-block;
     height: 100%;width: 86%;
     line-height:3.1rem;
@@ -255,19 +244,19 @@ ul.myorder-dropdown>.fn-active>a{
     color: #2d83ce;
     padding: 0 .6rem 0 0;
 }
-.mon-content span{
+.productList .mon-content span{
     display: inline-block;
     height: 100%;
     line-height:3.1rem;
     color: #000;
 }
-.num-content i{
+.productList .num-content i{
     font-size: 1.4rem;
 }
-.myorderTime,.myorderName{
+.productList .myorderTime,.myorderName{
     color: #000;
 }
-.myorderMon{
+.productList .myorderMon{
     display: inline-block;
     height: 100%;
     line-height:3.1rem;
@@ -275,112 +264,18 @@ ul.myorder-dropdown>.fn-active>a{
     color: #fb3b4e;
     font-weight: 600;
 }
-.del-content{
+.productList .del-content{
     min-height: 5rem;
     padding: .6rem;
     background: #fbfbfb;
 }
-.del-content span{
+.productList .del-content span{
     color: #111;
 }
-.del-content div .myorderStau{
+.productList .del-content div .myorderStau{
     color: #F27405;
 }
-/*订单详情*/
-.orderDet-ul li{
-    border: 1px solid #DFDFDF;
-    margin-bottom: .6rem;
-    overflow: hidden;
-    border-radius: .8rem;
-}
-.orderDet-ul>li:last-of-type{
-    margin-bottom: 50px;
-}
-.orderDet-ul .del-content{
-    padding-bottom: 0;
-}
-/*收货人信息*/
-.information-con .fn-fl{
-    width: 8%;height: 100%;
-    line-height: 3.1rem;
-    text-align: center;
-    color: #f7a014;
-    font-size: 1.6rem;
-    transform: rotateY(180deg);
-}
-.information-con .myorderID{
-    color: #000;
-    width: 90%;
-}
-.color-67{
-    color: #676767;
-}
-.color-67.fn-text-xs{
-    font-size:.8rem;
-}
-.back-red{
-    background: #fa6767;
-    font-weight: normal;
-}
-.fn-stripe-redblue::before{
-    transform: rotateY(180deg);
-    display: block;
-    content: '';
-    height: 4px;
-    border-radius: 0 0 .8rem .8rem;
-    background: repeating-linear-gradient(62deg,#529fd7 1px,#529fd7 5px,#fff 5px,#fff 10px,#ec5252 10px,#ec5252 15px,#fff 15px,#fff 20px);
-    background: -webkit-repeating-linear-gradient(62deg,#529fd7 1px,#529fd7 5px,#fff 5px,#fff 10px,#ec5252 10px,#ec5252 15px,#fff 15px,#fff 20px);
-    background: -moz-repeating-linear-gradient(62deg,#529fd7 1px,#529fd7 5px,#fff 5px,#fff 10px,#ec5252 10px,#ec5252 15px,#fff 15px,#fff 20px);
-}
-.informaList-con .myorderID{
-    padding: 0 .6rem;
-    color: #000;
-}
-.informaList-del .fn-padding-0 span{
-    font-size: .9rem;
-    color: #676767;
-}
-.informaList-del li {
-    border: none;
-    padding: .6rem;
-    border-bottom: 1px solid #DFDFDF;
-    margin-bottom:0;
-    overflow: hidden;
-    border-radius: 0;
-}
-.informaNum-con{
-    padding: .6rem;
-}
-.bor-none{
-    border: none;
-}
-.height-xs{
-    height: 1rem;
-}
-.orderDetail-mon .mon-content{
-    height: 2.2rem;
-    margin-bottom: .3rem;
-}
-.height-sm{
-    height: 2rem;
-}
-.delNode-con .myorderID{
-    padding-left: .6rem;
-    color: #000;
-}
-.node-content{
-    height: 4rem;
-    padding: .6rem;
-}
-.freight{
-    height: 40px;
-}
-.freight p{
-    height: 20px;
-}
-.font-normal{
-    font-weight: normal;
-}
+
 /*product-detail*/
 html{background: #f2f2f2;}
 .proDe-top{width:100%;height:5rem;line-height:5rem;background-color: #fff;font-size:1.2rem;position:relative;}
@@ -391,7 +286,7 @@ html{background: #f2f2f2;}
     right:0;
     margin-right:10px;
 }
-.proDe-top_line{width:100%;height:0.4rem;background:url("../img/top_line.png") no-repeat;background-size:100% 100%;position:absolute;bottom:0;}
+.proDe-top_line{width:100%;height:0.4rem;background-size:100% 100%;position:absolute;bottom:0;}
 
 .proDe-list{width:100%;height:13.3rem;font-size:1rem;overflow: hidden;}
 .proDe-list_main{width:90%;height:100%;margin:0 auto;margin-top:1.5rem;}

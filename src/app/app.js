@@ -253,6 +253,8 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate','icbc.
                     profileService:['$ocLazyLoad', function($ocLazyLoad) {
                         return $ocLazyLoad.load([
                             'views/profile/js/profile-ctrl.js',
+                            'views/profile/js/profile-serv.js',
+                            'views/profile/js/profile-dire.js',
                             'views/profile/css/personal_center.css'
                         ]);
                     }]
@@ -262,42 +264,42 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate','icbc.
                 url:'/info',
                 title:'个人信息',
                 templateUrl:'views/profile/info.html',
-                //controller:'InfoCtrl'
+                controller:'InfoCtrl'
             })
             .state('profile.myAccount',{
                 url:'/myAccount',
                 title:'账户信息',
                 backState:'profile.info',
                 templateUrl:'views/profile/myAccount.html',
-                //controller:'addAddressCtrl'
+                controller:'myAccountCtrl'
             })
             .state('profile.myAddress',{
                 url:'/myAddress',
                 title:'地址管理',
                 backState:'profile.info',
                 templateUrl:'views/profile/myAddress.html',
-                //controller:'addAddressCtrl'
+                controller:'myAddressCtrl'
             })
             .state('profile.changePw',{
                 url:'/info',
                 title:'修改密码',
                 backState:'profile.info',
                 templateUrl:'views/profile/changePw.html',
-            //    controller:'InfoCtrl'
+             //   controller:'InfoCtrl'
             })
             .state('profile.addAddress',{
                 url:'/addAddress',
                 title:'新增地址',
                 backState:'profile.myAddress',
                 templateUrl:'views/profile/addAddress.html',
-                //controller:'InfoCtrl'
+                controller:'addAddressCtrl'
             })
             .state('profile.editAddress',{
                 url:'/editAddress',
                 title:'编辑收货地址',
                 backState:'profile.myAddress',
                 templateUrl:'views/profile/editAddress.html',
-                //controller:'InfoCtrl'
+                controller:'editAddressCtrl'
             })
 
             /**

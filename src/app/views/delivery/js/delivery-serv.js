@@ -1,4 +1,4 @@
-angular.module("myApp").service("DeliveryService",function(){
+angular.module("myApp").service("DeliveryService",["$es",function($es){
 
     this.getDeliveryStatusArray = function(){
         return [
@@ -62,7 +62,7 @@ angular.module("myApp").service("DeliveryService",function(){
         return deliveryList;
     };
 
-})
+}])
     .service("DeliveryDetailService",function(){
 
         this.getDeliveryDetail = function(deliveryId){

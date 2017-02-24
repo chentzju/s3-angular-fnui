@@ -1,7 +1,7 @@
-<div id="paymentList">
+<div id="paymentList" class="payment">
     <!--搜索-->
     <div class="fn-g search-nav back-white">
-        <div class="payment">
+        <div class="payment-search">
             <i class="iconfont icon-sousuo1 search-color fn-padding-horizontal-xs"></i>
             <input type="text" placeholder="请输入内容" class="payment-input">
         </div>
@@ -26,7 +26,7 @@
             </li>
         </tab-bar>
         <iscroll-wrapper class="payment-box">
-            <li ng-repeat="payment in payments track by $index" style="border:0;">
+            <li ng-repeat="payment in payments track by $index" class="fn-padding-xs" style="border:0;background: #f2f2f2;">
                 <!--数据盒子-->
                 <div class="payment-list">
                     <!--向上的三角-->
@@ -47,7 +47,7 @@
                             <p>付款时间：<span class="time">{{payment.time2}}</span></p>
                             <p>付款状态：<span class="status">{{payment.statusText}}</span></p>
                         </div>
-                        <div class="payment-monery-list  fn-fr">
+                        <div class="fn-padding-right-xs  fn-fr">
                             <p>付款单金额：<span class="money fn-fr">{{payment.money1|currency:'￥'}}</span></p>
                             <p>&nbsp;&nbsp;&nbsp;&nbsp;实付金额：<span class="money fn-fr">{{payment.money2|currency:'￥'}}</span></p>
                         </div>

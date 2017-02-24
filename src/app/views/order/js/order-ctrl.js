@@ -1,10 +1,12 @@
 /**
  * Created by chent on 2017/1/18.
  */
-angular.module("myApp").controller("orderCtrl",["$scope","$rootScope","ProductService",function ($scope,$rootScope,ProductService) {
+angular.module("myApp").controller("cartCtrl",["$scope","$rootScope","cartService",function ($scope,$rootScope,cartService) {
+    var scHei = document.documentElement.offsetHeight||document.body.offsetHeight;
+    $(".cart-main").css("height",scHei-90);
 
-
-    var page,time,status;
+    /*console.log(111)*/
+    /*var page,time,status;
     $scope.changeStatus = function(newStatus){
         page = 0;
         time = 0;
@@ -40,14 +42,51 @@ angular.module("myApp").controller("orderCtrl",["$scope","$rootScope","ProductSe
     }
 
     //初始化
-    initPage();
+    initPage();*/
+
+    $scope.reduceCartPro=function ($index) {
+        if($scope.cartProducts[$index].num==1){
+            $scope.cartProducts[$index].num=1
+        }else{
+            $scope.cartProducts[$index].num--
+        }
+    };
+    $scope.addCartPro=function($index){
+        if($scope.cartProducts[$index].num==$scope.cartProducts[$index].limtNum){
+            $scope.cartProducts[$index].num=$scope.cartProducts[$index].limtNum
+        }else{
+            $scope.cartProducts[$index].num++
+        }
+    };
+    function loadCartProducts() {
+        return cartService.getCartList();
+    }
+    function initPage(){
+        $scope.cartProducts = loadCartProducts();
+    }
+
+    //初始化
+    initPage()
 
 }]);
-
-myApp.controller("ProductDetailCtrl",["$scope","$rootScope",'$stateParams','ProductService',function ($scope,$rootScope,$stateParams,ProductService) {
+myApp.controller("addOrderCtrl",["$scope","$rootScope",'$stateParams',function ($scope,$rootScope,$stateParams) {
+    /*//取得传过来的参数
+     console.log($rootScope.backState)
+     var productId = $stateParams.productId;
+     // console.log();
+     $scope.product = ProductService.getProductDetail(productId);*/
+    var scHei = document.documentElement.offsetHeight||document.body.offsetHeight;
+    $(".addO").css("height",scHei-50)
+}]);
+myApp.controller("orderConfirmCtrl",["$scope","$rootScope",'$stateParams',function ($scope,$rootScope,$stateParams) {
+    var scHei = document.documentElement.offsetHeight||document.body.offsetHeight;
+    $(".orderconfirm").css("height",scHei-51-parseFloat($(".orderconfirm-bottom").css("height")))
+}]);
+/*
+myApp.controller("orderCatCtrl",["$scope","$rootScope",'$stateParams','ProductService',function ($scope,$rootScope,$stateParams,ProductService) {
     //取得传过来的参数
     console.log($rootScope.backState)
     var productId = $stateParams.productId;
     // console.log();
     $scope.product = ProductService.getProductDetail(productId);
-}]);
+}]);*/

@@ -1,10 +1,10 @@
 /**
  * Created by chent on 2017/1/18.
  */
-angular.module("myApp").controller("orderCtrl",["$scope","$rootScope","ProductService",function ($scope,$rootScope,ProductService) {
+angular.module("myApp").controller("cartCtrl",["$scope","$rootScope","cartService",function ($scope,$rootScope,cartService) {
 
-
-    var page,time,status;
+    /*console.log(111)*/
+    /*var page,time,status;
     $scope.changeStatus = function(newStatus){
         page = 0;
         time = 0;
@@ -40,7 +40,31 @@ angular.module("myApp").controller("orderCtrl",["$scope","$rootScope","ProductSe
     }
 
     //初始化
-    initPage();
+    initPage();*/
+
+    $scope.reduceCartPro=function ($index) {
+        if($scope.cartProducts[$index].num==1){
+            $scope.cartProducts[$index].num=1
+        }else{
+            $scope.cartProducts[$index].num--
+        }
+    };
+    $scope.addCartPro=function($index){
+        if($scope.cartProducts[$index].num==$scope.cartProducts[$index].limtNum){
+            $scope.cartProducts[$index].num=$scope.cartProducts[$index].limtNum
+        }else{
+            $scope.cartProducts[$index].num++
+        }
+    };
+    function loadCartProducts() {
+        return cartService.getCartList();
+    }
+    function initPage(){
+        $scope.cartProducts = loadCartProducts();
+    }
+
+    //初始化
+    initPage()
 
 }]);
 

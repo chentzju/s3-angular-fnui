@@ -97,7 +97,8 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate','icbc.
                 url:'/cart',
                 title:'购物车',
                 backState:'product.productList',
-                templateUrl:'views/order/cart.html'
+                templateUrl:'views/order/cart.html',
+                controller:'cartCtrl'
             })
 
             //提交订单

@@ -24,7 +24,7 @@ html{background-color: #F2F2F2;}
 .profile .list_main{height:18.9rem;}
 .profile .cutLine{width:100%;height:5px;background-color: #F2F2F2;}
 .profile .list{width:100%;font-size:1.2rem;}
-.profile .list>a>li{width:100%;height:3.7rem;line-height:3.7rem; color:#828282;position:relative;}
+.profile .list>a>li{width:100%;height:3.7rem;line-height:3.7rem; color:#828282;position:relative;background-color:#fff;}
 .profile .list>a>li>i{width:2rem;height:2rem;position:relative;top:15%;margin-left:1rem;margin-right:0.5rem;}
 .profile .list>a>li>em{width:0.3rem;height:0.83rem;background:url("../img/list_icon_left.png") no-repeat;background-size:100% 100%;position:absolute;right:1rem;top:50%;margin-top:-0.41rem;}
 .profile .remark{position:absolute;right:7%;color:#9F9F9F;}
@@ -72,7 +72,7 @@ html{background-color: #F2F2F2;}
 /*账户信息*/
 .profile .myAccount{width:100%;}
 .profile .myAccount span,input{display: inline-block}
-.profile .myAccount>li{width:100%;height:4rem;line-height: 4rem;border-bottom:1px solid #F0F0F0;overflow: hidden;}
+.profile .myAccount>li{width:100%;height:4rem;line-height: 4rem;border-bottom:1px solid #F0F0F0;overflow: hidden;background-color: #fff;}
 .profile .myAccount>li>.spa{text-align: left;font-size:1.2rem;color:#4C4B4B;margin-left:1.5rem;}
 .profile .myAccount>li>.inp{width:70%;color:#989898;outline: none;font-size: 1.1rem;border:none;}
 .profile .myAccount>li>.inp0{width:21%;}

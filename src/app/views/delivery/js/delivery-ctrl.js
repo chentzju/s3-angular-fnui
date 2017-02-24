@@ -5,6 +5,20 @@ angular.module("myApp").controller("DeliveryListCtrl",["$scope","$rootScope","De
         page = 0;
         time = 0;
         status = newStatus;
+        status = newStatus;
+        if(status.id=='0'){
+            $scope.isBadge = false;
+            $scope.isPending = false;
+            $scope.isSuccess = true;
+        }else if(status.id=='1'){
+            $scope.isPending = false;
+            $scope.isSuccess = false;
+            $scope.isBadge = true;
+        }else{
+            $scope.isBadge = false;
+            $scope.isSuccess = false;
+            $scope.isPending = true;
+        }
         $scope.deliverys = loadDeliverys(status,page,time);
     };
 

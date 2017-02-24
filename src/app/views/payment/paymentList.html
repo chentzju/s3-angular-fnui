@@ -18,9 +18,9 @@
                         <i class="iconfont icon-xiangxiajiantou fn-size"></i>
                     </a>
                     <ul class="fn-dropdown-content paymentList-dropdown myorder-dropdown" >
-                        <li class="fn-active"><a href="javascript:void(0)">一周内</a></li>
-                        <li><a href="javascript:void(0)">一个月内</a></li>
-                        <li><a href="javascript:void(0)">三个月内</a></li>
+                        <li class="fn-active"><a href="javascript:void(0)" ng-click="changeTime(6)">一周内</a></li>
+                        <li><a href="javascript:void(0)" ng-click="changeTime(7)">一个月内</a></li>
+                        <li><a href="javascript:void(0)" ng-click="changeTime(8)">三个月内</a></li>
                     </ul>
                 </drop-down>
             </li>
@@ -32,7 +32,7 @@
                     <!--向上的三角-->
                     <a ui-sref="payment.paymentDetail({paymentId:payment.id})">
                         <div class="back-white fn-cf">
-                            <div class="payment-arrow-up fn-fl">
+                            <div class="payment-arrow-up fn-fl" ng-class="{'badgeSuccess': isSuccess, 'badge': isBadge,'payment-arrow-up':isPending}">
                                 <!--<span class="fn-text-top  payment-list-number">{{$index+1}}</span>-->
                             </div>
                             <div class="payment-numberlist fn-size-color fn-fr">

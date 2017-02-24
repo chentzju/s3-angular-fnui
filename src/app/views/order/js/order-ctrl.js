@@ -2,6 +2,8 @@
  * Created by chent on 2017/1/18.
  */
 angular.module("myApp").controller("cartCtrl",["$scope","$rootScope","cartService",function ($scope,$rootScope,cartService) {
+    var scHei = document.documentElement.offsetHeight||document.body.offsetHeight;
+    $(".cart-main").css("height",scHei-90);
 
     /*console.log(111)*/
     /*var page,time,status;
@@ -67,11 +69,24 @@ angular.module("myApp").controller("cartCtrl",["$scope","$rootScope","cartServic
     initPage()
 
 }]);
-
+myApp.controller("addOrderCtrl",["$scope","$rootScope",'$stateParams',function ($scope,$rootScope,$stateParams) {
+    /*//取得传过来的参数
+     console.log($rootScope.backState)
+     var productId = $stateParams.productId;
+     // console.log();
+     $scope.product = ProductService.getProductDetail(productId);*/
+    var scHei = document.documentElement.offsetHeight||document.body.offsetHeight;
+    $(".addO").css("height",scHei-50)
+}]);
+myApp.controller("orderConfirmCtrl",["$scope","$rootScope",'$stateParams',function ($scope,$rootScope,$stateParams) {
+    var scHei = document.documentElement.offsetHeight||document.body.offsetHeight;
+    $(".orderconfirm").css("height",scHei-51-parseFloat($(".orderconfirm-bottom").css("height")))
+}]);
+/*
 myApp.controller("orderCatCtrl",["$scope","$rootScope",'$stateParams','ProductService',function ($scope,$rootScope,$stateParams,ProductService) {
     //取得传过来的参数
     console.log($rootScope.backState)
     var productId = $stateParams.productId;
     // console.log();
     $scope.product = ProductService.getProductDetail(productId);
-}]);
+}]);*/

@@ -158,18 +158,6 @@ p,ul,h1,h2,h3,h4,h5,h6,ol,dl,dt,dd,pre,li,form,input,select,textarea{
     font-size:1.6rem;
 }
 /* home page */
-.color-more{
-    color:#ec5759;
-}
-.color-finance{
-    color:#2fa585;
-}
-.color-credit{
-    color:#1a86ce;
-}
-.color-invoice{
-    color:#fc9b16;
-}
 .home-data-wrapper{
     min-height: 20rem;
     background-color:#0e90d2;
@@ -177,6 +165,23 @@ p,ul,h1,h2,h3,h4,h5,h6,ol,dl,dt,dd,pre,li,form,input,select,textarea{
 .home-list{
     background: #fff;
 }
+
+.back-blue{
+    background: #2d83ce;
+}
+.home-list .color-more{
+    color:#ec5759;
+}
+.home-list .color-finance{
+    color:#2fa585;
+}
+.home-list .color-credit{
+    color:#1a86ce;
+}
+.home-list .color-invoice{
+    color:#fc9b16;
+}
+
 .home-list ul>li{
     height:8.7rem;
     border: 1px #E8E8E8 solid;
@@ -193,6 +198,9 @@ p,ul,h1,h2,h3,h4,h5,h6,ol,dl,dt,dd,pre,li,form,input,select,textarea{
     border-right: none;
     border-left: none;
 }
+.home-list ul>li>a{
+     display: inline-block;
+}
 .home-list ul>li>a>span{
     color: #000;
     display: block;
@@ -201,50 +209,45 @@ p,ul,h1,h2,h3,h4,h5,h6,ol,dl,dt,dd,pre,li,form,input,select,textarea{
     font-size: 2.8rem;
 }
 /*首页*/
-.color-white{
-    color: #fff;
-}
 .home-top{
     padding:0;
 }
-.back-blue{
-    background: #2d83ce;
+.home-top .color-white{
+    color: #fff;
 }
-.home-con-top{
+
+.home-top .home-con-top{
     border: 0;
     box-shadow: none;
     padding: 1.5rem 0 0 0;
 }
-.home-con-bot{
+.home-top .home-con-bot{
     padding:0;
     border-top: 1px  solid #4E95D5;
 }
-.home-con-bot .fn-u-sm-6{
+.home-top .home-con-bot .fn-u-sm-6{
     padding: 1.25rem 2rem;
 }
-.home-con-bot .fn-u-sm-6:first-child{
+.home-top .home-con-bot .fn-u-sm-6:first-child{
     border-right: 1px  solid #4E95D5;
 }
-.margin-bot{
-    margin-bottom: 14px;
-}
-.text-center{
+.home-top .text-center{
     text-align: center;
 }
-.padd-bot0{
+.home-top .padd-bot0{
     padding-bottom: 0;
 }
-#orderNum{
+.home-top #orderNum{
     font-size: 3rem;
     padding-top: 0;
 }
-.today-txt{
+.home-top .today-txt{
     font-size: 1rem;
 }
-.today-num{
+.home-top .today-num{
     font-size: 1.2rem;
 }
-.today-num span{
+.home-top .today-num span{
     color: #DBDE6B;
 }
 .scroll-content{

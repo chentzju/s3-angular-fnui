@@ -190,11 +190,17 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate','icbc.
                     controller:'PaymentListCtrl'
                 })
                 .state('payment.paymentDetail',{
-                    url:'/paymentdetail/:paymentId',
+                    url:'/paymentDetail/:paymentId',
                     title:'付款详情',
                     backState:'payment.paymentList',
                     templateUrl:'views/payment/paymentDetail.html',
                     controller:'PaymentDetailCtrl'
+                })
+                .state('payment.paymentSearch',{
+                    url:'/paymentSearch',
+                    backState:'payment.paymentList',
+                    templateUrl:'views/payment/paymentSearch.html',
+                    //controller:'paymentSearchCtrl'
                 })
 
             /**
@@ -228,7 +234,12 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate','icbc.
                     templateUrl:'views/delivery/deliveryDetail.html',
                     controller:'DeliveryDetailCtrl'
                 })
-
+                .state('delivery.deliverySearch',{
+                    url:'/deliverySearch',
+                    backState:'delivery.deliverySearch',
+                    templateUrl:'views/delivery/deliverySearch.html',
+                    //controller:'deliverySearchCtrl'
+                })
 
 
             /**

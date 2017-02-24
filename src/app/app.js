@@ -78,7 +78,7 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate','icbc.
             //购物车和订单部分
             .state('order',{
                 url:'/order',
-                templateUrl: 'views/public/main.html',
+                templateUrl: 'views/order/main.html',
                 abstract:true,
                 resolve:{
                     orderService:['$ocLazyLoad', function($ocLazyLoad) {
@@ -91,7 +91,6 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate','icbc.
                     }]
                 }
             })
-
             //购物车
             .state('order.cart',{
                 url:'/cart',
@@ -218,6 +217,7 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate','icbc.
                 .state('delivery.deliveryList',{
                     url:'/deliveryList',
                     title:'我的发货单',
+                    backState:'app',
                     templateUrl:'views/delivery/deliveryList.html',
                     controller:'DeliveryListCtrl'
                 })
@@ -261,7 +261,7 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate','icbc.
                 //controller:'addAddressCtrl'
             })
             .state('profile.myAddress',{
-                url:'/info',
+                url:'/myAddress',
                 title:'地址管理',
                 backState:'profile.info',
                 templateUrl:'views/profile/myAddress.html',

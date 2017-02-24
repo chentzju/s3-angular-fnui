@@ -1,7 +1,7 @@
-<div id="deliveryList" class="delivery-back">
+<div id="deliveryList" class="delivery">
     <!--搜索-->
     <div class="fn-g search-nav back-white">
-        <div class="delivery" >
+        <div class="delivery-search" >
             <i class="iconfont icon-sousuo1 search-color fn-padding-horizontal-xs"></i>
             <input type="text" placeholder="请输入内容" class="delivery-input">
         </div>
@@ -19,16 +19,16 @@
                         <i class="iconfont icon-xiangxiajiantou fn-size"></i>
                     </a>
                     <ul class="fn-dropdown-content deliveryList-dropdown" >
-                        <li class="fn-active"><a>一周内</a></li>
-                        <li><a>一个月内</a></li>
-                        <li><a>三个月内</a></li>
+                        <li class="fn-active"><a href="javascript:void(0)" ng-click="changeTime(6)">一周内</a></li>
+                        <li><a href="javascript:void(0)" ng-click="changeTime(7)">一个月内</a></li>
+                        <li><a href="javascript:void(0)" ng-click="changeTime(8)">三个月内</a></li>
                     </ul>
                 </drop-down>
             </li>
         </tab-bar>
     <!--数据盒子-->
-        <iscroll-wrapper>
-            <li ng-repeat="delivery in deliverys track by $index" style="border:0;background: #f2f2f2;" class="delivery-det">
+        <iscroll-wrapper class="delivery-box">
+            <li ng-repeat="delivery in deliverys track by $index" style="border:none;background: #f2f2f2;">
                 <!--付款单列表-->
                 <a ui-sref="delivery.deliveryDetail({deliveryId:delivery.id})">
                     <div class="delivery-list">
@@ -37,7 +37,7 @@
                             <div class="delivery-arrow-up fn-fl">
                                 <span class="fn-size list-number">{{$index+1}}</span>
                             </div>
-                            <div class="delivery-numberlist fn-size-color fn-fr">
+                            <div class="delivery-numberlist fn-size fn-fr">
                                 发货单编号：{{delivery.id}}
                                 <i class="iconfont icon-xiangyou1 fn-fr fn-size"></i>
                             </div>

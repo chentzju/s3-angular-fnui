@@ -1,4 +1,4 @@
-angular.module("myApp").service("PaymentService",function(){
+angular.module("myApp").service("PaymentService",["$es",function($es){
 
     this.getPaymentStatusArray = function(){
         return [
@@ -73,7 +73,7 @@ angular.module("myApp").service("PaymentService",function(){
         return paymentList;
     };
 
-})
+}])
     .service("PaymentDetailService",function(){
 
         this.getPaymentDetail = function(paymentId){

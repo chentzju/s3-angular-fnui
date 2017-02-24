@@ -1,12 +1,25 @@
 angular.module("myApp").controller("PaymentListCtrl",["$scope","$rootScope","PaymentService",function ($scope,$rootScope,PaymentService) {
     var page,time,status;
 
-    $scope.changeStatus = function(newStatus){
+        $scope.changeStatus = function(newStatus){
         page = 0;
         time = 0;
         status = newStatus;
-        $scope.payments = loadPayments(status,page,time);
-    };
+            if(status.id=='0'){
+                $scope.isBadge = false;
+                $scope.isPending = false;
+                $scope.isSuccess = true;
+            }else if(status.id=='1'){
+                $scope.isPending = false;
+                $scope.isSuccess = false;
+                $scope.isBadge = true;
+            }else{
+                $scope.isBadge = false;
+                $scope.isSuccess = false;
+                $scope.isPending = true;
+            }
+           $scope.payments = loadPayments(status,page,time);
+        };
 
     $scope.changeTime = function(newTime){
         page = 0;

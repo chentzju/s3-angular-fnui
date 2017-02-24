@@ -18,7 +18,7 @@ angular.module("myApp").service("DeliveryService",["$es",function($es){
                     delivery.id = "DD2017000000"+time+page+i;
                     delivery.name = "订单名称";
                     delivery.status = 0;
-                    delivery.time = "2017-"+time;
+                    delivery.time = "2017年"+time;
                     delivery.statusText = "待审核";
                     deliveryList.push(delivery);
                 }
@@ -29,7 +29,7 @@ angular.module("myApp").service("DeliveryService",["$es",function($es){
                     delivery.id = "DD2017111111"+time+page+i;
                     delivery.name = "订单名称";
                     delivery.status = 0;
-                    delivery.time = "2017-"+time;
+                    delivery.time = "2017年"+time;
                     delivery.statusText = "已审核";
                     deliveryList.push(delivery);
                 }
@@ -40,7 +40,7 @@ angular.module("myApp").service("DeliveryService",["$es",function($es){
                     delivery.id = "DD201722222"+time+page+i;
                     delivery.name = "订单名称";
                     delivery.status = 0;
-                    delivery.time = "2017-"+time;
+                    delivery.time = "2017年"+time;
                     delivery.statusText = "已作废";
                     deliveryList.push(delivery);
                 }
@@ -51,7 +51,7 @@ angular.module("myApp").service("DeliveryService",["$es",function($es){
                     delivery.id = "DD2017xxxxxxx"+time+page+i+Math.floor(Math.random()*3);
                     delivery.name = "订单名称";
                     delivery.status = 0;
-                    delivery.time = "2017-"+time;
+                    delivery.time = "2017年"+time;
                     delivery.statusText = "已确认";
                     deliveryList.push(delivery);
                 }
@@ -63,7 +63,7 @@ angular.module("myApp").service("DeliveryService",["$es",function($es){
     };
 
 }])
-    .service("DeliveryDetailService",function(){
+    .service("DeliveryDetailService",['$es',function($es){
 
         this.getDeliveryDetail = function(deliveryId){
             //get deliveryDetail
@@ -79,4 +79,4 @@ angular.module("myApp").service("DeliveryService",["$es",function($es){
             return deliveryDetail;
         }
 
-    });
+    }]);

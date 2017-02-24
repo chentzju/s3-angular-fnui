@@ -35,8 +35,7 @@
                     <div class="delivery-list">
                         <!--向上的三角-->
                         <div class="back-white fn-cf">
-                            <div class="delivery-arrow-up fn-fl">
-                                <span class="fn-size list-number">{{$index+1}}</span>
+                            <div class="delivery-arrow-up fn-fl" ng-class="{'badgeSuccess': isSuccess, 'badge': isBadge,'delivery-arrow-up':isPending}">
                             </div>
                             <div class="delivery-numberlist fn-size fn-fr">
                                 发货单编号：{{delivery.id}}

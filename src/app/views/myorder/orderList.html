@@ -37,8 +37,8 @@
 
                 <!--订单编号-->
                 <div class="num-content">
-                    <div class="badge fn-fl">
-                        <span>{{$index+1}}</span>
+                    <!--<div class=" fn-fl" ng-class="{{order.statusClass}}">-->
+                        <div class="fn-fl badgePending" ng-class="{'badgeSuccess': isSuccess, 'badge': isBadge,'badgePending':isPending}">
                     </div>
                     <span class="myorderID fn-fr">
                         订单编号：{{order.id}}

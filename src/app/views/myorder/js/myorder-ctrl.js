@@ -9,6 +9,23 @@ angular.module("myApp").controller("OrderListCtrl",["$scope","$rootScope","Order
         page = 0;
         time = 0;
         status = newStatus;
+        if(status.id=='1'){
+            $scope.isBadge = false;
+            $scope.isPending = false;
+            $scope.isSuccess = true;
+
+        }else if(status.id=='2'){
+
+            $scope.isPending = false;
+            $scope.isSuccess = false;
+            $scope.isBadge = true;
+        }else{
+
+            $scope.isBadge = false;
+            $scope.isSuccess = false;
+            $scope.isPending = true;
+
+        }
         $scope.orders = loadOrders(status,page,time);
     };
 

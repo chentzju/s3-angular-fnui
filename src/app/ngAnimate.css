@@ -24,20 +24,28 @@
     opacity: 0;
     transition-duration: 250ms;
     -webkit-transition-duration: 250ms;
+    position:absolute;
+    width:100%
 }
 /* line 71, ../sass/ng-animation.scss */
 .toggle.ng-enter-active {
     opacity: 1;
+    position:absolute;
+    width:100%
 }
 /* line 75, ../sass/ng-animation.scss */
 .toggle.ng-leave {
     opacity: 1;
     transition-duration: 250ms;
     -webkit-transition-duration: 250ms;
+    position:absolute;
+    width:100%
 }
 /* line 80, ../sass/ng-animation.scss */
 .toggle.ng-leave-active {
     opacity: 0;
+    position:absolute;
+    width:100%
 }
 /* line 85, ../sass/ng-animation.scss */
 .toggle.ng-hide-add {
@@ -782,6 +790,8 @@
     -ms-transform: scale(1);
     -webkit-transform: scale(1);
     opacity: 1;
+    position:absolute;
+    width:100%;
 }
 /* line 558, ../sass/ng-animation.scss */
 .scale-fade.ng-leave {
@@ -798,6 +808,8 @@
     -ms-transform: scale(0.7);
     -webkit-transform: scale(0.7);
     opacity: 0;
+    position:absolute;
+    width:100%;
 }
 /* line 570, ../sass/ng-animation.scss */
 .scale-fade.ng-hide-add {

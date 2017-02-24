@@ -1,4 +1,4 @@
-angular.module("myApp").service("DeliveryService",function(){
+angular.module("myApp").service("DeliveryService",["$es",function($es){
 
     this.getDeliveryStatusArray = function(){
         return [
@@ -18,6 +18,7 @@ angular.module("myApp").service("DeliveryService",function(){
                     delivery.id = "DD2017000000"+time+page+i;
                     delivery.name = "订单名称";
                     delivery.status = 0;
+                    delivery.time = "2017-"+time;
                     delivery.statusText = "待审核";
                     deliveryList.push(delivery);
                 }
@@ -28,6 +29,7 @@ angular.module("myApp").service("DeliveryService",function(){
                     delivery.id = "DD2017111111"+time+page+i;
                     delivery.name = "订单名称";
                     delivery.status = 0;
+                    delivery.time = "2017-"+time;
                     delivery.statusText = "已审核";
                     deliveryList.push(delivery);
                 }
@@ -38,6 +40,7 @@ angular.module("myApp").service("DeliveryService",function(){
                     delivery.id = "DD201722222"+time+page+i;
                     delivery.name = "订单名称";
                     delivery.status = 0;
+                    delivery.time = "2017-"+time;
                     delivery.statusText = "已作废";
                     deliveryList.push(delivery);
                 }
@@ -48,6 +51,7 @@ angular.module("myApp").service("DeliveryService",function(){
                     delivery.id = "DD2017xxxxxxx"+time+page+i+Math.floor(Math.random()*3);
                     delivery.name = "订单名称";
                     delivery.status = 0;
+                    delivery.time = "2017-"+time;
                     delivery.statusText = "已确认";
                     deliveryList.push(delivery);
                 }
@@ -58,22 +62,18 @@ angular.module("myApp").service("DeliveryService",function(){
         return deliveryList;
     };
 
-})
+}])
     .service("DeliveryDetailService",function(){
 
-        this.getDeliveryDetail = function(deliveryId,deliveryNum){
+        this.getDeliveryDetail = function(deliveryId){
             //get deliveryDetail
             var deliveryDetail = {
                 deliveryId:deliveryId,
-                deliveryNum:deliveryNum,
-                orderTo:"王小二",
-                orderTel:'1590000001256',
-                orderAddDefault:"杭州市下城区新市街153号",
-                orderAdd:"浙江宁波",
-                price: Number(Math.random()*10).toFixed(2),
-                orderType:"自购零食",
-                orderPayType:"265dtex/48f",
-                length:"100m"
+                deliveryTo:"张三",
+                carNum:"浙A12345",
+                telPhone:"18314676709",
+                time:"2017-01-17  15:20:25",
+                remark:"货物要准时送到"
             };
 
             return deliveryDetail;

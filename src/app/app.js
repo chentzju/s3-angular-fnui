@@ -236,7 +236,7 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate','icbc.
                 })
                 .state('delivery.deliverySearch',{
                     url:'/deliverySearch',
-                    backState:'delivery.deliverySearch',
+                    backState:'delivery.deliveryList',
                     templateUrl:'views/delivery/deliverySearch.html',
                     //controller:'deliverySearchCtrl'
                 })

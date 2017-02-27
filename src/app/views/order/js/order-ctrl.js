@@ -7,42 +7,42 @@ angular.module("myApp").controller("cartCtrl",["$scope","$rootScope","cartServic
 
     /*console.log(111)*/
     /*var page,time,status;
-     $scope.changeStatus = function(newStatus){
-     page = 0;
-     time = 0;
-     status = newStatus;
-     $scope.products = loadProducts(status,page,time);
-     };
+    $scope.changeStatus = function(newStatus){
+        page = 0;
+        time = 0;
+        status = newStatus;
+        $scope.products = loadProducts(status,page,time);
+    };
 
-     //$rootScope  在购买的时候应该会有用吧
-     $scope.products = ProductService.getProductList();
+    //$rootScope  在购买的时候应该会有用吧
+    $scope.products = ProductService.getProductList();
 
-     $scope.refreshPage = function () {
-     $scope.products = loadProducts(status,page,time);
-     };
+    $scope.refreshPage = function () {
+        $scope.products = loadProducts(status,page,time);
+    };
 
-     $scope.loadMore = function () {
-     page = page+1;
-     var products = loadProducts(status,page,time);
-     if(products.length>0)
-     for(var i=0,len=products.length; i<len; i++){
-     $scope.products.push(products[i]);
-     }
-     };
+    $scope.loadMore = function () {
+        page = page+1;
+        var products = loadProducts(status,page,time);
+        if(products.length>0)
+            for(var i=0,len=products.length; i<len; i++){
+                $scope.products.push(products[i]);
+            }
+    };
 
-     function loadProducts(status,page,time) {
-     return ProductService.getProductList(status,page,time);
-     }
-     function initPage(){
-     page =0;time=0;
-     var productStatusArray = ProductService.getProductStatusArray();
-     $scope.productStatusArray = productStatusArray;
-     status = productStatusArray[0];
-     $scope.products = loadProducts(status,page,time);
-     }
+    function loadProducts(status,page,time) {
+        return ProductService.getProductList(status,page,time);
+    }
+    function initPage(){
+        page =0;time=0;
+        var productStatusArray = ProductService.getProductStatusArray();
+        $scope.productStatusArray = productStatusArray;
+        status = productStatusArray[0];
+        $scope.products = loadProducts(status,page,time);
+    }
 
-     //初始化
-     initPage();*/
+    //初始化
+    initPage();*/
 
     $scope.reduceCartPro=function ($index) {
         if($scope.cartProducts[$index].num==1){
@@ -83,10 +83,10 @@ myApp.controller("orderConfirmCtrl",["$scope","$rootScope",'$stateParams',functi
     $(".orderconfirm").css("height",scHei-51-parseFloat($(".orderconfirm-bottom").css("height")))
 }]);
 /*
- myApp.controller("orderCatCtrl",["$scope","$rootScope",'$stateParams','ProductService',function ($scope,$rootScope,$stateParams,ProductService) {
- //取得传过来的参数
- console.log($rootScope.backState)
- var productId = $stateParams.productId;
- // console.log();
- $scope.product = ProductService.getProductDetail(productId);
- }]);*/
+myApp.controller("orderCatCtrl",["$scope","$rootScope",'$stateParams','ProductService',function ($scope,$rootScope,$stateParams,ProductService) {
+    //取得传过来的参数
+    console.log($rootScope.backState)
+    var productId = $stateParams.productId;
+    // console.log();
+    $scope.product = ProductService.getProductDetail(productId);
+}]);*/

@@ -91,6 +91,7 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate','icbc.
                     }]
                 }
             })
+
             //购物车
             .state('order.cart',{
                 url:'/cart',
@@ -276,7 +277,7 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate','icbc.
                 controller:'myAccountCtrl'
             })
             .state('profile.myAddress',{
-                url:'/myAddress',
+                url:'/info',
                 title:'地址管理',
                 backState:'profile.info',
                 templateUrl:'views/profile/myAddress.html',

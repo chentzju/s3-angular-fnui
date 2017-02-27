@@ -96,7 +96,8 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate','icbc.
                 url:'/cart',
                 title:'购物车',
                 backState:'product.productList',
-                templateUrl:'views/order/cart.html'
+                templateUrl:'views/order/cart.html',
+                controller:'cartCtrl'
             })
 
             //提交订单
@@ -105,7 +106,7 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate','icbc.
                 templateUrl: 'views/order/addOrder.html',
                 title:"提交订单",
                 backState:"order.cart",
-                //controller:'addOrderCtrl'
+                controller:'addOrderCtrl'
             })
 
             //确认订单
@@ -113,7 +114,8 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate','icbc.
                 url:'/confirm',
                 templateUrl: 'views/order/orderConfirm.html',
                 title:'确认订单',
-                backState:'order.cart'
+                backState:'order.cart',
+                controller:'orderConfirmCtrl'
             })
             //订单成功
             .state('order.sucess',{
@@ -155,10 +157,10 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate','icbc.
                     controller:'OrderDetailCtrl'
                 })
                 .state('search',{
-                url:'app/search',
+                    url:'app/search',
                     title:'查找订单',
-                templateUrl:'views/public/search.html',
-                controller:'SearchCtrl'
+                    templateUrl:'views/public/search.html',
+                    controller:'SearchCtrl'
                     //controller:'OrderListCtrl'
                 })
 
@@ -290,14 +292,14 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate','icbc.
             .state('profile.addAddress',{
                 url:'/addAddress',
                 title:'新增地址',
-                backState:'profile.myAddress',
+                backState:'profile.addAddress',
                 templateUrl:'views/profile/addAddress.html',
                 controller:'addAddressCtrl'
             })
             .state('profile.editAddress',{
                 url:'/editAddress',
                 title:'编辑收货地址',
-                backState:'profile.myAddress',
+                backState:'profile.addAddress',
                 templateUrl:'views/profile/editAddress.html',
                 controller:'editAddressCtrl'
             })

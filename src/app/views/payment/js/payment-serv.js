@@ -21,6 +21,7 @@ angular.module("myApp").service("PaymentService",["$es",function($es){
                     payment.time2 = "2017年"+time;
                     payment.money1="22222"+time;
                     payment.statusText = "未付款";
+                    payment.statusClass="paymentNo";
                     paymentList.push(payment);
                 }
                 break;
@@ -34,6 +35,7 @@ angular.module("myApp").service("PaymentService",["$es",function($es){
                     payment.time2 = "2017年"+time;
                     payment.money1="22222"+time;
                     payment.statusText = "已付款";
+                    payment.statusClass="paymentSuccess";
                     paymentList.push(payment);
                 }
                 break;
@@ -47,6 +49,7 @@ angular.module("myApp").service("PaymentService",["$es",function($es){
                     payment.time2 = "2017年"+time;
                     payment.money1="22222"+time;
                     payment.statusText = "未付款";
+                    payment.statusClass="paymentNo";
                     paymentList.push(payment);
                 }
                 break;

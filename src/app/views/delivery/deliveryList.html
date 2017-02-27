@@ -35,7 +35,7 @@
                     <div class="delivery-list">
                         <!--向上的三角-->
                         <div class="back-white fn-cf">
-                            <div class="delivery-arrow-up fn-fl" ng-class="{'badgeSuccess': isSuccess, 'badge': isBadge,'delivery-arrow-up':isPending}">
+                            <div class="delivery-arrow-up fn-fl" ng-class="{'deliverySuccess': isSuccess,'deliveryNo':isNo,'deliveryNo':'isPending'}">
                             </div>
                             <div class="delivery-numberlist fn-size fn-fr">
                                 发货单编号：{{delivery.id}}
@@ -46,7 +46,7 @@
                         <div class="delivery-list-detail fn-size">
                             <p>经销商名称：<span class="time">工银聚股份有限公司</span></p>
                             <p>生成时间：<span class="time">{{delivery.time}}</span></p>
-                            <p>发货状态：<span>{{delivery.statusText}}</span></p>
+                            <p>发货状态：<span class="satus">{{delivery.statusText}}</span></p>
                         </div>
                     </div>
                 </a>

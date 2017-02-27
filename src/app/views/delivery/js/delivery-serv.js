@@ -3,9 +3,8 @@ angular.module("myApp").service("DeliveryService",["$es",function($es){
     this.getDeliveryStatusArray = function(){
         return [
             {id:null,name:'全  部'},
-            {id:0, name:'待审核'},
-            {id:1,name:'已审核'},
-            {id:2,name:'已作废'}
+            {id:0, name:'未确认'},
+            {id:1,name:'已确认'},
         ];
     };
     this.getDeliveryList = function(status,page,time){
@@ -19,7 +18,8 @@ angular.module("myApp").service("DeliveryService",["$es",function($es){
                     delivery.name = "订单名称";
                     delivery.status = 0;
                     delivery.time = "2017年"+time;
-                    delivery.statusText = "待审核";
+                    delivery.statusText = "未确认";
+                    delivery.statusClass = 'deliveryNo';
                     deliveryList.push(delivery);
                 }
                 break;
@@ -30,18 +30,8 @@ angular.module("myApp").service("DeliveryService",["$es",function($es){
                     delivery.name = "订单名称";
                     delivery.status = 0;
                     delivery.time = "2017年"+time;
-                    delivery.statusText = "已审核";
-                    deliveryList.push(delivery);
-                }
-                break;
-            case 2:
-                for(i = 0;i<10;i++){
-                    delivery = {};
-                    delivery.id = "DD201722222"+time+page+i;
-                    delivery.name = "订单名称";
-                    delivery.status = 0;
-                    delivery.time = "2017年"+time;
-                    delivery.statusText = "已作废";
+                    delivery.statusText = "已确认";
+                    delivery.statusClass = 'deliverySuccess';
                     deliveryList.push(delivery);
                 }
                 break;
@@ -52,7 +42,8 @@ angular.module("myApp").service("DeliveryService",["$es",function($es){
                     delivery.name = "订单名称";
                     delivery.status = 0;
                     delivery.time = "2017年"+time;
-                    delivery.statusText = "已确认";
+                    delivery.statusText = "未确认";
+                    delivery.statusClass = 'deliveryNo';
                     deliveryList.push(delivery);
                 }
                 break;

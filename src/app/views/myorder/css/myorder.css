@@ -64,7 +64,7 @@ p,ul,h1,h2,h3,h4,h5,h6,ol,dl,dt,dd,pre,li,form,input,select,textarea{
     position: relative;
     display: inline-block;
 }
-.order-list .myorder-tabs .fn-dropdown i{
+.order-list  .fn-dropdown i{
     font-size: 1rem;
 }
 .order-list .fn-nav-tabs>li a{

@@ -43,7 +43,15 @@ angular.module("myApp").controller("cartCtrl",["$scope","$rootScope","cartServic
 
     //初始化
     initPage();*/
+    $scope.changeCheck=function ($index) {
+        if($scope.cartProducts[$index].isCheck=="cart-noCheck"){
+            $scope.cartProducts[$index].isCheck="cart-check"
+        }else{
+            $scope.cartProducts[$index].isCheck="cart-noCheck"
+        }
 
+        /*alert(1)*/
+    }
     $scope.reduceCartPro=function ($index) {
         if($scope.cartProducts[$index].num==1){
             $scope.cartProducts[$index].num=1
@@ -76,11 +84,11 @@ myApp.controller("addOrderCtrl",["$scope","$rootScope",'$stateParams',function (
      // console.log();
      $scope.product = ProductService.getProductDetail(productId);*/
     var scHei = document.documentElement.offsetHeight||document.body.offsetHeight;
-    $(".addO").css("height",scHei-50)
+    $(".addO").css("height",scHei-95)
 }]);
 myApp.controller("orderConfirmCtrl",["$scope","$rootScope",'$stateParams',function ($scope,$rootScope,$stateParams) {
     var scHei = document.documentElement.offsetHeight||document.body.offsetHeight;
-    $(".orderconfirm").css("height",scHei-51-parseFloat($(".orderconfirm-bottom").css("height")))
+    $(".orderconfirm").css("height",scHei-54-parseFloat($(".orderconfirm-bottom").css("height")))
 }]);
 /*
 myApp.controller("orderCatCtrl",["$scope","$rootScope",'$stateParams','ProductService',function ($scope,$rootScope,$stateParams,ProductService) {

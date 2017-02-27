@@ -363,6 +363,7 @@ html{
 }*/
 /*productSearch*/
 /*cart*/
+.cart-check{position: relative;top:10%;display: inline-block;width:1.3rem;height:1.3rem;border:1px solid #999;border-radius: 50%;background:red;}
 .cart-main{z-index:10000;position:relative;width:100%;height:100%;/*margin-bottom:1.25rem;*/background-color:#F2F2F2;overflow: auto;}
 .cart-list{width:100%;height:100%;margin:0 auto;padding:0 5%;overflow:auto}
 .cart-list>li{width:100%;background-color:#fdfdfd;margin-top:0.533rem;border:1px solid #DADADA;border-radius: 10px;overflow:hidden;}
@@ -422,11 +423,11 @@ body{background:#F2F2F2}
 /*提交订单*/
 html{background-color: #F2F2F2;}
 input:focus { outline: none; }
-.addO{position:relative;width:100%;height: 100%;;background-color: #F2F2F2;padding-top:0.6rem;overflow:auto;padding-bottom:50px;}
+.addO{position:relative;width:100%;height: 100%;;background-color: #F2F2F2;padding-top:0.6rem;overflow:auto;/*padding-bottom:50px;*/}
 .addO i,span{display: inline-block;}
 .addO ul,li{list-style: none;margin:0 0;padding:0 0;}
 .addO .main{width:93%;background-color:#fff;margin:0 auto;border:1px solid #E6E6E6;border-radius: 8px;overflow: hidden;}
-.addO .payWay{height:34rem;}
+.addO .payWay{height:31rem;}
 .addO .title{width:100%;height:3.4rem;line-height: 3.4rem;font-size:1.2rem;border-bottom:1px solid #E6E6E6;}
 .addO .title>i{width:1.4rem;height:1.4rem;margin-left:1rem;margin-right:1rem;position: relative;top:9%;}
 .addO .title_pay{background:url("../img/order_icon00.png") no-repeat;background-size: 100% 100%;}
@@ -449,13 +450,14 @@ input:focus { outline: none; }
 .addO .details_time>i{width:1.1rem;height:1.1rem;background:url("../img/order_icon_date.png") no-repeat;background-size: 100% 100%;position:absolute;right:3%;top:29%;}
 /*.addO .payRmark{height:6.6rem;}*/
 /*.addO .payRmark>input{margin-left:1rem;display: inline-block;width:100%;height:3rem;line-height:3rem;border: none;font-size:1.2rem;}*/
-.addOrderTig{outline:none;padding-left:1rem;display: inline-block;width:100%;height:9rem;line-height:3rem;border: none;font-size:1.2rem;}
+.addOrderTig{outline:none;padding-left:1rem;display: inline-block;width:100%;height:9rem;line-height:2rem;border: none;font-size:1.2rem;}
 .addO .addorder-bottom{position:fixed;bottom:0;width:100%;height:45px;line-height:50px;text-align:center;background-color:#fff;border-top:1px solid #FCFCFC;}
 .addO .addorder-bottom span{width:8.3rem;height:100%;color:#fff;float: right;}
 .addO .addOrder-bottom_l{background-color: #F89860;}
 .addO .addOrder-bottom_r{background-color: #2F83CE;}
 /*提交订单*/
 /*确认订单*/
+.scale-fade{margin-top:1px;}
 html{
     background:#f2f2f2;
     height: 100%;
@@ -469,6 +471,8 @@ html{
     font-size:0.9rem;
 }
 .orcon-div{
+    z-index:10;
+    position:relative;
     background:#fff;
     width:93%;
     margin:0 auto;

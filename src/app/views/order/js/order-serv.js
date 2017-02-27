@@ -7,8 +7,10 @@ angular.module("myApp")
             var cartList = [];
             var i,order;
             for(i = 0;i<10;i++){
+
                 order = {};
                 order.id = i;
+                order.isCheck="cart-noCheck"
                 order.num = 5;
                 order.name = "订单名称"+i;
                 order.price = "1106";

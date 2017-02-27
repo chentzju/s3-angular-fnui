@@ -6,15 +6,15 @@ angular.module("myApp").controller("PaymentListCtrl",["$scope","$rootScope","Pay
         time = 0;
         status = newStatus;
             if(status.id=='0'){
-                $scope.isBadge = false;
-                $scope.isPending = false;
-                $scope.isSuccess = true;
-            }else if(status.id=='1'){
-                $scope.isPending = false;
                 $scope.isSuccess = false;
-                $scope.isBadge = true;
+                $scope.isNo = true;
+                $scope.isPending=false;
+            }else if(status.id=='1'){
+                $scope.isNo = false;
+                $scope.isSuccess = true;
+                $scope.isPending=false;
             }else{
-                $scope.isBadge = false;
+                $scope.isNo = false;
                 $scope.isSuccess = false;
                 $scope.isPending = true;
             }

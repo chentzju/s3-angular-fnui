@@ -62,35 +62,7 @@
                     </a>
                 </div>
             </div>
-            <!--<div class="orderMoney">-->
-                <!--<div class="num-content informaNum-con bor-none  fn-padding-bottom-0">-->
-                        <!--<span  class="fn-fl ">-->
-                           <!--订单总额-->
-                        <!--</span>-->
-                        <!--<span  class="fn-fr ">-->
-                           <!--{{payment.paymentMoney|currency:'￥'}}-->
-                        <!--</span>-->
-                <!--</div>-->
-                <!--<div class="freight fn-padding fn-padding-top-0 fn-padding-bottom-0 fn-cf">-->
-                    <!--<p>-->
-                             <!--<span class="fn-fl color-67 fn-text-xs">-->
-                               <!--+运费-->
-                            <!--</span>-->
-                            <!--<span class="fn-fr color-67 fn-text-xs">-->
-                               <!--{{payment.Prepaid|currency:'￥'}}-->
-                            <!--</span>-->
-                    <!--</p>-->
-                    <!--<p>-->
-                            <!--<span class="fn-fl color-67 fn-text-xs">-->
-                               <!-- -现金抵用券-->
-                            <!--</span>-->
-                            <!--<span class="fn-fr color-67 fn-text-xs">-->
-                               <!--{{payment.discountCoupon|currency:'￥'}}-->
-                            <!--</span>-->
-                    <!--</p>-->
 
-                <!--</div>-->
-            <!--</div>-->
             <div class="num-content informaNum-con bor-none  fn-padding-bottom-0">
                         <span  class="fn-fl ">
                            订单总额
@@ -120,13 +92,13 @@
             </div>
 
             <div class="b-top fn-padding-xs">
-                <div class="orderTime ">
+                <div class="orderBottom">
                     <a class="paymentMon fn-fr money">
                         {{payment.outofpocket|currency:'￥'}}
                     </a>
                     <span class="fn-fr">支付金额：</span>
                 </div>
-                <div class="orderTime bor-none height-sm">
+                <div class="orderBottom bor-none height-sm">
                     <a class=" fn-fr color-67 fn-text-xs">
                         {{payment.orderTime}}
                     </a>

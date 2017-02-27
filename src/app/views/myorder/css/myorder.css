@@ -80,7 +80,7 @@ p,ul,h1,h2,h3,h4,h5,h6,ol,dl,dt,dd,pre,li,form,input,select,textarea{
 .order-list .fn-dropdown>a{
     color: #444;
 }
-.order-list .myorder-tabs>li>drop-down a:hover{
+.order-list li>.fn-dropdown a:hover{
     color:#2d83ce;
 }
 .order-list .myorder-box ul{
@@ -109,6 +109,10 @@ p,ul,h1,h2,h3,h4,h5,h6,ol,dl,dt,dd,pre,li,form,input,select,textarea{
 .order-list .num-content,.mon-content{
     height: 3.1rem;
 }
+.order-list .myorder-box .num-content .icon-fanhui {
+    transform: rotateY(180deg);
+    -webkit-transform: rotateY(180deg);
+}
 .order-list .num-content{
     border-bottom: 1px solid #DFDFDF;
     background: #fff;
@@ -126,7 +130,7 @@ p,ul,h1,h2,h3,h4,h5,h6,ol,dl,dt,dd,pre,li,form,input,select,textarea{
     display: inline-block;
     position: relative;
     top: -3px;
-    border-top: 2.8rem solid #2fa585;
+    border-top: 2.8rem solid #ec5759;
 }
 /*已审核*/
 .order-list .myorder-box .badgeSuccess{
@@ -137,7 +141,7 @@ p,ul,h1,h2,h3,h4,h5,h6,ol,dl,dt,dd,pre,li,form,input,select,textarea{
     display: inline-block;
     position: relative;
     top: -3px;
-    border-top: 2.8rem solid #2d83ce;
+    border-top: 2.8rem solid #2fa585;
 }
 
 /*已作废*/
@@ -219,6 +223,7 @@ p,ul,h1,h2,h3,h4,h5,h6,ol,dl,dt,dd,pre,li,form,input,select,textarea{
     color: #f7a014;
     font-size: 1.6rem;
     transform: rotateY(180deg);
+    -webkit-transform: rotateY(180deg);
 }
 .order-list .information-con .myorderID{
     color: #000;
@@ -236,6 +241,7 @@ p,ul,h1,h2,h3,h4,h5,h6,ol,dl,dt,dd,pre,li,form,input,select,textarea{
 }
 .order-list .fn-stripe-redblue::before{
     transform: rotateY(180deg);
+    -webkit-transform: rotateY(180deg);
     display: block;
     content: '';
     height: 4px;

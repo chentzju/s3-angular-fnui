@@ -304,3 +304,20 @@ p,ul,h1,h2,h3,h4,h5,h6,ol,dl,dt,dd,pre,li,form,input,select,textarea{
 .order-list .font-normal{
     font-weight: normal;
 }
+
+/*搜索页面*/
+.myorderSearch{
+    margin-top: -.3rem;
+    min-height: 80rem;
+}
+.myorderSearch .top_main .iconfont {
+    font-size: 1.8rem;
+    margin-top: -.3rem;
+    left: 3%;
+}
+.myorderSearch .top_main_ip {
+    width: 86%;
+}
+.myorderSearch  .label_main .icon-lajitong {
+    font-size: 1.2rem;
+}

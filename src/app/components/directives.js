@@ -18,8 +18,7 @@ myApp.directive('butterToast', function() {
     return {
         restrict: 'E',
         replace: true,
-        template: '<a class="go-top" ng-click="goTop()" >' +
-                        '<i class="fn-gotop fn-gotop-icon fn-icon-chevron-up"></i></a>',
+        template: '<a class="go-top fn-icon-chevron-up fn-primary" ng-click="goTop()" ></a>',
         link: function(scope, element, attrs) {
             $(element).hide();
             $(document).on('scroll',function(){
@@ -161,7 +160,7 @@ myApp.directive('butterToast', function() {
                         myScroll = new IScroll(wrapper,{probeType: 2,click:true});
 
                     //高度处理
-                    var height  = $(window).height() - $('.header')[0].clientHeight - $('.footer')[0].clientHeight -$('.search-nav')[0].clientHeight - $('.fn-tabbar')[0].clientHeight -10;
+                    var height  = $(window).height() - $('.header')[0].clientHeight - $('.footer')[0].clientHeight -$('.search-nav')[0].clientHeight - $('.fn-tabbar')[0].clientHeight -2;
                     $(wrapper).css("min-height",height);
 
                     //滚动时

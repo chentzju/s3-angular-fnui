@@ -26,7 +26,7 @@
 .delivery .back-white{background: #fff;}
 .delivery .list-number{position: relative;top: -32px;left: 6px;width: 1.4rem;white-space: nowrap;}
 .delivery .delivery-numberlist{display: inline-block;width: 85%;line-height: 3.1rem;padding: 0 0.6rem 0 0;}
-
+.delivery .delivery-numberlist .icon-fanhui{transform: rotateY(180deg);-webkit-transform: rotateY(180deg);}
 
 /*发货单详情*/
 .delivery .deliveryDet{min-height: 56.8rem;background: #f2f2f2;}
@@ -34,7 +34,7 @@
 .delivery .b-bot{border-bottom: 1px solid #f2f2f2;}
 .delivery .b-top{border-top: 1px solid #f2f2f2;}
 .delivery .i-color{color: #F27405;font-size: 1.2rem;transform: rotateY(180deg);}
-.delivery .color-67{ color: #676767;  }
+.delivery .color-67{ color: #676767;}
 .delivery .mydeliveryName{color: #000;}
 .delivery .content-head{width: 100%;line-height: 3.1rem;}
 .delivery .content-center{padding: .6rem;line-height: 2rem;  }

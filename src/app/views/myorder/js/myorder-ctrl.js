@@ -49,7 +49,16 @@ angular.module("myApp").controller("OrderListCtrl",["$scope","$rootScope","Order
     };
 
     function loadOrders(status,page,time) {
-         return OrderService.getOrderList(status,page,time);
+        var toast = $.toast.show('loading');
+        var result = OrderService.getOrderList(status,page,time);
+        if(toast)
+            setTimeout(function(){
+                toast.close();
+            },0);
+        if(result.retCode == "200"){
+            return result.orderList;
+        }else
+            return [];
     }
 
     function initPage(){

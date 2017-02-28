@@ -18,8 +18,7 @@ myApp.directive('butterToast', function() {
     return {
         restrict: 'E',
         replace: true,
-        template: '<a class="go-top" ng-click="goTop()" >' +
-                        '<i class="fn-gotop fn-gotop-icon fn-icon-chevron-up"></i></a>',
+        template: '<a class="go-top fn-icon-chevron-up fn-primary" ng-click="goTop()" ></a>',
         link: function(scope, element, attrs) {
             $(element).hide();
             $(document).on('scroll',function(){
@@ -42,14 +41,13 @@ myApp.directive('butterToast', function() {
         templateUrl:'templates/headbar.tpl.html',
         link:function(scope,element,attr){
             scope.goBack = function(){
-                if(scope.backState)
-                    $state.go(scope.backState);
-                else
-                    $state.go($rootScope.previousState_name, $rootScope.previousState_params);
+                if(scope.backState){
+                    if($rootScope.previousState_name)
+                        $state.go($rootScope.previousState_name, $rootScope.previousState_params);
+                    else
+                        $state.go(scope.backState);
+                }
             };
-            // scope.closeOffCanvas = function(){
-            //     $("#doc-oc-demo1").offCanvas('close');
-            // }
         }
     }
 }])
@@ -161,7 +159,7 @@ myApp.directive('butterToast', function() {
                         myScroll = new IScroll(wrapper,{probeType: 2,click:true});
 
                     //高度处理
-                    var height  = $(window).height() - $('.header')[0].clientHeight - $('.footer')[0].clientHeight -$('.search-nav')[0].clientHeight - $('.fn-tabbar')[0].clientHeight -10;
+                    var height  = $(window).height() - $('.header')[0].clientHeight - $('.footer')[0].clientHeight -$('.search-nav')[0].clientHeight - $('.fn-tabbar')[0].clientHeight -2;
                     $(wrapper).css("min-height",height);
 
                     //滚动时

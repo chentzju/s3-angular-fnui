@@ -158,10 +158,10 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate','icbc.
                     controller:'OrderDetailCtrl'
                 })
                 .state('search',{
-                url:'app/search',
+                    url:'app/search',
                     title:'查找订单',
-                templateUrl:'views/public/search.html',
-                controller:'SearchCtrl'
+                    templateUrl:'views/public/search.html',
+                    controller:'SearchCtrl'
                     //controller:'OrderListCtrl'
                 })
 

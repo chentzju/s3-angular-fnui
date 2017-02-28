@@ -387,6 +387,14 @@ html{
 .count_num{float:left;width:40%;margin:0 1%;}
 .count_r{color:#FF2A57;}
 */
+.cart-all_check label{float:left;}
+.cart-all_check-span{float:left;}
+.cart-list_top label{float:left;}
+.cart-list_top label input{border-radius: 50%;}
+.cart-list_top .icon-yuanxingxuanzhongfill{color:#1487CD}
+.cart-list_top .icon-yuanxingweixuanzhong{color:#D3D3D3}
+.cart-all_check .icon-yuanxingxuanzhongfill{color:#1487CD}
+.cart-all_check .icon-yuanxingweixuanzhong{color:#D3D3D3}
 .cart-icon{float:right;margin-right:20px;height:3.33rem;line-height:3.33rem;}
 html{height:100%}
 .cart-count span{height:1.93rem;line-height:1.93rem;background-color: #F7F7F7;text-align: center;}
@@ -398,7 +406,9 @@ html{height:100%}
 .cart-bottom{/*z-index:10000*/;width:100%;height:40px;line-height:40px;font-size:0.95rem;border-top: 1px solid #E5E5E5;position:fixed;bottom: 0;}
 .cart-left{float:left;width:70%;height:100%;overflow:hidden;background-color: #fff;}
 .cart-all_check{float:left;margin-left: 2rem;}
-.cart-all_check>span{position:relative;top:0.2rem;left:-0.7rem;}
+/*.cart-all_check>span{position:relative;left:-0.7rem;
+    top:14%;display: inline-block;width:1.3rem;height:1.3rem;border:1px solid #999;border-radius: 50%;
+}*/
 .cart-total{float:right;margin-right: 5%;color:#FB4152;}
 
 .cart-right{float:right;width:30%;height:100%;background-color: #2F83CE;color:#fff;text-align: center;}

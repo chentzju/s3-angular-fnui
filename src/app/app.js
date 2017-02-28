@@ -115,7 +115,7 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate','icbc.
                 url:'/confirm',
                 templateUrl: 'views/order/orderConfirm.html',
                 title:'确认订单',
-                backState:'order.cart',
+                backState:'order.addOrder',
                 controller:'orderConfirmCtrl'
             })
             //订单成功

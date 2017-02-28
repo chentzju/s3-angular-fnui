@@ -25,7 +25,7 @@
                            minlength="4" placeholder="验证码" ng-focus="showError = false">
                 </div>
             </div>
-            <div class="fn-alert fn-alert-danger" ng-show = "showError">{{errorMessage}}</div>
+            <div class="fn-alert fn-alert-danger" ng-show = "showError" ng-bind="errorMessage"></div>
             <div>
                 <button class="fn-btn fn-btn-secondary fn-btn-block fn-disabled" id="checkCode">提交</button>
             </div>

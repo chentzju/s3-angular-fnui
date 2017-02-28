@@ -157,12 +157,12 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate','icbc.
                     templateUrl:'views/myorder/orderDetail.html',
                     controller:'OrderDetailCtrl'
                 })
-                .state('search',{
-                    url:'app/search',
+                .state('myorder.myorderSearch',{
+                    url:'/myorderSearch',
                     title:'查找订单',
-                    templateUrl:'views/public/search.html',
-                    controller:'SearchCtrl'
-                    //controller:'OrderListCtrl'
+                    backState:'myorder.orderList',
+                    templateUrl:'views/myorder/myorderSearch.html',
+                    //controller:'OrderSearchCtrl'
                 })
 
 

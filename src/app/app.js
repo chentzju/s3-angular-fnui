@@ -293,14 +293,14 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate','icbc.
             .state('profile.addAddress',{
                 url:'/addAddress',
                 title:'新增地址',
-                backState:'profile.addAddress',
+                backState:'profile.myAddress',
                 templateUrl:'views/profile/addAddress.html',
                 controller:'addAddressCtrl'
             })
             .state('profile.editAddress',{
                 url:'/editAddress',
                 title:'编辑收货地址',
-                backState:'profile.addAddress',
+                backState:'profile.myAddress',
                 templateUrl:'views/profile/editAddress.html',
                 controller:'editAddressCtrl'
             })
@@ -354,6 +354,12 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate','icbc.
             $rootScope.title = toState.title;
             $rootScope.showBack = toState.backState != null;
             $rootScope.backState = toState.backState;
+
+            angular.element(document).ready(function(){
+                $.each(FNUI.DOMWatchers, function(i, watcher) {
+                    watcher(document);
+                });
+            });
         });
 
         var loginState = "account.login";

@@ -7,7 +7,7 @@
 
                 <!--<i class="iconfont icon-yuanxingweixuanzhong" ng-click="changeCheck($event,$index)"></i>-->
                 <label class="fn-checkbox fn-danger">
-                    <input type="checkbox" ng-model="cartProduct.isCheck" value="" data-fn-ucheck>
+                    <input type="checkbox" ng-click="changeCheck($event,$index)" ng-model="cartProduct.isCheck" value="" data-fn-ucheck>
                 </label>
 
                 <span class="cart-name">{{cartProduct.name}}</span>

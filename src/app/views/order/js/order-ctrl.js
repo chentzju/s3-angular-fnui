@@ -47,11 +47,14 @@ angular.module("myApp").controller("cartCtrl",["$scope","$rootScope","cartServic
     var allCheckTig=true;
     $scope.allCheck=function () {
         if(allCheckTig){
+            $scope.totalPrice=0;
             angular.forEach($scope.cartProducts, function(data){
                 data.isCheck=true;
+                $scope.totalPrice+=data.price*data.num
             });
             allCheckTig=false;
         }else{
+            $scope.totalPrice=0;
             angular.forEach($scope.cartProducts, function(data){
                 data.isCheck=false;
             });
@@ -72,13 +75,15 @@ angular.module("myApp").controller("cartCtrl",["$scope","$rootScope","cartServic
     };
     var checktig=true;
     $scope.changeCheck=function ($event,$index) {
-        if(checktig){
+        calculatePrice()
+
+        /*if(checktig){
             $($event.target).attr("class","iconfont icon-yuanxingxuanzhongfill");
             checktig=false;
         }else{
             $($event.target).attr("class","iconfont icon-yuanxingweixuanzhong");
             checktig=true;
-        }
+        }*/
 
 
         /*if($scope.cartProducts[$index].isCheck=="cart-noCheck"){
@@ -89,19 +94,15 @@ angular.module("myApp").controller("cartCtrl",["$scope","$rootScope","cartServic
 
         /*alert(1)*/
     }
-
-
     $scope.reduceCartPro=function ($index) {
         if($scope.cartProducts[$index].num==1){
             $scope.cartProducts[$index].num=1
         }else{
             $scope.cartProducts[$index].num--;
-            $scope.totalPrice=0
-            angular.forEach($scope.cartProducts, function(data){
-                //data等价于array[index]
-                $scope.totalPrice+=data.price*data.num
-                console.log(111);
-            });
+            if($scope.cartProducts[$index].isCheck){
+                calculatePrice()
+            }
+
         }
     };
     $scope.addCartPro=function($index){
@@ -109,14 +110,20 @@ angular.module("myApp").controller("cartCtrl",["$scope","$rootScope","cartServic
             $scope.cartProducts[$index].num=$scope.cartProducts[$index].limtNum
         }else{
             $scope.cartProducts[$index].num++;
-            $scope.totalPrice=0
-            angular.forEach($scope.cartProducts, function(data){
-                //data等价于array[index]
-                $scope.totalPrice+=data.price*data.num
-                console.log(111);
-            });
+            if($scope.cartProducts[$index].isCheck){
+                calculatePrice()
+            }
+
         }
     };
+    function calculatePrice() {
+        $scope.totalPrice=0
+        angular.forEach($scope.cartProducts, function(data){
+            if(data.isCheck){
+                $scope.totalPrice+=data.price*data.num
+            }
+        });
+    }
     function loadCartProducts() {
         return cartService.getCartList();
     }
@@ -125,12 +132,7 @@ angular.module("myApp").controller("cartCtrl",["$scope","$rootScope","cartServic
     }
     //初始化
     initPage()
-    $scope.totalPrice=0
-    angular.forEach($scope.cartProducts, function(data){
-        //data等价于array[index]
-        $scope.totalPrice+=data.price*data.num
-        console.log(111);
-    });
+    calculatePrice()
 
 }]);
 myApp.controller("addOrderCtrl",["$scope","$rootScope",'$stateParams',function ($scope,$rootScope,$stateParams) {

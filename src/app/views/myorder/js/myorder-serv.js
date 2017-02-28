@@ -25,8 +25,7 @@ angular.module("myApp")
                         order.name = "订单名称";
                         order.money = "1106"+time+page+i;
                         order.status = 0;
-                        order.statusText = "未审核";
-                        order.statusClass = 'badgePending';
+                        order.statusText =  ['未审核','已审核','已作废'];
                         orderList.push(order);
                     }
                     break;
@@ -37,9 +36,8 @@ angular.module("myApp")
                         order.time = "2017年"+time;
                         order.name = "订单名称";
                         order.money = "1106"+time+page+i;
-                        order.status = 0;
-                        order.statusText = "已审核";
-                        order.statusClass = 'badgeSuccess';
+                        order.status = 1;
+                        order.statusText = ['未审核','已审核','已作废'];
                         orderList.push(order);
                     }
                     break;
@@ -50,9 +48,8 @@ angular.module("myApp")
                         order.time = "2017年"+time;
                         order.name = "订单名称";
                         order.money = "1106"+time+page+i;
-                        order.status = 0;
-                        order.statusClass = 'badge';
-                        order.statusText = "已作废";
+                        order.status = 2;
+                        order.statusText =['未审核','已审核','已作废'];
                         orderList.push(order);
                     }
                     break;
@@ -63,9 +60,8 @@ angular.module("myApp")
                         order.time = "2017年"+time;
                         order.name = "订单名称";
                         order.money = "1106"+time+page+i;
-                        order.status = 0;
-                        order.statusText = "未审核";
-                        order.statusClass = 'badgePending';
+                        order.status = Number(Math.random()*2).toFixed();
+                        order.statusText = ['未审核','已审核','已作废'];
                         orderList.push(order);
                     }
                     break;

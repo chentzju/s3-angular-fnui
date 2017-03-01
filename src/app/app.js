@@ -78,7 +78,7 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate','icbc.
             //购物车和订单部分
             .state('order',{
                 url:'/order',
-                templateUrl: 'views/order/main.html',
+                templateUrl: 'views/public/main.html',
                 abstract:true,
                 resolve:{
                     load:['$ocLazyLoad', function($ocLazyLoad) {

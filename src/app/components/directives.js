@@ -41,10 +41,12 @@ myApp.directive('butterToast', function() {
         templateUrl:'templates/headbar.tpl.html',
         link:function(scope,element,attr){
             scope.goBack = function(){
-                if(scope.backState)
-                    $state.go(scope.backState);
-                else
-                    $state.go($rootScope.previousState_name, $rootScope.previousState_params);
+                if(scope.backState ) {
+                    if ($rootScope.previousState_name)
+                        $state.go($rootScope.previousState_name, $rootScope.previousState_params);
+                    else
+                        $state.go(scope.backState);
+                }
             };
         }
     }

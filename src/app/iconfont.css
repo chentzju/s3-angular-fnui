@@ -1,15 +1,15 @@
 
 @font-face {font-family: "iconfont";
-  src: url('../iconfont/iconfont.eot?t=1488176338747'); /* IE9*/
-  src: url('../iconfont/iconfont.eot?t=1488176338747#iefix') format('embedded-opentype'), /* IE6-IE8 */
-  url('../iconfont/iconfont.woff?t=1488176338747') format('woff'), /* chrome, firefox */
-  url('../iconfont/iconfont.ttf?t=1488176338747') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
-  url('../iconfont/iconfont.svg?t=1488176338747#iconfont') format('svg'); /* iOS 4.1- */
+  src: url('../iconfont/iconfont.eot?t=1488352069804'); /* IE9*/
+  src: url('../iconfont/iconfont.eot?t=1488352069804#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('../iconfont/iconfont.woff?t=1488352069804') format('woff'), /* chrome, firefox */
+  url('../iconfont/iconfont.ttf?t=1488352069804') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('../iconfont/iconfont.svg?t=1488352069804#iconfont') format('svg'); /* iOS 4.1- */
 }
 
 .iconfont {
   font-family:"iconfont" !important;
-  font-size:16px;
+  font-size:1.4rem;
   font-style:normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -24,6 +24,8 @@
 .icon-del:before { content: "\e64a"; }
 
 .icon-fanhui:before { content: "\e602"; }
+
+.icon-guanbi:before { content: "\e61a"; }
 
 .icon-gengduo:before { content: "\e608"; }
 
@@ -90,6 +92,8 @@
 .icon-dingdanxinxi:before { content: "\e645"; }
 
 .icon-daikuan:before { content: "\e833"; }
+
+.icon-shouye-copy-copy-copy:before { content: "\e603"; }
 
 .icon-qiehuan:before { content: "\e6ac"; }
 

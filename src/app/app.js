@@ -18,7 +18,7 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate','icbc.
                 title:'首页',
                 templateUrl:'views/public/app.html',
                 resolve:{
-                    MyappService:['$ocLazyLoad', function($ocLazyLoad) {
+                    load:['$ocLazyLoad', function($ocLazyLoad) {
                         return $ocLazyLoad.load([
                             'views/public/js/app-ctrl.js',
                             'views/public/js/app-serv.js'
@@ -42,7 +42,7 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate','icbc.
                 templateUrl: 'views/public/main.html',
                 abstract:true,
                 resolve:{
-                    orderService:['$ocLazyLoad', function($ocLazyLoad) {
+                    load:['$ocLazyLoad', function($ocLazyLoad) {
                         return $ocLazyLoad.load([
                             'views/product/js/product-ctrl.js',
                             'views/product/js/product-serv.js',
@@ -78,10 +78,10 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate','icbc.
             //购物车和订单部分
             .state('order',{
                 url:'/order',
-                templateUrl: 'views/order/main.html',
+                templateUrl: 'views/public/main.html',
                 abstract:true,
                 resolve:{
-                    orderService:['$ocLazyLoad', function($ocLazyLoad) {
+                    load:['$ocLazyLoad', function($ocLazyLoad) {
                         return $ocLazyLoad.load([
                             'views/order/css/order.css',
                             'views/order/js/order-ctrl.js',
@@ -115,7 +115,7 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate','icbc.
                 url:'/confirm',
                 templateUrl: 'views/order/orderConfirm.html',
                 title:'确认订单',
-                backState:'order.cart',
+                backState:'order.addOrder',
                 controller:'orderConfirmCtrl'
             })
             //订单成功
@@ -134,7 +134,7 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate','icbc.
                     templateUrl:'views/public/main.html',
                     abstract:true,
                     resolve:{
-                        myorderService:['$ocLazyLoad', function($ocLazyLoad) {
+                        load:['$ocLazyLoad', function($ocLazyLoad) {
                             return $ocLazyLoad.load([
                                     'views/myorder/js/myorder-ctrl.js',
                                     'views/myorder/js/myorder-serv.js',
@@ -157,12 +157,12 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate','icbc.
                     templateUrl:'views/myorder/orderDetail.html',
                     controller:'OrderDetailCtrl'
                 })
-                .state('search',{
-                    url:'app/search',
+                .state('myorder.myorderSearch',{
+                    url:'/myorderSearch',
                     title:'查找订单',
-                    templateUrl:'views/public/search.html',
-                    controller:'SearchCtrl'
-                    //controller:'OrderListCtrl'
+                    backState:'myorder.orderList',
+                    templateUrl:'views/myorder/myorderSearch.html',
+                    //controller:'OrderSearchCtrl'
                 })
 
 
@@ -174,7 +174,7 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate','icbc.
                     templateUrl:'views/public/main.html',
                     abstract:true,
                     resolve:{
-                        paymentService:['$ocLazyLoad', function($ocLazyLoad) {
+                        load:['$ocLazyLoad', function($ocLazyLoad) {
                             return $ocLazyLoad.load([
                                 'views/payment/js/payment-ctrl.js',
                                 'views/payment/js/payment-serv.js',
@@ -200,6 +200,7 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate','icbc.
                 })
                 .state('payment.paymentSearch',{
                     url:'/paymentSearch',
+                    title:'搜索付款单',
                     backState:'payment.paymentList',
                     templateUrl:'views/payment/paymentSearch.html',
                     //controller:'paymentSearchCtrl'
@@ -213,7 +214,7 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate','icbc.
                     templateUrl:'views/public/main.html',
                     abstract:true,
                     resolve:{
-                        deliveryService:['$ocLazyLoad', function($ocLazyLoad) {
+                        load:['$ocLazyLoad', function($ocLazyLoad) {
                             return $ocLazyLoad.load([
                                 'views/delivery/js/delivery-ctrl.js',
                                 'views/delivery/js/delivery-serv.js',
@@ -253,7 +254,7 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate','icbc.
                 templateUrl:'views/public/main.html',
                 abstract:true,
                 resolve:{
-                    profileService:['$ocLazyLoad', function($ocLazyLoad) {
+                    load:['$ocLazyLoad', function($ocLazyLoad) {
                         return $ocLazyLoad.load([
                             'views/profile/js/profile-ctrl.js',
                             'views/profile/js/profile-serv.js',
@@ -313,7 +314,7 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate','icbc.
                 template:'<div class="main-view" ng-view ui-view></div>',
                 abstract:true,
                 resolve:{
-                    accountService:['$ocLazyLoad', function($ocLazyLoad) {
+                    load:['$ocLazyLoad', function($ocLazyLoad) {
                         return $ocLazyLoad.load([
                             'views/account/assets/rsaoath.min.js',
                             'views/account/css/account.css',

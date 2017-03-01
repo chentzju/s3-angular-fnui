@@ -41,8 +41,8 @@ myApp.directive('butterToast', function() {
         templateUrl:'templates/headbar.tpl.html',
         link:function(scope,element,attr){
             scope.goBack = function(){
-                if(scope.backState){
-                    if($rootScope.previousState_name)
+                if(scope.backState ) {
+                    if ($rootScope.previousState_name)
                         $state.go($rootScope.previousState_name, $rootScope.previousState_params);
                     else
                         $state.go(scope.backState);
@@ -117,7 +117,7 @@ myApp.directive('butterToast', function() {
             restrict:'E',
             transclude:true,
             templateUrl:'templates/iscroll.tpl.html',
-            link:function(){
+            link:function(scope,element,attr){
                 var myScroll;
                 function createScroll(){
                     var pullUp = $('#pullUp'),
@@ -159,7 +159,7 @@ myApp.directive('butterToast', function() {
                         myScroll = new IScroll(wrapper,{probeType: 2,click:true});
 
                     //高度处理
-                    var height  = $(window).height() - $('.header')[0].clientHeight - $('.footer')[0].clientHeight -$('.search-nav')[0].clientHeight - $('.fn-tabbar')[0].clientHeight -2;
+                    var height  = $(window).height() - $('.header')[0].clientHeight - $('.footer')[0].clientHeight -$('.wrapper-head')[0].clientHeight -2;
                     $(wrapper).css("min-height",height);
 
                     //滚动时
@@ -224,10 +224,16 @@ myApp.directive('butterToast', function() {
                         }
                     });
                     wrapper.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+
+                    return myScroll;
                 }
+
                 $(function(){
-                    if(!myScroll)
-                        createScroll();
+                    if(!myScroll){
+                        var myScroll = createScroll();
+                        scope.myScroll = myScroll;
+                    }
+
                 });
             }
         }
@@ -244,7 +250,9 @@ myApp.directive('butterToast', function() {
                     var myscroll = new IScroll(scroll,{
                         click:true
                     });
-                    myscroll.maxScrollY = 0;
+                    var height  = $(window).height() - $('.header')[0].clientHeight - $('.footer')[0].clientHeight -$('.wrapper-head')[0].clientHeight -2;
+                    $(scroll).css("max-height",height);
+                    scroll.maxScrollY = 0;
                     scroll.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
                 })
             }

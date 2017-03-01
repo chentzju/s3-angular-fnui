@@ -1,52 +1,78 @@
 /**
  * Created by chent on 2017/1/18.
  */
-angular.module("myApp").controller("ProductCtrl",["$scope","$rootScope","ProductService",function ($scope,$rootScope,ProductService) {
+angular.module("myApp").controller("ProductCtrl",["$scope","$rootScope","ProductService","CompanyService",function ($scope,$rootScope,ProductService,CompanyService) {
 
-
-    var page,time,status;
-    $scope.changeStatus = function(newStatus){
-        page = 0;
-        time = 0;
-        status = newStatus;
-        $scope.products = loadProducts(status,page,time);
-    };
-
-    //$rootScope  在购买的时候应该会有用吧
-    //$scope.products = ProductService.getProductList();
+    var page = 1,key = null;
 
     $scope.refreshPage = function () {
-        $scope.products = loadProducts(status,page,time);
+        var page = 1;
+        $scope.products = loadProducts($scope.currentCompany.companyId,page,key);
     };
 
     $scope.loadMore = function () {
         page = page+1;
-        var products = loadProducts(status,page,time);
+        var products = loadProducts($scope.currentCompany.companyId,page,key);
         if(products.length>0)
             for(var i=0,len=products.length; i<len; i++){
                 $scope.products.push(products[i]);
             }
     };
 
-    function loadProducts(status,page,time) {
-        return ProductService.getProductList(status,page,time);
-    }
-    function initPage(){
-        page =0;time=0;
-        var productStatusArray = ProductService.getProductStatusArray();
-        $scope.productStatusArray = productStatusArray;
-        status = productStatusArray[0];
-        $scope.products = loadProducts(status,page,time);
-    }
+    $scope.getAll = function(){
+        page = 1;
+        key=null;
+        $scope.products = loadProducts($scope.currentCompany.companyId,page,key);
+    };
+
+    $scope.showCompanyList = function(){
+        Modal.action('open');
+    };
+
+    $scope.changeCompany = function(company){
+        page = 1;
+        key = null;
+        $scope.currentCompany = company;
+        $scope.products = loadProducts(company.companyId,page,key);
+        Modal.action('close');
+        var myScroll = $scope.myScroll;
+        myScroll.scrollTo(0,0);
+        myScroll.refresh();
+        myScroll.maxScrollY = 0;
+    };
+
 
     //初始化
     initPage();
+
+    function loadProducts(companyId,page,key) {
+        return ProductService.getProductList(companyId,page,key);
+    }
+
+    function initPage(){
+        var companyList = CompanyService.getCompanyList();
+        $scope.companyList = companyList;
+        var company = companyList[0];
+        $scope.currentCompany = company;
+        $scope.products = loadProducts(company.companyId,page);
+    }
+    function loadProducts(companyId,page,key) {
+        return ProductService.getProductList(companyId,page,key);
+    }
+
+    function initPage(){
+        var companyList = CompanyService.getCompanyList();
+        $scope.companyList = companyList;
+        var company = companyList[0];
+        $scope.currentCompany = company;
+        $scope.products = loadProducts(company.companyId,page);
+    }
+
 
 }]);
 
 myApp.controller("ProductDetailCtrl",["$scope","$rootScope",'$stateParams','ProductService',function ($scope,$rootScope,$stateParams,ProductService) {
     //取得传过来的参数
     var productId = $stateParams.productId;
-    // console.log();
     $scope.product = ProductService.getProductDetail(productId);
 }]);

@@ -5,19 +5,6 @@ angular.module("myApp").controller("PaymentListCtrl",["$scope","$rootScope","Pay
         page = 0;
         time = 0;
         status = newStatus;
-            if(status.id=='0'){
-                $scope.isSuccess = false;
-                $scope.isNo = true;
-                $scope.isPending=false;
-            }else if(status.id=='1'){
-                $scope.isNo = false;
-                $scope.isSuccess = true;
-                $scope.isPending=false;
-            }else{
-                $scope.isNo = false;
-                $scope.isSuccess = false;
-                $scope.isPending = true;
-            }
            $scope.payments = loadPayments(status,page,time);
         };
 
@@ -40,10 +27,20 @@ angular.module("myApp").controller("PaymentListCtrl",["$scope","$rootScope","Pay
             }
     };
 
+    //function loadPayments(status,page,time) {
+    //    return PaymentService.getPaymentList(status,page,time);
+    //}
     function loadPayments(status,page,time) {
-        return PaymentService.getPaymentList(status,page,time);
+        var toast = $.toast.show('loading');
+        var result = PaymentService.getPaymentList(status,page,time);
+        if(toast)
+            setTimeout(function(){
+                toast.close();
+            },0);
+        if(result.retCode == "200"){return result.paymentList;
+        }else
+            return [];
     }
-
     function initPage(){
         page =0;time=0;
         var paymentStatusArray = PaymentService.getPaymentStatusArray();

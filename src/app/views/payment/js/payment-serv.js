@@ -20,8 +20,7 @@ angular.module("myApp").service("PaymentService",["$es",function($es){
                     payment.time1 = "2017年"+time;
                     payment.time2 = "2017年"+time;
                     payment.money1="22222"+time;
-                    payment.statusText = "未付款";
-                    payment.statusClass="paymentNo";
+                    payment.statusText = ['未付款','已付款'];
                     paymentList.push(payment);
                 }
                 break;
@@ -30,12 +29,11 @@ angular.module("myApp").service("PaymentService",["$es",function($es){
                     payment = {};
                     payment.id = "DD2017111111"+time+page+i;
                     payment.name = "订单名称";
-                    payment.status = 0;
+                    payment.status =1;
                     payment.time1 = "2017年"+time;
                     payment.time2 = "2017年"+time;
                     payment.money1="22222"+time;
-                    payment.statusText = "已付款";
-                    payment.statusClass="paymentSuccess";
+                    payment.statusText = ['未付款','已付款'];
                     paymentList.push(payment);
                 }
                 break;
@@ -44,18 +42,20 @@ angular.module("myApp").service("PaymentService",["$es",function($es){
                     payment = {};
                     payment.id = "DD2017xxxxxxx"+time+page+i+Math.floor(Math.random()*3);
                     payment.name = "订单名称";
-                    payment.status = 0;
                     payment.time1 = "2017年"+time;
                     payment.time2 = "2017年"+time;
                     payment.money1="22222"+time;
-                    payment.statusText = "未付款";
-                    payment.statusClass="paymentNo";
+                    payment.status = Number(Math.random()*1).toFixed();
+                    payment.statusText = ['未付款','已付款'];
                     paymentList.push(payment);
                 }
                 break;
         }
-
-        return paymentList;
+        return {
+            retCode:'200',
+            retMsg:'msg',
+            paymentList:paymentList
+        }
     };
 
 }])

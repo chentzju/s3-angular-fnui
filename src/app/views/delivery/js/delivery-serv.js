@@ -18,8 +18,7 @@ angular.module("myApp").service("DeliveryService",["$es",function($es){
                     delivery.name = "订单名称";
                     delivery.status = 0;
                     delivery.time = "2017年"+time;
-                    delivery.statusText = "未确认";
-                    delivery.statusClass = 'deliveryNo';
+                    delivery.statusText = ['未确认','已确认'];
                     deliveryList.push(delivery);
                 }
                 break;
@@ -28,10 +27,9 @@ angular.module("myApp").service("DeliveryService",["$es",function($es){
                     delivery = {};
                     delivery.id = "DD2017111111"+time+page+i;
                     delivery.name = "订单名称";
-                    delivery.status = 0;
+                    delivery.status = 1;
                     delivery.time = "2017年"+time;
-                    delivery.statusText = "已确认";
-                    delivery.statusClass = 'deliverySuccess';
+                    delivery.statusText = ['未确认','已确认'];
                     deliveryList.push(delivery);
                 }
                 break;
@@ -40,17 +38,18 @@ angular.module("myApp").service("DeliveryService",["$es",function($es){
                     delivery = {};
                     delivery.id = "DD2017xxxxxxx"+time+page+i+Math.floor(Math.random()*3);
                     delivery.name = "订单名称";
-                    delivery.status = 0;
                     delivery.time = "2017年"+time;
-                    delivery.statusText = "未确认";
-                    delivery.statusClass = 'deliveryNo';
+                    delivery.status = Number(Math.random()*1).toFixed();
+                    delivery.statusText = ['未确认','已确认'];
                     deliveryList.push(delivery);
                 }
                 break;
         }
-
-
-        return deliveryList;
+        return {
+            retCode:'200',
+            retMsg:'msg',
+            deliveryList:deliveryList
+        }
     };
 
 }])

@@ -56,6 +56,17 @@ angular.module("myApp").controller("ProductCtrl",["$scope","$rootScope","Product
         $scope.currentCompany = company;
         $scope.products = loadProducts(company.companyId,page);
     }
+    function loadProducts(companyId,page,key) {
+        return ProductService.getProductList(companyId,page,key);
+    }
+
+    function initPage(){
+        var companyList = CompanyService.getCompanyList();
+        $scope.companyList = companyList;
+        var company = companyList[0];
+        $scope.currentCompany = company;
+        $scope.products = loadProducts(company.companyId,page);
+    }
 
 
 }]);

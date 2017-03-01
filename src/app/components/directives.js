@@ -157,7 +157,7 @@ myApp.directive('butterToast', function() {
                         myScroll = new IScroll(wrapper,{probeType: 2,click:true});
 
                     //高度处理
-                    var height  = $(window).height() - $('.header')[0].clientHeight - $('.footer')[0].clientHeight -$('.search-nav')[0].clientHeight - $('.fn-tabbar')[0].clientHeight -2;
+                    var height  = $(window).height() - $('.header')[0].clientHeight - $('.footer')[0].clientHeight -$('.wrapper-head')[0].clientHeight -2;
                     $(wrapper).css("min-height",height);
 
                     //滚动时
@@ -242,7 +242,9 @@ myApp.directive('butterToast', function() {
                     var myscroll = new IScroll(scroll,{
                         click:true
                     });
-                    myscroll.maxScrollY = 0;
+                    var height  = $(window).height() - $('.header')[0].clientHeight - $('.footer')[0].clientHeight -$('.wrapper-head')[0].clientHeight -2;
+                    $(scroll).css("max-height",height);
+                    scroll.maxScrollY = 0;
                     scroll.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
                 })
             }

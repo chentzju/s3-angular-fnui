@@ -9,23 +9,6 @@ angular.module("myApp").controller("OrderListCtrl",["$scope","$rootScope","Order
         page = 0;
         time = 0;
         status = newStatus;
-        if(status.id=='1'){
-            $scope.isBadge = false;
-            $scope.isPending = false;
-            $scope.isSuccess = true;
-
-        }else if(status.id=='2'){
-
-            $scope.isPending = false;
-            $scope.isSuccess = false;
-            $scope.isBadge = true;
-        }else{
-
-            $scope.isBadge = false;
-            $scope.isSuccess = false;
-            $scope.isPending = true;
-
-        }
         $scope.orders = loadOrders(status,page,time);
     };
 
@@ -78,11 +61,4 @@ myApp.controller("OrderDetailCtrl",["$scope","$rootScope",'$stateParams','OrderD
     //取得传过来的参数
     var orderId = $stateParams.orderId;
     $scope.order = OrderDetailService.getOrderDetail(orderId);
-    // var orderNum = $stateParams.orderNum;
-    // $scope.order = OrderDetailService.getOrderDetail(orderId,orderNum);
-
-    // 我的订单详情
-    // function loadOrderDetail(status,page,time) {
-    //     return OrderDetailService.getOrderDetail(status,page,time);
-    // }
 }]);

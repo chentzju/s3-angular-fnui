@@ -118,7 +118,6 @@
     height: 0;
     color: #fff;
     border-right: 3.4rem solid transparent;
-    border-top: 2.8rem solid #d7d7d7;
     display: inline-block;
     position: relative;
     top: -3px;
@@ -134,8 +133,9 @@
 }
 .productList .badge span{
     position: relative;
-    top: -32px;
-    left: 6px;
+    top: -2.4rem;
+    left: .4rem;
+    font-size: .3rem;
     width: 1.4rem;
     white-space: nowrap;
 }
@@ -147,25 +147,22 @@
     color: #2d83ce;
     padding: 0 .6rem 0 0;
 }
+.productList .num-content .icon-fanhui {
+    transform: rotateY(180deg);
+    -webkit-transform: rotateY(180deg);
+}
 .productList .mon-content span{
     display: inline-block;
     height: 100%;
     line-height:3.1rem;
     color: #000;
 }
+
 .productList .num-content i{
     font-size: 1.4rem;
 }
 .productList .myorderTime,.myorderName{
     color: #000;
-}
-.productList .myorderMon{
-    display: inline-block;
-    height: 100%;
-    line-height:3.1rem;
-    background-color: #fff;
-    color: #fb3b4e;
-    font-weight: 600;
 }
 .productList .del-content{
     min-height: 5rem;
@@ -178,34 +175,74 @@
 .productList .del-content div .myorderStau{
     color: #F27405;
 }
+.productList .proMoney{
+    height: 100%;
+    width: 100%;
+    padding: 1.6rem 1rem 1.6rem 0;
+    text-align: center;
+    color: #111;
 
-/*product-detail*/
+}
+.productList .proMoney .proMoney-num{
+    color: #fa6767;
+    font-weight: 500;
+}
+
+/*产品详情*/
 html{background: #f2f2f2;}
-.proDe-top{width:100%;height:5rem;line-height:5rem;background-color: #fff;font-size:1.2rem;position:relative;}
-.proDe-top_name{color:#3184CE;float: left;margin-left:1rem;}
-.proDe-top_icon{float: right;/*margin-right:1rem;*/}
+.productDetail{
+    background: #fff;
+}
+.proDe-top{
+    width:100%;
+    height:4rem;
+    line-height:4rem;
+    background-color: #fff;
+    position:relative;
+}
+.proDe-top_name{
+    color:#3184CE;
+    float: left;
+    margin-left:1.6rem;
+}
+.proDe-top_icon{float: right;}
 .proDe-top_icon i{
     position:absolute;
     right:0;
-    margin-right:10px;
+    margin-right:1.6rem;
+    color:#BEBEBE;
 }
-.proDe-top_line{width:100%;height:0.4rem;background-size:100% 100%;position:absolute;bottom:0;}
-
-.proDe-list{width:100%;height:13.3rem;font-size:1rem;overflow: hidden;}
+.proDe-top_line{width:100%;height:0.6rem;background: url("../img/wave.png");background-size:100% 0.6rem;position:absolute;bottom:0;}
+.proDe-list{width:100%;height:13.3rem;font-size:1.2rem;overflow: hidden;}
 .proDe-list_main{width:90%;height:100%;margin:0 auto;margin-top:1.5rem;}
+.proDe-list_main .card-content-inner span{color: #fa6767;font-weight: 600;  }
 .proDe-pic{width:7.6rem;height:8.3rem;float: left;position:relative;top:0.5rem;}
 .proDe-pic>img{width:100%;height:100%;}
 .proDe-card{float: left;margin-left:3.33rem;}
-
-.proDe-btn{width:93%;margin:0 auto;margin-top:2rem;}
+.proDe-btn{width:100%;padding:1rem 1rem 0 1rem;
+    /*border-top:1px solid #d8d6d6*/
+}
 .proDe-btn div{width:100%;height:3rem;font-size:1.2rem;line-height:3rem;text-align:center;border:1px solid #76ACDD;border-radius:30px;}
 .proDe-add{background-color:#fff;color:#3183CE;}
-/*.buy{float:right;background-color: #2F83D0;color:#fff;}*/
-/*product-detail*/
-/*productSearch*/
-.proSear{
 
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*产品搜索*/
 .proSear-input{
     width:100%;
     height:5.4rem;

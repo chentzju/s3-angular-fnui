@@ -4,19 +4,18 @@
     <!--搜素加时间-->
     <div class="fn-g search-nav back-white">
         <div class="payment">
-            <i class="iconfont icon-sousuo1 fn-size-color p2"></i>
+            <i class="iconfont icon-sou fn-size-color p2"></i>
             <a  ui-sref="product.productSearch">
-                <input type="text" placeholder="关键字搜索" class="payment-input">
+                <input type="text"  placeholder="关键字搜索" class="payment-input fn-disabled">
             </a>
         </div>
     </div>
 
-    <tab-bar>
-        <li ng-repeat="status in productStatusArray">
-            <a  class="fn-btn fn-margin-0" href="javascript:void(0)" ng-click="changeStatus(status)">{{status.name}}</a>
-        </li>
-
-    </tab-bar>
+    <div>
+        <div class="fn-text-truncate fn-u-sm-9" ng-bind="currentCompany.companyName"></div>
+        <span class="fn-text-right  fn-u-sm-3" ng-click="showCompanyList()">
+            <a><i class="fn-icon-filter"></i>切换</a></span>
+    </div>
 
     <!--数据盒子-->
     <iscroll-wrapper class="myorder-box">
@@ -25,41 +24,62 @@
                 <!--订单编号-->
                 <div class="num-content">
                     <div class="badge fn-fl">
-                        <span>{{$index+1}}</span>
+                        <span>HOT</span>
                     </div>
                     <span class="myorderID fn-fr">
                         {{product.productName}}
+                        <i class="iconfont icon-fanhui fn-fr"></i>
                     </span >
                 </div>
 
-                <!--订单详情-->
-                <div class="del-content">
-                    <div>
+                <div class="fn-g">
+                    <div class="fn-u-sm-9 fn-padding-0">
+                        <!--订单详情-->
+                        <div class="del-content">
+                            <div>
                         <span>
                             产品编号：{{product.productId}}
                         </span>
-                        <span>
+                                <span>
                             规格：262dt
                         </span>
-                    </div>
-                    <div>
+                            </div>
+                            <div>
                         <span>
                             价格：{{product.price}}
                         </span>
-                        <span>
+                                <span>
                             分类号：1001
                         </span>
-                    </div>
-                    <div>
+                            </div>
+                            <div>
                         <span>
                             分类名：{{product.productName}}
                         </span>
-                    </div>
+                            </div>
 
+                        </div>
+                    </div>
+                    <div class="fn-u-sm-3 fn-padding-0">
+                        <!--标准价-->
+                        <div class="proMoney">
+                            <div>标准价</div>
+
+                            <div class="proMoney-num">￥{{product.price}}</div>
+                        </div>
+                    </div>
                 </div>
             </a>
         </li>
     </iscroll-wrapper>
 </div>
 
+<fn-action>
+    <ul class="fn-list">
+        <li ng-repeat = "company in companyList">
+            <a ng-bind="company.companyName" ng-click="changeCompany(company)">
+            </a>
+        </li>
+    </ul>
+</fn-action>
 

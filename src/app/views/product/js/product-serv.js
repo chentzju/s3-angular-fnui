@@ -29,7 +29,7 @@ angular.module("myApp").service("ProductService",function(){
                 for(i = 0;i<10;i++){
                     product = {
                         productId:"001"+i,
-                        productName:"最近订单产品名称"+i,
+                        productName:"最近订单"+i,
                         price: Number(Math.random()*10).toFixed(2)
                     };
                     productList.push(product);
@@ -39,7 +39,7 @@ angular.module("myApp").service("ProductService",function(){
                 for(i = 0;i<10;i++){
                     product = {
                         productId:"002"+i,
-                        productName:"收藏产品名称"+i,
+                        productName:"收藏"+i,
                         price: Number(Math.random()*10).toFixed(2)
                     };
                     productList.push(product);
@@ -49,7 +49,7 @@ angular.module("myApp").service("ProductService",function(){
                 for(i = 0;i<10;i++){
                     product = {
                         productId:"003"+i,
-                        productName:"一个虚拟产品名称"+i,
+                        productName:"POY"+i,
                         price: Number(Math.random()*10).toFixed(2)
                     };
                     productList.push(product);

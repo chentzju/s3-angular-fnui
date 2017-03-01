@@ -2,6 +2,7 @@
 
 <div id="productList" class="productList">
     <!--搜素加时间-->
+
     <div class="wrapper-head">
         <div class="fn-g search-nav back-white">
             <div class="payment">
@@ -26,6 +27,7 @@
                 <!--订单编号-->
                 <div class="num-content">
                     <div class="badge fn-fl">
+                        <span>HOT</span>
                     </div>
                     <span class="myorderID fn-fr">
                         {{product.productName}}
@@ -74,6 +76,14 @@
         </li>
     </iscroll-wrapper>
 
+<fn-action>
+    <ul class="fn-list">
+        <li ng-repeat = "company in companyList">
+            <a ng-bind="company.companyName" ng-click="changeCompany(company)">
+            </a>
+        </li>
+    </ul>
+</fn-action>
 
     <fn-action>
         <ul class="fn-list">

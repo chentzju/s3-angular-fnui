@@ -5,7 +5,7 @@
     <div class="fn-g search-nav back-white">
         <div class="payment">
             <i class="iconfont icon-sou fn-size-color p2"></i>
-            <a ui-sref="search">
+            <a ui-sref="myorder.myorderSearch">
                 <input type="text" placeholder="请输入内容" class="payment-input">
             </a>
         </div>
@@ -36,12 +36,13 @@
 
 
                 <!--订单编号-->
-                <div class="num-content">
-                    <!--<div class=" fn-fl" ng-class="{{order.statusClass}}">-->
-                        <div class="fn-fl badgePending" ng-class="{'badgeSuccess': isSuccess, 'badge': isBadge,'badgePending':isPending}">
+                <div class="num-content statusFa">
+
+                    <!--<div class="fn-fl order-status " ng-class="{order-status-0:order.status ==  0," ></div>-->
+                    <div class="fn-fl" ng-class="{'badgeSuccess': order.status == 1, 'badge': order.status == 2,'badgePending':order.status == 0}">
                     </div>
                     <span class="myorderID fn-fr">
-                        订单编号：{{order.id}}
+                        {{order.id}}
                         <i class="iconfont icon-fanhui fn-fr"></i>
                     </span >
                 </div>
@@ -53,7 +54,7 @@
                             经销商名称：
                         </span>
                         <span class="myorderName">
-                            <!--{{order.id}}-->工银聚股份有限公司
+                            工银聚股份有限公司
                         </span>
                     </div>
                     <div>
@@ -70,17 +71,16 @@
                             单据状态：
                         </span>
                         <span class="myorderStau">
-                            {{order.statusText}}
-                            <!--已审核-->
+                            {{order.statusText[order.status]}}
                         </span>
                     </div>
 
                 </div>
                 <!--订单金额-->
                 <div class="mon-content">
-                    <a class="myorderMon fn-fr">
+                    <span class="myorderMon fn-fr">
                         ￥{{order.money}}
-                    </a>
+                    </span>
                     <span class="fn-fr">订单金额：</span>
                 </div>
 

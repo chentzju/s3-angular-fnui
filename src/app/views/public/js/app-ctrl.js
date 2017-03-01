@@ -12,9 +12,4 @@ myApp.controller("MyappCtrl",['$scope','$state','$es','MyappService',function ($
             url:'about'
         }
     ]
-}])
-.controller('SearchCtrl',['$scope','$state',function($scope,$state){
-    $scope.cancel = function(){
-        $state.goBack();
-    }
 }]);

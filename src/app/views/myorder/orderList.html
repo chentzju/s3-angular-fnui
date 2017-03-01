@@ -37,8 +37,6 @@
 
                 <!--订单编号-->
                 <div class="num-content statusFa">
-
-                    <!--<div class="fn-fl order-status " ng-class="{order-status-0:order.status ==  0," ></div>-->
                     <div class="fn-fl" ng-class="{'badgeSuccess': order.status == 1, 'badge': order.status == 2,'badgePending':order.status == 0}">
                     </div>
                     <span class="myorderID fn-fr">
@@ -50,7 +48,7 @@
                 <!--订单详情-->
                 <div class="del-content">
                     <div>
-                        <span>
+                        <span class="leftspan">
                             经销商名称：
                         </span>
                         <span class="myorderName">
@@ -58,7 +56,7 @@
                         </span>
                     </div>
                     <div>
-                        <span>
+                        <span class="leftspan">
                             下单时间：
                         </span>
                         <span class="myorderTime">
@@ -67,10 +65,10 @@
                         </span>
                     </div>
                     <div>
-                        <span>
+                        <span class="leftspan">
                             单据状态：
                         </span>
-                        <span class="myorderStau">
+                        <span class="myorderStau" ng-class={'myorderStau':order.status==1,'paySuccess':order.status==2,'leftspan':order.status=0}>
                             {{order.statusText[order.status]}}
                         </span>
                     </div>

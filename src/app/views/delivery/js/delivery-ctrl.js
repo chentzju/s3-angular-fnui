@@ -5,23 +5,8 @@ angular.module("myApp").controller("DeliveryListCtrl",["$scope","$rootScope","De
         page = 0;
         time = 0;
         status = newStatus;
-        status = newStatus;
-        if(status.id=='0'){
-            $scope.isSuccess = false;
-            $scope.isNo = true;
-            $scope.isPending=false;
-        }else if(status.id=='1'){
-            $scope.isNo = false;
-            $scope.isSuccess = true;
-            $scope.isPending=false;
-        }else{
-            $scope.isNo = false;
-            $scope.isSuccess = false;
-            $scope.isPending = true;
-        }
         $scope.deliverys = loadDeliverys(status,page,time);
     };
-
     $scope.changeTime = function(newTime){
         page = 0;
         time = newTime;
@@ -41,10 +26,21 @@ angular.module("myApp").controller("DeliveryListCtrl",["$scope","$rootScope","De
             }
     };
 
+    //function loadDeliverys(status,page,time) {
+    //    return DeliveryService.getDeliveryList(status,page,time);
+    //}
     function loadDeliverys(status,page,time) {
-        return DeliveryService.getDeliveryList(status,page,time);
+        var toast = $.toast.show('loading');
+        var result = DeliveryService.getDeliveryList(status,page,time);
+        if(toast)
+            setTimeout(function(){
+                toast.close();
+            },0);
+        if(result.retCode == "200"){
+            return result.deliveryList;
+        }else
+            return [];
     }
-
     function initPage(){
         page =0;time=0;
         var deliveryStatusArray = DeliveryService.getDeliveryStatusArray();

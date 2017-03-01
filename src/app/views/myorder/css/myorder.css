@@ -334,24 +334,3 @@ p,ul,h1,h2,h3,h4,h5,h6,ol,dl,dt,dd,pre,li,form,input,select,textarea{
 .myorderSearch  .label_main .icon-lajitong {
     font-size: 1.2rem;
 }
-
-/*已审核*/
-.order-list .myorder-box .order-status{
-    width: 0;
-    height: 0;
-    color: #fff;
-    border-right: 3.4rem solid transparent;
-    display: inline-block;
-    position: relative;
-    top: -3px;
-    /*/border-top: 2.8rem solid #2fa585;*/
-}
-.order-status-0{
-    border-top: 2.8rem solid #f92672;
-}
-.order-status-1{
-    border-top: 2.8rem solid #66d9ef;
-}
-.order-status-2{
-    border-top: 2.8rem solid #8481ff;
-}

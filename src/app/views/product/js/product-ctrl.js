@@ -27,7 +27,7 @@ angular.module("myApp").controller("ProductCtrl",["$scope","$rootScope","Product
 
     $scope.showCompanyList = function(){
         Modal.action('open');
-    }
+    };
 
     $scope.changeCompany = function(company){
         page = 1;
@@ -35,6 +35,10 @@ angular.module("myApp").controller("ProductCtrl",["$scope","$rootScope","Product
         $scope.currentCompany = company;
         $scope.products = loadProducts(company.companyId,page,key);
         Modal.action('close');
+        var myScroll = $scope.myScroll;
+        myScroll.scrollTo(0,0);
+        myScroll.refresh();
+        myScroll.maxScrollY = 0;
     };
 
 

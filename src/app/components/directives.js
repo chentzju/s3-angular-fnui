@@ -115,7 +115,7 @@ myApp.directive('butterToast', function() {
             restrict:'E',
             transclude:true,
             templateUrl:'templates/iscroll.tpl.html',
-            link:function(){
+            link:function(scope,element,attr){
                 var myScroll;
                 function createScroll(){
                     var pullUp = $('#pullUp'),
@@ -222,10 +222,16 @@ myApp.directive('butterToast', function() {
                         }
                     });
                     wrapper.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+
+                    return myScroll;
                 }
+
                 $(function(){
-                    if(!myScroll)
-                        createScroll();
+                    if(!myScroll){
+                        var myScroll = createScroll();
+                        scope.myScroll = myScroll;
+                    }
+
                 });
             }
         }

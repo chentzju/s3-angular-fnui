@@ -108,7 +108,7 @@ p,ul,h1,h2,h3,h4,h5,h6,ol,dl,dt,dd,pre,li,form,input,select,textarea{
     border: 1px solid #DFDFDF;
 }
 .order-list .num-content,.mon-content{
-    height: 2.5rem;
+    height: 3.1rem;
 }
 .order-list .myorder-box .num-content .icon-fanhui {
     transform: rotateY(180deg);
@@ -167,7 +167,7 @@ p,ul,h1,h2,h3,h4,h5,h6,ol,dl,dt,dd,pre,li,form,input,select,textarea{
 .order-list .num-content .myorderID{
     display: inline-block;
     height: 100%;width: 91%;
-    line-height:2.5rem;
+    line-height:3.1rem;
     background-color: #fff;
     color: #2d83ce;
     padding: 0 .8rem 0 0;

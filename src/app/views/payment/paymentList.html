@@ -2,7 +2,7 @@
     <!--搜索-->
     <div class="fn-g search-nav back-white">
         <div class="payment-search">
-            <i class="iconfont icon-sousuo1 search-color fn-padding-horizontal-xs"></i>
+            <i class="iconfont icon-sou search-color fn-padding-horizontal-xs"></i>
             <a ui-sref="payment.paymentSearch"><input type="text" placeholder="请输入内容" class="payment-input"></a>
         </div>
     </div>
@@ -15,9 +15,12 @@
                 <drop-down>
                     <a class="fn-btn">
                         日期
-                        <i class="iconfont icon-xiangxiajiantou fn-size"></i>
+                        <i class="iconfont icon-ananzuiconv265 fn-size"></i>
                     </a>
+
                     <ul class="fn-dropdown-content paymentList-dropdown myorder-dropdown" >
+                        <div id="triangle-up">
+                        </div>
                         <li class="fn-active"><a href="javascript:void(0)" ng-click="changeTime(6)">一周内</a></li>
                         <li><a href="javascript:void(0)" ng-click="changeTime(7)">一个月内</a></li>
                         <li><a href="javascript:void(0)" ng-click="changeTime(8)">三个月内</a></li>
@@ -37,7 +40,7 @@
                             </div>
                             <div class="payment-numberlist fn-size-color fn-fr">
 
-                                    付款单编号：{{payment.id}}
+                                    {{payment.id}}
                                     <i class="iconfont icon-fanhui fn-fr fn-size"></i>
 
                             </div>
@@ -48,7 +51,7 @@
                             <p>付款状态：<span class="status">{{payment.statusText}}</span></p>
                         </div>
                         <div class="fn-padding-xs  fn-fr">
-                            <p>支付金额：<span class="money fn-fr">{{payment.money1|currency:'￥'}}</span></p>
+                            <p class="payColor">支付金额：<span class="money fn-fr">{{payment.money1|currency:'￥'}}</span></p>
                         </div>
                     </a>
                 </div>

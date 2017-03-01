@@ -107,7 +107,7 @@ p,ul,h1,h2,h3,h4,h5,h6,ol,dl,dt,dd,pre,li,form,input,select,textarea{
     border: 1px solid #DFDFDF;
 }
 .order-list .num-content,.mon-content{
-    height: 3.1rem;
+    height: 2.5rem;
 }
 .order-list .myorder-box .num-content .icon-fanhui {
     transform: rotateY(180deg);
@@ -126,22 +126,22 @@ p,ul,h1,h2,h3,h4,h5,h6,ol,dl,dt,dd,pre,li,form,input,select,textarea{
     width: 0;
     height: 0;
     color: #fff;
-    border-right: 3.4rem solid transparent;
+    border-right: 2rem solid transparent;
     display: inline-block;
     position: relative;
     top: -3px;
-    border-top: 2.8rem solid #ec5759;
+    border-top: 1.9rem solid #ec5759;
 }
 /*已审核*/
 .order-list .myorder-box .badgeSuccess{
     width: 0;
     height: 0;
     color: #fff;
-    border-right: 3.4rem solid transparent;
+    border-right: 2rem solid transparent;
     display: inline-block;
     position: relative;
     top: -3px;
-    border-top: 2.8rem solid #2fa585;
+    border-top: 1.9rem solid #2fa585;
 }
 
 /*已作废*/
@@ -149,8 +149,8 @@ p,ul,h1,h2,h3,h4,h5,h6,ol,dl,dt,dd,pre,li,form,input,select,textarea{
     width: 0;
     height: 0;
     color: #fff;
-    border-right: 3.4rem solid transparent;
-    border-top: 2.8rem solid #d7d7d7;
+    border-right: 2rem solid transparent;
+    border-top: 1.9rem solid #d7d7d7;
     display: inline-block;
     position: relative;
     top: -3px;
@@ -165,16 +165,16 @@ p,ul,h1,h2,h3,h4,h5,h6,ol,dl,dt,dd,pre,li,form,input,select,textarea{
 }
 .order-list .num-content .myorderID{
     display: inline-block;
-    height: 100%;width: 86%;
-    line-height:3.1rem;
+    height: 100%;width: 91%;
+    line-height:2.5rem;
     background-color: #fff;
     color: #2d83ce;
-    padding: 0 .6rem 0 0;
+    padding: 0 .8rem 0 0;
 }
 .order-list .mon-content span{
     display: inline-block;
     height: 100%;
-    line-height:3.1rem;
+    line-height:2.5rem;
     color: #000;
 }
 .order-list .num-content i{
@@ -186,7 +186,7 @@ p,ul,h1,h2,h3,h4,h5,h6,ol,dl,dt,dd,pre,li,form,input,select,textarea{
 .order-list .myorderMon{
     display: inline-block;
     height: 100%;
-    line-height:3.1rem;
+    line-height:2.5rem;
     background-color: #fff;
     color: #fb3b4e;
     font-weight: 600;

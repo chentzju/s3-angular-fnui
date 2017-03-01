@@ -2,16 +2,28 @@ angular.module('icbc.espresso',[])
  .factory('$es',function($q,$state)
     {
 
-	 var setting = {};
-	 function setConfig(key,value){
-         setting[key] = value;
-     }
-     function getConfig(key){
-         return setting[key];
-     }
+        var userinfo={};
+        var appId = "s3";
+        var userManage = "usermanage";
 
 
-	 var userinfo={};
+
+        //other configs
+         var setting = {};
+         function setConfig(key,value){
+             setting[key] = value;
+             if(key === 'appid')
+                 appId = value;
+             if(key === 'userservice')
+                 userManage = 'usermanage';
+         }
+         function getConfig(key){
+             return setting[key];
+         }
+
+
+
+
 	 /**
 	  * ajax执行一个服务器端Action，该方法是同步函数版本
 	  * 一个Action可描述为　类名+方法名+别名(可选) 或 portalConfig中配置的数据集ID + 别名(可选)
@@ -133,9 +145,11 @@ angular.module('icbc.espresso',[])
            }
 
         return{
+            userinfo:userinfo,
+            appId:appId,
+            userManage:userManage,
             java:java,
             ajax:ajax,
-            userinfo:userinfo,
             setConfig:setConfig,
             getConfig:getConfig
         }

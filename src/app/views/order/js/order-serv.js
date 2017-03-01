@@ -7,11 +7,13 @@ angular.module("myApp")
             var cartList = [];
             var i,order;
             for(i = 0;i<10;i++){
+
                 order = {};
                 order.id = i;
+                order.isCheck=false;
                 order.num = 5;
                 order.name = "订单名称"+i;
-                order.price = "1106";
+                order.price = 1;
                 order.limtNum=7;
                 cartList.push(order);
             }

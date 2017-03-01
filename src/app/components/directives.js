@@ -251,7 +251,7 @@ myApp.directive('butterToast', function() {
                         click:true
                     });
                     var height  = $(window).height() - $('.header')[0].clientHeight - $('.footer')[0].clientHeight -$('.wrapper-head')[0].clientHeight -2;
-                    $(scroll).css("max-height",height);
+                    $(scroll).css("height",height);
                     scroll.maxScrollY = 0;
                     scroll.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
                 })

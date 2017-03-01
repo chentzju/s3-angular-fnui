@@ -19,13 +19,13 @@
 .delivery .delivery-list-detail{background: #fbfbfb;padding-left: 9px;border-top:1px solid #c1c1c1;line-height: 2rem;}
 /*.delivery .delivery-arrow-up {width:0;height:0;color:#fff;border-right:3.4rem solid transparent;border-top:2.8rem solid #CCCCCC;display: inline-block;position: relative;  top:-3px;}*/
 /*未确认*/
-.delivery .deliveryNo{width:0;height:0;color:#fff;border-right:3.4rem solid transparent;border-top:2.8rem solid #ea566c;display: inline-block;position: relative;  top:-3px;}
+.delivery .deliveryNo{width:0;height:0;color:#fff;border-right:3rem solid transparent;border-top:2.3rem solid #ea566c;display: inline-block;position: relative;  top:-3px;}
 /*已确认*/
-.delivery .deliverySuccess{width:0;height:0;color:#fff;border-right:3.4rem solid transparent;border-top:2.8rem solid #2fa585;display: inline-block;position: relative;  top:-3px;}
+.delivery .deliverySuccess{width:0;height:0;color:#fff;border-right:3rem solid transparent;border-top:2.3rem solid #2fa585;display: inline-block;position: relative;  top:-3px;}
 
 .delivery .back-white{background: #fff;}
 .delivery .list-number{position: relative;top: -32px;left: 6px;width: 1.4rem;white-space: nowrap;}
-.delivery .delivery-numberlist{display: inline-block;width: 85%;line-height: 3.1rem;padding: 0 0.6rem 0 0;}
+.delivery .delivery-numberlist{display: inline-block;width: 87%;line-height: 2.5rem;padding: 0 0.6rem 0 0;}
 .delivery .delivery-numberlist .icon-fanhui{transform: rotateY(180deg);-webkit-transform: rotateY(180deg);}
 
 /*发货单详情*/

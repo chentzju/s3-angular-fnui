@@ -20,14 +20,14 @@
 .payment .payment-list{border-radius: .8rem;border:1px solid #c1c1c1;overflow: hidden;background: #fff;}
 .payment .payment-list-detail{background: #fbfbfb;border-top:1px solid #c1c1c1;border-bottom:1px solid #c1c1c1;}
 .payment .payment-list-detail p{color:#000;line-height: 1.8rem;}
-.payment .payment-arrow-up {width:0;height:0;color:#fff;border-right:3.4rem solid transparent;border-top:2.8rem solid #c1c1c1;display: inline-block;position: relative;  top:-3px;}
 /*未付款*/
-.payment .paymentNo{width:0;height:0;color:#fff;border-right:3.4rem solid transparent;border-top:2.8rem solid #ea566c;display: inline-block;position: relative;  top:-3px;}
+.payment .paymentNo{width:0;height:0;color:#fff;border-right:3rem solid transparent;border-top:2.3rem solid #ea566c;display: inline-block;position: relative;  top:-3px;}
 /*已付款*/
-.payment .paymentSuccess{width:0;height:0;color:#fff;border-right:3.4rem solid transparent;border-top:2.8rem solid #2fa585;display: inline-block;position: relative;  top:-3px;}
+.payment .paymentSuccess{width:0;height:0;color:#fff;border-right:3rem solid transparent;border-top:2.3rem solid #2fa585;display: inline-block;position: relative;  top:-3px;}
 .payment .payment-list-number{position: relative;top: -32px;left: 6px;width: 1.4rem;white-space: nowrap;}
-.payment .payment-numberlist{display: inline-block;width: 85%;line-height: 3.1rem;padding: 0 0.6rem 0 0;}
+.payment .payment-numberlist{display: inline-block;width: 88%;line-height: 2.5rem;padding: 0 0.6rem 0 0;}
 .payment .payment-numberlist .icon-fanhui{transform: rotateY(180deg);-webkit-transform: rotateY(180deg);}
+.payment .payColor{color: #000;}
 
 /*付款单详情*/
 .payment  .paymentHead{background: #f2f2f2;min-height: 56.8rem;}

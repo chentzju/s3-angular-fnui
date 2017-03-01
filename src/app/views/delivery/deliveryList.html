@@ -48,7 +48,7 @@
                         <div class="delivery-list-detail fn-size">
                             <p>经销商名称：<span class="time">工银聚股份有限公司</span></p>
                             <p>生成时间：<span class="time">{{delivery.time}}</span></p>
-                            <p>发货状态：<span class="satus">{{delivery.statusText[delivery.status]}}</span></p>
+                            <p>发货状态：<span ng-class={'status':delivery.status==0,'payColor':delivery.status==1}>{{delivery.statusText[delivery.status]}}</span></p>
                         </div>
                     </div>
                 </a>

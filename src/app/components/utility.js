@@ -36,9 +36,14 @@ var Modal = {
              });
         },
 
-        action : function(){
+        action : function(action){
             var modal =$("#fn-actions");
-            modal.modal('open');
+            if(action === "close")
+                modal.modal('close')
+            else
+                modal.modal('open');
+
+
         }
 };
 

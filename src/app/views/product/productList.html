@@ -6,17 +6,16 @@
         <div class="payment">
             <i class="iconfont icon-sou fn-size-color p2"></i>
             <a  ui-sref="product.productSearch">
-                <input type="text" placeholder="关键字搜索" class="payment-input">
+                <input type="text"  placeholder="关键字搜索" class="payment-input fn-disabled">
             </a>
         </div>
     </div>
 
-    <tab-bar>
-        <li ng-repeat="status in productStatusArray">
-            <a  class="fn-btn fn-margin-0" href="javascript:void(0)" ng-click="changeStatus(status)">{{status.name}}</a>
-        </li>
-
-    </tab-bar>
+    <div>
+        <div class="fn-text-truncate fn-u-sm-9" ng-bind="currentCompany.companyName"></div>
+        <span class="fn-text-right  fn-u-sm-3" ng-click="showCompanyList()">
+            <a><i class="fn-icon-filter"></i>切换</a></span>
+    </div>
 
     <!--数据盒子-->
     <iscroll-wrapper class="myorder-box">
@@ -75,4 +74,12 @@
     </iscroll-wrapper>
 </div>
 
+<fn-action>
+    <ul class="fn-list">
+        <li ng-repeat = "company in companyList">
+            <a ng-bind="company.companyName" ng-click="changeCompany(company)">
+            </a>
+        </li>
+    </ul>
+</fn-action>
 

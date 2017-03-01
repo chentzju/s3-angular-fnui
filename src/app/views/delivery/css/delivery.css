@@ -19,7 +19,7 @@
 /*发货单列表*/
 .delivery .delivery-box ul>li>a{display: block;padding: .8rem .8rem  .1rem .8rem;}
 .delivery .delivery-list{border-radius: .8rem;border:1px solid #c1c1c1;overflow: hidden;}
-.delivery .delivery-list p{color:#000;line-height: 1.9rem;}
+.delivery .delivery-list p{color:#000;line-height: 2.1rem;}
 .delivery .delivery-list-detail{background: #fbfbfb;padding-left: 9px;border-top:1px solid #c1c1c1;}
 /*未确认*/
 .delivery .deliveryNo{width:0;height:0;color:#fff;border-right:2rem solid transparent;border-top:1.9rem solid #ea566c;display: inline-block;position: relative;  top:-3px;}

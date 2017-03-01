@@ -10,6 +10,11 @@ angular.module("myApp").controller("OrderListCtrl",["$scope","$rootScope","Order
         time = 0;
         status = newStatus;
         $scope.orders = loadOrders(status,page,time);
+
+        var myScroll = $scope.myScroll;
+        myScroll.scrollTo(0,0);
+        myScroll.refresh();
+        myScroll.maxScrollY = 0;
     };
 
     $scope.changeTime = function(newTime){

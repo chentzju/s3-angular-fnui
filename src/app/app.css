@@ -313,6 +313,6 @@ p,ul,h1,h2,h3,h4,h5,h6,ol,dl,dt,dd,pre,li,form,input,select,textarea{
 .pSearch .label_main>p>i{float:right;color:#959595;}
 .pSearch .label_main>p>span{float:left;font-size:1.3rem;}
 .pSearch .label_main .iconfont{font-size:1.5rem;}
-.pSearch .label_list{width:100%;height:100%;font-size:1rem;overflow: hidden;}
+.pSearch .label_list{width:100%;height:100%;font-size:1rem;overflow: hidden;min-height: 40rem;}
 .pSearch .label_list>li{float:left;min-width:5rem;height:2.1rem;padding:0 1rem;
 line-height:2.1rem;text-align: center;border:1px solid #D4D4D4;border-radius: 8px;background-color: #FAFAFA;margin-right:0.5rem;margin-top:0.5rem;}

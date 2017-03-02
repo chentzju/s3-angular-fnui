@@ -78,7 +78,7 @@
                 <!--订单金额-->
                 <div class="mon-content">
                     <span class="myorderMon fn-fr">
-                        ￥{{order.money}}
+                        {{order.money|currency:'￥'}}
                     </span>
                     <span class="fn-fr">订单金额：</span>
                 </div>

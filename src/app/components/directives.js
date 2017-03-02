@@ -305,7 +305,7 @@ myApp.directive('butterToast', function() {
         restrict:'E',
         transclude:true,
         template:'<div class = "fn-modal-actions" id="fn-actions">'
-        +' <div class="fn-modal-actions-group"  style="overflow:scroll;height:10rem;" ng-transclude>'
+        +' <div class="fn-modal-actions-group"  style="overflow:scroll;height:16rem;background: #fff" ng-transclude>'
         +'</div>'
         +'<div class="fn-modal-actions-group">' +
         '<button class="fn-btn fn-btn-secondary fn-btn-block" data-fn-modal-close>取消</button>' +

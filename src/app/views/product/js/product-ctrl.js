@@ -63,4 +63,22 @@ myApp.controller("ProductDetailCtrl",["$scope","$rootScope",'$stateParams','Prod
     //取得传过来的参数
     var productId = $stateParams.productId;
     $scope.product = ProductService.getProductDetail(productId);
+
+
+    // 收藏按钮
+    var flag = true;
+    $scope.collection = function (productID) {
+        console.log(productID)
+        if (flag){
+            $(".proDe-top_icon").find("i").attr("class","iconfont icon-shoucang icon-shoucangfill");
+            flag = false;
+
+        }else{
+            $(".proDe-top_icon").find("i").attr("class","iconfont icon-shoucang");
+            flag = true;
+        }
+    }
+
+
+
 }]);

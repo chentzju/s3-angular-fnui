@@ -7,10 +7,14 @@
  *
  *   getUserInfo:获取用户信息
  *   getCompanyList:获取用户所属分公司
- *   getUserAddress:获取用户地址
+ *   setCurrentCompany : 设置当前分公司
+ *   getCurrentCompany : 获取当前分公司
+ *   getUserAddress: 获取用户地址
+ *   getDefaultAddress: 获取默认地址
  *   updateUserAddress:更新用户地址信息
  *   deleteUserAddress:删除用户地址信息
  *   addUserAddress:删除用户地址信息
+ *   setDefaultAddress: 设置地址为默认地址
  *   ...待补充
  *
  */
@@ -59,6 +63,11 @@ angular.module('myApp').service('UserInfoService',['$es',function($es){
     this.setCurrentCompany = function(companyId){
         istore.set('currentCompany',companyId);
     };
+
+    this.getCurrentCompany = function(){
+        return istore.get('currentCompany');
+    };
+
 
 
     this.getUserAddress = function(){
@@ -113,6 +122,15 @@ angular.module('myApp').service('UserInfoService',['$es',function($es){
 
 
     };
+
+
+    this.getDefaultAddress = function(){
+
+    };
+
+    this.setDefaultAddress = function(addressId){
+
+    }
 
 }]);
 

@@ -10,12 +10,6 @@
 .delivery ul.deliveryList-dropdown{border-radius: .8rem;overflow: hidden;padding: 0;min-width: 110px;}
 .delivery ul.deliveryList-dropdown>.fn-active>a{color: #2d83ce;background-color: #ebf6ff;}
 .delivery ul.deliveryList-dropdown>li>a{margin: 0;}
-
-/*tab切换*/
-.delivery .newtabs{border-bottom: 1px solid #c1c1c1;}
-.delivery .newtabs>li>a:hover{border-bottom:1px solid  #2d83d0;color:#2d83d0 !important;}
-.delivery .newtabs>li>a:active{color:#2d83d0;}
-
 /*发货单列表*/
 .delivery .delivery-box ul>li>a{display: block;padding: .8rem .8rem  .1rem .8rem;}
 .delivery .delivery-list{border-radius: .8rem;border:1px solid #DFDFDF;overflow: hidden;}

@@ -12,12 +12,6 @@
 .payment ul.paymentList-dropdown>.fn-active>a{color: #2d83ce;background-color: #ebf6ff;}
 .payment ul.paymentList-dropdown>li>a{margin: 0;}
 
-
-/*tab切换*/
-.payment .payment-search .newtabs{border-bottom: 1px solid #c1c1c1;}
-.payment .payment-search .newtabs>li>a:hover{border-bottom:1px solid  #2d83d0;color:#2d83d0 !important;}
-.payment .payment-search .newtabs>li>a:active{color:#2d83d0;}
-
 /*付款单列表*/
 .payment .p8{padding:.8rem .8rem  .1rem .8rem;}
 .payment .payment-list{border-radius: .8rem;border:1px solid #dfdfdf;overflow: hidden;background: #fff;}

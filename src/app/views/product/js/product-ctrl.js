@@ -17,9 +17,6 @@ angular.module("myApp").controller("ProductCtrl",["$scope","ProductService","Use
                 $scope.products.push(products[i]);
             }
     };
-    $scope.changeColor=function(){
-        console.log(11111)
-    }
     $scope.getAll = function(){
         page = 1;
         key=null;

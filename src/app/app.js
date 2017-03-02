@@ -24,7 +24,8 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate','icbc.
                             'views/public/js/app-serv.js'
                         ])
                     }]
-                }
+                },
+                controller:'MyappCtrl'
             })
             .state('about', {
                 url:'/about',
@@ -78,7 +79,7 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate','icbc.
             //购物车和订单部分
             .state('order',{
                 url:'/order',
-                templateUrl: 'views/order/main.html',
+                templateUrl: 'views/public/main.html',
                 abstract:true,
                 resolve:{
                     load:['$ocLazyLoad', function($ocLazyLoad) {
@@ -311,7 +312,7 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate','icbc.
              */
             .state('account',{
                 url:'/account',
-                template:'<div class="main-view" ng-view ui-view></div>',
+                templateUrl:'views/public/main.html',
                 abstract:true,
                 resolve:{
                     load:['$ocLazyLoad', function($ocLazyLoad) {
@@ -327,17 +328,25 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate','icbc.
             })
             .state('account.login',{
                 url:'/login',
+                title:'登录',
                 templateUrl:'views/account/login.html',
                 controller:'LoginCtrl'
             })
-            .state('account.checkMobile',{
+            .state('account.getCode',{
                 url:'/checkMobile',
+                title:'获取验证码',
                 templateUrl:'views/account/getCode.html'
+            })
+            .state('account.checkCode',{
+                url:'/checkCode',
+                title:'输入验证码',
+                templateUrl:'views/account/checkCode.html'
             })
             .state('account.checkSuccess',{
                 url:'/checkSuccess',
-                templateUrl:'views/account/checkCode.html'
-            })
+                title:'输入验证码',
+                templateUrl:'views/account/checkSuccess.html'
+            });
 
     }])
     .run(['$rootScope', '$state', '$stateParams','$es', function($rootScope, $state, $stateParams,$es) {

@@ -195,9 +195,9 @@ p,ul,h1,h2,h3,h4,h5,h6,ol,dl,dt,dd,pre,li,form,input,select,textarea{
 }
 
 .home-list ul>li{
-    height:8.7rem;
+    height:8rem;
     border: 1px #E8E8E8 solid;
-    border-bottom: none;
+    border-top: none;
     border-left: none;
     padding : 1.25rem 0;
     text-align: center;
@@ -218,7 +218,7 @@ p,ul,h1,h2,h3,h4,h5,h6,ol,dl,dt,dd,pre,li,form,input,select,textarea{
     display: block;
 }
 .home-list .iconfont{
-    font-size: 2.8rem;
+    font-size: 2.2rem;
 }
 /*首页*/
 .home-top{
@@ -284,7 +284,7 @@ p,ul,h1,h2,h3,h4,h5,h6,ol,dl,dt,dd,pre,li,form,input,select,textarea{
 }
 .content-scroller{
     position: absolute;
-    height:20.1rem;
+    min-height:21rem;
     width: 100%;
     /* Prevent elements to be highlighted on tap */
     -webkit-tap-highlight-color: rgba(0,0,0,0);

@@ -30,7 +30,7 @@ angular.module("myApp").service("OrderService",['$es',function($es){
                         order.id = "DD2017000000"+time+page+i;
                         order.time = "2017年"+time;
                         order.name = "订单名称";
-                        order.money = "1106"+time+page+i;
+                        //order.money = "1106"+time+page+i;
                         order.status = 0;
                         order.statusText =  ['未审核','已审核','已作废'];
                         orderList.push(order);
@@ -42,7 +42,7 @@ angular.module("myApp").service("OrderService",['$es',function($es){
                         order.id = "DD2017111111"+time+page+i;
                         order.time = "2017年"+time;
                         order.name = "订单名称";
-                        order.money = "1106"+time+page+i;
+                        //order.money = "1106"+time+page+i;
                         order.status = 1;
                         order.statusText = ['未审核','已审核','已作废'];
                         orderList.push(order);
@@ -54,7 +54,7 @@ angular.module("myApp").service("OrderService",['$es',function($es){
                         order.id = "DD201722222"+time+page+i;
                         order.time = "2017年"+time;
                         order.name = "订单名称";
-                        order.money = "1106"+time+page+i;
+                        //order.money = "1106"+time+page+i;
                         order.status = 2;
                         order.statusText =['未审核','已审核','已作废'];
                         orderList.push(order);
@@ -66,7 +66,7 @@ angular.module("myApp").service("OrderService",['$es',function($es){
                         order.id = "DD2017000000"+time+page+i;
                         order.time = "2017年"+time;
                         order.name = "订单名称";
-                        order.money = "1106"+time+page+i;
+                        //order.money = "1106"+time+page+i;
                         order.status = Number(Math.random()*2).toFixed();
                         order.statusText = ['未审核','已审核','已作废'];
                         orderList.push(order);

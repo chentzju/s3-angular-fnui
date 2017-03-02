@@ -1,11 +1,11 @@
-angular.module("myApp").controller("PaymentListCtrl",["$scope","$rootScope","PaymentService",function ($scope,$rootScope,PaymentService) {
+angular.module("myApp").controller("PaymentListCtrl",["$scope","PaymentService",function ($scope,PaymentService) {
     var page,time,status;
 
         $scope.changeStatus = function(newStatus){
         page = 0;
         time = 0;
         status = newStatus;
-           $scope.payments = loadPayments(status,page,time);
+        $scope.payments = loadPayments(status,page,time);
         };
 
     $scope.changeTime = function(newTime){

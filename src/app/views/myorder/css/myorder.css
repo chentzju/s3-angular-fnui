@@ -182,7 +182,7 @@
     font-size: 1.4rem;
 }
 .order-list .myorderTime,.myorderName{
-    color: #000;
+    color: #767676;
 }
 .order-list .mon-content .myorderMon{
     display: inline-block;
@@ -198,7 +198,7 @@
     background: #fbfbfb;
 }
 .order-list .del-content .leftspan{
-    color: #000;
+    color: #767676;
 }
 .order-list .myorderStau{
     color: #F27405;
@@ -232,7 +232,7 @@
     width: 90%;
 }
 .order-list .color-67{
-    color: #676767;
+    color: #767676;
 }
 .order-list .color-67.fn-text-xs{
     font-size:.8rem;
@@ -258,7 +258,7 @@
 }
 .order-list .informaList-del .fn-padding-0 span{
     font-size: .9rem;
-    color: #676767;
+    color: #767676;
 }
 .order-list .informaList-del li {
     border: none;

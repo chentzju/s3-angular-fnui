@@ -160,9 +160,9 @@ p,ul,h1,h2,h3,h4,h5,h6,ol,dl,dt,dd,pre,li,form,input,select,textarea{
 .order-list .myorder-box .badgeBox .myorderTime{
     color: #767676;
 }
-.order-list .myorder-box .badgeBox .myorderStau{
-    color: #000;
-}
+/*.order-list .myorder-box .badgeBox .myorderStau{*/
+    /*color: #000;*/
+/*}*/
 .order-list .badge span{
     position: relative;
     top: -32px;
@@ -209,9 +209,7 @@ p,ul,h1,h2,h3,h4,h5,h6,ol,dl,dt,dd,pre,li,form,input,select,textarea{
 .order-list .myorderStau{
     color: #F27405;
 }
-.order-list  .payObsolete{
-    color:#767676;
-}
+
 /*订单详情*/
 .order-list.orderDet-ul li{
     border: 1px solid #DFDFDF;

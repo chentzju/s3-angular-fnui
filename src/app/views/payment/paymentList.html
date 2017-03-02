@@ -49,7 +49,7 @@
                         <div class="fn-padding-xs payment-list-detail">
                             <p>生成时间：<span class="time">{{payment.time1}}</span></p>
                             <p>付款时间：<span class="time">{{payment.time2}}</span></p>
-                            <p>付款状态：<span ng-class={'status':payment.status==0,'payColor':payment.status==1}>{{payment.statusText[payment.status]}}</span></p>
+                            <p>付款状态：<span class="status">{{payment.statusText[payment.status]}}</span></p>
                         </div>
                         <div class="fn-padding-xs  fn-fr">
                             <p class="payColor">支付金额：<span class="money fn-fr">{{payment.money1|currency:'￥'}}</span></p>

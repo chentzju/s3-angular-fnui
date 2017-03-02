@@ -58,7 +58,7 @@
                     </div>
                     <div>
                         <span class="leftspan">
-                            下单时间：
+                            付款时间：
                         </span>
                         <span class="myorderTime">
                             {{order.time}}
@@ -69,19 +69,19 @@
                         <span class="leftspan">
                             单据状态：
                         </span>
-                        <span class="myorderStau" ng-class={'myorderStau':order.status==1,'paySuccess':order.status==2,'leftspan':order.status=0}>
+                        <span class="myorderStau">
                             {{order.statusText[order.status]}}
                         </span>
                     </div>
 
                 </div>
-                <!--订单金额-->
-                <div class="mon-content">
-                    <span class="myorderMon fn-fr">
-                        {{order.money|currency:'￥'}}
-                    </span>
-                    <span class="fn-fr">订单金额：</span>
-                </div>
+                <!--&lt;!&ndash;订单金额&ndash;&gt;-->
+                <!--<div class="mon-content">-->
+                    <!--<span class="myorderMon fn-fr">-->
+                        <!--{{order.money|currency:'￥'}}-->
+                    <!--</span>-->
+                    <!--<span class="fn-fr">订单金额：</span>-->
+                <!--</div>-->
 
             </a>
         </li>

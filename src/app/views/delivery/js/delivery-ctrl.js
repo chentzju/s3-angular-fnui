@@ -1,4 +1,4 @@
-angular.module("myApp").controller("DeliveryListCtrl",["$scope","$rootScope","DeliveryService",function ($scope,$rootScope,DeliveryService) {
+angular.module("myApp").controller("DeliveryListCtrl",["$scope","DeliveryService",function ($scope,DeliveryService) {
     var page,time,status;
 
     $scope.changeStatus = function(newStatus){

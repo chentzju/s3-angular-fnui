@@ -28,11 +28,11 @@
             <a ui-sref="product.productDetail({productId:product.productId})" >
                 <!--订单编号-->
                 <div class="num-content">
-                    <div class="badge fn-fl">
-                        <span>HOT</span>
+                    <div class="fn-fl pro-iconBox">
+                        <i class="iconfont icon-chanpin"></i>
                     </div>
-                    <span class="myorderID fn-fr">
-                        {{product.productName}}
+                    <span class="myorderID fn-fr fn-padding-left-0">
+                        {{product.productId}}
                         <i class="iconfont icon-fanhui fn-fr"></i>
                     </span >
                 </div>
@@ -42,19 +42,19 @@
                         <!--订单详情-->
                         <div class="del-content">
                             <div class="">
-                                <span class="fn-u-sm-7 fn-padding-0">
-                                    产品编号：{{product.productId}}
+                                <span class="fn-padding-0">
+                                    产品名称：{{product.productName}}
                                 </span>
-                                <span class="fn-u-sm-5 fn-padding-0">
-                                    规格：262dt
+
+                            </div>
+                            <div>
+                                <span class="fn-padding-0">
+                                    分类号：1001
                                 </span>
                             </div>
                             <div>
-                                <span class="fn-u-sm-7 fn-padding-0">
-                                    价格：{{product.price}}
-                                </span>
-                                <span class="fn-u-sm-5 fn-padding-0">
-                                    分类号：1001
+                                <span class="fn-padding-0">
+                                    规格：262dt
                                 </span>
                             </div>
                             <div>
@@ -68,7 +68,7 @@
                     <div class="fn-u-sm-3 fn-padding-0">
                         <!--标准价-->
                         <div class="proMoney">
-                            <div>标准价</div>
+                            <!--<div>标准价</div>-->
 
                             <div class="proMoney-num">￥{{product.price}}</div>
                         </div>
@@ -77,6 +77,8 @@
             </a>
         </li>
     </iscroll-wrapper>
+
+
 
     <fn-action>
         <ul class="fn-list">

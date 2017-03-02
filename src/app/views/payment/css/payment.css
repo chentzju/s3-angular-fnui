@@ -37,7 +37,7 @@
 /*已付款*/
 .payment .paymentSuccess{width:0;height:0;color:#fff;border-right:2rem solid transparent;border-top:1.9rem solid #2fa585;display: inline-block;position: relative;  top:-3px;}
 .payment .payment-list-number{position: relative;top: -32px;left: 6px;width: 1.4rem;white-space: nowrap;}
-.payment .payment-numberlist{display: inline-block;width: 92%;line-height: 2.2rem;padding: 0 .8rem 0 0;}
+.payment .payment-numberlist{display: inline-block;width: 92%;line-height: 3.1rem;padding: 0 .8rem 0 0;}
 .payment .payment-numberlist .icon-fanhui{transform: rotateY(180deg);-webkit-transform: rotateY(180deg);}
 .payment .payColor{color: #000;}
 

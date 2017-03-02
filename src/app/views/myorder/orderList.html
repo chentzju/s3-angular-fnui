@@ -35,9 +35,7 @@
     <!--数据盒子-->
     <iscroll-wrapper class="myorder-box">
         <li ng-repeat="order in orders track by $index">
-            <a ui-sref="myorder.orderDetail({orderId:order.id})" >
-
-
+            <a ui-sref="myorder.orderDetail({orderId:order.id})" ng-class="{'badgeSuccessBox': order.status == 1, 'badgeBox': order.status == 2,'badgePendingBox':order.status == 0}">
                 <!--订单编号-->
                 <div class="num-content statusFa">
                     <div class="fn-fl" ng-class="{'badgeSuccess': order.status == 1, 'badge': order.status == 2,'badgePending':order.status == 0}">
@@ -80,7 +78,7 @@
                 <!--订单金额-->
                 <div class="mon-content">
                     <span class="myorderMon fn-fr">
-                        ￥{{order.money}}
+                        {{order.money|currency:'￥'}}
                     </span>
                     <span class="fn-fr">订单金额：</span>
                 </div>

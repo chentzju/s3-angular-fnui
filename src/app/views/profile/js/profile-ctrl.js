@@ -1,31 +1,30 @@
-angular.module("myApp")
-    .controller('InfoCtrl',['$scope','$rootScope','$infoService',
-        function($scope,$rootScope,$infoService){
-            var getInfoText=$infoService.getInfoText();
-            $rootScope.companyName=getInfoText.companyName;
-            $rootScope.role=getInfoText.role;
+angular.module("myApp").controller('InfoCtrl',['$scope','UserInfoService',
+        function($scope,UserInfoService){
+            var getInfoText=UserInfoService.getUserInfo();
+            $scope.companyName=getInfoText.companyName;
+            $scope.role=getInfoText.role;
         }])
 
-    .controller('myAccountCtrl',['$scope','$rootScope','$myAccountService','$infoService',
-        function($scope,$rootScope,$myAccountService,$infoService){
-            var getMyAccountText=$myAccountService.getMyAccountText();
+    .controller('myAccountCtrl',['$scope','UserInfoService',
+        function($scope,UserInfoService){
+            var getMyAccountText=UserInfoService.getUserInfo();
             $scope.accountNum=getMyAccountText.accountNum;
             $scope.accountName=getMyAccountText.accountName;
             $scope.name=getMyAccountText.name;
             $scope.phone=getMyAccountText.phone;
 
-            var getInfoText=$infoService.getInfoText();
+            var getInfoText=UserInfoService.getUserInfo();
             $scope.companyName=getInfoText.companyName;
             $scope.role=getInfoText.role;
         }])
 
-    .controller('myAddressCtrl',['$scope','$rootScope','$myAddressService',
-        function($scope,$rootScope,$myAddressService){
-            var getMyAddressText=$myAddressService.getmyAddressText();
+    .controller('myAddressCtrl',['$scope','UserInfoService',
+        function($scope,UserInfoService){
+            var getMyAddressText=UserInfoService.getUserAddress();
             $scope.addressList=getMyAddressText.myAddressList;
 
             $scope.clic=function($index){
-                $rootScope.index=$index;
+                $scope.index=$index;
             };
 
             $scope.delete=function($index){
@@ -36,10 +35,10 @@ angular.module("myApp")
 
         }])
 
-    .controller('editAddressCtrl',['$scope','$rootScope','$myAddressService',
-        function($scope,$rootScope,$myAddressService){
-            var index=$rootScope.index;
-            var getMyAddressText=$myAddressService.getmyAddressText();
+    .controller('editAddressCtrl',['$scope','UserInfoService',
+        function($scope,UserInfoService){
+            var index=$scope.index;
+            var getMyAddressText=UserInfoService.getUserAddress();
             $scope.addressList=getMyAddressText.myAddressList[index];
 
         }])

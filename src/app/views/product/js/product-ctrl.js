@@ -1,7 +1,7 @@
 /**
  * Created by chent on 2017/1/18.
  */
-angular.module("myApp").controller("ProductCtrl",["$scope","$rootScope","ProductService","CompanyService",function ($scope,$rootScope,ProductService,CompanyService) {
+angular.module("myApp").controller("ProductCtrl",["$scope","ProductService","UserInfoService",function ($scope,ProductService,UserInfoService) {
 
     var page = 1,key = null;
 
@@ -9,7 +9,6 @@ angular.module("myApp").controller("ProductCtrl",["$scope","$rootScope","Product
         var page = 1;
         $scope.products = loadProducts($scope.currentCompany.companyId,page,key);
     };
-
     $scope.loadMore = function () {
         page = page+1;
         var products = loadProducts($scope.currentCompany.companyId,page,key);
@@ -18,7 +17,9 @@ angular.module("myApp").controller("ProductCtrl",["$scope","$rootScope","Product
                 $scope.products.push(products[i]);
             }
     };
-
+    $scope.changeColor=function(){
+        console.log(11111)
+    }
     $scope.getAll = function(){
         page = 1;
         key=null;
@@ -50,24 +51,12 @@ angular.module("myApp").controller("ProductCtrl",["$scope","$rootScope","Product
     }
 
     function initPage(){
-        var companyList = CompanyService.getCompanyList();
+        var companyList = UserInfoService.getCompanyList();
         $scope.companyList = companyList;
         var company = companyList[0];
         $scope.currentCompany = company;
         $scope.products = loadProducts(company.companyId,page);
     }
-    function loadProducts(companyId,page,key) {
-        return ProductService.getProductList(companyId,page,key);
-    }
-
-    function initPage(){
-        var companyList = CompanyService.getCompanyList();
-        $scope.companyList = companyList;
-        var company = companyList[0];
-        $scope.currentCompany = company;
-        $scope.products = loadProducts(company.companyId,page);
-    }
-
 
 }]);
 

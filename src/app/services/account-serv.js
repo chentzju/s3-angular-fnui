@@ -1,5 +1,14 @@
 /**
  * Created by chent on 2017/2/13.
+ *
+ *  UserService
+ *  用来处理用户登录信息
+ *  userLogin : 用户登录入口
+ *  changePassword : 用户修改密码接口
+ *  getValidateCode : 获取验证码接口
+ *  checkValidate : 校验验证码接口
+ *   mobileLogin  : 手机登录(后台未实现)
+ *
  */
 
 

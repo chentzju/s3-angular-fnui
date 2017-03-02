@@ -17,58 +17,6 @@ angular.module("myApp")
                 order.limtNum=7;
                 cartList.push(order);
             }
-            /*switch(status.id){
-                case 0:
-                    for(i = 0;i<3;i++){
-                        order = {};
-                        order.id = "DD2017000000"+time+page+i;
-                        order.time = "2017年"+time;
-                        order.name = "订单名称";
-                        order.money = "1106"+time+page+i;
-                        order.status = 0;
-                        order.statusText = "待审核";
-                        orderList.push(order);
-                    }
-                    break;
-                case 1:
-                    for(i = 0;i<10;i++){
-                        order = {};
-                        order.id = "DD2017111111"+time+page+i;
-                        order.time = "2017年"+time;
-                        order.name = "订单名称";
-                        order.money = "1106"+time+page+i;
-                        order.status = 0;
-                        order.statusText = "已审核";
-                        orderList.push(order);
-                    }
-                    break;
-                case 2:
-                    for(i = 0;i<10;i++){
-                        order = {};
-                        order.id = "DD201722222"+time+page+i;
-                        order.time = "2017年"+time;
-                        order.name = "订单名称";
-                        order.money = "1106"+time+page+i;
-                        order.status = 0;
-                        order.statusText = "已作废";
-                        orderList.push(order);
-                    }
-                    break;
-                default:
-                    for(i = 0;i<10;i++){
-                        order = {};
-                        order.id = "DD2017xxxxxxx"+time+page+i+Math.floor(Math.random()*3);
-                        order.time = "2017年"+time;
-                        order.name = "订单名称";
-                        order.money = "1106"+time+page+i;
-                        order.status = 0;
-                        order.statusText = "未审核";
-                        orderList.push(order);
-                    }
-                    break;
-            }*/
-
-
             return cartList;
         };
     }])

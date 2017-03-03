@@ -36,8 +36,8 @@ gulp.task("assets",function(){
 //copy files
 gulp.task('copy',function(){
     gulp.src('src/app/templates/*').pipe(gulp.dest('dist/templates'));
-    gulp.src('src/app/iconfont/*').pipe(gulp.dest('dist/iconfont'));
-    gulp.src('src/app/services/*').pipe(gulp.dest('dist/services'));
+    gulp.src('src/app/iconfont/*').pipe(gulp.dest('dist/styles/iconfont'));
+    gulp.src('src/app/services/*').pipe(gulp.dest('dist/scripts/services'));
     gulp.src('src/index.html').pipe(gulp.dest('dist'));
     gulp.src('src/404.html').pipe(gulp.dest('dist'));
 });
@@ -73,6 +73,12 @@ gulp.task('client',function(){
         .pipe(concat('app.css'))
         .pipe(cssmin())
         .pipe(gulp.dest('dist/styles'));
+
+    gulp.src(['src/app/directives/*.js'])
+        .pipe(concat('directives.min.js'))
+        .pipe(uglify())
+        .pipe(gulp.dest('dist/scripts/directives'));
+
 });
 
 
@@ -118,6 +124,10 @@ gulp.task('client-dev',function(){
     gulp.src('src/app/*.css')
         .pipe(concat('app.css'))
         .pipe(gulp.dest('dist/styles'));
+
+    gulp.src(['src/app/directives/*.js'])
+        .pipe(concat('directive.min.js'))
+        .pipe(gulp.dest('dist/scripts/directives'));
 });
 gulp.task('dev',['clean', 'assets-dev', 'copy', 'image','views','client-dev']);
 

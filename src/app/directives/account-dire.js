@@ -8,7 +8,7 @@ angular.module("myApp").directive('loginForm',['$state','UserService',function($
     return{
         restrict:'E',
         replace:true,
-        templateUrl:'views/account/login.tpl.html',
+        templateUrl:'views/templates/login.tpl.html',
         link:function (scope,element,attr) {
              $(element).validator({
                  validateOnSubmit:true,
@@ -31,7 +31,7 @@ angular.module("myApp").directive('loginForm',['$state','UserService',function($
         return{
             restrict:'E',
             replace:true,
-            templateUrl:'views/account/getValidateCode.tpl.html',
+            templateUrl:'views/templates/getValidateCode.tpl.html',
             link:function(scope,element,attr){
                 $(element).validator({
                     validateOnsubmit:true,
@@ -50,7 +50,7 @@ angular.module("myApp").directive('loginForm',['$state','UserService',function($
         return {
             restrict:'E',
             replace:true,
-            templateUrl:'views/account/checkValidateCode.tpl.html',
+            templateUrl:'views/templates/checkValidateCode.tpl.html',
             link:function(scope,element,attr){
                 $(element).validator({
                     validateOnsubmit:true,
@@ -68,7 +68,7 @@ angular.module("myApp").directive('loginForm',['$state','UserService',function($
         return {
             restrict:'E',
             replace:true,
-            templateUrl:'views/account/password.tpl.html',
+            templateUrl:'views/templates/password.tpl.html',
             link:function (scope,element,attr) {
                 $(element).validator({
                     validateOnSubmit:true,
@@ -94,7 +94,7 @@ angular.module("myApp").directive('loginForm',['$state','UserService',function($
         return {
             restrict:'E',
             replace:true,
-            templateUrl:'views/account/mobileLogin.tpl.html',
+            templateUrl:'views/templates/mobileLogin.tpl.html',
             link:function(scope,element,attr){
                 $(element).find('#mobileForm').validator({
                     validateOnSubmit:true,

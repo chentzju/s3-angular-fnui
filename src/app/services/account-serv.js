@@ -28,7 +28,7 @@ angular.module('myApp').service('UserService',['$es',function($es){
             param.appid = appid;
         else
             param.appid = $es.getConfig('custid');
-        return $es.java('userAuthenBean.getPublickKey',param,userManage,1000);
+        return $es.java('userAuthenBean.getPublicKey',param,userManage,1000);
     };
 
     /**

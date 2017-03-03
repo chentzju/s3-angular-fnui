@@ -23,7 +23,7 @@ angular.module('myApp').service('UserInfoService',['$es',function($es){
 
     this.getUserInfo = function(){
 
-            //TESTSTART
+            //#
             return {
                 retCode:'200',
                 retMsg:'success',
@@ -35,7 +35,7 @@ angular.module('myApp').service('UserInfoService',['$es',function($es){
                 name:'浙江化工测试',
                 phone:'1585858558'
             };
-        //TESTEND
+        //##
 
     };
 
@@ -43,7 +43,7 @@ angular.module('myApp').service('UserInfoService',['$es',function($es){
 
     this.getCompanyList = function(){
 
-        //TESTSTART
+        //#
         //get product
         return [
             {companyId:"1",companyName:'某某公司'},
@@ -51,7 +51,7 @@ angular.module('myApp').service('UserInfoService',['$es',function($es){
                 companyId:"2",companyName:'一个名king字特别特别特别特别长的分公司'
             }
         ];
-        //TESTSEND
+        //##
 
 
         var param = {};
@@ -72,7 +72,7 @@ angular.module('myApp').service('UserInfoService',['$es',function($es){
 
     this.getUserAddress = function(){
 
-        //TESTSTART
+        //#
         return {
             retCode:'200',
             retMsg:'success',
@@ -97,7 +97,7 @@ angular.module('myApp').service('UserInfoService',['$es',function($es){
                 }
             ]
         };
-        //TESTEND
+        //##
 
 
     };

@@ -39,7 +39,7 @@ angular.module('myApp').service('UserService',['$es',function($es){
      * @returns {*}
      */
     this.userLogin = function(loginName,password,code){
-        //TESTSTART
+        //#
         $es.userinfo = {userName:'haha'};
         return {
             retCode:'200',
@@ -47,7 +47,7 @@ angular.module('myApp').service('UserService',['$es',function($es){
             isActive:1,
             appid:"s3"
         };
-        //TESTEND
+        //##
 
         // public key
         var key = getPublicKey();
@@ -95,12 +95,12 @@ angular.module('myApp').service('UserService',['$es',function($es){
      * @returns {*}
      */
     this.changePassword = function(oldPassword,newPassword,repeatPassword,loginName,appid){
-        //TESTSTART
+        //#
         return {
             retCode:'200',
             retMsg:'success'
         };
-        //TESTEND
+        //##
 
 
         // public key
@@ -140,14 +140,14 @@ angular.module('myApp').service('UserService',['$es',function($es){
      */
     this.getValidateCode = function(phoneNumber,loginName,appid){
 
-        //TESTSTART
+        //#
         //假装取到了
         return{
             retCode:200,
             retMsg:'success',
             mobile:'135****3456'
         };
-        //TESTEND
+        //##
 
         var param = {
             mobile:phoneNumber
@@ -173,9 +173,9 @@ angular.module('myApp').service('UserService',['$es',function($es){
      */
     this.checkValidate = function(mobile,code,appid){
 
-        //TESTSTART
+        //#
         return true;
-        //TESTEND
+        //##
 
         var param = {
             mobile:mobile
@@ -202,12 +202,12 @@ angular.module('myApp').service('UserService',['$es',function($es){
     //TODO 手机号码登录 未做
     this.mobileLogin = function(phoneNumber,code){
 
-        //TESTSTART
+        //#
         return{
             retCode:200,
             retMsg:'success'
         };
-        //TESTEND
+        //##
 
         var param = {
             mobile:phoneNumber,

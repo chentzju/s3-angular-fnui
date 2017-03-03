@@ -375,12 +375,6 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate','icbc.
             if(toState.name === loginState)
                 valid = true;
             else if(!valid){
-                //TESTSTART
-                if(true){
-
-                }else{
-                //TESTEND
-
                 //check userinfo
                  $es.userinfo = $es.java("userInfoBean.getUserData");
                  if($es.userinfo.status == "000" || $es.userinfo.retCode == "200"){
@@ -399,9 +393,6 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate','icbc.
                 event.preventDefault();
                 $state.go(loginState);
             }
-                //TESTSTART
-                }
-                //TESTEND
             }
         });
     }])

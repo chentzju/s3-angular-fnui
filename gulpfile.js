@@ -42,7 +42,6 @@ gulp.task("assets",function(){
 gulp.task('copy',function(){
     gulp.src('src/app/templates/*').pipe(gulp.dest('dist/templates'));
     gulp.src('src/app/iconfont/*').pipe(gulp.dest('dist/styles/iconfont'));
-    gulp.src('src/app/services/*').pipe(gulp.dest('dist/scripts/services'));
     gulp.src('src/index.html').pipe(gulp.dest('dist'));
     gulp.src('src/404.html').pipe(gulp.dest('dist'));
 
@@ -56,42 +55,36 @@ gulp.task('app',function(){
     gulp.src(['src/app/*.js','src/app/components/*'])
         .pipe(concat('app.js'))
         .pipe(gulp.dest('dist/scripts'));
-
     gulp.src('src/app/*.css')
         .pipe(concat('app.css'))
         .pipe(gulp.dest('dist/styles'));
-
     gulp.src(['src/app/directives/*.js'])
         .pipe(concat('directive.min.js'))
         .pipe(gulp.dest('dist/scripts/directives'));
-
 });
 
-
-
-gulp.task('replace',function(){
-    gulp.src(['dist/scripts/services/*.js'])
-        .pipe(replace(/\/\/TESTSTART[^(\/\/TESTSTART)]+\/\/TESTEND/g, ''))
-        .pipe(gulp.dest('dist/scripts/services'))
-
-    gulp.src(['dist/scripts/app.js'])
-        .pipe(replace(/\/\/TESTSTART[^(\/\/TESTSTART)]+\/\/TESTEND/g, ''))
-        .pipe(gulp.dest('dist/scripts'));
-});
-gulp.task('uglify',function () {
-    gulp.src('dist/scripts/app.js')
+gulp.task('app-build',function(){
+    gulp.src(['src/app/*.js','src/app/components/*'])
+        .pipe(concat('app.js'))
+        .pipe(replace(/\/\/#[^#]*\/\/##/g,''))
         .pipe(uglify())
         .pipe(gulp.dest('dist/scripts'));
-    gulp.src('dist/styles/app.css')
+    gulp.src('src/app/*.css')
+        .pipe(concat('app.css'))
         .pipe(cssmin())
         .pipe(gulp.dest('dist/styles'));
-    gulp.src(['dist/scripts/directives/directive.min.js'])
+    gulp.src(['src/app/directives/*.js'])
+        .pipe(replace(/\/\/#[^#]*\/\/##/g,''))
+        .pipe(concat('directive.min.js'))
         .pipe(uglify())
         .pipe(gulp.dest('dist/scripts/directives'));
 });
 
-
-
+gulp.task('replace',function(){
+    gulp.src('src/app/services/*.js')
+        .pipe(replace(/\/\/#[^#]*\/\/##/g,''))
+        .pipe(gulp.dest('dist/scripts/services/'));
+});
 
 
 gulp.task('watch', function () {
@@ -111,5 +104,5 @@ gulp.task('connect',['dev'],function(){
 gulp.task('dev',['clean', 'assets', 'copy','app']);
 gulp.task('build-dev',['connect','watch']);
 
-gulp.task('build',['dev','replace','uglify']);
+gulp.task('build',['clean', 'assets', 'copy','app-build','replace']);
 gulp.task('default',['build']);

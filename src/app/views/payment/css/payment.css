@@ -3,7 +3,6 @@
 .payment .Bule{color:#2d83d0;}
 .payment .i-Bule{color:#2d83d0;font-size: 1.5rem;}
 .payment .money{color: #ff2150;font-weight: 600;}
-/*.time{color: #767676;}*/
 .status{color: #F27405;}
 /*搜索*/
 .payment .back-white{background: #fff;}
@@ -18,12 +17,11 @@
 /*付款单列表*/
 .payment .p8{padding:.8rem .8rem  .1rem .8rem;}
 .payment .payment-list{border-radius: .8rem;border:1px solid #dfdfdf;overflow: hidden;background: #fff;}
-.payment .payment-list-detail{background: #fbfbfb;border-top:1px solid #dfdfdf;border-bottom:1px solid #dfdfdf;}
+.payment .payment-list-detail{background: #fbfbfb;border-top:1px solid #dfdfdf;}
 .payment .payment-list-detail p{color:#767676;line-height: 1.8rem;font-size: 1.1rem;}
 .payment .payment-list-number{position: relative;top: -32px;left: 6px;width: 1.4rem;white-space: nowrap;}
 .payment .payment-numberlist{display: inline-block;width: 100%;line-height: 3.1rem;padding: 0 .8rem 0 0;color: #464646;}
 .payment .payment-numberlist .icon-fanhui{transform: rotateY(180deg);-webkit-transform: rotateY(180deg);}
-/*.payment .payColor{color: #000;}*/
 
 /*付款单详情*/
 .payment  .paymentHead{background: #f2f2f2;min-height: 56.8rem;}

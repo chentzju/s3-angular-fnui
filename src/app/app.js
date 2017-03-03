@@ -274,14 +274,14 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate','icbc.
                 controller:'myAccountCtrl'
             })
             .state('profile.myAddress',{
-                url:'/info',
+                url:'/myAddress',
                 title:'地址管理',
                 backState:'profile.info',
                 templateUrl:'views/profile/myAddress.html',
                 controller:'myAddressCtrl'
             })
             .state('profile.changePw',{
-                url:'/info',
+                url:'/changePw',
                 title:'修改密码',
                 backState:'profile.info',
                 templateUrl:'views/profile/changePw.html',
@@ -327,7 +327,7 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate','icbc.
                 controller:'LoginCtrl'
             })
             .state('account.getCode',{
-                url:'/checkMobile',
+                url:'/getCode',
                 title:'获取验证码',
                 templateUrl:'views/account/getCode.html'
             })

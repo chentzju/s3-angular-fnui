@@ -107,7 +107,7 @@ angular.module("myApp").directive('loginForm',['$state','UserService',function($
 
                         var i = 60;
                         getCode.html("("+i+")s");
-                        Timer.invoke(tick,0,1000,60000);
+                        timer.invoke(tick,0,1000,60000);
                         function tick(){
                             --i;
                             getCode.html("("+i+")s");

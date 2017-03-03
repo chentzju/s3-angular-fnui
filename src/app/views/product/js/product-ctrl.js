@@ -1,6 +1,7 @@
 /**
  * Created by chent on 2017/1/18.
  */
+// 产品列表
 angular.module("myApp").controller("ProductCtrl",["$scope","ProductService","UserInfoService",function ($scope,ProductService,UserInfoService) {
 
     var page = 1,key = null;
@@ -57,6 +58,7 @@ angular.module("myApp").controller("ProductCtrl",["$scope","ProductService","Use
 
 }]);
 
+//产品详情
 myApp.controller("ProductDetailCtrl",["$scope","$rootScope",'$stateParams','ProductService',function ($scope,$rootScope,$stateParams,ProductService) {
     //取得传过来的参数
     var productId = $stateParams.productId;
@@ -65,6 +67,7 @@ myApp.controller("ProductDetailCtrl",["$scope","$rootScope",'$stateParams','Prod
 
     // 收藏按钮
     var flag = true;
+    // $scope.collection = function (productID,flag) {
     $scope.collection = function (productID) {
         console.log(productID)
         if (flag){
@@ -77,6 +80,28 @@ myApp.controller("ProductDetailCtrl",["$scope","$rootScope",'$stateParams','Prod
             flag = true;
         }
     }
+
+    //加入购物车
+    $scope.addProductToCart = function (productID) {
+        // if(flag){
+        //
+        // }else{
+        //
+        // }
+
+    }
+
+
+
+}]);
+
+// 产品搜索
+myApp.controller("ProductSearchCtrl",["$scope",'$stateParams','ProductService',function ($scope,$stateParams,ProductService) {
+
+    // function loadCategoryInfo() {
+    //
+    // }
+
 
 
 

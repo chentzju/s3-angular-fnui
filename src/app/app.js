@@ -67,7 +67,8 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate','icbc.
                 url:'/productSearch',
                 title:'产品搜索',
                 backState:'product.productList',
-                templateUrl:'views/product/productSearch.html'
+                templateUrl:'views/product/productSearch.html',
+                controller:'ProductSearchCtrl'
             })
             .state('product.productDetail',{
                 url:'/productDetail/:productId',

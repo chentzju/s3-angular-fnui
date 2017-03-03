@@ -37,6 +37,8 @@
     border:none;
     width:80%;
     outline: none;
+    line-height: 26px;
+    height:26px;
 }
 
 .order-list .payment-input:not([type=radio]):not([type=checkbox]), select {

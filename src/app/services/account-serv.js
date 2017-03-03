@@ -68,21 +68,15 @@ angular.module('myApp').service('UserService',['$es',function($es){
             param.code = '';
 
         var result = $es.java('userAuthenBean.userLogin',param,userManage,3000);
-        if(result || !result.retCode){
+        if(!result || !result.retCode){
             return {
                 retCode:'400',
                 retMsg:'系统错误，请联系管理员'
             }
         }else if(result.retCode !== "200"){
             return result;
-        }else if(result.isActive == '0'){
-            return {
-                retCode:'400',
-                retMsg:'用户未激活，请激活后登录'
-            }
-        }else{
+        }else
             return result;
-        }
     };
 
     /**

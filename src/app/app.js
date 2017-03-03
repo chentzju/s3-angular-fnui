@@ -375,7 +375,13 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate','icbc.
             var valid =  false;
             if(toState.name === loginState)
                 valid = true;
+
             else if(!valid){
+
+                //#
+                return;
+                //##
+
                 //check userinfo
                  $es.userinfo = $es.java("userInfoBean.getUserData");
                  if($es.userinfo.status == "000" || $es.userinfo.retCode == "200"){
@@ -384,16 +390,15 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate','icbc.
                      $rootScope.username = $es.userinfo.userName;
                      $rootScope.customerId = $es.userinfo.customerId;
 
-
                  //角色
                  var roleId = $es.userinfo.roles[0].id;
-                 //根据角色判断首页的不同显示
-                 //应该是来自后台的状态才比较合理
-                 //新增一个状态表，来保存状态
+                     //根据角色判断首页的不同显示
+                     //应该是来自后台的状态才比较合理
+                     //新增一个状态表，来保存状态
                  }else {
-                event.preventDefault();
-                $state.go(loginState);
-            }
+                        event.preventDefault();
+                        $state.go(loginState);
+                 }
             }
         });
     }])

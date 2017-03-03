@@ -84,6 +84,12 @@ p,ul,h1,h2,h3,h4,h5,h6,ol,dl,dt,dd,pre,li,form,input,select,textarea{
     to { -webkit-transform:rotate(360deg) translateZ(0); }
 }
 
+/** 必要更改 **/
+.fn-btn.fn-active, .fn-btn:active {
+    background-image: none;
+    box-shadow: none;
+}
+
 /*tab*/
 .fn-tabbar .fn-tab-active{
     border: none;
@@ -95,6 +101,7 @@ p,ul,h1,h2,h3,h4,h5,h6,ol,dl,dt,dd,pre,li,form,input,select,textarea{
     margin-right: 5px;
     display: block;
     position: relative;
+    border:none;
 }
 .fn-tabbar .fn-tab-active>a{
     border: none;

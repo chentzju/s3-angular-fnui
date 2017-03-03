@@ -12,7 +12,7 @@
         <!--tab切换-->
             <tab-bar>
                 <li ng-repeat="status in deliveryStatusArray">
-                    <a  class="fn-btn fn-size" style="box-shadow:none;color:#000;" href="javascript:void(0)" ng-click="changeStatus(status)">{{status.name}}</a>
+                    <a  class="fn-btn fn-size" style="box-shadow:none;" href="javascript:void(0)" ng-click="changeStatus(status)">{{status.name}}</a>
                 </li>
                 <li>
                     <drop-down>
@@ -36,14 +36,11 @@
                 <a ui-sref="delivery.deliveryDetail({deliveryId:delivery.id})">
                     <div class="delivery-list">
                         <!--向上的三角-->
-                        <div class="back-white fn-cf">
-                            <!--<div class="delivery-arrow-up fn-fl" ng-class="setStyle(delivery.status)">-->
-                            <div class="fn-fl" ng-class="{'deliverySuccess': delivery.status==0,'deliveryNo':delivery.status==1}">
-
-                            </div>
-                            <div class="delivery-numberlist fn-size fn-fr">
+                        <div class="back-white">
+                            <div class="delivery-numberlist">
+                                <i class="iconfont icon-bill-sent i-Blue deliveryOrder"></i>
                                 {{delivery.id}}
-                                <i class="iconfont icon-fanhui fn-fr fn-size"></i>
+                                <i class="iconfont icon-fanhui fn-fr fn-size Blue"></i>
                             </div>
                         </div>
 

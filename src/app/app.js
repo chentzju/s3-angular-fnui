@@ -20,8 +20,7 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate','icbc.
                 resolve:{
                     load:['$ocLazyLoad', function($ocLazyLoad) {
                         return $ocLazyLoad.load([
-                            'views/public/js/home-ctrl.js',
-                            'services/public-serv.js'
+                            'scripts/services/public-serv.js'
                         ])
                     }]
                 },
@@ -46,9 +45,8 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate','icbc.
                     load:['$ocLazyLoad', function($ocLazyLoad) {
                         return $ocLazyLoad.load([
                             'views/product/js/product-ctrl.js',
-                            'views/product/js/product-dire.js',
-                            'services/product-serv.js',
-                            'services/userinfo-serv.js',
+                            'scripts/services/product-serv.js',
+                            'scripts/services/userinfo-serv.js',
                             'views/product/css/product.css'
                         ])
                     }]
@@ -88,8 +86,7 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate','icbc.
                         return $ocLazyLoad.load([
                             'views/order/css/order.css',
                             'views/order/js/order-ctrl.js',
-                            'views/order/js/order-dire.js',
-                            'services/cart-serv.js'
+                            'scripts/services/cart-serv.js'
                         ])
                     }]
                 }
@@ -140,8 +137,7 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate','icbc.
                         load:['$ocLazyLoad', function($ocLazyLoad) {
                             return $ocLazyLoad.load([
                                     'views/myorder/js/myorder-ctrl.js',
-                                    'services/order-serv.js',
-                                    'views/myorder/js/myorder-dire.js',
+                                    'scripts/services/order-serv.js',
                                     'views/myorder/css/myorder.css'
                                 ]);
                         }]
@@ -180,8 +176,7 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate','icbc.
                         load:['$ocLazyLoad', function($ocLazyLoad) {
                             return $ocLazyLoad.load([
                                 'views/payment/js/payment-ctrl.js',
-                                'services/payment-serv.js',
-                                'views/payment/js/payment-dire.js',
+                                'scripts/services/payment-serv.js',
                                 'views/payment/css/payment.css'
                             ]);
                         }]
@@ -220,8 +215,7 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate','icbc.
                         load:['$ocLazyLoad', function($ocLazyLoad) {
                             return $ocLazyLoad.load([
                                 'views/delivery/js/delivery-ctrl.js',
-                                'services/delivery-serv.js',
-                                'views/delivery/js/delivery-dire.js',
+                                'scripts/services/delivery-serv.js',
                                 'views/delivery/css/delivery.css'
                             ]);
                         }]
@@ -260,9 +254,8 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate','icbc.
                     load:['$ocLazyLoad', function($ocLazyLoad) {
                         return $ocLazyLoad.load([
                             'views/profile/js/profile-ctrl.js',
-                            'services/userinfo-serv.js',
-                            'services/account-serv.js',
-                            'views/profile/js/profile-dire.js',
+                            'scripts/services/userinfo-serv.js',
+                            'scripts/services/account-serv.js',
                             'views/profile/css/personal_center.css'
                         ]);
                     }]
@@ -282,14 +275,14 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate','icbc.
                 controller:'myAccountCtrl'
             })
             .state('profile.myAddress',{
-                url:'/info',
+                url:'/myAddress',
                 title:'地址管理',
                 backState:'profile.info',
                 templateUrl:'views/profile/myAddress.html',
                 controller:'myAddressCtrl'
             })
             .state('profile.changePw',{
-                url:'/info',
+                url:'/changePw',
                 title:'修改密码',
                 backState:'profile.info',
                 templateUrl:'views/profile/changePw.html',
@@ -322,9 +315,8 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate','icbc.
                         return $ocLazyLoad.load([
                             'views/account/assets/rsaoath.min.js',
                             'views/account/css/account.css',
-                            'views/account/js/account-dire.js',
                             'views/account/js/account-ctrl.js',
-                            'services/account-serv.js'
+                            'scripts/services/account-serv.js'
                         ]);
                     }]
                 }
@@ -336,7 +328,7 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate','icbc.
                 controller:'LoginCtrl'
             })
             .state('account.getCode',{
-                url:'/checkMobile',
+                url:'/getCode',
                 title:'获取验证码',
                 templateUrl:'views/account/getCode.html'
             })

@@ -8,7 +8,7 @@ angular.module("myApp").directive('loginForm',['$state','UserService',function($
     return{
         restrict:'E',
         replace:true,
-        templateUrl:'views/account/login.tpl.html',
+        templateUrl:'templates/login.tpl.html',
         link:function (scope,element,attr) {
              $(element).validator({
                  validateOnSubmit:true,
@@ -31,7 +31,7 @@ angular.module("myApp").directive('loginForm',['$state','UserService',function($
         return{
             restrict:'E',
             replace:true,
-            templateUrl:'views/account/getValidateCode.tpl.html',
+            templateUrl:'templates/getValidateCode.tpl.html',
             link:function(scope,element,attr){
                 $(element).validator({
                     validateOnsubmit:true,
@@ -50,7 +50,7 @@ angular.module("myApp").directive('loginForm',['$state','UserService',function($
         return {
             restrict:'E',
             replace:true,
-            templateUrl:'views/account/checkValidateCode.tpl.html',
+            templateUrl:'templates/checkValidateCode.tpl.html',
             link:function(scope,element,attr){
                 $(element).validator({
                     validateOnsubmit:true,
@@ -68,7 +68,7 @@ angular.module("myApp").directive('loginForm',['$state','UserService',function($
         return {
             restrict:'E',
             replace:true,
-            templateUrl:'views/account/password.tpl.html',
+            templateUrl:'templates/password.tpl.html',
             link:function (scope,element,attr) {
                 $(element).validator({
                     validateOnSubmit:true,
@@ -94,7 +94,7 @@ angular.module("myApp").directive('loginForm',['$state','UserService',function($
         return {
             restrict:'E',
             replace:true,
-            templateUrl:'views/account/mobileLogin.tpl.html',
+            templateUrl:'templates/mobileLogin.tpl.html',
             link:function(scope,element,attr){
                 $(element).find('#mobileForm').validator({
                     validateOnSubmit:true,
@@ -107,7 +107,7 @@ angular.module("myApp").directive('loginForm',['$state','UserService',function($
 
                         var i = 60;
                         getCode.html("("+i+")s");
-                        Timer.invoke(tick,0,1000,60000);
+                        timer.invoke(tick,0,1000,60000);
                         function tick(){
                             --i;
                             getCode.html("("+i+")s");

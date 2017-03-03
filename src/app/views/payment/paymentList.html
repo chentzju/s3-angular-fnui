@@ -35,14 +35,11 @@
                 <div class="payment-list">
                     <!--向上的三角-->
                     <a ui-sref="payment.paymentDetail({paymentId:payment.id})">
-                        <div class="back-white fn-cf">
-                            <div class="fn-fl" ng-class="{'paymentNo': payment.status==0,'paymentSuccess':payment.status==1}">
-                                <!--<span class="fn-text-top  payment-list-number">{{$index+1}}</span>-->
-                            </div>
-                            <div class="payment-numberlist fn-size-color fn-fr">
+                        <div class="back-white">
+                            <div class="payment-numberlist">
+                                <i class="iconfont icon-fukuandan paymentOrder i-Bule"></i>
                                     {{payment.id}}
-                                    <i class="iconfont icon-fanhui fn-fr fn-size"></i>
-
+                                    <i class="iconfont icon-fanhui fn-fr fn-size Bule"></i>
                             </div>
                         </div>
                         <div class="fn-padding-xs payment-list-detail">

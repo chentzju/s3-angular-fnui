@@ -1,12 +1,6 @@
 /**
  * Created by chent on 2017/1/18.
  */
-var config = {
-    'custid':'ultimate',
-    'userservice':'usermanage'
-};
-
-
 var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate','icbc.espresso'])
     .config(['$stateProvider','$urlRouterProvider',function($stateProvider,$urlRouterProvider){
         $urlRouterProvider.otherwise('/app');

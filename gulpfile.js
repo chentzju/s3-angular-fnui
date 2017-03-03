@@ -52,7 +52,9 @@ gulp.task('copy',function(){
 
 //app builder
 gulp.task('app',function(){
-    gulp.src(['src/app/*.js','src/app/components/*'])
+    gulp.src(['src/app/config.js'])
+        .pipe(gulp.dest('dist/scripts'));
+    gulp.src(['src/app/components/*','src/app/*.js'])
         .pipe(concat('app.js'))
         .pipe(gulp.dest('dist/scripts'));
     gulp.src('src/app/*.css')
@@ -64,7 +66,9 @@ gulp.task('app',function(){
 });
 
 gulp.task('app-build',function(){
-    gulp.src(['src/app/*.js','src/app/components/*'])
+    gulp.src(['src/app/config.js'])
+        .pipe(gulp.dest('dist/scripts'));
+    gulp.src(['src/app/components/*','src/app/*.js'])
         .pipe(concat('app.js'))
         .pipe(replace(/\/\/#[^#]*\/\/##/g,''))
         .pipe(uglify())

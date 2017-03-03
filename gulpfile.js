@@ -57,10 +57,8 @@ gulp.task('views',function(){
 });
 
 gulp.task('replace',function(){
-    config.modules.forEach(function(item) {
-        gulp.src(['dist/services/*.js'])
+    gulp.src(['dist/scripts/services/*.js','dist/*.js','dist/directives/*.js'])
             .pipe(replace(/\/\/TESTSTART[^(//TESTSTART)]+\/\/TESTEND/g, ''))
-    })
 });
 
 //

@@ -10,6 +10,11 @@ var replace = require('gulp-replace');
 var config = require("./config.js");
 
 
+//public clean
+gulp.task('clean', function () {
+    fse.emptyDirSync('dist');
+});
+
 //load assets
 gulp.task("assets",function(){
      gulp.src([
@@ -40,81 +45,14 @@ gulp.task('copy',function(){
     gulp.src('src/app/services/*').pipe(gulp.dest('dist/scripts/services'));
     gulp.src('src/index.html').pipe(gulp.dest('dist'));
     gulp.src('src/404.html').pipe(gulp.dest('dist'));
-});
 
-//build app
-gulp.task('image',function(){
-    gulp.src('src/app/images/*')
-        .pipe(imgmin())
-        .pipe(gulp.dest('dist/images'))
-});
-
-//views changed
-gulp.task('views',function(){
     config.modules.forEach(function (item) {
         fse.copySync(item.path, 'dist/views/'+item.name);
     })
 });
 
-gulp.task('replace',function(){
-    gulp.src(['dist/scripts/services/*.js','dist/*.js','dist/directives/*.js'])
-            .pipe(replace(/\/\/TESTSTART[^(//TESTSTART)]+\/\/TESTEND/g, ''))
-});
-
-//
-gulp.task('client',function(){
-    gulp.src(['src/app/*.js','src/app/components/*'])
-        .pipe(concat('app.js'))
-        .pipe(gulp.dest('dist/scripts'));
-
-    gulp.src('src/app/*.css')
-        .pipe(concat('app.css'))
-        .pipe(cssmin())
-        .pipe(gulp.dest('dist/styles'));
-
-    gulp.src(['src/app/directives/*.js'])
-        .pipe(concat('directives.min.js'))
-        .pipe(uglify())
-        .pipe(gulp.dest('dist/scripts/directives'));
-
-});
-
-
-
-gulp.task('clean', function () {
-    fse.emptyDirSync('dist');
-});
-
-gulp.task('build',['clean', 'assets', 'copy', 'image','views','client','replace']);
-gulp.task('default',['build']);
-
-
-
-
-// dev enviroment
-gulp.task("assets-dev",function(){
-    gulp.src([
-        'bower_components/jquery/dist/jquery.js',
-        'node_modules/fnui/dist/js/fnui.js',
-        'bower_components/iscroll/build/iscroll-probe.js'
-    ])
-        .pipe(concat("vendor.js"))
-        .pipe(gulp.dest('dist/assets/js'));
-
-    gulp.src([
-        'bower_components/angular/angular.js',
-        'bower_components/angular-ui-router/release/angular-ui-router.min.js',
-        'bower_components/angular-animate/angular-animate.js',
-        'bower_components/oclazyload/dist/ocLazyLoad.js'
-    ])
-        .pipe(concat('angular.min.js'))
-        .pipe(gulp.dest('dist/assets/js'));
-
-    gulp.src('node_modules/fnui/dist/fonts/*').pipe(gulp.dest('dist/assets/fonts'));
-    gulp.src('node_modules/fnui/dist/css/*').pipe(gulp.dest('dist/assets/styles'));
-});
-
-gulp.task('client-dev',function(){
+//app builder
+gulp.task('app',function(){
     gulp.src(['src/app/*.js','src/app/components/*'])
         .pipe(concat('app.js'))
         .pipe(gulp.dest('dist/scripts'));
@@ -126,17 +64,40 @@ gulp.task('client-dev',function(){
     gulp.src(['src/app/directives/*.js'])
         .pipe(concat('directive.min.js'))
         .pipe(gulp.dest('dist/scripts/directives'));
+
 });
-gulp.task('dev',['clean', 'assets-dev', 'copy', 'image','views','client-dev']);
+
+
+
+gulp.task('replace',function(){
+    gulp.src(['dist/scripts/services/*.js'])
+        .pipe(replace(/\/\/TESTSTART[^(\/\/TESTSTART)]+\/\/TESTEND/g, ''))
+        .pipe(gulp.dest('dist/scripts/services'))
+
+    gulp.src(['dist/scripts/app.js'])
+        .pipe(replace(/\/\/TESTSTART[^(\/\/TESTSTART)]+\/\/TESTEND/g, ''))
+        .pipe(gulp.dest('dist/scripts'));
+});
+gulp.task('uglify',function () {
+    gulp.src('dist/scripts/app.js')
+        .pipe(uglify())
+        .pipe(gulp.dest('dist/scripts'));
+    gulp.src('dist/styles/app.css')
+        .pipe(cssmin())
+        .pipe(gulp.dest('dist/styles'));
+    gulp.src(['dist/scripts/directives/directive.min.js'])
+        .pipe(uglify())
+        .pipe(gulp.dest('dist/scripts/directives'));
+});
+
+
+
+
 
 gulp.task('watch', function () {
-    gulp.watch(['src/index.html','src/app/templates/*','src/app/services/*'], ['copy','reload']);
-    gulp.watch(['src/app/*.js','src/app/components/*','src/app/*.css'], ['client-dev','reload']);
-    gulp.watch(['src/app/views/**/*.html','src/app/views/**/**/*'], ['views','reload']);
-    gulp.watch(['src/index.html'], ['copy','reload']);
-    gulp.watch(['src/app/images/*'],['image','reload']);
+    gulp.watch(['src/index.html','src/app/templates/*','src/app/services/*','src/app/views/**/*.html','src/app/views/**/**/*'], ['copy','reload']);
+    gulp.watch(['src/app/*.js','src/app/components/*','src/app/*.css'], ['app','reload']);
 });
-
 gulp.task('reload',function () {
     gulp.src('dist').pipe(connect.reload())
 });
@@ -147,6 +108,8 @@ gulp.task('connect',['dev'],function(){
     })
 });
 
+gulp.task('dev',['clean', 'assets', 'copy','app']);
 gulp.task('build-dev',['connect','watch']);
 
-
+gulp.task('build',['dev','replace','uglify']);
+gulp.task('default',['build']);

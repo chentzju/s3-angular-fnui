@@ -32,7 +32,7 @@
 .delivery .color-76{ color: #767676;}
 .delivery .mydeliveryName{color: #000;}
 .delivery .content-head{width: 100%;line-height: 3.1rem;}
-.delivery .content-center{padding: .6rem;line-height: 2rem;}
+.delivery .content-center{padding: .6rem;line-height: 2rem;background: #fbfbfb;}
 .delivery .height-29{font-size: 1.2rem;}
 .delivery .freight{height: 40px;}
 .delivery .freight p{height: 20px;}

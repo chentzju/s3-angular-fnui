@@ -2,7 +2,7 @@
  * Created by chent on 2017/1/18.
  */
 var config = {
-    'custid':'s3',
+    'custid':'ultimate',
     'userservice':'usermanage'
 };
 

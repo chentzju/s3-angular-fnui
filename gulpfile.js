@@ -80,6 +80,12 @@ gulp.task('app-build',function(){
         .pipe(gulp.dest('dist/scripts/directives'));
 });
 
+gulp.task('service',function(){
+    gulp.src('src/app/services/*.js')
+        .pipe(gulp.dest('dist/scripts/services/'));
+});
+
+
 gulp.task('replace',function(){
     gulp.src('src/app/services/*.js')
         .pipe(replace(/\/\/#[^#]*\/\/##/g,''))
@@ -101,7 +107,7 @@ gulp.task('connect',['dev'],function(){
     })
 });
 
-gulp.task('dev',['clean', 'assets', 'copy','app']);
+gulp.task('dev',['clean', 'assets', 'copy','app','service']);
 gulp.task('build-dev',['connect','watch']);
 
 gulp.task('build',['clean', 'assets', 'copy','app-build','replace']);

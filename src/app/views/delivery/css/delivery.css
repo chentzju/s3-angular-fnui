@@ -7,7 +7,7 @@
 .detColor{color:#000;}
 /*搜索*/
 .delivery .delivery-search{width:94%;border:1px solid #2d83d0;margin:3%;border-radius: 10px;}
-.delivery .delivery-input{border:none;width:84%;outline: none;vertical-align: inherit!important;line-height: 14px;height: 14px;}
+.delivery .delivery-input{border:none;width:84%;outline: none;line-height: 26px;height:26px;}
 .delivery .delivery-input input[placeholder]{color: #ebf6ff;!important}
 .delivery ul.deliveryList-dropdown{border-radius: .8rem;overflow: hidden;padding: 0;min-width: 110px;}
 .delivery ul.deliveryList-dropdown>.fn-active>a{color: #2d83ce;background-color: #ebf6ff;}
@@ -32,7 +32,7 @@
 .delivery .color-76{ color: #767676;}
 .delivery .mydeliveryName{color: #000;}
 .delivery .content-head{width: 100%;line-height: 3.1rem;}
-.delivery .content-center{padding: .6rem;line-height: 2rem;}
+.delivery .content-center{padding: .6rem;line-height: 2rem;background: #fbfbfb;}
 .delivery .height-29{font-size: 1.2rem;}
 .delivery .freight{height: 40px;}
 .delivery .freight p{height: 20px;}

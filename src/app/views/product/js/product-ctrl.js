@@ -68,10 +68,11 @@ myApp.controller("ProductDetailCtrl",["$scope","$rootScope",'$stateParams','Prod
     $scope.collection = function (productID) {
         console.log(productID)
         if (flag){
+            $.toast.show('收藏成功',1000)
             $(".proDe-top_icon").find("i").attr("class","iconfont icon-shoucang icon-shoucangfill");
             flag = false;
-
         }else{
+            $.toast.show('取消收藏',1000)
             $(".proDe-top_icon").find("i").attr("class","iconfont icon-shoucang");
             flag = true;
         }

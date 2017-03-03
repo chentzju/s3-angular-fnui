@@ -38,11 +38,10 @@
             <a ui-sref="myorder.orderDetail({orderId:order.id})" ng-class="{'badgeSuccessBox': order.status == 1, 'badgeBox': order.status == 2,'badgePendingBox':order.status == 0}">
                 <!--订单编号-->
                 <div class="num-content statusFa">
-                    <div class="fn-fl" ng-class="{'badgeSuccess': order.status == 1, 'badge': order.status == 2,'badgePending':order.status == 0}">
-                    </div>
-                    <span class="myorderID fn-fr">
+                    <span class="myorderID">
+                        <i class="iconfont icon-wodedingdan i-Blue"></i>
                         {{order.id}}
-                        <i class="iconfont icon-fanhui fn-fr"></i>
+                        <i class="iconfont icon-fanhui fn-fr Blue"></i>
                     </span >
                 </div>
 
@@ -75,14 +74,6 @@
                     </div>
 
                 </div>
-                <!--&lt;!&ndash;订单金额&ndash;&gt;-->
-                <!--<div class="mon-content">-->
-                    <!--<span class="myorderMon fn-fr">-->
-                        <!--{{order.money|currency:'￥'}}-->
-                    <!--</span>-->
-                    <!--<span class="fn-fr">订单金额：</span>-->
-                <!--</div>-->
-
             </a>
         </li>
     </iscroll-wrapper>

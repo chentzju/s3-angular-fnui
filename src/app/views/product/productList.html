@@ -11,10 +11,13 @@
             </div>
         </div>
 
-        <div class="fn-g">
-            <div class="fn-text-truncate fn-u-sm-9" ng-bind="currentCompany.companyName"></div>
+        <div class="fn-g back-white companyBox">
+            <span class="fn-text-right  fn-u-sm-1 fn-padding-right-0">
+                <i class="iconfont icon-gongsi color-invoice"></i>
+            </span>
+            <div class="fn-text-truncate fn-u-sm-8 fn-padding-left-sm fn-padding-right-0" ng-bind="currentCompany.companyName"></div>
             <span class="fn-text-right  fn-u-sm-3" ng-click="showCompanyList()">
-                <a><i class="fn-icon-filter"></i>切换</a>
+                <a><i class="iconfont icon-qiehuan1 "></i>切换</a>
             </span>
         </div>
     </div>
@@ -25,11 +28,11 @@
             <a ui-sref="product.productDetail({productId:product.productId})" >
                 <!--订单编号-->
                 <div class="num-content">
-                    <div class="badge fn-fl">
-                        <span>HOT</span>
+                    <div class="fn-fl pro-iconBox">
+                        <i class="iconfont icon-chanpin"></i>
                     </div>
-                    <span class="myorderID fn-fr">
-                        {{product.productName}}
+                    <span class="myorderID fn-fr fn-padding-left-0">
+                        {{product.productId}}
                         <i class="iconfont icon-fanhui fn-fr"></i>
                     </span >
                 </div>
@@ -39,19 +42,19 @@
                         <!--订单详情-->
                         <div class="del-content">
                             <div class="">
-                                <span class="fn-u-sm-7 fn-padding-0">
-                                    产品编号：{{product.productId}}
+                                <span class="fn-padding-0">
+                                    产品名称：{{product.productName}}
                                 </span>
-                                <span class="fn-u-sm-5 fn-padding-0">
-                                    规格：262dt
+
+                            </div>
+                            <div>
+                                <span class="fn-padding-0">
+                                    分类号：1001
                                 </span>
                             </div>
                             <div>
-                                <span class="fn-u-sm-7 fn-padding-0">
-                                    价格：{{product.price}}
-                                </span>
-                                <span class="fn-u-sm-5 fn-padding-0">
-                                    分类号：1001
+                                <span class="fn-padding-0">
+                                    规格：262dt
                                 </span>
                             </div>
                             <div>
@@ -65,7 +68,7 @@
                     <div class="fn-u-sm-3 fn-padding-0">
                         <!--标准价-->
                         <div class="proMoney">
-                            <div>标准价</div>
+                            <!--<div>标准价</div>-->
 
                             <div class="proMoney-num">￥{{product.price}}</div>
                         </div>
@@ -75,23 +78,20 @@
         </li>
     </iscroll-wrapper>
 
-<fn-action>
-    <ul class="fn-list">
-        <li ng-repeat = "company in companyList">
-            <a ng-bind="company.companyName" ng-click="changeCompany(company)">
-            </a>
-        </li>
-    </ul>
-</fn-action>
+
 
     <fn-action>
         <ul class="fn-list">
-            <li ng-repeat = "company in companyList">
-                <a ng-bind="company.companyName" ng-click="changeCompany(company)">
+            <li ng-repeat = "company in companyList" ng-click="changeCompany(company)" >
+                <div class="fn-u-sm-2" >
+                    <i class="iconfont " ng-class="{'icon-queren': currentCompany.companyId ==  company.companyId,'icon-yuanquan':currentCompany.companyId !=  company.companyId}"></i>
+                </div>
+                <a ng-bind="company.companyName" class="fn-u-sm-10">
                 </a>
             </li>
         </ul>
     </fn-action>
+
 </div>
 
 <!--bottom bar  -->

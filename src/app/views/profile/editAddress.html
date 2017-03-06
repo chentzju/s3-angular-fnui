@@ -11,7 +11,16 @@
                 <input type="text" value="{{addressList.phone}}">
             </li>
             <li>
-                <span>省市:</span><i class="city"></i>
+                <span>省市:</span>
+                <div class="form-item item-line" id="select_contact">
+                    <div class="pc-box">
+                        <input type="hidden" name="contact_province_code" data-id="0001" id="contact_province_code" value="" data-province-name="">
+                        <input type="hidden" name="contact_city_code" id="contact_city_code" value="" data-city-name="">
+                        <input type="text" name="pricent" data-city-code="" data-province-code="" data-district-code="" id="show_contact" value=""
+                               required ng-class="{'error':signUpForm.pricent.$invalid && signUpForm.pricent.$touched,'seccess':signUpForm.pricent.$valid}"
+                        >
+                    </div>
+                </div>
             </li>
             <li>
                 <span>详情地址:</span>

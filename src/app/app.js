@@ -247,10 +247,13 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate','icbc.
                 resolve:{
                     load:['$ocLazyLoad', function($ocLazyLoad) {
                         return $ocLazyLoad.load([
+                            'views/profile/js/areaData_v2.js',
+                            'views/profile/js/iosSelect.js',
                             'views/profile/js/profile-ctrl.js',
                             'scripts/services/userinfo-serv.js',
                             'scripts/services/account-serv.js',
-                            'views/profile/css/personal_center.css'
+                            'views/profile/css/personal_center.css',
+                            'views/profile/css/iosSelect.css'
                         ]);
                     }]
                 }

@@ -18,6 +18,20 @@ angular.module("myApp").controller('InfoCtrl',['$scope','UserInfoService',
             $scope.role=getInfoText.role;
         }])
 
+    .controller('changePwCtrl',['$scope',
+        function($scope){
+            $scope.pwDate={};
+
+            $scope.submitForm=function(){
+                console.log($scope.signUpForm);
+                if($scope.pwDate.newPw1!==$scope.pwDate.newPw2){
+                    alert('两次密码不一致');
+                } else{
+                    alert('修改成功');
+                }
+            }
+        }])
+
     .controller('myAddressCtrl',['$scope','UserInfoService',
         function($scope,UserInfoService){
             var getMyAddressText=UserInfoService.getUserAddress();
@@ -32,7 +46,26 @@ angular.module("myApp").controller('InfoCtrl',['$scope','UserInfoService',
                 alist.splice($index,1);
             };
 
+            $(function(){
+                //默认地址管理
+                $scope.ind="";
+                var mb=$('.myAddress_list>li>.edit>.edit_left');
+                $(mb).children().eq(0).attr({'class':'iconfont icon-queren','state':1});
 
+               $(mb).click(function(){
+                   $(mb).children().attr({'class':'iconfont icon-yuanquan','state':0});
+
+                   if($(this).children().attr('state')==0){
+                       $(this).children().attr('class','iconfont icon-queren');
+                       $(this).children().attr('state',1);
+                   }else{
+                       $(this).children().attr('class','iconfont icon-yuanquan');
+                       $(this).children().attr('state',0);
+                   }
+                   $scope.ind=$(mb).index(this);
+                   console.log($scope.ind);
+               });
+            })
         }])
 
     .controller('editAddressCtrl',['$scope','UserInfoService',

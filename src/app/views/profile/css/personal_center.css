@@ -11,6 +11,7 @@ html{background-color: #F2F2F2;}
 .profile .error{border:1px solid red !important;}
 .profile .seccess{border:1px solid #009A61 !important;}
 .profile .btn{width: 7rem;height: 3rem;background-color: #2D83CE;border: none;border-radius: 5px;color: #fff;margin-left: 25%;}
+.profile .btn_bottom{width:100%;height:3.5rem;line-height:3.5rem;font-size:1.4rem;text-align:center;background-color: #2F83CE;color:#fff;position:fixed;bottom:0;outline:none;border:none;}
 .profile input{outline: none;}
 .profile .header{position: relative;z-index: 2000;}
 .profile .shadow{display:none;width:100%;height:100%;position: fixed;left:0;top:0;z-index: 1200;background-color: #F1F1F1;opacity: 0.5;}
@@ -67,7 +68,8 @@ html{background-color: #F2F2F2;}
 .profile .edit_right{width:50%;height:2.6rem;float:right;position: relative;}
 
 .profile .edit_left>i{position:relative;left:-2%;top:6%;}
-.profile .myAddress_list li i{color:#FB3E50;}
+.profile .myAddress_list li .icon-yuanquan{color:#7D7D7D;}
+.profile .myAddress_list li .icon-queren{color:#FB3B4E;}
 
 .profile .myAddress_btn{width:95%;height:2.9rem;line-height: 2.9rem;text-align:center;color:#fff;border-radius:10px;margin:5.3rem auto 6rem auto;background-color: #2F83CE;}
 .profile .myAddress_btn>span{display: inline-block;width:1.4rem;height:1.4rem;margin-right:1rem;background:url("../img/addAddress_icon01.png") no-repeat;background-size:100% 100%;position:relative;top:10%;}

@@ -1,6 +1,4 @@
-/**
- * Created by dell on 2017/3/3.
- */
+
 angular.module("myApp")
     .directive("productsearchtype",function(){
         return {

@@ -14,7 +14,7 @@ angular.module("myApp").directive('loginForm',['$state','UserService',function($
                  validateOnSubmit:true,
                  onSuccess:function(){
                      //处理登陆事宜
-                     var result = UserService.userLogin(scope.user,scope.password);
+                     var result = UserService.userLogin(scope.loginName,scope.password);
                      if(result.retCode === "200"){
                          event.preventDefault();
                          $state.go('app');
@@ -36,7 +36,7 @@ angular.module("myApp").directive('loginForm',['$state','UserService',function($
                 $(element).validator({
                     validateOnsubmit:true,
                     onSuccess:function(){
-                        var result = UserService.getValidateCode(scope.mobilephone);
+                        var result = UserService.getValidateCode(scope.mobilePhone);
                         if(result.retCode === "200"){
                             event.preventDefault();
                             $state.go('account.checkCode');

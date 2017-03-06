@@ -57,7 +57,6 @@ angular.module("myApp").controller("ProductCtrl",["$scope","ProductService","Use
     }
 
 }]);
-
 //产品详情
 myApp.controller("ProductDetailCtrl",["$scope",'$stateParams','ProductService',function ($scope,$stateParams,ProductService) {
     //取得传过来的参数
@@ -125,10 +124,5 @@ myApp.controller("ProductSearchCtrl",["$scope",'$stateParams','ProductService',f
     $scope.clearForm = function() {
         console.log('ddd')
     }
-
-
-
-
-
 
 }]);

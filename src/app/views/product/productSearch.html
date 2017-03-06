@@ -2,9 +2,11 @@
 
     <div class="top">
         <div class="top_main">
-            <i class="iconfont icon-sou"></i>
-            <input class="top_main_ip" type="text" placeholder="POY">
-            <i class="iconfont icon-guanbi"></i>
+            <form action="" class="proFrom">
+                <i class="iconfont icon-sou" ng-click="processForm()"></i>
+                <input class="top_main_ip" type="text" placeholder="POY" id="proInput"  ng-keyup="proKeyup($event)" ng-model="formData.val">
+                <i class="iconfont icon-guanbi" ng-click="clearForm()"></i>
+            </form>
         </div>
     </div>
     <div class="proSear-category">

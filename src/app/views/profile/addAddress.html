@@ -19,48 +19,14 @@
                 </li>
 
                 <li>
-                    <!--<span>省市:</span>-->
-                    <div class="iphone">
-                        <div class="browser">
-                            <!--选择地区-->
-                            <section class="express-area"  ng-click="showAndNot()" ng-model="userDate.pricentf">
-                                <a id="expressArea" href="javascript:void(0)">
-                                    <dl>
-                                        <dt>选择地区:</dt>
-                                        <dd>省 > 市 > 区/县</dd>
-                                    </dl>
-                                </a>
-                            </section>
-                            <!--选择地区弹层-->
-                            <section id="areaLayer" class="express-area-box">
-                                <header>
-                                    <h3>选择地区</h3>
-
-                                    <a ng-click="closeXaunQu" id="closeArea" class="close" href="javascript:void(0)" title="关闭"></a>
-                                </header>
-                                <article id="areaBox">
-
-                                    <ul id="areaList" class="area-list" ng-show="provinceShow">
-                                        <li ng-click="selectP($index)" ng-repeat="provin in province track by $index">
-                                            {{provin}}
-                                        </li>
-                                    </ul>
-                                    <ul id="areaList1" class="area-list" ng-show="cityShow">
-                                        <a id="" href="javascript:void(0)" ng-click="back(0)" ng-show="areaBack">返回</a>
-                                        <li ng-click="selectC($index)" ng-repeat="cit in city track by $index">
-                                            {{cit}}
-                                        </li>
-                                    </ul>
-                                    <ul id="areaList2" class="area-list" ng-show="districtShow">
-                                        <a id="" href="javascript:void(0)" ng-click="back(1)" ng-show="areaBack">返回</a>
-                                        <li ng-click="selectD($index)" ng-repeat="distri in district track by $index">
-                                            {{distri}}
-                                        </li>
-                                    </ul>
-                                </article>
-                            </section>
-                            <!--遮罩层-->
-                            <!--<div id="areaMask" class="mask"></div>-->
+                    <span>省市:</span>
+                    <div class="form-item item-line" id="select_contact">
+                        <div class="pc-box">
+                            <input type="hidden" name="contact_province_code" data-id="0001" id="contact_province_code" value="" data-province-name="">
+                            <input type="hidden" name="contact_city_code" id="contact_city_code" value="" data-city-name="">
+                            <input type="text" name="pricent" data-city-code="0" data-province-code="330000" data-district-code="330103" id="show_contact" value="浙江省 杭州市 下城区"
+                                   required ng-class="{'error':signUpForm.pricent.$invalid && signUpForm.pricent.$touched,'seccess':signUpForm.pricent.$valid}"
+                            >
                         </div>
                     </div>
                 </li>

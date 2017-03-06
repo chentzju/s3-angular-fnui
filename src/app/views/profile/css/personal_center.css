@@ -90,62 +90,6 @@ html{background-color: #F2F2F2;}
 .profile .myAccount>li>.inp{width:70%;height:4rem;color:#989898;outline: none;font-size: 1.1rem;border:none;text-align: right;float:right;margin-right:1.5rem;}
 .profile .myAccount>li>.remark0{width:50%;font-size:1rem;color:#F9AF87;}
 
-
-/*省市样式*/
-.iphone { width: 384px; height: 799px; padding: 182px 32px 157px; margin: 10px auto; }
-.browser { position: relative; width: 320px; height: 460px; overflow: hidden; }
-@media (min-width: 721px) and (max-width: 1300px) {
-    .iphone { width: 270px; height: 562px; padding: 128px 23px 111px; margin: 20px auto; background-size: 270px 562px; }
-    .browser { width: 224px; height: 323px; }
-}
-@media (max-width: 720px) {
-    .iphone { width: 100%; height: 100%; padding: 0; background: none; }
-    .browser { width: 100%; height: 100%; }
-}
-/*选择地区*/
-.express-area {  margin-top: .25rem; margin-bottom: .25rem; background-color: #fff; position:relative;top:-31%;}
-.express-area a { display: block; padding: .5rem; background: url(../img/link-arrow.png) no-repeat 98% 50%; background-size: .55rem .55rem; }
-.express-area dl { position: relative; line-height: 1.2rem; color: #4d525d; }
-.express-area dl dt { position: absolute; top: 0; left: 2%; font-size: 1.2rem; line-height: 1.2rem; font-weight: normal; }
-.express-area dl dd { padding-top: .1rem;  margin-left: 7.5rem; text-align: justify; font-size: 1.2rem; line-height: 1rem; }
-@media (min-width: 721px) and (max-width: 1300px) {
-    .express-area a { padding: .3rem; }
-    .express-area dl dt { font-size: .5rem; line-height: 1rem; }
-    .express-area dl dd { padding-right: .6rem; margin-left: 3rem; font-size: .4rem; line-height: .8rem; }
-}
-/*选择地区弹层*/
-.express-area-box { position: absolute; bottom: -100%; left: 50%; z-index: 15; width: 320px; margin-left: -160px; background-color: #fff; color: #4d525d; }
-.express-area-box header { position: relative; border-top: 1px solid #e2e2e2; border-bottom: 1px solid #e2e2e2; }
-.express-area-box header h3 { margin: 0 1.675rem; text-align: center; font-size: .8rem; line-height: 2.25rem; }
-.express-area-box header .back,
-.express-area-box header .close { position: absolute; top: 0; width: 1.675rem; height: 2.25rem; }
-.express-area-box header .back { display: none; left: 0; background: url(../img/back.png) no-repeat center;   background-size: .45rem .75rem; }
-.express-area-box header .close { right: 0; background: url(../img/close-area.png) no-repeat center; background-size: .675rem .675rem; }
-.express-area-box article { height: 250px; overflow-y: scroll; }
-.area-list li { padding: .5rem; border-bottom: 1px solid #e2e2e2; text-align: justify; font-size: .7rem; line-height: 1.25rem; }
-@media (min-width: 721px) and (max-width: 1300px) {
-    .express-area-box { width: 224px; margin-left: -112px; }
-    .express-area-box header h3 { font-size: .7rem; line-height: 1.7rem; }
-    .express-area-box header .back,
-    .express-area-box header .close { height: 1.7rem; }
-    .express-area-box article { height: 120px; }
-    .area-list li { padding: .3rem; font-size: .6rem; line-height: 1rem; }
-}
-@media (max-width: 720px) {
-    .express-area-box { position: fixed; left: 0; width: 100%; margin-left: 0; }
-}
-/*遮罩层*/
-.mask { display: none; position: absolute; top: 0; left: 0; z-index: 12; width: 100%; height: 100%; background-color: rgba(0,0,0,.5); }
-@media (max-width: 720px) {
-    .mask {
-        position: fixed;
-    }
-
-    .area-list {
-        overflow: auto;
-    }
-
-    #areaLayer {
-        display: none;
-    }
-}
+.profile #select_contact{display: inline-block;width: 75%;height: 3rem;border: none;float: right;position: relative;}
+.profile #show_contact{width:100%;height:3rem;line-height:3rem;border:none;padding-left:1rem;}
+.ios-select-widget-box header.iosselect-header a {color:#2D83CE;}

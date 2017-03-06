@@ -1,6 +1,3 @@
-/**
- * Created by chent on 2017/1/18.
- */
 
 angular.module("myApp")
     .directive("productsearchtype",function(){
@@ -8,7 +5,7 @@ angular.module("myApp")
             restrict:'E',
             replace:true,
             transclude:true,
-                template:' <ul class="sort_list fn-avg-sm-3" ng-transclude></ul>',
+            template:' <ul class="sort_list fn-avg-sm-3" ng-transclude></ul>',
             link:function(scope,element){
                 $(function() {
                     var selector = $(element);

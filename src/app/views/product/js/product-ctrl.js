@@ -57,7 +57,7 @@ angular.module("myApp").controller("ProductCtrl",["$scope","ProductService","Use
     }
 
 }]);
-// 产品详情
+//产品详情
 myApp.controller("ProductDetailCtrl",["$scope",'$stateParams','ProductService',function ($scope,$stateParams,ProductService) {
     //取得传过来的参数
     var productId = $stateParams.productId;
@@ -93,15 +93,36 @@ myApp.controller("ProductDetailCtrl",["$scope",'$stateParams','ProductService',f
 
 
 }]);
-// 产品搜索
 
+// 产品搜索
 myApp.controller("ProductSearchCtrl",["$scope",'$stateParams','ProductService',function ($scope,$stateParams,ProductService) {
-    
+
     // function loadCategoryInfo() {
     //
     // }
-    
 
 
+    function formController($scope) {
+        $scope.formData = {};
+
+    }
+    //表单搜索
+    $scope.processForm = function() {
+        // $log.info('',$scope.formData);
+        console.log('这是你要搜索的内容：'+$.param($scope.formData));
+        // $('#proInput').value =='';
+        $scope.clearForm();
+    };
+    //回车搜索
+    $scope.proKeyup = function(e){
+        var keycode = window.event?e.keyCode:e.which;
+        if(keycode==13){
+            $scope.processForm();
+        }
+    };
+    //清空表单
+    $scope.clearForm = function() {
+        console.log('ddd')
+    }
 
 }]);

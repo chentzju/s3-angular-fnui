@@ -72,9 +72,7 @@ gulp.task('app-build',function(){
         .pipe(concat('app.js'))
         .pipe(replace(/\/\/#[^#]*\/\/##/g,''))
         .pipe(uglify({
-            mangle: {
-                except: ['angular']
-            }
+            mangle:false
         }))
         .pipe(gulp.dest('dist/scripts'));
     gulp.src('src/app/*.css')
@@ -85,9 +83,7 @@ gulp.task('app-build',function(){
         .pipe(replace(/\/\/#[^#]*\/\/##/g,''))
         .pipe(concat('directive.min.js'))
         .pipe(uglify({
-            mangle: {
-                except: ['angular']
-            }
+            mangle:false
         }))
         .pipe(gulp.dest('dist/scripts/directives'));
 });

@@ -16,7 +16,7 @@ angular.module("myApp").service("ProductService",function(){
 
     this.getProductList = function(companyId,page,key){
 
-        //TESTSTART
+        //#
         var productList = [];
         var i,product;
         for(i = 0;i<10;i++){
@@ -28,7 +28,7 @@ angular.module("myApp").service("ProductService",function(){
             productList.push(product);
         }
         return productList;
-        //TESTEND
+        //##
 
         //page
         page = page || 1;
@@ -52,7 +52,7 @@ angular.module("myApp").service("ProductService",function(){
 
     this.getProductDetail = function(productId){
 
-        //TESTSTART
+        //#
         //get product
         return {
             productId:productId,
@@ -61,7 +61,7 @@ angular.module("myApp").service("ProductService",function(){
             type:"优等品",
             length:"100m"
         };
-        //TESTSEND
+        //##
 
 
         //TODO : 后台没有这个方法

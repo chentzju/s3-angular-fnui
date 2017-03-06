@@ -28,7 +28,7 @@ angular.module('myApp').service('UserService',['$es',function($es){
             param.appid = appid;
         else
             param.appid = $es.getConfig('custid');
-        return $es.java('userAuthenBean.getPublickKey',param,userManage,1000);
+        return $es.java('userAuthenBean.getPublicKey',param,userManage,1000);
     };
 
     /**
@@ -39,7 +39,7 @@ angular.module('myApp').service('UserService',['$es',function($es){
      * @returns {*}
      */
     this.userLogin = function(loginName,password,code){
-        //TESTSTART
+        //#
         $es.userinfo = {userName:'haha'};
         return {
             retCode:'200',
@@ -47,7 +47,7 @@ angular.module('myApp').service('UserService',['$es',function($es){
             isActive:1,
             appid:"s3"
         };
-        //TESTEND
+        //##
 
         // public key
         var key = getPublicKey();
@@ -68,21 +68,15 @@ angular.module('myApp').service('UserService',['$es',function($es){
             param.code = '';
 
         var result = $es.java('userAuthenBean.userLogin',param,userManage,3000);
-        if(result || !result.retCode){
+        if(!result || !result.retCode){
             return {
                 retCode:'400',
                 retMsg:'系统错误，请联系管理员'
             }
         }else if(result.retCode !== "200"){
             return result;
-        }else if(result.isActive == '0'){
-            return {
-                retCode:'400',
-                retMsg:'用户未激活，请激活后登录'
-            }
-        }else{
+        }else
             return result;
-        }
     };
 
     /**
@@ -95,12 +89,12 @@ angular.module('myApp').service('UserService',['$es',function($es){
      * @returns {*}
      */
     this.changePassword = function(oldPassword,newPassword,repeatPassword,loginName,appid){
-        //TESTSTART
+        //#
         return {
             retCode:'200',
             retMsg:'success'
         };
-        //TESTEND
+        //##
 
 
         // public key
@@ -140,14 +134,14 @@ angular.module('myApp').service('UserService',['$es',function($es){
      */
     this.getValidateCode = function(phoneNumber,loginName,appid){
 
-        //TESTSTART
+        //#
         //假装取到了
         return{
             retCode:200,
             retMsg:'success',
             mobile:'135****3456'
         };
-        //TESTEND
+        //##
 
         var param = {
             mobile:phoneNumber
@@ -173,9 +167,9 @@ angular.module('myApp').service('UserService',['$es',function($es){
      */
     this.checkValidate = function(mobile,code,appid){
 
-        //TESTSTART
+        //#
         return true;
-        //TESTEND
+        //##
 
         var param = {
             mobile:mobile
@@ -202,12 +196,12 @@ angular.module('myApp').service('UserService',['$es',function($es){
     //TODO 手机号码登录 未做
     this.mobileLogin = function(phoneNumber,code){
 
-        //TESTSTART
+        //#
         return{
             retCode:200,
             retMsg:'success'
         };
-        //TESTEND
+        //##
 
         var param = {
             mobile:phoneNumber,

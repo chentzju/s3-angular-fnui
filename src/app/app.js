@@ -1,12 +1,6 @@
 /**
  * Created by chent on 2017/1/18.
  */
-var config = {
-    'custid':'ultimate',
-    'userservice':'usermanage'
-};
-
-
 var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate','icbc.espresso'])
     .config(['$stateProvider','$urlRouterProvider',function($stateProvider,$urlRouterProvider){
         $urlRouterProvider.otherwise('/app');
@@ -65,7 +59,8 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate','icbc.
                 url:'/productSearch',
                 title:'产品搜索',
                 backState:'product.productList',
-                templateUrl:'views/product/productSearch.html'
+                templateUrl:'views/product/productSearch.html',
+                controller:'ProductSearchCtrl'
             })
             .state('product.productDetail',{
                 url:'/productDetail/:productId',
@@ -374,12 +369,12 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate','icbc.
             var valid =  false;
             if(toState.name === loginState)
                 valid = true;
-            else if(!valid){
-                //TESTSTART
-                if(true){
 
-                }else{
-                //TESTEND
+            else if(!valid){
+
+                //#
+                return;
+                //##
 
                 //check userinfo
                  $es.userinfo = $es.java("userInfoBean.getUserData");
@@ -389,19 +384,15 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate','icbc.
                      $rootScope.username = $es.userinfo.userName;
                      $rootScope.customerId = $es.userinfo.customerId;
 
-
                  //角色
                  var roleId = $es.userinfo.roles[0].id;
-                 //根据角色判断首页的不同显示
-                 //应该是来自后台的状态才比较合理
-                 //新增一个状态表，来保存状态
+                     //根据角色判断首页的不同显示
+                     //应该是来自后台的状态才比较合理
+                     //新增一个状态表，来保存状态
                  }else {
-                event.preventDefault();
-                $state.go(loginState);
-            }
-                //TESTSTART
-                }
-                //TESTEND
+                        event.preventDefault();
+                        $state.go(loginState);
+                 }
             }
         });
     }])

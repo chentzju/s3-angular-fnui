@@ -396,28 +396,6 @@ var myApp = angular.module("myApp",['ui.router','oc.lazyLoad','ngAnimate','icbc.
             }
         });
     }])
-    .controller("RootCtrl",['$scope','$state','$es',function ($scope,$state,$es) {
-        //用户信息
-        var userInfo = $es.userinfo;
-        $scope.userName = userInfo.userName;
-        $scope.unionId = userInfo.unionId;
+    .controller("RootCtrl",function ($scope) {
 
-        //展示首页
-
-        //如果角色不同，首页内容照例也不同
-        var main = {
-            1:[
-                {name:'',state:''}
-            ],
-            2:[],
-            3:[]
-        };
-
-        var footer = {
-            1:[
-                {name:'首页',state:''}
-            ],
-            2:[],
-            3:[]
-        };
-    }]);
+    });

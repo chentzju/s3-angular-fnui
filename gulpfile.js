@@ -52,7 +52,7 @@ gulp.task('copy',function(){
 
 //app builder
 gulp.task('app',function(){
-    gulp.src(['src/app/config.js'])
+    gulp.src(['src/config.js'])
         .pipe(gulp.dest('dist/scripts'));
     gulp.src(['src/app/components/*','src/app/*.js'])
         .pipe(concat('app.js'))
@@ -66,12 +66,16 @@ gulp.task('app',function(){
 });
 
 gulp.task('app-build',function(){
-    gulp.src(['src/app/config.js'])
+    gulp.src(['src/config.js'])
         .pipe(gulp.dest('dist/scripts'));
     gulp.src(['src/app/components/*','src/app/*.js'])
         .pipe(concat('app.js'))
         .pipe(replace(/\/\/#[^#]*\/\/##/g,''))
-        .pipe(uglify())
+        .pipe(uglify({
+            mangle: {
+                except: ['angular']
+            }
+        }))
         .pipe(gulp.dest('dist/scripts'));
     gulp.src('src/app/*.css')
         .pipe(concat('app.css'))
@@ -80,7 +84,11 @@ gulp.task('app-build',function(){
     gulp.src(['src/app/directives/*.js'])
         .pipe(replace(/\/\/#[^#]*\/\/##/g,''))
         .pipe(concat('directive.min.js'))
-        .pipe(uglify())
+        .pipe(uglify({
+            mangle: {
+                except: ['angular']
+            }
+        }))
         .pipe(gulp.dest('dist/scripts/directives'));
 });
 
